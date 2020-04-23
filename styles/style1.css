@@ -21,3 +21,7 @@ header .left span {
     font-size: 30px;
     color: white;
 }
+header .left img {
+    width: 30px;
+    height: 30px;
+}
