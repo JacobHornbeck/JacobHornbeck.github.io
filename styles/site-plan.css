@@ -1,10 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=IM+Fell+French+Canon+SC|Lato');
 
 :root {
-    --primary-color: #396E94;
-    --secondary-color: #E7C24F;
-    --accent1-color: #A43312;
-    --accent2-color: white;
+    --primary-color: #10D15A;
+    --secondary-color: #676767;
+    --accent1-color: #FFFF64;
+    --accent2-color: #2B22E3;
+    --default-color: #1A1A1A;
     --heading-font: "IM Fell French Canon SC";
     --paragraph-font: Lato, Helvetica, sans-serif;
 }
@@ -16,7 +17,7 @@ html {
 body {
     max-width: 900px;
     margin: 0 auto;
-    background-color: white;
+    background-color: floralwhite;
     padding: 1em;
 }
 
@@ -26,14 +27,14 @@ img {
 
 h1, h2, h3, h4, h5, h6 {
     font-family: var(--heading-font);
-    color: darkslategray;
+    color: var(--default-color);
 }
 
 header {
     padding: 1em;
     text-align: center;
-    color: var(--accent2-color);
-    background-color: lightgray;
+    color: var(--accent1-color);
+    background-color: var(--secondary-color);
 }
 
 header>h1 {
@@ -79,7 +80,7 @@ p {
 }
 
 nav {
-    background-color: lightskyblue;
+    background-color: var(--secondary-color);
     line-height: 3em;
     text-align: center;
     font-size: 1.2em;
@@ -93,13 +94,15 @@ nav>ul {
 nav a {
     padding: 1em;
     min-width: 70px;
+    text-decoration: none;
 }
 
 nav a:link, nav a:visited {
-    color: lightgreen;
+    color: var(--primary-color);
 }
 
 nav a:hover {
-    color: greenyellow;
-    background-color: rgba(255,255,100,0.5);
+    color: var(--primary-color);
+    text-decoration: underline var(--accent1-color);
+    background-color: rgba(255,255,255,0.2);
 }
