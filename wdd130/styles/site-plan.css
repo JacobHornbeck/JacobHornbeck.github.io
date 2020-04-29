@@ -1,13 +1,12 @@
-@import url('https://fonts.googleapis.com/css?family=IM+Fell+French+Canon+SC|Lato');
+@import url('https://fonts.googleapis.com/css?family=Baloo+Tamma+2|Carter+One&display=swap');
 
 :root {
-    --primary-color: #10D15A;
-    --secondary-color: #676767;
-    --accent1-color: #FFFF64;
-    --accent2-color: #2B22E3;
-    --default-color: #1A1A1A;
-    --heading-font: "IM Fell French Canon SC";
-    --paragraph-font: Lato, Helvetica, sans-serif;
+    --primary-color: #7F7F7F;
+    --secondary-color: #FBD75D;
+    --accent1-color: #323232;
+    --accent2-color: #FFFFFF;
+    --heading-font: 'Carter One';
+    --paragraph-font: 'Baloo Tamma 2';
 }
 
 html {
@@ -17,7 +16,7 @@ html {
 body {
     max-width: 900px;
     margin: 0 auto;
-    background-color: floralwhite;
+    background-color: var(--accent2-color);
     padding: 1em;
 }
 
@@ -27,24 +26,38 @@ img {
 
 h1, h2, h3, h4, h5, h6 {
     font-family: var(--heading-font);
-    color: var(--default-color);
+    color: var(--accent1-color);
 }
 
 header {
     padding: 1em;
     text-align: center;
-    color: var(--accent1-color);
-    background-color: var(--secondary-color);
+    color: var(--accent2-color);
+    background-color: var(--accent1-color);
 }
 
 header>h1 {
-    color: black;
+    color: var(--accent2-color);
+}
+
+footer {
+    background-color: var(--primary-color);
+    color: var(--accent1-color);
 }
 
 p {
     font-family: var(--paragraph-font);
-    color: black;
+    color: var(--accent1-color);
     padding: 1em;
+}
+
+#logo {
+    width: 400px;
+    height: 400px;
+}
+
+.signature {
+    font-family: var(--paragraph-font);
 }
 
 .colors {
@@ -73,6 +86,7 @@ p {
 
 .accent1 {
     background-color: var(--accent1-color);
+    color: #F0F0F0;
 }
 
 .accent2 {
@@ -80,7 +94,7 @@ p {
 }
 
 nav {
-    background-color: var(--secondary-color);
+    background-color: var(--primary-color);
     line-height: 3em;
     text-align: center;
     font-size: 1.2em;
@@ -94,15 +108,15 @@ nav>ul {
 nav a {
     padding: 1em;
     min-width: 70px;
-    text-decoration: none;
 }
 
 nav a:link, nav a:visited {
-    color: var(--primary-color);
+    color: var(--accent2-color);
+    transition: color 0.5s;
 }
 
 nav a:hover {
-    color: var(--primary-color);
-    text-decoration: underline var(--accent1-color);
-    background-color: rgba(255,255,255,0.2);
+    color: var(--secondary-color);
+    background-color: var(--accent2-color);
+    transition: all 0.5s;
 }
