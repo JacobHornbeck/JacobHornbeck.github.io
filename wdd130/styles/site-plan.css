@@ -41,8 +41,10 @@ header>h1 {
 }
 
 footer {
-    background-color: var(--primary-color);
-    color: var(--accent1-color);
+    font-family: var(--paragraph-font);
+    background-color: var(--accent1-color);
+    color: var(--accent2-color);
+    padding: 1em;
 }
 
 p {
@@ -54,6 +56,9 @@ p {
 #logo {
     width: 400px;
     height: 400px;
+}
+#urlOfCoolors {
+    display: none;
 }
 
 .signature {
@@ -111,12 +116,13 @@ nav a {
 }
 
 nav a:link, nav a:visited {
+    font-family: var(--heading-font);
     color: var(--accent2-color);
-    transition: color 0.5s;
+    text-decoration: none;
+    transition: all 0.5s;
 }
 
 nav a:hover {
-    color: var(--secondary-color);
-    background-color: var(--accent2-color);
-    transition: all 0.5s;
+    color: var(--accent1-color);
+    background: var(--accent2-color);
 }
