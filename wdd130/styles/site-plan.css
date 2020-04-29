@@ -117,12 +117,13 @@ nav a {
 
 nav a:link, nav a:visited {
     font-family: var(--heading-font);
-    color: var(--accent2-color);
+    color: var(--secondary-color);
     text-decoration: none;
     transition: all 0.5s;
 }
 
 nav a:hover {
     color: var(--accent1-color);
-    background: var(--accent2-color);
+    background: var(--secondary-color);
+    box-shadow: 0 0 10px var(--secondary-color);
 }
