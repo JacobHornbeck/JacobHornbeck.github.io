@@ -35,6 +35,22 @@ function ParseTime(time) {
     }
 }
 
+function NewNotification(title,options) {
+    if (!("Notification" in window)) {
+        alert("This browser does not support desktop notification");
+    }
+    else if (Notification.permission === "granted") {
+        var notification = new Notification(title,options);
+    }
+    else if (Notification.permission !== "denied") {
+        Notification.requestPermission().then(function (permission) {
+            if (permission === "granted") {
+                var notification = new Notification(title,options);
+            }
+        });
+    }
+}
+
 function Task(name,time) {
     this.nameFor = name
     if (time.getHours()>12) {
@@ -74,5 +90,5 @@ function OpenClassWhen() {
             }
         }
     }
-    console.log(tasksToday.length+" tasks for today")
+    console.log(tasksToday.length+" task"+"s".substring(0,tasksToday.length)+" for today")
 }
