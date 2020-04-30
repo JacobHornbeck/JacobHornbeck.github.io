@@ -67,9 +67,14 @@ function Task(name,time) {
     let notif
     function Notify() {
         if (BetweenDays(today,timeOf)<timeDif) {
-            notif = NewNotification("$(nameOf.toUpperCase()) is starting soon!\n"+
-                "Click now to open the class, otherwise class "+
-                "will automatically open in 3/2 minutes!")
+            notif = NewNotification(
+                "$(nameOf.toUpperCase()) is starting soon!",
+                {
+                    'body': 'Click now to open the class, otherwise class '+
+                            'will automatically open in 3/2 minutes!',
+                    'icon': 'images/favicon.ico'
+                }
+            )
         }
         if (BetweenDays(today,timeOf)<(timeDif/2)) {
             clearInterval(iterate)
@@ -88,7 +93,7 @@ function OpenClassWhen() {
         ['ecen106',['monday','wednesday'],'3:15pm'],
         ['cse121b',['tuesday','thursday'],'10:15am'],
         ['cse170',['tuesday','thursday'],'2:00pm'],
-        ['wdd130',['tuesday'],'8:00pm'],
+        ['wdd130',['tuesday'],'4:04pm'],
     ]
     for (var i = 0; i<classTimes.length; i++) {
         for (var j = 0; j<classTimes[i][1].length; j++) {
