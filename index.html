@@ -3,7 +3,8 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Jacob's GitHub Pages</title>
+        <title>JacobHornbeck.GitHub.io</title>
+        <link href="https://fonts.googleapis.com/css2?family=Baloo+Tamma+2&family=Carter+One&display=swap" rel="stylesheet">
     </head>
     <style>
         :root {
@@ -15,23 +16,34 @@
             --paragraph-font: 'Baloo Tamma 2';
         }
 
+        html {
+            background-color: var(--primary-color);
+        }
+        body {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: var(--accent2-color);
+            padding: 1em;
+        }
+
         h1, h2, h3, h4, h5, h6 {
             font-family: var(--heading-font);
             color: var(--accent1-color);
         }
         header {
-            padding: 1em;
-            text-align: center;
             color: var(--accent2-color);
-            background-color: var(--accent1-color);
         }
-        header>h1 {
+        header>nav>h1 {
+            position: relative;
+            top: 0; left: 0;
+            padding-top: 10px;
             color: var(--accent2-color);
-            display: inline;
         }
         footer {
+            position: relative;
+            bottom: 0; left: 0;
             font-family: var(--paragraph-font);
-            background-color: var(--accent1-color);
+            background-color: var(--primary-color);
             color: var(--accent2-color);
             padding: 1em;
         }
@@ -41,7 +53,8 @@
             padding: 1em;
         }
         nav {
-            display: inline;
+            position: relative;
+            top: 0; right: 0;
             background-color: var(--primary-color);
             line-height: 3em;
             text-align: center;
@@ -69,11 +82,11 @@
     </style>
     <body>
         <header>
-            <h1>Jacob Hornbeck's GitHub Page</h1>
             <nav>
+                <h1>Jacob Hornbeck's GitHub Page</h1>
                 <ul>
-                    <li>for-fun</li>
-                    <li>wdd130</li>
+                    <li><a href="for-fun/index.html">For-Fun</a></li>
+                    <li><a href="wdd130/index.html">WDD 130</a></li>
                 </ul>
             </nav>
         </header>
