@@ -74,4 +74,5 @@ function OpenClassWhen() {
             }
         }
     }
+    console.log(tasksToday.length+" tasks for today")
 }
