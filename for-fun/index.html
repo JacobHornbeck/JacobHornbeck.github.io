@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>JacobHornbeck.GitHub.io/For-Fun</title>
+        <link href="https://fonts.googleapis.com/css2?family=Baloo+Tamma+2&family=Carter+One&display=swap" rel="stylesheet">
+    </head>
+    <style>
+        :root {
+            --primary-color: #7F7F7F;
+            --secondary-color: #FBD75D;
+            --accent1-color: #323232;
+            --accent2-color: #FFFFFF;
+            --heading-font: 'Carter One';
+            --paragraph-font: 'Baloo Tamma 2';
+        }
+
+        html {
+            background-color: var(--primary-color);
+        }
+        body {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: var(--accent2-color);
+            padding: 1em;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--heading-font);
+            color: var(--accent1-color);
+        }
+        header {
+            color: var(--accent2-color);
+        }
+        header>nav>h1 {
+            position: relative;
+            top: 0; left: 0;
+            padding-top: 10px;
+            color: var(--accent2-color);
+        }
+        footer {
+            position: relative;
+            bottom: 0; left: 0;
+            font-family: var(--paragraph-font);
+            background-color: var(--primary-color);
+            color: var(--accent2-color);
+            padding: 1em;
+        }
+        p {
+            font-family: var(--paragraph-font);
+            color: var(--accent1-color);
+            padding: 1em;
+        }
+        nav {
+            position: relative;
+            top: 0; right: 0;
+            background-color: var(--primary-color);
+            line-height: 3em;
+            text-align: center;
+            font-size: 1.2em;
+        }
+        nav>ul {
+            list-style-type: none;
+            display: flex;
+        }
+        nav a {
+            padding: 1em;
+            min-width: 70px;
+        }
+        nav a:link, nav a:visited {
+            font-family: var(--heading-font);
+            color: var(--secondary-color);
+            text-decoration: none;
+            transition: all 0.5s;
+        }
+        nav a:hover {
+            color: var(--accent1-color);
+            background: var(--secondary-color);
+            box-shadow: 0 0 10px var(--secondary-color);
+        }
+    </style>
+    <body>
+        <header>
+            <nav>
+                <h1>For-Fun Folder</h1>
+                <ul>
+                    <li><a href="auto-class-opener/index.html">Auto Class Opener</a></li>
+                    <li><a href="my-page/index.html">My Page</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <h2>What to do?</h2>
+            <p>To navigate use the links at the top. Pick which folder you would like to view.</p>
+        </main>
+        <footer><span>&copy;2020 Jacob Hornbeck</span></footer>
+    </body>
+</html>
