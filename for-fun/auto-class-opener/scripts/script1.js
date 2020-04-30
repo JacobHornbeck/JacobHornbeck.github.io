@@ -76,6 +76,7 @@ function Task(name,time) {
                     'icon': 'images/favicon.ico'
                 }
             )
+            notified = true
         }
         if (BetweenDays(today,timeOf)<(timeDif/2)) {
             clearInterval(iterate)
