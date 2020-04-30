@@ -15,7 +15,6 @@ body {
     margin: 0 auto;
     background-color: var(--accent2-color);
     padding: 1em;
-    padding-top: 0;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -26,8 +25,7 @@ header {
     color: var(--accent2-color);
 }
 header>nav>h1 {
-    position: relative;
-    top: 0; left: 0;
+    margin-top: 0;
     padding-top: 10px;
     color: var(--accent2-color);
 }
