@@ -36,58 +36,63 @@ function ParseTime(time) {
 }
 
 function NewNotification(title,options) {
+    var notification
     if (!("Notification" in window)) {
         alert("This browser does not support desktop notification")
     }
     else if (Notification.permission === "granted") {
-        var notification = new Notification(title,options)
+        notification = new Notification(title,options)
     }
     else if (Notification.permission !== "denied") {
         Notification.requestPermission().then(function (permission) {
             if (permission === "granted") {
-                var notification = new Notification(title,options)
+                notification = new Notification(title,options)
             }
         });
     }
     return notification
 }
 
-function Task(name,time) {
-    this.nameFor = name
-    if (time.getHours()>12) {
-        this.timeFor = time.toDateString()+" "+(time.getHours()-12)+":"+time.getMinutes()+"pm"
-    }
-    else {
-        this.timeFor = time.toDateString()+" "+time.getHours()+":"+time.getMinutes()+"am"
-    }
-    let timeDif = 300000
-    let nameOf = name
-    let timeOf = time
-    let iterate
-    let notif
-    let notified = false;
-    function Notify() {
-        if (BetweenDays(today,timeOf)<timeDif && !notified) {
-            notif = NewNotification(
-                nameOf.toUpperCase()+" is starting soon!",
-                {
-                    'body': 'Click now to open the class, otherwise class '+
-                            'will automatically open in 3/2 minutes!',
-                    'icon': 'images/favicon.ico'
-                }
-            )
-            notified = true
+class Task {
+    nameOf = ''
+    timeOf = new Date()
+    #timeDif = 300000
+    #notified = false
+    #opened = false
+    #iterate
+    #notif
+    #timeFor
+    constructor(name, time) {
+        this.nameOf = name
+        this.timeOf = time
+        if (time.getHours() > 12) {
+            this.#timeFor = time.toDateString() + " " + (time.getHours() - 12) + ":" + time.getMinutes() + "pm"
         }
-        if (BetweenDays(today,timeOf)<(timeDif/2)) {
-            clearInterval(iterate)
-            document.getElementById(nameOf).click()
+        else {
+            this.#timeFor = time.toDateString() + " " + time.getHours() + ":" + time.getMinutes() + "am"
         }
-        notif.onClick = function(event) {
+        this.#iterate = setInterval(this.#Notify, 10000)
+        console.log("Task today: "+this.nameOf.toUpperCase()+" @"+this.#timeFor)
+    }
+    #Notify() {
+        if (BetweenDays(today, this.timeOf) < this.#timeDif && !this.#notified) {
+            this.#notif = NewNotification(this.nameOf.toUpperCase() + " is starting soon!", {
+                'body': 'Click now to open the class, otherwise class ' +
+                    'will automatically open in 3/2 minutes!',
+                'icon': 'images/favicon.ico'
+            })
+            this.#notified = true
+        }
+        if (BetweenDays(today, this.timeOf) < (this.#timeDif / 2) && !this.#opened) {
+            clearInterval(this.#iterate)
+            document.getElementById(this.nameOf).click()
+        }
+        this.#notif.onClick = function (event) {
             event.preventDefault()
-            document.getElementById(nameOf).click()
+            clearInterval(this.#iterate)
+            document.getElementById(this.nameOf).click()
         }
     }
-    iterate = setInterval(Notify,10000)
 }
 
 function OpenClassWhen() {
