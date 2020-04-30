@@ -37,18 +37,19 @@ function ParseTime(time) {
 
 function NewNotification(title,options) {
     if (!("Notification" in window)) {
-        alert("This browser does not support desktop notification");
+        alert("This browser does not support desktop notification")
     }
     else if (Notification.permission === "granted") {
-        var notification = new Notification(title,options);
+        var notification = new Notification(title,options)
     }
     else if (Notification.permission !== "denied") {
         Notification.requestPermission().then(function (permission) {
             if (permission === "granted") {
-                var notification = new Notification(title,options);
+                var notification = new Notification(title,options)
             }
         });
     }
+    return notification
 }
 
 function Task(name,time) {
@@ -63,9 +64,19 @@ function Task(name,time) {
     let nameOf = name
     let timeOf = time
     let iterate
+    let notif
     function Notify() {
         if (BetweenDays(today,timeOf)<timeDif) {
+            notif = NewNotification("$(nameOf.toUpperCase()) is starting soon!\n"+
+                "Click now to open the class, otherwise class "+
+                "will automatically open in 3/2 minutes!")
+        }
+        if (BetweenDays(today,timeOf)<(timeDif/2)) {
             clearInterval(iterate)
+            document.getElementById(nameOf).click()
+        }
+        notif.onClick = function(event) {
+            event.preventDefault()
             document.getElementById(nameOf).click()
         }
     }
