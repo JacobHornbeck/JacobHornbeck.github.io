@@ -65,10 +65,11 @@ function Task(name,time) {
     let timeOf = time
     let iterate
     let notif
+    let notified = false;
     function Notify() {
-        if (BetweenDays(today,timeOf)<timeDif) {
+        if (BetweenDays(today,timeOf)<timeDif && !notified) {
             notif = NewNotification(
-                "$(nameOf.toUpperCase()) is starting soon!",
+                nameOf.toUpperCase()+" is starting soon!",
                 {
                     'body': 'Click now to open the class, otherwise class '+
                             'will automatically open in 3/2 minutes!',
