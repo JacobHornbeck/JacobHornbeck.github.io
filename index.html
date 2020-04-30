@@ -6,7 +6,64 @@
         <title>Jacob's GitHub Pages</title>
     </head>
     <style>
+        :root {
+            --primary-color: #7F7F7F;
+            --secondary-color: #FBD75D;
+            --accent1-color: #323232;
+            --accent2-color: #FFFFFF;
+            --heading-font: 'Carter One';
+            --paragraph-font: 'Baloo Tamma 2';
+        }
 
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--heading-font);
+            color: var(--accent1-color);
+        }
+        header {
+            padding: 1em;
+            text-align: center;
+            color: var(--accent2-color);
+            background-color: var(--accent1-color);
+        }
+        header>h1 {
+            color: var(--accent2-color);
+        }
+        footer {
+            font-family: var(--paragraph-font);
+            background-color: var(--accent1-color);
+            color: var(--accent2-color);
+            padding: 1em;
+        }
+        p {
+            font-family: var(--paragraph-font);
+            color: var(--accent1-color);
+            padding: 1em;
+        }
+        nav {
+            background-color: var(--primary-color);
+            line-height: 3em;
+            text-align: center;
+            font-size: 1.2em;
+        }
+        nav>ul {
+            list-style-type: none;
+            display: flex;
+        }
+        nav a {
+            padding: 1em;
+            min-width: 70px;
+        }
+        nav a:link, nav a:visited {
+            font-family: var(--heading-font);
+            color: var(--secondary-color);
+            text-decoration: none;
+            transition: all 0.5s;
+        }
+        nav a:hover {
+            color: var(--accent1-color);
+            background: var(--secondary-color);
+            box-shadow: 0 0 10px var(--secondary-color);
+        }
     </style>
     <body>
         <header>
@@ -14,7 +71,7 @@
             <nav>
                 <ul>
                     <li>for-fun</li>
-                    <li></li>
+                    <li>wdd130</li>
                 </ul>
             </nav>
         </header>
