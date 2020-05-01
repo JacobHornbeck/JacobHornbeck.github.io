@@ -97,7 +97,7 @@ function OpenClassWhen() {
     var classTimes = [
         ['ecen106',['monday','wednesday'],'3:15pm'],
         ['cse121b',['tuesday','thursday'],'10:15am'],
-        ['cse170',['tuesday','thursday'],'4:09pm'],
+        ['cse170',['tuesday','thursday'],'2:00pm'],
         ['wdd130',['tuesday'],'8:00pm'],
     ]
     for (var i = 0; i<classTimes.length; i++) {
