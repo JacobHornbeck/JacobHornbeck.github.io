@@ -36,16 +36,17 @@ function ParseTime(time) {
 }
 
 function NewNotification(title,options) {
+    var notification
     if (!("Notification" in window)) {
         alert("This browser does not support desktop notification")
     }
     else if (Notification.permission === "granted") {
-        var notification = new Notification(title,options)
+        notification = new Notification(title,options)
     }
     else if (Notification.permission !== "denied") {
         Notification.requestPermission().then(function (permission) {
             if (permission === "granted") {
-                var notification = new Notification(title,options)
+                notification = new Notification(title,options)
             }
         });
     }
