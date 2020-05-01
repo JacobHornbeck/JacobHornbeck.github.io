@@ -65,6 +65,10 @@ p {
     font-family: var(--paragraph-font);
 }
 
+.colored {
+    color: var(--primary-color);
+}
+
 .colors {
     width: 100%;
     min-width: 350px;
@@ -123,6 +127,7 @@ nav a:link, nav a:visited {
 }
 
 nav a:hover {
+    text-shadow: 1px 1px var(--accent2-color);
     color: var(--accent1-color);
     background: var(--secondary-color);
     box-shadow: 0 0 10px var(--secondary-color);
