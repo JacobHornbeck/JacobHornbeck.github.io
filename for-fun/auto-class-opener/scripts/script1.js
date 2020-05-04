@@ -84,7 +84,7 @@ function Task(name,time) {
             clearInterval(iterate)
             document.getElementById(nameOf).click()
         }
-        notif.onClick = function(event) {
+        notif.onclick = function(event) {
             event.preventDefault()
             clearInterval(iterate)
             document.getElementById(nameOf).click()
