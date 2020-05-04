@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Base Converter</title>
+        <link href="https://fonts.googleapis.com/css2?family=Baloo+Tamma+2&family=Carter+One&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="styles/style1.css">
+    </head>
+    <body>
+        <header>
+            <nav>
+                <h1>Base Converter</h1>
+                <ul>
+                    <li><a href="/for-fun/">Back</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <h2>Base Converter</h2>
+            <p>Enter a number to convert: <input id="in1" type="text" onkeydown="Convert()"></p>
+            <ul>
+                <li>Hexadecimal (base 16): <input id="out1" type="text" readonly><input type="button" value="Copy"></li>
+                <li>Deciaml (base 10): <input id="out2" type="text" readonly><input type="button" value="Copy"></li>
+                <li>Binary (base 2): <input id="out3" type="text" readonly><input type="button" value="Copy"></li>
+            </ul>
+        </main>
+        <footer><span>&copy;2020 Jacob Hornbeck</span></footer>
+    </body>
+    <script src="scripts/script1.js"></script>
+</html>
