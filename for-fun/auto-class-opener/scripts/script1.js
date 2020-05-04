@@ -78,20 +78,20 @@ function Task(name,time) {
                     'icon': 'images/favicon.ico'
                 }
             )
+            notif.onclick = function(event) {
+                if (!opened) {
+                    event.preventDefault()
+                    clearInterval(iterate)
+                    document.getElementById(nameOf).click()
+                    opened = true;
+                }
+            }
             notified = true
         }
         if (BetweenDays(today,timeOf)<(timeDif/2) && !opened) {
             clearInterval(iterate)
             document.getElementById(nameOf).click()
             opened = true;
-        }
-        notif.onclick = function(event) {
-            if (!opened) {
-                event.preventDefault()
-                clearInterval(iterate)
-                document.getElementById(nameOf).click()
-                opened = true;
-            }
         }
     }
     iterate = setInterval(Notify,10000)
