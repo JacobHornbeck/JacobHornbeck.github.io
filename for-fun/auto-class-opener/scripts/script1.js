@@ -83,11 +83,15 @@ function Task(name,time) {
         if (BetweenDays(today,timeOf)<(timeDif/2) && !opened) {
             clearInterval(iterate)
             document.getElementById(nameOf).click()
+            opened = true;
         }
         notif.onclick = function(event) {
-            event.preventDefault()
-            clearInterval(iterate)
-            document.getElementById(nameOf).click()
+            if (!opened) {
+                event.preventDefault()
+                clearInterval(iterate)
+                document.getElementById(nameOf).click()
+                opened = true;
+            }
         }
     }
     iterate = setInterval(Notify,10000)
