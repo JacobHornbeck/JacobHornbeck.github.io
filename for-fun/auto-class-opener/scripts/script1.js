@@ -61,13 +61,13 @@ function Task(name,time) {
     else {
         this.timeFor = time.toDateString()+" "+time.getHours()+":"+time.getMinutes()+"am"
     }
-    let timeDif = 300000
-    let nameOf = name
-    let timeOf = time
-    let iterate
-    let notif
-    let notified = false;
-    let opened = false;
+    var timeDif = 300000
+    var nameOf = name
+    var timeOf = time
+    var iterate
+    var notif
+    var notified = false;
+    var opened = false;
     function Notify() {
         if (BetweenDays(today,timeOf)<timeDif && !notified) {
             notif = NewNotification(
