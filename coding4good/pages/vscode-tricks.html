@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Information about cool tricks to use in Visual Studio Code">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Tamma+2&family=Carter+One&display=swap" rel="stylesheet">
+    <title>Visual Studio Code Tricks</title>
+    <style>
+        :root {
+            --main-gray: #C4C4C4;
+            --dark-gray: #777777;
+            --button-blue: #0066B8;
+            --button-blue-hover: #005ba4;
+            --heading-font: 'Carter One', Arial;
+            --paragraph-font: 'Baloo Tamma 2';
+        }
+        header {
+            background-color: var(--main-gray);
+            padding: 0.25em 1em;
+        }
+        footer {
+            background-color: var(--main-gray);
+            padding: 0.1em 1em;
+        }
+        span.my-name, span.alternate-name {
+            text-shadow: 1px 1px 2px var(--dark-gray);
+            font-family: arial;
+            font-weight: bold;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--heading-font);
+        }
+        p, li, span, a {
+            font-family: var(--paragraph-font);
+        }
+        table th, table td {
+            font-family: var(--paragraph-font);
+        }
+        table th {
+            font-size: 1.7em;
+            font-weight: normal;
+        }
+        a {
+            text-decoration: none;
+        }
+        a:hover, a:hover div {
+            text-decoration: underline;
+        }
+        #get-vscode ul li {
+            margin-top: 10px;
+        }
+        #get-vscode div {
+            line-height: 1.5em;
+        }
+        #get-vscode ul table tr a:hover div {
+            text-decoration: none;
+        }
+        div.link-button:hover {
+            text-decoration: none;
+        }
+        #keyboard-shortcuts table td,
+        #keyboard-shortcuts table th {
+            padding: 0 20px 10px 5px;
+        }
+        tbody#key-shorts tr td span {
+            background-color: lightgray;
+            border: solid 1px gray;
+            border-radius: 2px;
+            font-size: 0.9em;
+            padding: 1px 5px 0;
+        }
+        .padded {
+            padding-left: 20px;
+        }
+        .link-button {
+            color: white;
+            padding: 7px 8px 3px;
+            border: none;
+            width: 150px;
+            text-align: center;
+            text-decoration: none;
+            background-color: var(--button-blue);
+        }
+        .link-button:hover {
+            cursor: pointer;
+            background-color: var(--button-blue-hover);
+        }
+        .link-button svg {
+            width: 15px;
+        }
+        .warning {
+            border: dashed black;
+            border-radius: 10px;
+            padding: 10px;
+            box-shadow: 0 0 5px red;
+        }
+        .warning strong {
+            color: red;
+            text-shadow: 0 0 5px black;
+        }
+        .warning p {
+            margin: 0;
+        }
+        .os-logo {
+            height: 0.7em;
+        }
+        .referencing {
+            position: relative;
+        }
+        .reference {
+            position: absolute;
+            top: -2px; right: -8px;
+            font-family: var(--paragraph-font);
+            font-size: 13px;
+        }
+        a[href="#ref1"], a[href="#ref2-9"] {
+            position: relative;
+            top: -0.5em; left: -3px;
+            font-size: 13px;
+        }
+        .ref {
+            position: relative;
+            top: -0.5em;
+            padding-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Visual Studio Tricks</h1>
+    </header>
+    <main>
+        <!-- Table of Contents -->
+        <section>
+            <h2>Table of Contents</h2>
+            <ul>
+                <li><a href="#intro">Introductions</a></li>
+                <li><a href="#get-vscode">Get and Setup Visual Studio Code</a></li>
+                <li><a href="#keyboard-shortcuts">Keboard Shortcuts</a></li>
+                <li><a href="#code-faster">Coding Simpler, but faster (HTML)</a></li>
+                <li><a href="#page-reference">Information Sources</a></li>
+            </ul>
+        </section>
+        <hr />
+        <!-- Introductions Section -->
+        <section id="intro">
+            <h3>Introductions</h3>
+            <div class="padded">
+                <h4>About Me</h4>
+                <p>My real name is Jacob Hornbeck (this is my account for school, you may know me as <span class="alternate-name">🤔 ᴄᴏᴅᴇᴅ ɢᴇɴɪᴜȿ 😎 <a href="#ref1"><span>1</span></a></span>), but here  I am called <span class="my-name">Coding4️⃣Good🤪</span>. I am going to BYU-Idaho to get my Bachelor's Degree in Software Engineering. I will be getting three different certificates in this degree:</p>
+                <ul>
+                    <li>Computer Programming Certificate</li>
+                    <li>Software Design Certificate</li>
+                    <li>Web Developement Certificate</li>
+                </ul>
+                <p>I am currently taking taking the following classes:</p>
+                <ul>
+                    <li>ECEN 106 - Computer Systems</li>
+                    <li>CSE 121B - JavaScript Language</li>
+                    <li>CSE 170 - Technical Teamwork</li>
+                    <li>WDD 130 - Web Development<br>(In this class is where I learned most of the stuff I am about to share)</li>
+                </ul>
+                <h4>About this Page</h4>
+                <p>As I stated above, I learned most of what I will share from my Web Development class. The information I am about to disclose is not secret it is just mostly hidden (I'm not quite sure how to say it, it's just that I have use VS Code for a while now, and I never knew about these cool tricks).</p>
+                <p>So continue reading to learn about these awesome tricks that you can use in Visual Studio Code! Plus if you know somebody who would enjoy learning this too, share it with them!</p>
+                <p>Enjoy!</p>
+            </div>
+        </section>
+        <hr />
+        <!-- Step 1: Get VSCode -->
+        <section id="get-vscode">
+            <h3>Get and Setup Visual Studio Code</h3>
+            <p>The first step to use these is to download Visual Studio Code (unless you have it already, then you can just continue <a href="#keyboard-shortcuts">here</a>).</p>
+            <p>To download VS Code the first thing you need it know is that it is free. Yep, <strong>free</strong>! All you need to do is go to the Visual Studio Code <a href="https://code.visualstudio.com/Download">download page</a> or click your operating system button below.</p>
+            <p>It is available for the following operating systems:</p>
+            <ul>
+                <li><span class="referencing">Windows OS<a href="#ref2"><div class="reference">2</div></a></span><br />
+                <table>
+                    <tbody>
+                        <tr>
+                            <td><a href="https://code.visualstudio.com/docs/?dv=win64" target="_blank"><div class="link-button"><svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" viewBox="0 0 16 16"><path fill="white" d="M13 8.5l-1.3-1.4L8.9 10V0H7.1v10L4.3 7.1 3 8.5l5 5zM3.6 14.1h8.8V16H3.6z"/></svg> 64 bit<br /><small>Windows 7, 8, 10</small></div></a></td>
+                            <td><a href="https://code.visualstudio.com/docs/?dv=win32" target="_blank"><div class="link-button"><svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" viewBox="0 0 16 16"><path fill="white" d="M13 8.5l-1.3-1.4L8.9 10V0H7.1v10L4.3 7.1 3 8.5l5 5zM3.6 14.1h8.8V16H3.6z"/></svg> 32 bit<br /><small>Windows 7, 8, 10</small></div></a></td>
+                        </tr>
+                    </tbody>
+                </table>
+                </li>
+                <li><span class="referencing">Linux OS<a href="#ref2"><div class="reference">2</div></a></span><br />
+                <table>
+                    <tbody>
+                        <tr>
+                            <td><a href="https://code.visualstudio.com/docs/?dv=linux64_deb" target="_blank"><div class="link-button"><svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" viewBox="0 0 16 16"><path fill="white" d="M13 8.5l-1.3-1.4L8.9 10V0H7.1v10L4.3 7.1 3 8.5l5 5zM3.6 14.1h8.8V16H3.6z"/></svg> 64 bit<br /><small>Debian / Ubuntu</small></div></a></td>
+                            <td><a href="https://code.visualstudio.com/docs/?dv=linux32_deb" target="_blank"><div class="link-button"><svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" viewBox="0 0 16 16"><path fill="white" d="M13 8.5l-1.3-1.4L8.9 10V0H7.1v10L4.3 7.1 3 8.5l5 5zM3.6 14.1h8.8V16H3.6z"/></svg> 32 bit<br /><small>Debian / Ubuntu</small></div></a></td>
+                        </tr>
+                        <tr>
+                            <td><a href="https://code.visualstudio.com/docs/?dv=linux64_rpm" target="_blank"><div class="link-button"><svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" viewBox="0 0 16 16"><path fill="white" d="M13 8.5l-1.3-1.4L8.9 10V0H7.1v10L4.3 7.1 3 8.5l5 5zM3.6 14.1h8.8V16H3.6z"/></svg> 64 bit<br /><small>Red Hat, Fedora, and SUSE</small></div></a></td>
+                            <td><a href="https://code.visualstudio.com/docs/?dv=linux32_rpm" target="_blank"><div class="link-button"><svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" viewBox="0 0 16 16"><path fill="white" d="M13 8.5l-1.3-1.4L8.9 10V0H7.1v10L4.3 7.1 3 8.5l5 5zM3.6 14.1h8.8V16H3.6z"/></svg> 32 bit<br /><small>Red Hat, Fedora, and SUSE</small></div></a></td>
+                        </tr>
+                    </tbody>
+                </table>
+                </li>
+                <li><span class="referencing">Apple OS<a href="#ref2"><div class="reference">2</div></a></span><br />
+                <a href="https://code.visualstudio.com/docs/?dv=osx" target="_blank"><div class="link-button"><svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" viewBox="0 0 16 16"><path fill="white" d="M13 8.5l-1.3-1.4L8.9 10V0H7.1v10L4.3 7.1 3 8.5l5 5zM3.6 14.1h8.8V16H3.6z"/></svg> macOS<br /><small>(v 10.10+)</small></div></a></li>
+            </ul>
+            <p>
+                Choose your operating system and follow the instructions for downloading and installing VS Code. Once it is installed, open it up so you can try these cool tricks on your own!
+            </p>
+        </section>
+        <hr />
+        <!-- Keyboard Shortcuts with VSCode -->
+        <section id="keyboard-shortcuts">
+            <h3>Keyboard Shortcuts</h3>
+            <p>Keyboard shortcuts are really handy when you know what they are (or if you can change them). Luck for you, Visual Studio Code allows us to view, edit, and add keyboard shortcuts. <a href="#ref2-9">2.9</a></p>
+            <div class="warning"><p><strong>WARNING</strong>: Make sure you know what you are doing when you change these shortcut keys, if you change the wrong one or change it to a shortcut that is already being used in that state, it may cause problems!</p></div>
+            <p>The following is a table of the general keyboard shortcuts in all available operating systems.</p>
+            <table>
+                <thead>
+                    <tr>
+                        <td><!--<strong>Shortcut name</strong>--></td>
+                        <th><span class="referencing"><img class="os-logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Windows_logo_-_2012_derivative.svg/88px-Windows_logo_-_2012_derivative.svg.png"> Windows<a href="#ref3"><div class="reference">3</div></a></span></th>
+                        <th><span class="referencing"><img class="os-logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Apple_logo_black.svg/1200px-Apple_logo_black.svg.png"> Mac OS<a href="#ref4"><div class="reference">4</div></a></span></th>
+                        <th><span class="referencing"><img class="os-logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/NewTux.svg/500px-NewTux.svg.png"> Linux<a href="#ref5"><div class="reference">5</div></a></span></th>
+                    </tr>
+                </thead>
+                <tbody id="key-shorts">
+                    <tr>
+                        <td><strong>Keyboard<br />Shortcuts</strong></td>
+                        <td><span>ctrl</span> + <span>K</span> then<br />press <span>ctrl</span> + <span>S</span></td>
+                        <td><span>⌘</span> + <span>K</span> then<br />press <span>⌘</span> + <span>S</span></td>
+                        <td><span>ctrl</span> + <span>K</span> then<br />press <span>ctrl</span> + <span>S</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Command<br />Palette</strong></td>
+                        <td><span>ctrl</span>+<span>shift</span>+<span>P</span><br /></td>
+                        <td><span>⇧</span> + <span>⌘</span> + <span>P</span></td>
+                        <td><span>ctrl</span>+<span>shift</span>+<span>P</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>User Settings</strong></td>
+                        <td><span>ctrl</span> + <span>,</span></td>
+                        <td><span>⌘</span> + <span>,</span></td>
+                        <td><span>ctrl</span> + <span>,</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>New File</strong></td>
+                        <td><span>ctrl</span> + <span>N</span></td>
+                        <td><span>⌘</span> + <span>N</span></td>
+                        <td><span>ctrl</span> + <span>N</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Open File</strong></td>
+                        <td><span>ctrl</span> + <span>O</span></td>
+                        <td><span>⌘</span> + <span>O</span></td>
+                        <td><span>ctrl</span> + <span>O</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Find in File</strong></td>
+                        <td><span>ctrl</span> + <span>F</span></td>
+                        <td><span>⌘</span> + <span>F</span></td>
+                        <td><span>ctrl</span> + <span>F</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Replace in File</strong></td>
+                        <td><span>ctrl</span> + <span>H</span></td>
+                        <td><span>⌥</span> + <span>⌘</span> + <span>F</span></td>
+                        <td><span>ctrl</span> + <span>H</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Find next/<br />previous</strong></td>
+                        <td><span>F3</span> or<br /><span>shift</span> + <span>F3</span></td>
+                        <td><span>⌘</span> + <span>G</span> or<br /> <span>⇧</span> + <span>⌘</span> + <span>G</span></td>
+                        <td><span>F3</span> or<br /><span>shift</span> + <span>F3</span></td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>If you want to see more keyboard shortcuts, either use VS Code and look at them, or go to the website (actually, the PDF) of the keyboard shortcuts.</p>
+            <p>If you want to learn more about creating your own keybindings visit <a href="https://code.visualstudio.com/docs/getstarted/keybindings#_advanced-customization" target="_blank">this link</a>.</p>
+        </section>
+        <hr />
+        <!-- Faster, Simpler Coding (HTML) -->
+        <section id="code-faster">
+            <h3>Coding Simpler, but Faster (HTML)</h3>
+            
+        </section>
+        <hr />
+        <!-- Reference Sources -->
+        <section id="page-reference">
+            <h3>Page Reference Sources</h3>
+            <table>
+                <tbody>
+                    <tr>
+                        <td><span id="ref1" class="ref">1</span></td>
+                        <td><span style="font-family: arial">🤔 ᴄᴏᴅᴇᴅ ɢᴇɴɪᴜȿ 😎's</span> <a href="https://www.khanacademy.org/profile/jaycubee" target="_blank">profile page</a></td>
+                    </tr>
+                    <tr>
+                        <td><span id="ref2" class="ref">2</span></td>
+                        <td><span>Visual Studio Code <a href="https://www.khanacademy.org/computer-programming/link_redirector?url=https%3A%2F%2Fcode.visualstudio.com%2FDownload" target="_blank">download page</a></span></td>
+                    </tr>
+                    <tr>
+                        <td><span id="ref2-9" class="ref">2.9</span></td>
+                        <td><span>The whole documentation, by the Visual Studio Code developers, all bout the keybindings for keyboard shortcuts</span></td>
+                    </tr>
+                    <tr>
+                        <td><span id="ref3" class="ref">3</span></td>
+                        <td><span>A pdf of all the default <a href="https://code.visualstudio.com/shortcuts/keyboard-shortcuts-windows.pdf" target="_blank">keyboard shortcut key-bindings</a> for Windows</span></td>
+                    </tr>
+                    <tr>
+                        <td><span id="ref4" class="ref">4</span></td>
+                        <td><span>A pdf of all the default <a href="https://code.visualstudio.com/shortcuts/keyboard-shortcuts-macos.pdf" target="_blank">keyboard shortcut key-bindings</a> for the Mac OS</span></td>
+                    </tr>
+                    <tr>
+                        <td><span id="ref5" class="ref">5</span></td>
+                        <td><span>A pdf of all the default <a href="https://code.visualstudio.com/shortcuts/keyboard-shortcuts-linux.pdf" target="_blank">keyboard shortcut key-bindings</a> for Linux</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+    <footer>
+        <p>&copy;<span id="year">2020</span> <span class="my-name">Coding4️⃣Good🤪</span> | All Rights Reserved</p>
+    </footer>
+</body>
+<!--
+    Work on fixing the underline when you hover over the buttons.
+    Fix the macOS link button, it's covering the whole width.
+    Add stuff in the code-faster section
+ -->
+</html>
