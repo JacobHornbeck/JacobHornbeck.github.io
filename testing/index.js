@@ -42,6 +42,7 @@ function frame() {
 }
 function NewHeart() {
     $.getJSON("heart.json", function(data) {
+        data.hearts++
         $("#numbers").text(data.hearts)
     })
 
