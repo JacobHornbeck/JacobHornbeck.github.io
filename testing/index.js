@@ -41,7 +41,7 @@ function frame() {
     }
 }
 function NewHeart() {
-    $.getJSON("heart.json", function(data) {
+    $.post("heart.json", function(data) {
         let tempHearts = data.hearts
         data.hearts = tempHearts + 1
         $("#numbers").text(data.hearts)
