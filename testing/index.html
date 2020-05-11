@@ -53,20 +53,25 @@
     </body>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>
+        const fsLibrary = require('fs')
+
+        let data = "Hello World."
+
+        fsLibrary.writeFile('newfile.txt', data, (error) => {if (error) throw err})
+
+        fsLibrary.readFile('newfile.txt', (error, txtString) => {
+            if (error) throw err;
+
+            document.write(txtString.toString())
+        })
+
         function like() {
             let hD = document.createElement('div')
             hD.className = "heart"
             document.body.appendChild(hD)
 
 
-            $.ajax({
-                type: "POST",
-                data: {like:true},
-                url: "like.php",
-                success: function(result) {
-                    $('#hearts').text(result)
-                }
-            })
+            
         }
     </script>
 </html>
