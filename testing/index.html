@@ -4,62 +4,11 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Testing Heart Clicker</title>
-        <style>
-
-
-
-            #heart-clicker {
-                font-family: Arial, Helvetica, sans-serif;
-                font-size: 15px;
-            }
-            #heart-clicker p {
-                margin: 0;
-                padding: 0.7em 0;
-            }
-            #heart-clicker p::before {
-                content: '❤ ';
-                width: 32px;
-            }
-            .heart {
-                position: fixed;
-                top: calc(150%); left: calc(50% - 32px);
-                width: 64px;
-                height: 64px;
-                background-image: url("heart.png");
-                animation: heartFloatUp 6s linear, heartWiggle 2s ease-in-out 0s infinite;
-            }
-
-            @keyframes heartWiggle {
-                0% {
-                    transform: translate(15px, 0px);
-                }
-                50% {
-                    transform: translate(-15px, 0px);
-                }
-                100% {
-                    transform: translate(15px, 0px);
-                }
-            }
-            @keyframes heartFloatUp {
-                0% {
-                    top: calc(150%);
-                    left: calc(50% - 32px);
-                }
-                100% {
-                    top: -100px;
-                }
-            }
-        </style>
+        <link rel="stylesheet" href="index.css">
     </head>
     <body>
-        <button id="heart-clicker" onclick="like()"><p>Show Your Support!</p><span id="hearts"><?php echo $likeCount ?></span></span></button>
+        <button id="heart-clicker" onclick="NewHeart()"><p>Show Your Support! <span id="numbers"></span></p></button>
     </body>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script>
-        function like() {
-            let hD = document.createElement('div')
-            hD.className = "heart"
-            document.body.appendChild(hD)
-        }
-    </script>
+    <script src="index.js"></script>
 </html>
