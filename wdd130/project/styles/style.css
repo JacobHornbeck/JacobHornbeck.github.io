@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css?family=Baloo+Tamma+2|Carter+One&display=swap');
+
+:root {
+    --primary-color: #7F7F7F;
+    --secondary-color: #FBD75D;
+    --accent1-color: #323232;
+    --accent2-color: #FFFFFF;
+    --heading-font: 'Carter One';
+    --paragraph-font: 'Baloo Tamma 2';
+}
+
+html {
+    background-color: var(--primary-color);
+}
+
+header, main, footer {
+    max-width: 960px;
+    margin: 0 auto;
+    background-color: whitesmoke;
+    overflow: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--heading-font);
+    color: var(--accent1-color);
+}
+
+header {
+    padding: 1em;
+    text-align: center;
+    color: var(--accent2-color);
+    background-color: var(--accent1-color);
+}
+
+header > h1 {
+    color: var(--accent2-color);
+}
+
+header > img.web-logo {
+    width: 50px;
+}
+
+nav {
+    background-color: var(--primary-color);
+    line-height: 3em;
+    text-align: center;
+    font-size: 1.2em;
+}
+
+nav>ul {
+    list-style-type: none;
+    display: flex;
+}
+
+nav a {
+    padding: 1em;
+    min-width: 70px;
+}
+
+nav a:link, nav a:visited {
+    font-family: var(--heading-font);
+    color: var(--secondary-color);
+    text-decoration: none;
+    transition: all 0.5s;
+}
+
+nav a:hover {
+    text-shadow: 1px 1px var(--accent2-color);
+    color: var(--accent1-color);
+    background: var(--secondary-color);
+    box-shadow: 0 0 10px var(--secondary-color);
+}
+
+footer {
+    font-family: var(--paragraph-font);
+    background-color: var(--accent1-color);
+    color: var(--accent2-color);
+    padding: 1em;
+}
+
+p {
+    font-family: var(--paragraph-font);
+    color: var(--accent1-color);
+    padding: 1em;
+}
+
+section {
+    padding: 5px 0;
+}
+section > img {
+    padding: 30px 20px 0 20px;
+}
+section > h2 {
+    text-align: center;
+    letter-spacing: 1px;
+}
+section + section > img {
+    float: left;
+}
+section > img {
+    float: right;
+}
+
+.social-link {
+    width: 40px;
+    transform: scale(0.9);
+    transition: transform 0.1s;
+}
+
+.social-link:hover {
+    transform: scale(1);
+}
+
+.indent {
+    padding-left: 20px;
+}
+.less-indent:nth-child(1) {
+    padding-left: 2px;
+}
