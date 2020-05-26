@@ -1,0 +1,44 @@
+body {
+    font-size: 16px;
+    background-color: #fff;
+    margin: 30px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+/* Activity 1 styles */
+.content1 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+    justify-content: center;
+}
+
+.red1 {
+    background-color: red;
+    grid-column: 1 / -1;
+    width: 100%;
+    min-height: 100px;
+}
+
+.green1 {
+    background-color: green;
+    justify-self: center;
+    min-width: 100px;
+    width: 70%;
+    min-height: 200px;
+}
+
+.gold1 {
+    background-color: gold;
+    justify-self: center;
+    min-width: 100px;
+    width: 70%;
+    min-height: 200px;
+}
+
+.blue1 {
+    background-color: blue;
+    grid-column: 1 / -1;
+    width: 100%;
+    min-height: 100px;
+}
