@@ -23,17 +23,15 @@ body {
 .green1 {
     background-color: green;
     justify-self: center;
-    min-width: 100px;
-    width: 70%;
-    min-height: 200px;
+    width: 200px;
+    height: 200px;
 }
 
 .gold1 {
     background-color: gold;
     justify-self: center;
-    min-width: 100px;
-    width: 70%;
-    min-height: 200px;
+    width: 200px;
+    height: 200px;
 }
 
 .blue1 {
@@ -41,4 +39,59 @@ body {
     grid-column: 1 / -1;
     width: 100%;
     min-height: 100px;
+}
+
+
+.red2, .red3, .red4, .red5, .red6 {
+    background-color: red;
+}
+.green2, .green3, .green4, .green5, .green6 {
+    background-color: green;
+}
+.gold2, .gold3, .gold4, .gold5, .gold6 {
+    background-color: gold;
+}
+.blue2, .blue3, .blue4, .blue5, .blue6 {
+    background-color: blue;
+}
+
+.content2, .content3, .content4, .content5, .content6 {
+    position: relative;
+}
+.content2 > div, .content3 > div, .content4 > div, .content5 > div, .content6 > div {
+    min-width: 100px; min-height: 100px;
+}
+
+.content2 {
+    height: 250px;
+}
+.red2 {
+    position: absolute;
+    top: 0; left: 0;
+}
+.green2 {
+    position: absolute;
+    top: 50px; left: 50px;
+}
+.gold2 {
+    position: absolute;
+    top: 100px; left: 100px;
+}
+.blue2 {
+    position: absolute;
+    top: 150px; left: 150px;
+}
+
+.content3 {
+    display: grid;
+    grid-template-columns: 250px 250px;
+}
+.red3 {
+    grid-column: 1 / -1;
+}
+.green3, .gold3 {
+    height: 200px;
+}
+.blue3 {
+    grid-column: 1 / -1;
 }
