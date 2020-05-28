@@ -12,28 +12,24 @@ body {
     grid-gap: 20px;
     justify-content: center;
 }
-
 .red1 {
     background-color: red;
     grid-column: 1 / -1;
     width: 100%;
     min-height: 100px;
 }
-
 .green1 {
     background-color: green;
     justify-self: center;
     width: 200px;
     height: 200px;
 }
-
 .gold1 {
     background-color: gold;
     justify-self: center;
     width: 200px;
     height: 200px;
 }
-
 .blue1 {
     background-color: blue;
     grid-column: 1 / -1;
@@ -42,6 +38,7 @@ body {
 }
 
 
+/* Week6 Layout Styles */
 .red2, .red3, .red4, .red5, .red6 {
     background-color: red;
 }
@@ -55,12 +52,15 @@ body {
     background-color: blue;
 }
 
+
 .content2, .content3, .content4, .content5, .content6 {
     position: relative;
 }
 .content2 > div, .content3 > div, .content4 > div, .content5 > div, .content6 > div {
     min-width: 100px; min-height: 100px;
+    max-width: 600px;
 }
+
 
 .content2 {
     height: 250px;
@@ -82,9 +82,10 @@ body {
     top: 150px; left: 150px;
 }
 
+
 .content3 {
     display: grid;
-    grid-template-columns: 250px 250px;
+    grid-template-columns: 275px 50px 275px;
 }
 .red3 {
     grid-column: 1 / -1;
@@ -92,6 +93,63 @@ body {
 .green3, .gold3 {
     height: 200px;
 }
+.green3 {
+    grid-column: 1;
+}
+.gold3 {
+    grid-column: -2;
+}
 .blue3 {
     grid-column: 1 / -1;
+}
+
+
+.content4 {
+    display: grid;
+    grid-template-columns: 300px 300px;
+    grid-template-rows: repeat(3,100px);
+}
+.red4 {
+    grid-row: 1 / span 3;
+}
+
+
+.green5 {
+    float: left;
+    width: 200px;
+    height: 200px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+.gold5 {
+    width: calc(600px - 20px * 2);
+    padding: 20px;
+    height: 300px;
+}
+
+
+.content6 {
+    display: grid;
+    grid-template-columns: repeat(6,100px);
+    grid-template-rows: repeat(6,100px);
+}
+.red6 {
+    grid-column: 1 / span 4;
+    grid-row: 1 / span 2;
+    z-index: 1;
+}
+.green6 {
+    grid-column: 1 / span 2;
+    grid-row: 5 / span 2;
+    z-index: 3;
+}
+.gold6 {
+    grid-column: 5 / span 2;
+    grid-row: 3 / span 4;
+    z-index: 3;
+}
+.blue6 {
+    grid-column: 2 / span 4;
+    grid-row: 2 / span 4;
+    z-index: 2;
 }
