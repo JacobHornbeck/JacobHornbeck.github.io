@@ -108,18 +108,22 @@ p {
 section {
     padding: 5px 100px;
 }
-section > img {
-    padding: 30px 20px 0 20px;
+section:nth-of-type(1) {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 10px;
 }
-section > h2 {
+section:nth-of-type(2) {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 10px;
+}
+section > img {
+    padding-top: 30px;
+}
+section > h2, section > div > h2 {
     text-align: center;
     letter-spacing: 1px;
-}
-section + section > img {
-    float: left;
-}
-section > img {
-    float: right;
 }
 
 .social-link {
