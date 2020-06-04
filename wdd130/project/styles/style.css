@@ -87,6 +87,10 @@ nav a:hover {
 nav a.at {
     border-bottom-color: var(--secondary-color);
 }
+nav.box-menu a.at {
+    border-bottom-color: rgba(0,0,0,0);
+    text-decoration: double var(--secondary-color);
+}
 main {
     background-color: whitesmoke;
     position: relative;
