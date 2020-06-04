@@ -10,6 +10,15 @@ header {
 main {
     padding-left: 20px;
 }
+table {
+    margin-left: 20px;
+}
+th {
+    text-align: left;
+}
+th span {
+    border-bottom: solid 2px black;
+}
 footer {
     position: fixed;
     left: 0; bottom: 0;
