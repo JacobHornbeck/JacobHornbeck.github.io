@@ -69,6 +69,8 @@ nav>ul {
 nav a {
     padding: 1em;
     min-width: 70px;
+    padding-bottom: calc(1em - 3px);
+    border-bottom: solid 3px rgba(0,0,0,0);
 }
 nav a:link, nav a:visited {
     font-family: var(--heading-font);
@@ -81,6 +83,9 @@ nav a:hover {
     color: var(--accent1-color);
     background: var(--secondary-color);
     box-shadow: 0 0 10px var(--secondary-color);
+}
+nav a.at {
+    border-bottom-color: var(--secondary-color);
 }
 main {
     background-color: whitesmoke;
@@ -294,43 +299,44 @@ section > h2, section > div > h2 {
         z-index: 999;
         transition: all 0.5s;
     }
-    #menu-click > div {
+    #menu-click > img {
         background: var(--secondary-color);
         transition: all 0.5s;
         position: absolute;
-        height: 2px;
+        border-radius: 5px;
+        height: 4px;
         width: 60%;
         left: 20%;
     }
-    #menu-click > div:nth-of-type(1) {
-        top: calc(25% - 1px);
+    #menu-click > img:nth-of-type(1) {
+        top: calc(25% - 2px);
     }
-    #menu-click > div:nth-of-type(2) {
-        top: calc(50% - 1px);
+    #menu-click > img:nth-of-type(2) {
+        top: calc(50% - 2px);
     }
-    #menu-click > div:nth-of-type(3) {
-        top: calc(75% - 1px);
+    #menu-click > img:nth-of-type(3) {
+        top: calc(75% - 2px);
     }
     #toggler:checked + #menu-click {
         position: fixed;
-        position: fixed;
-        position: fixed;
-        transform: translate(20px, -20px) scale(0.6);
+        transform: translate(20px, -20px) scale(0.5);
+        background: rgba(255,255,255,0.1);
     }
-    #toggler:checked + #menu-click > div:nth-of-type(1) {
+    #toggler:checked + #menu-click > img:nth-of-type(1) {
         top: calc(50% - 1px);
         transform: rotate(405deg);
     }
-    #toggler:checked + #menu-click > div:nth-of-type(2) {
+    #toggler:checked + #menu-click > img:nth-of-type(2) {
         top: calc(50% - 1px);
         opacity: 0;
     }
-    #toggler:checked + #menu-click > div:nth-of-type(3) {
+    #toggler:checked + #menu-click > img:nth-of-type(3) {
         top: calc(50% - 1px);
         transform: rotate(-405deg);
     }
-    #menu-click:hover {
+    #menu-click:hover, #toggler:checked + #menu-click:hover {
         background: rgba(255,255,255,0.4);
+        cursor: pointer;
     }
     #toggler:checked ~ nav.box-menu {
         left: 30%;
