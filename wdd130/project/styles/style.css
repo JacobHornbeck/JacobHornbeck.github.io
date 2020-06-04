@@ -207,7 +207,7 @@ section > h2, section > div > h2 {
     }
 }
 
-@media screen and (max-width: calc(960px + 2em)) {
+@media screen and (max-width: 992px) {
     header, main, footer {
         max-width: calc(100% - 2em);
     }
@@ -231,7 +231,7 @@ section > h2, section > div > h2 {
         padding: 5px 50px;
     }
     header {
-        display: block;
+        display: block !important;
     }
     nav > ul {
         padding-left: 0;
@@ -256,7 +256,7 @@ section > h2, section > div > h2 {
         z-index: 99;
     }
     nav.box-menu > ul {
-        flex-direction: column;
+        display: block;
     }
     nav.box-menu li {
         margin-bottom: 37px;
@@ -289,6 +289,7 @@ section > h2, section > div > h2 {
         top: calc(75% - 1px);
     }
     #toggler:checked + #menu-click {
+        position: fixed;
         transform: translate(20px, -20px) scale(0.6);
     }
     #toggler:checked + #menu-click > div:nth-of-type(1) {
