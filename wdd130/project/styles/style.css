@@ -19,6 +19,7 @@ body {
     padding: 0;
     margin: 0;
     font-size: 16px;
+    overflow: hidden scroll;
 }
 header, main, footer {
     max-width: 960px;
@@ -84,6 +85,7 @@ nav a:hover {
 main {
     background-color: whitesmoke;
     position: relative;
+    overflow: hidden;
     z-index: 9;
 }
 footer {
@@ -133,8 +135,13 @@ section > h2, section > div > h2 {
     letter-spacing: 1px;
 }
 
-#menu-click {
+#menu-click, nav.box-menu {
     display: none;
+}
+#toggler {
+    position: absolute;
+    top: -999px;
+    left: -999px;
 }
 
 .social-link {
@@ -226,31 +233,47 @@ section > h2, section > div > h2 {
     header {
         display: block;
     }
+    nav > ul {
+        padding-left: 0;
+        justify-content: center;
+    }
 }
 
 @media screen and (max-width: 660px) {
     /* Change nav to a menu*/
     header > nav {
-        position: absolute;
-        top: 0; left: calc(200%);
-        min-width: 100px;
-        z-index: 998;
-        transition: all 0.5s;
+        display: none;
     }
-    header > nav > ul {
-        flex-direction: row;
+    nav.box-menu {
+        display: block;
+        position: fixed;
+        top: 0; left: calc(100%);
+        min-width: 200px;
+        width: 70%;
+        height: 100%;
+        transition: all 0.2s;
+        background: var(--primary-color);
+        z-index: 99;
+    }
+    nav.box-menu > ul {
+        flex-direction: column;
+    }
+    nav.box-menu li {
+        margin-bottom: 37px;
     }
     #menu-click {
         display: block;
         position: absolute;
-        top: 0; right: 0;
-        width: 40px;
-        height: 40px;
-        transition: all 0.5s;
+        top: 10px;
+        right: 10px;
+        width: 60px;
+        height: 60px;
         z-index: 999;
+        transition: all 0.5s;
     }
     #menu-click > div {
         background: var(--secondary-color);
+        transition: all 0.5s;
         position: absolute;
         height: 2px;
         width: 60%;
@@ -265,17 +288,38 @@ section > h2, section > div > h2 {
     #menu-click > div:nth-of-type(3) {
         top: calc(75% - 1px);
     }
+    #toggler:checked + #menu-click {
+        transform: translate(20px, -20px) scale(0.6);
+    }
+    #toggler:checked + #menu-click > div:nth-of-type(1) {
+        top: calc(50% - 1px);
+        transform: rotate(405deg);
+    }
+    #toggler:checked + #menu-click > div:nth-of-type(2) {
+        top: calc(50% - 1px);
+        opacity: 0;
+    }
+    #toggler:checked + #menu-click > div:nth-of-type(3) {
+        top: calc(50% - 1px);
+        transform: rotate(-405deg);
+    }
     #menu-click:hover {
         background: rgba(255,255,255,0.4);
     }
-    
+    #toggler:checked ~ nav.box-menu {
+        left: 30%;
+    }
 }
 
 @media screen and (max-width: 550px) {
     .social {
         float: none;
         position: relative;
-        margin: 4px calc(50% - 40px * 3);
+        margin-top: 5px;
+        margin-left: 40px;
+    }
+    .contact {
+        margin-left: 40px;
     }
 }
 

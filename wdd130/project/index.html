@@ -10,16 +10,27 @@
         <link rel="stylesheet" href="styles/style.css">
     </head>
     <body>
+        <div class="menu">
+            <input type="checkbox" id="toggler">
+            <label id="menu-click" for="toggler">
+                <div></div>
+                <div></div>
+                <div></div>
+            </label>
+            <nav class="box-menu">
+                <ul>
+                    <li><a href="#" class="at">Home</a></li>
+                    <li><a href="#" class="">Amenities</a></li>
+                    <li><a href="#" class="">Temple Spotlight</a></li>
+                    <li><a href="#" class="">Reservations</a></li>
+                </ul>
+            </nav>
+        </div>
         <header>
             <div>
             <img src="images/favicon.png" alt="website logo"
                  class="web-logo">
             <h1>Temple Inn & Suites</h1>
-            </div>
-            <div id="menu-click">
-                <div></div>
-                <div></div>
-                <div></div>
             </div>
             <nav align="center">
                 <ul>
@@ -94,11 +105,30 @@
                     <img src="images/twitter-icon.png" alt="icon for twitter" class="social-link"></a>
             </div>
             <div class="contact">
-                📍 <span class="less-indent">Temple Inn & Suites Headquarters</span><br />
-                  <span class="indent">355 Wisconsin Avenue</span><br />
-                  <span class="indent">Bethesda, MD 20814</span><br />
-                📞<span class="less-indent">215-829-9999</span><br />
-                ✉<span class="less-indent">info@templinn.com</span><br />
+                <table>
+                    <tbody>
+                        <tr>
+                            <td>📍</td> <!-- Replace this and #2, #3 with icons -->
+                            <td>Temple Inn & Suites Headquarters</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>355 Wisconsin Avenue</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>Bethesda, MD 20814</td>
+                        </tr>
+                        <tr>
+                            <td>📞</td> <!-- #2 -->
+                            <td>215-829-9999</td>
+                        </tr>
+                        <tr>
+                            <td>✉</td> <!-- #3 -->
+                            <td>info@templinn.com</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
             <div class="bottom-copyright">
                 Copyright &copy; 2020 Temple Inn & Suites | All Rights Reserved |
