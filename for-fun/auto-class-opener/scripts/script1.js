@@ -17,7 +17,7 @@ var tasksToday = []
 function GetDay() {
     today = new Date()
 }
-setInterval(GetDay,60000)
+setInterval(GetDay,42)
 
 function BetweenDays(t1,t2) {
     return (t2.getTime() - t1.getTime())
@@ -25,13 +25,18 @@ function BetweenDays(t1,t2) {
 
 function ParseTime(time) {
     var colon = time.indexOf(':')
-    switch (time.substring(time.length-2,time.length)) {
-        case 'am':
-            return [parseInt(time.substring(0,colon)),parseInt(time.substring(colon+1,time.length-2))]
-        break;
-        case 'pm':
-            return [parseInt(time.substring(0,colon))+12,parseInt(time.substring(colon+1,time.length-2))]
-        break;
+    if (time.substring(0,2)=='12' && time.substring(time.length-2,time.length)=='pm') {
+        return [12,45]
+    }
+    else {
+        switch (time.substring(time.length-2,time.length)) {
+            case 'am':
+                return [parseInt(time.substring(0,colon)),parseInt(time.substring(colon+1,time.length-2))]
+            break;
+            case 'pm':
+                return [parseInt(time.substring(0,colon))+12,parseInt(time.substring(colon+1,time.length-2))]
+            break;
+        }
     }
 }
 
@@ -55,12 +60,13 @@ function NewNotification(title,options) {
 
 function Task(name,time) {
     this.nameFor = name
-    if (time.getHours()>12) {
+    if (time.getHours()>=12) {
         this.timeFor = time.toDateString()+" "+(time.getHours()-12)+":"+time.getMinutes()+"pm"
     }
     else {
         this.timeFor = time.toDateString()+" "+time.getHours()+":"+time.getMinutes()+"am"
     }
+    this.time2show = time
     var timeDif = 300000
     var nameOf = name
     var timeOf = time
@@ -117,3 +123,20 @@ function OpenClassWhen() {
     }
     console.log(tasksToday.length+" task"+"s".substring(0,tasksToday.length)+" for today")
 }
+
+function ShowTime() {
+    for (let i = 0; i<tasksToday.length; i++) {
+        let something = document.getElementById("timetil"+(i+1))
+        let t2 = BetweenDays(today,tasksToday[i].time2show)
+        if (t2>0) {
+            let hr = Math.floor(t2/3600000)
+            t2 -= hr*3600000
+            let min = Math.floor(t2/60000)
+            t2 -= min*60000
+            let sec = Math.floor(t2/1000)
+            t2 -= sec*1000
+            something.innerHTML = "Time til "+tasksToday[i].nameFor.toUpperCase()+": <strong>"+hr+" hr "+min+" min "+sec+" sec</strong>"
+        }
+    }
+}
+setInterval(ShowTime,51)
