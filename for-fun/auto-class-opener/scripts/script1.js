@@ -146,7 +146,7 @@ function ShowTime() {
         }
     }
     var things = document.getElementsByClassName("timetil")
-    if (tasksToday.length < things.length) {
+    if (taskToday.length > 0 && tasksToday.length < things.length) {
         things[things.length-1].remove()
     }
 }
