@@ -126,9 +126,6 @@ function OpenClassWhen() {
 
 function ShowTime() {
     var things = document.getElementsByClassName("timetil")
-    if (tasksToday.length < things.length) {
-        things[things.length-1].remove()
-    }
     for (let i = 0; i<tasksToday.length; i++) {
         let something = document.getElementById("timetil"+(i+1))
         let t2 = BetweenDays(today,tasksToday[i].time2show)
@@ -148,6 +145,9 @@ function ShowTime() {
                 something.remove()
             }, 500);
         }
+    }
+    if (tasksToday.length < things.length) {
+        things[things.length-1].remove()
     }
 }
 setInterval(ShowTime,51)
