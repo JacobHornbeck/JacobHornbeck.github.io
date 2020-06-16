@@ -139,7 +139,7 @@ function ShowTime() {
             something.innerHTML = "Time til "+tasksToday[i].nameFor.toUpperCase()+": <strong>"+hr+" hr "+min+" min "+sec+" sec</strong>"
         }
         else {
-            something.style.right = "500px"
+            something.style.right = "-500px"
             setTimeout(() => {
                 tasksToday.splice(i,1)
                 something.remove()
