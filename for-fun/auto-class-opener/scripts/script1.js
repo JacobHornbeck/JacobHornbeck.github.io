@@ -105,10 +105,10 @@ function Task(name,time) {
 
 function OpenClassWhen() {
     var classTimes = [
-        ['ecen106',['monday','wednesday'],'3:15pm'],
-        ['cit171',['monday','tuesday','wednesday','thursday'],'12:45pm'],
-        ['cse170',['tuesday','thursday'],'2:00pm'],
-        ['wdd130',['tuesday'],'8:00pm'],
+        ['cit171',  ['monday', 'tuesday', 'wednesday', 'thursday'], '12:45pm'],
+        ['cse170',  [          'tuesday',              'thursday'], '2:00pm'],
+        ['ecen106', ['monday',            'wednesday'            ], '3:15pm'],
+        ['wdd130',  [          'tuesday'                         ], '8:00pm'],
     ]
     for (var i = 0; i<classTimes.length; i++) {
         for (var j = 0; j<classTimes[i][1].length; j++) {
@@ -125,10 +125,14 @@ function OpenClassWhen() {
 }
 
 function ShowTime() {
+    var things = document.getElementsByClassName("timetil")
+    if (tasksToday.length < things.length) {
+        things[things.length-1].remove()
+    }
     for (let i = 0; i<tasksToday.length; i++) {
         let something = document.getElementById("timetil"+(i+1))
         let t2 = BetweenDays(today,tasksToday[i].time2show)
-        if (t2>0) {
+        if (t2>=0) {
             let hr = Math.floor(t2/3600000)
             t2 -= hr*3600000
             let min = Math.floor(t2/60000)
@@ -136,6 +140,13 @@ function ShowTime() {
             let sec = Math.floor(t2/1000)
             t2 -= sec*1000
             something.innerHTML = "Time til "+tasksToday[i].nameFor.toUpperCase()+": <strong>"+hr+" hr "+min+" min "+sec+" sec</strong>"
+        }
+        else {
+            something.style.right = "500px"
+            setTimeout(() => {
+                tasksToday.splice(i,1)
+                something.remove()
+            }, 500);
         }
     }
 }
