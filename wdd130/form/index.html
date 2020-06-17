@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Assignment - HTML Forms</title>
+        <style>
+            body {
+                margin: 0;
+            }
+            header {
+                position: relative;
+                background-color: lightgray;
+                color: black;
+                padding: 1px 10px;
+            }
+            footer {
+                position: fixed;
+                left: 0; bottom: 0;
+                width: 100%;
+                padding: 20px;
+                background-color: lightgray;
+                color: black;
+            }
+
+            #feedback {
+                position: fixed;
+                top: calc(50%);
+                left: calc(50% - 110px - 1em);
+                height: 140px;
+                width: 220px;
+                box-shadow: 1px 1px 10px gray;
+                border-radius: 5px;
+                border: solid 2px;
+                padding: 1em;
+                background: whitesmoke;
+                opacity: 0;
+            }
+            form {
+                margin: 0 auto;
+                width: 400px;
+            }
+            form label {
+                display: block;
+            }
+            form ul {
+                list-style-type: none;
+            }
+            form ul li {
+                margin-bottom: 10px;
+            }
+            form input[type="text"] {
+                height: 1.5em;
+            }
+            form textarea {
+                width: 30em;
+                height: 4em;
+            }
+            form input, form textarea {
+                border-radius: 2px;
+                border: outset 2px;
+                outline: none;
+            }
+            form input:active, form input[type="text"]:focus,
+            form textarea:active, form textarea:focus {
+                border-style: inset;
+            }
+        </style>
+    </head>
+    <body>
+        <header><h1>WDD 130 Assignment - HTML Forms</h1></header>
+        <form action="SubmitForm()">
+            <ul>
+                <li>
+                    <label for="name">Your name: </label>
+                    <input type="text" id="name" name="user_name" placeholder="First and last name" required>
+                </li>
+                <li>
+                    <label for="email">Your preferred email: </label>
+                    <input type="text" id="email" name="user_email" placeholder="Email address" required>
+                </li>
+                <li>
+                    <label for="info">Your message: </label>
+                    <textarea name="suggestion" id="info" placeholder="Enter your ideas of what we can do!" required></textarea>
+                </li>
+                <li>
+                    <input type="submit" value="Submit Suggestion">
+                </li>
+            </ul>
+        </form>
+        <div id="feedback"></div>
+        <footer>&copy;2020 Jacob Hornbeck | WDD 130 | BYU-Idaho</footer>
+    </body>
+    <script>
+        // get the feedback div element so we can do something with it.
+        const feedbackElement = document.getElementById('feedback');
+        // get the form element so we can read what was entered in it.
+        const formElement = document.forms[0];
+
+        function SubmitForm(e) {
+            // stop the form from doing the default action
+            e.preventDefault();
+            // set the contents of our feedback element to a message letting the user know the form was submitted successfully. Notice that we pull the name that was entered in the form to personalize the message!
+            feedbackElement.innerHTML = 'Hello '+ formElement.user_name.value +'!<br /> Thank you for your message. We will review your suggestions and let you know whether or not we will use it!';
+            feedbackElement.style.transition = "all 0.5s";
+            feedbackElement.style.opacity = "0";
+            setTimeout(() => {
+                feedbackElement.style.opacity = "1";
+                feedbackElement.style.top = "calc(50% - 70px - 1em)";
+                setTimeout(() => {
+                    feedbackElement.style.opacity = "0";
+                    feedbackElement.style.top = "calc(50%)";
+                }, 15000);
+            }, 1000);
+            // make the feedback element visible.
+            feedbackElement.style.display = "block";
+        }
+
+        // add a 'listener' to wait for a submission of our form. When that happens run the code below.
+        formElement.addEventListener('submit', SubmitForm);
+    </script>
+</html>

@@ -72,3 +72,27 @@ nav a:hover {
 ul {
     font-family: var(--paragraph-font);
 }
+
+.timetil {
+    position: fixed;
+    top: 0; right: 0;
+    padding: 0.5em;
+    height: 1em;
+    font-family: sans-serif;
+    background: rgba(0,0,0,0.4);
+    color: white;
+    z-index: 999;
+    transition: all 0.5s;
+}
+.timetil:nth-of-type(2) {
+    top: 2em;
+}
+.timetil:nth-of-type(3) {
+    top: 4em;
+}
+.timetil:nth-of-type(4) {
+    top: 6em;
+}
+.timetil:nth-of-type(5) {
+    top: 8em;
+}
