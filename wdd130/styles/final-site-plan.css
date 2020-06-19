@@ -1,0 +1,134 @@
+
+
+:root {
+    --primary-color: #7F7F7F;
+    --secondary-color: #FBD75D;
+    --accent1-color: #323232;
+    --accent2-color: #FFFFFF;
+    --heading-font: 'Carter One';
+    --paragraph-font: 'Baloo Tamma 2';
+}
+
+html {
+    background-color: var(--primary-color);
+}
+
+body {
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: var(--accent2-color);
+    padding: 1em;
+}
+
+img {
+    max-width: 100%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--heading-font);
+    color: var(--accent1-color);
+}
+
+header {
+    padding: 1em;
+    text-align: center;
+    color: var(--accent2-color);
+    background-color: var(--accent1-color);
+}
+
+header>h1 {
+    color: var(--accent2-color);
+}
+
+footer {
+    font-family: var(--paragraph-font);
+    background-color: var(--accent1-color);
+    color: var(--accent2-color);
+    padding: 1em;
+}
+
+p {
+    font-family: var(--paragraph-font);
+    color: var(--accent1-color);
+    padding: 1em;
+}
+
+#logo {
+    width: 400px;
+    height: 400px;
+}
+#urlOfCoolors {
+    display: none;
+}
+
+.signature {
+    font-family: var(--paragraph-font);
+}
+
+.colored {
+    color: var(--primary-color);
+}
+
+.colors {
+    width: 100%;
+    min-width: 350px;
+    margin: auto;
+    text-align: center;
+}
+
+.colors th {
+    background-color: #999;
+}
+
+.colors td {
+    width: 25%;
+    height: 3em;
+}
+
+.primary {
+    background-color: var(--primary-color);
+}
+
+.secondary {
+    background-color: var(--secondary-color);
+}
+
+.accent1 {
+    background-color: var(--accent1-color);
+    color: #F0F0F0;
+}
+
+.accent2 {
+    background-color: var(--accent2-color);
+}
+
+nav {
+    background-color: var(--primary-color);
+    line-height: 3em;
+    text-align: center;
+    font-size: 1.2em;
+}
+
+nav>ul {
+    list-style-type: none;
+    display: flex;
+}
+
+nav a {
+    padding: 1em;
+    min-width: 70px;
+}
+
+nav a:link, nav a:visited {
+    font-family: var(--heading-font);
+    color: var(--secondary-color);
+    text-decoration: none;
+    transition: all 0.5s;
+}
+
+nav a:hover {
+    text-shadow: 1px 1px var(--accent2-color);
+    color: var(--accent1-color);
+    background: var(--secondary-color);
+    box-shadow: 0 0 10px var(--secondary-color);
+}
