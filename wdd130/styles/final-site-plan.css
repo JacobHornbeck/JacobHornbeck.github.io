@@ -5,8 +5,8 @@
     --secondary-color: #FBD75D;
     --accent1-color: #323232;
     --accent2-color: #FFFFFF;
-    --heading-font: 'Carter One';
-    --paragraph-font: 'Baloo Tamma 2';
+    --heading-font: 'Play', arial bold, sans-serif;
+    --paragraph-font: 'Nova Mono', 'Rubik';
 }
 
 html {
