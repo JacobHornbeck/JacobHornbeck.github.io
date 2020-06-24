@@ -125,6 +125,7 @@ function OpenClassWhen() {
     setInterval(ShowTime,51)
 }
 
+var timeoutSet = false
 function ShowTime() {
     for (let i = 0; i<tasksToday.length; i++) {
         let something = document.getElementById("timetil"+(i+1))
@@ -138,16 +139,16 @@ function ShowTime() {
             t2 -= sec*1000
             something.innerHTML = "Time til "+tasksToday[i].nameFor.toUpperCase()+": <strong>"+hr+" hr "+min+" min "+sec+" sec</strong>"
         }
-        else {
+        else if (!timeoutSet) {
             something.style.right = "-500px"
             setTimeout(() => {
                 tasksToday.splice(i,1)
                 something.remove()
-            }, 500);
+            }, 500)
+            timeoutSet = true
         }
     }
-    var things = document.getElementsByClassName("timetil")
-    if (tasksToday.length < things.length) {
-        things[things.length-1].remove()
+    if (tasksToday.length < document.getElementsByClassName("timetil").length) {
+        document.getElementsByClassName("timetil")[document.getElementsByClassName("timetil").length-1].remove()
     }
 }
