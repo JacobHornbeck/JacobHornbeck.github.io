@@ -20,10 +20,10 @@
             <nav class="box-menu">
                 <h2>Menu</h2>
                 <ul>
-                    <li><a href="./"                      class="at">Home</a></li>
+                    <li><a href="./"                      class="">Home</a></li>
                     <li><a href="./amenities.html"        class="">Amenities</a></li>
                     <li><a href="./temple-spotlight.html" class="">Temple Spotlight</a></li>
-                    <li><a href="./reservation.html"      class="">Reservations</a></li>
+                    <li><a href="./reservation.html"      class="at">Reservations</a></li>
                 </ul>
             </nav>
         </div>
@@ -34,64 +34,69 @@
             <h1>Temple Inn & Suites</h1></div>
             <nav>
                 <ul>
-                    <li><a href="./"                      class="at">Home</a></li>
+                    <li><a href="./"                      class="">Home</a></li>
                     <li><a href="./amenities.html"        class="">Amenities</a></li>
                     <li><a href="./temple-spotlight.html" class="">Temple Spotlight</a></li>
-                    <li><a href="./reservation.html"      class="">Reservations</a></li>
+                    <li><a href="./reservation.html"      class="at">Reservations</a></li>
                 </ul>
             </nav>
         </header>
-        <main>
-            <div class="hero-image">
-                <img src="images/temple-hero.png"
-                     alt="Salt Lake Temple">
-                <div class="action">
-                    <h3>
-                        Come visit us, near a temple!
-                    </h3>
-                    <a class="button" href="./reservation.html">Make a reservation</a>
-                </div>
-            </div>
+        <main class="non-centered">
+            <section class="cover-header"></section>
             <section>
-                <div><img src="images/home-away-from-home.png" alt="comfy hotel room"></div>
-                <div>
-                    <h2>Your Home Away from Home</h2>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. In
-                        culpa excepturi quas animi quo reprehenderit distinctio aliquid
-                        vero ab doloribus veniam error, velit fugiat impedit suscipit,
-                        expedita et vel reiciendis quia voluptatem perferendis! Quaerat,
-                        fugit, sunt molestias cupiditate ipsum ut tempore minima.
-                    </p>
-                </div>
-            </section>
-            <section>
-                <div><img src="images/temple-wedding.png" alt="temple sealing room"></div>
-                <div>
-                    <h2>Wedding Receptions</h2>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Facere a ipsum rerum itaque quod vitae officia pariatur,
-                        quibusdam numquam voluptatum blanditiis sed ipsa labore
-                        ea non magnam, exercitationem nesciunt unde! Quasi ullam
-                        nobis debitis error? Magnam inventore quibusdam nemo,
-                        odit doloribus nulla. Repudiandae, atque!
-                    </p>
-                </div>
-            </section>
-            <section>
-                <h2>Family Search Center</h2>
+                <h2>Making a Reservation</h2>
                 <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore,
-                    possimus. Fugiat corrupti magni iure debitis officiis excepturi
-                    veniam enim quae reiciendis, et rem quod! Aspernatur quod aut
-                    ex animi, ad obcaecati provident commodi cum at ullam non. Sit
-                    voluptatem fugiat minus natus, laborum dolores sint eligendi,
-                    soluta vitae voluptas neque! Illum, veniam commodi debitis
-                    accusamus cumque officiis harum nihil exercitationem magnam
-                    laboriosam quos delectus aspernatur consequuntur totam rem ut
-                    impedit iste vel eum esse?
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Veniam eveniet alias quasi exercitationem, molestiae
+                    dignissimos atque aliquid pariatur ea libero accusamus
+                    quaerat unde quo. Quis itaque rem deserunt deleniti laudantium?
                 </p>
+            </section>
+            <section>
+                <h2>Filling Out the Form</h2>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Beatae dolorum aspernatur nostrum, vel eveniet sunt praesentium?
+                    Soluta nihil doloribus hic perspiciatis impedit similique
+                    necessitatibus et, beatae nam nisi saepe aliquam ad earum
+                    sequi harum est totam unde repellendus corrupti iste?
+                </p>
+            </section>
+            <section>
+                <h2>The Details:</h2>
+                <ul>
+                    <li>Your name: <input type="text" name="your-name" id="username"></li>
+                    <li>Your email: <input type="email" name="your-email" id="useremail"></li>
+                    <li>Your phone number: <input type="tel" name="your-phone" id="userphone"></li>
+                    <li>Length of stay: <input type="number" name="stay-length" id="staylength"></li>
+                    <li>First day of stay: <input type="date" name="stay-start" id="staystart"></li>
+                    <li>Number of guests: <input type="number" name="guest-number" id="guestnumber"></li>
+                    <li>Room type: <select name="room-type" id="roomtype">
+                        <option value="Standard"></option>
+                        <option value="Suite"></option>
+                        <option value="Balcony Standard"></option>
+                        <option value="Balcony Suite"></option>
+                    </select></li>
+                </ul>
+            </section>
+            <section>
+                <h2>Payment:</h2>
+                <ul>
+                    <li>
+                        <label for="card-type">Card type:</label>
+                        <select name="card-type" id="card-type">
+                            <option value="">Select a card type</option>
+                            <option value="Visa">Visa</option>
+                            <option value="Credit">Credit</option>
+                            <option value="Debit">Debit</option>
+                            <option value="Gift Card">Gift Card</option>
+                        </select>
+                    </li>
+                    <li>Name on card: </li>
+                    <li>Card number: </li>
+                    <li>Expiration date: </li>
+                    <li>PIN: </li>
+                </ul>
             </section>
         </main>
         <footer>

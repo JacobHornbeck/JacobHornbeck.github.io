@@ -5,8 +5,8 @@
     --secondary-color: #FBD75D;
     --accent1-color: #323232;
     --accent2-color: #FFFFFF;
-    --heading-font: 'Carter One', Verdana, sans-serif;
-    --paragraph-font: 'Baloo Tamma 2', Impact, sans-serif;
+    --heading-font: 'Carter One', Impact, sans-serif;
+    --paragraph-font: 'Baloo Tamma 2', Verdana, sans-serif;
 }
 html {
     background-image: linear-gradient(to bottom, gray, black);
@@ -16,15 +16,15 @@ html {
     background-size: cover;
 }
 body {
-    padding: 0;
     margin: 0;
+    padding: 0;
     font-size: 16px;
     overflow: hidden scroll;
 }
 header, main, footer {
-    max-width: 960px;
     margin: 0 auto;
     overflow: hidden;
+    max-width: 960px;
     box-shadow: 0 4px 10px black;
 }
 h1, h2, h3, h4, h5, h6 {
@@ -32,13 +32,13 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--accent1-color);
 }
 header {
-    position: relative;
     z-index: 10;
-    padding: 5px 1em;
     display: flex;
+    padding: 5px 1em;
+    position: relative;
+    text-align: center;
     align-items: center;
     justify-content: center;
-    text-align: center;
     color: var(--accent2-color);
     background-color: var(--accent1-color);
 }
@@ -49,9 +49,9 @@ header > div {
     text-align: center;
 }
 header > div > h1 {
+    font-size: 1.5rem;
     padding-left: 10px;
     padding-right: 10px;
-    font-size: 1.5rem;
     color: var(--accent2-color);
 }
 header > div > img.web-logo {
@@ -79,8 +79,8 @@ nav a:link, nav a:visited {
     transition: all 0.5s;
 }
 nav a:hover {
-    text-shadow: 1px 1px #f5f5f570;
     color: var(--accent1-color);
+    text-shadow: 1px 1px #f5f5f570;
     background: var(--secondary-color);
     box-shadow: 0 0 10px var(--secondary-color);
 }
@@ -90,16 +90,17 @@ nav a.at {
 main {
     background-color: whitesmoke;
     position: relative;
+    min-height: 100px;
     overflow: hidden;
     z-index: 9;
 }
 footer {
-    position: relative;
-    z-index: 10;
-    font-family: var(--paragraph-font);
     background-color: var(--accent1-color);
+    font-family: var(--paragraph-font);
     color: var(--accent2-color);
+    position: relative;
     padding: 1em;
+    z-index: 10;
 }
 p {
     font-family: var(--paragraph-font);
@@ -110,9 +111,9 @@ section {
     padding: 5px 100px;
 }
 section:nth-of-type(1) {
-    display: grid;
     grid-template-columns: auto 350px;
     grid-gap: 10px;
+    display: grid;
 }
 section:nth-of-type(1) > div {
     grid-row: 1;
@@ -124,9 +125,9 @@ section:nth-of-type(1) > div:nth-of-type(2) {
     grid-column: 1;
 }
 section:nth-of-type(2) {
-    display: grid;
     grid-template-columns: 350px auto;
     grid-gap: 10px;
+    display: grid;
 }
 section > div {
     padding: 0;
@@ -150,8 +151,8 @@ section > h2, section > div > h2 {
 }
 #toggler {
     position: absolute;
-    top: -999px;
     left: -999px;
+    top: -999px;
 }
 
 .social-link {
@@ -164,6 +165,17 @@ section > h2, section > div > h2 {
 }
 .contact {
     margin-left: 15%;
+}
+.contact img {
+    width: 20px;
+    padding-top: 2px;
+    padding-right: 5px;
+}
+.contact td {
+    vertical-align: top;
+}
+.contact tr:hover > td > a > img {
+    transform: scale(1.5);
 }
 .social {
     float: right;
@@ -185,22 +197,98 @@ section > h2, section > div > h2 {
     height: 250px;
 }
 .hero-image > .action {
-    position: absolute;
-    top: calc(50% - 20px);
-    padding: 10px 20px;
-    left: 40px;
     color: var(--secondary-color);
     background: rgba(0,0,0,0.4);
+    top: calc(50% - 20px);
     transition: all 0.5s;
     animation: Action 2s;
+    padding-bottom: 20px;
+    position: absolute;
+    padding: 10px 20px;
+    left: 40px;
 }
 .action > h3 {
     color: var(--secondary-color);
 }
-.action button {
-    padding: 0.3em;
+.action .button {
+    font-family: var(--paragraph-font);
+    background-color: lightgray;
+    color: var(--accent1-color);
+    padding-bottom: 0.1em;
+    text-decoration: none;
+    padding: 0.4em 0.7em;
+    border-radius: 3px;
+    font-size: 14px;
+}
+.facts {
+    font-family: var(--paragraph-font);
+    list-style-type: '♦️  ';
+}
+section.not-grid, section.photo-spotlight {
+    display: block;
+}
+section.dedication {
+    display: grid;
+    grid-template-columns: 300px auto;
+    grid-gap: 20px;
+}
+.dedication img {
+    max-width: 300px;
+}
+section.photo-spotlight {
+    border: solid 1px var(--accent1-color);
+    margin: 40px auto 10px auto;
+    width: calc(100% - 400px);
+    position: relative;
+    height: 300px;
+}
+section.photo-spotlight img {
+    position: absolute;
+    left: calc(50% - 200px);
+}
+section.photo-spotlight button {
+    border: solid 0.5px var(--accent1-color);
+    font-family: var(--paragraph-font);
+    top: calc(50% - 25px);
+    transition: all 0.2s;
+    border-radius: 100%;
+    position: absolute;
+    font-weight: bold;
+    padding-top: 5px;
+    font-size: 20px;
+    outline: none;
+    height: 50px;
+    width: 50px;
+}
+section.photo-spotlight button:active {
+    transform: scale(0.9);
+    transition: none;
+}
+section.photo-spotlight button.go-left {
+    left: -20px;
+}
+section.photo-spotlight button.go-right {
+    right: -20px;
 }
 
+section.cover-header {
+    background-image: url("../images/paper-fixed.jpg");
+    background-position: top;
+    background-attachment: local;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 150px;
+}
+main.non-centered > section.cover-header + section {
+    display: block;
+}
+main.non-centered h2 {
+    text-align: left;
+}
+ul {
+    font-family: var(--paragraph-font);
+    list-style-type: '♦️  ';
+}
 
 @keyframes Action {
     from {
@@ -234,8 +322,8 @@ section > h2, section > div > h2 {
         width: 100%;
     }
     section img {
-        width: 350px;
         margin-left: calc(50% - 350px / 2);
+        width: 350px;
     }
     section {
         padding: 5px 50px;
@@ -244,8 +332,8 @@ section > h2, section > div > h2 {
         display: block;
     }
     nav > ul {
-        padding-left: 0;
         justify-content: center;
+        padding-left: 0;
     }
 }
 
@@ -255,27 +343,27 @@ section > h2, section > div > h2 {
         display: none;
     }
     nav.box-menu {
-        display: block;
-        position: fixed;
-        top: 0; left: calc(100%);
-        min-width: 200px;
-        width: 70%;
-        height: 100%;
-        transition: all 0.2s;
         background: var(--primary-color);
+        top: 0; left: calc(100%);
+        transition: all 0.2s;
+        min-width: 200px;
+        position: fixed;
+        display: block;
+        height: 100%;
         z-index: 99;
+        width: 70%;
     }
     nav.box-menu > ul {
         display: block;
     }
     nav.box-menu li {
+        min-width: calc(100% - 2em);
         position: absolute;
         left: 0;
-        min-width: calc(100% - 2em);
     }
     nav.box-menu a {
-        display: block;
         min-width: 100%;
+        display: block;
     }
     nav.box-menu li:nth-of-type(1) {
         top: 68px;
@@ -290,13 +378,13 @@ section > h2, section > div > h2 {
         top: 280px;
     }
     #menu-click {
-        display: block;
-        position: absolute;
         top: 10px;
         right: 10px;
         width: 60px;
         height: 60px;
         z-index: 999;
+        display: block;
+        position: absolute;
         transition: all 0.5s;
     }
     #menu-click > img {
@@ -319,20 +407,20 @@ section > h2, section > div > h2 {
     }
     #toggler:checked + #menu-click {
         position: fixed;
-        transform: translate(20px, -20px) scale(0.5);
         background: rgba(255,255,255,0.1);
+        transform: translate(20px, -20px) scale(0.5);
     }
     #toggler:checked + #menu-click > img:nth-of-type(1) {
-        top: calc(50% - 1px);
         transform: rotate(405deg);
+        top: calc(50% - 1px);
     }
     #toggler:checked + #menu-click > img:nth-of-type(2) {
         top: calc(50% - 1px);
         opacity: 0;
     }
     #toggler:checked + #menu-click > img:nth-of-type(3) {
-        top: calc(50% - 1px);
         transform: rotate(-405deg);
+        top: calc(50% - 1px);
     }
     #menu-click:hover, #toggler:checked + #menu-click:hover {
         background: rgba(255,255,255,0.4);
@@ -346,9 +434,9 @@ section > h2, section > div > h2 {
 @media screen and (max-width: 550px) {
     .social {
         float: none;
-        position: relative;
         margin-top: 5px;
         margin-left: 40px;
+        position: relative;
     }
     .contact {
         margin-left: 40px;
