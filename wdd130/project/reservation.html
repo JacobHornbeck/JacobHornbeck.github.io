@@ -62,42 +62,46 @@
                     sequi harum est totam unde repellendus corrupti iste?
                 </p>
             </section>
-            <section>
-                <h2>The Details:</h2>
-                <ul>
-                    <li>Your name: <input type="text" name="your-name" id="username"></li>
-                    <li>Your email: <input type="email" name="your-email" id="useremail"></li>
-                    <li>Your phone number: <input type="tel" name="your-phone" id="userphone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"></li>
-                    <li>Length of stay: <input type="number" name="stay-length" id="staylength"></li>
-                    <li>First day of stay: <input type="date" name="stay-start" id="staystart"></li>
-                    <li>Number of guests: <input type="number" name="guest-number" id="guestnumber"></li>
-                    <li>Room type: <select name="room-type" id="roomtype">
-                        <option value="Standard"></option>
-                        <option value="Suite"></option>
-                        <option value="Balcony Standard"></option>
-                        <option value="Balcony Suite"></option>
-                    </select></li>
-                </ul>
-            </section>
-            <section>
-                <h2>Payment:</h2>
-                <ul>
-                    <li>
-                        <label for="card-type">Card type:</label>
-                        <select name="card-type" id="card-type">
-                            <option value="">Select a card type</option>
-                            <option value="Visa">Visa</option>
-                            <option value="Credit">Credit</option>
-                            <option value="Debit">Debit</option>
-                            <option value="Gift Card">Gift Card</option>
-                        </select>
-                    </li>
-                    <li>Name on card: </li>
-                    <li>Card number: </li>
-                    <li>Expiration date: </li>
-                    <li>PIN: </li>
-                </ul>
-            </section>
+            <form action="SubmitReservation()" id="reservation-form">
+                <section>
+                    <h2>The Details:</h2>
+                    <ul>
+                        <li>Your name: <input required type="text" name="your_name" id="username" minlength="3"></li>
+                        <li>Your email: <input required type="email" name="your_email" id="useremail"></li>
+                        <li>Your phone number: <input required type="tel" name="your_phone" id="userphone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"> <input type="checkbox" name="text_able" id="textable"> Can we text this number?</li>
+                        <li>Length of stay: <input required type="number" name="stay_length" id="staylength" value="1" min="1"> nights</li>
+                        <li>First day of stay: <input required type="date" name="stay_start" id="staystart"></li>
+                        <li>Number of guests: <input required type="number" name="guest_number" id="guestnumber" value="1" min="1"> people</li>
+                        <li>Room type: <select required name="room_type" id="roomtype">
+                            <option value="">Select a room type</option>
+                            <option value="Standard">Standard</option>
+                            <option value="Suite">Suite</option>
+                            <option value="Basic Balcony">Basic Balcony</option>
+                            <option value="Balcony Suite">Balcony Suite</option>
+                        </select> with <input type="number" name="bed_num" id="bednumber" min="1" max="5"> beds</li>
+                    </ul>
+                </section>
+                <section>
+                    <h2>Payment:</h2>
+                    <ul>
+                        <li>
+                            <label for="cardtype">Card type:</label>
+                            <select required name="card_type" id="cardtype">
+                                <option value="">Select a card type</option>
+                                <option value="Visa">Visa</option>
+                                <option value="Credit">Credit</option>
+                                <option value="Debit">Debit</option>
+                                <option value="Gift Card">Gift Card</option>
+                            </select>
+                        </li>
+                        <li>Name on card: <input required type="text" name="name_on_card" id="cardname"></li>
+                        <li>Card number: <input required type="text" name="card_number" id="cardnumber" pattern="[0-9]{4} [0-9]{4} [0-9]{4} [0-9]{4}"></li>
+                        <li>Expiration date: <input required type="date" name="exp_date" id="expiration"></li>
+                        <li>PIN: <input required type="password" name="pin_number" id="pin" maxlength="4"></li>
+                    </ul>
+                    <input type="submit" value="Confirm and Pay">
+                </section>
+            </form>
         </main>
         <footer>
             <div class="social">
@@ -112,23 +116,19 @@
                 <table>
                     <tbody>
                         <tr>
-                            <td><img src="images/icons/location.png" alt="location pin icon"></td>
-                            <td>Temple Inn & Suites Headquarters</td>
+                            <td><a href="maps://355,Wisconsin+Avenue,Bethesda,MD,20814"><img src="images/icons/location.png" alt="location pin icon"></a></td>
+                            <td>
+                                Temple Inn & Suites Headquarters<br>
+                                355 Wisconsin Avenue<br>
+                                Bethesda, MD 20814
+                            </td>
                         </tr>
                         <tr>
-                            <td></td>
-                            <td>355 Wisconsin Avenue</td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td>Bethesda, MD 20814</td>
-                        </tr>
-                        <tr>
-                            <td><img src="images/icons/phone.png" alt="phone icon"></td>
+                            <td><a href="tel:2158299999"><img src="images/icons/phone.png" alt="phone icon"></a></td>
                             <td>215-829-9999</td>
                         </tr>
                         <tr>
-                            <td><img src="images/icons/mail.png" alt="email icon"></td>
+                            <td><a href="mailto:info@templinn.com"><img src="images/icons/mail.png" alt="email icon"></a></td>
                             <td>info@templinn.com</td>
                         </tr>
                     </tbody>
@@ -140,4 +140,5 @@
             </div>
         </footer>
     </body>
+    <script src="./scripts/form-handler.js"></script>
 </html>
