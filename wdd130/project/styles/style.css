@@ -247,7 +247,7 @@ section > h2, section > div > h2 {
     list-style-type: '♦️  ';
     margin-bottom: 40px;
 }
-section.not-grid, section.photo-spotlight {
+section.not-grid, div.photo-spotlight {
     display: block;
 }
 
@@ -260,15 +260,15 @@ section.dedication {
     max-width: 300px;
     margin-top: 0;
 }
-section.photo-spotlight {
+div.photo-spotlight {
     border: solid 1px var(--accent1-color);
     margin: 50px auto 10px auto;
-    width: calc(100% - 400px);
+    width: calc(100% - 200px);
     border-radius: 10px;
     position: relative;
     height: 300px;
 }
-section.photo-spotlight > div {
+div.photo-spotlight > div {
     width: 100%; height: 100%;
     position: absolute;
     overflow: hidden;
@@ -276,7 +276,7 @@ section.photo-spotlight > div {
     perspective: 800px;
     perspective-origin: center calc(50% + 20px);
 }
-section.photo-spotlight > div > img {
+div.photo-spotlight > div > img {
     box-shadow: 1px 1px 20px rgba(0,0,0,0.7);
     transition: all 0.5s, left 1s;
     left: calc(50% - 200px);
@@ -288,69 +288,69 @@ section.photo-spotlight > div > img {
     border: none;
     padding: 0;
 }
-section.photo-spotlight img.img-l4 {
+div.photo-spotlight img.img-l4 {
     left: calc(50% - 200px - 600px);
     transform-style: preserve-3d;
     transform: scale(0.55) rotate3d(0,1,0,60deg);
     transition: all 0s;
     z-index: 2;
 }
-section.photo-spotlight img.img-l3 {
+div.photo-spotlight img.img-l3 {
     left: calc(50% - 200px - 500px);
     transform-style: preserve-3d;
     transform: scale(0.6) rotate3d(0,1,0,60deg);
     z-index: 3;
 }
-section.photo-spotlight img.img-l2 {
+div.photo-spotlight img.img-l2 {
     left: calc(50% - 200px - 400px);
     transform-style: preserve-3d;
     transform: scale(0.65) rotate3d(0,1,0,60deg);
     z-index: 4;
 }
-section.photo-spotlight img.img-l1 {
+div.photo-spotlight img.img-l1 {
     left: calc(50% - 200px - 300px);
     transform-style: preserve-3d;
     transform: scale(0.7) rotate3d(0,1,0,60deg);
     z-index: 5;
 }
-section.photo-spotlight img.img-mc {
+div.photo-spotlight img.img-mc {
     transform-style: preserve-3d;
     left: calc(50% - 200px);
     transform: scale(0.9);
     z-index: 6;
 }
-section.photo-spotlight img.img-r1 {
+div.photo-spotlight img.img-r1 {
     left: calc(50% - 200px + 300px);
     transform-style: preserve-3d;
     transform: scale(0.7) rotate3d(0,1,0,-60deg);
     z-index: 5;
 }
-section.photo-spotlight img.img-r2 {
+div.photo-spotlight img.img-r2 {
     left: calc(50% - 200px + 400px);
     transform-style: preserve-3d;
     transform: scale(0.65) rotate3d(0,1,0,-60deg);
     z-index: 4;
 }
-section.photo-spotlight img.img-r3 {
+div.photo-spotlight img.img-r3 {
     left: calc(50% - 200px + 500px);
     transform-style: preserve-3d;
     transform: scale(0.6) rotate3d(0,1,0,-60deg);
     z-index: 3;
 }
-section.photo-spotlight img.img-r4 {
+div.photo-spotlight img.img-r4 {
     left: calc(50% - 200px + 600px);
     transform-style: preserve-3d;
     transform: scale(0.55) rotate3d(0,1,0,-60deg);
     z-index: 2;
 }
-section.photo-spotlight img.img-r5 {
+div.photo-spotlight img.img-r5 {
     left: calc(50% - 200px + 700px);
     transform-style: preserve-3d;
     transform: scale(0.5) rotate3d(0,1,0,-60deg);
     transition: all 0s;
     z-index: 1;
 }
-section.photo-spotlight button {
+div.photo-spotlight button {
     border: solid 0.5px var(--accent1-color);
     background-color: var(--accent2-color);
     font-family: var(--paragraph-font);
@@ -367,18 +367,18 @@ section.photo-spotlight button {
     width: 50px;
     z-index: 6;
 }
-section.photo-spotlight button:hover {
+div.photo-spotlight button:hover {
     opacity: 0.8;
     cursor: pointer;
 }
-section.photo-spotlight button:active {
+div.photo-spotlight button:active {
     transform: scale(0.9);
     transition: none;
 }
-section.photo-spotlight button#go-left {
+div.photo-spotlight button#go-left {
     left: -20px;
 }
-section.photo-spotlight button#go-right {
+div.photo-spotlight button#go-right {
     right: -20px;
 }
 
@@ -467,6 +467,10 @@ section.amenities-grid {
     padding-bottom: 50px;
     width: auto;
 }
+section.amenities-grid > h2 {
+    grid-column: 1 / span 3;
+    grid-row: 1;
+}
 section.amenities-grid > div {
     box-shadow: 1px 1px 5px var(--primary-color);
     border: dashed 1px var(--accent1-color);
@@ -508,17 +512,17 @@ section.amenities-grid > div > img {
     .social {
         margin-right: 50px;
     }
-    section.photo-spotlight {
+    div.photo-spotlight {
         position: relative;
         padding-left: 0;
         padding-right: 0;
         transform: scale(0.9);
     }
-    section.photo-spotlight > div {
+    div.photo-spotlight > div {
         padding: 0;
     }
     section:nth-of-type(1), section:nth-of-type(2),
-    section.dedication, section.photo-spotlight, header {
+    section.dedication, div.photo-spotlight, header {
         display: block;
     }
     section:first-child {
