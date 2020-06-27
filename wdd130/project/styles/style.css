@@ -31,6 +31,12 @@ h1, h2, h3, h4, h5, h6 {
     font-family: var(--heading-font);
     color: var(--accent1-color);
 }
+h2 {
+    margin-bottom: 0;
+}
+section ul, p {
+    margin-top: 0;
+}
 header {
     z-index: 10;
     display: flex;
@@ -102,9 +108,11 @@ footer {
     padding: 1em;
     z-index: 10;
 }
-p {
+p, span, ul, li {
     font-family: var(--paragraph-font);
     color: var(--accent1-color);
+}
+p {
     padding: 1em;
 }
 section {
@@ -133,7 +141,7 @@ section > div {
     padding: 0;
     margin: 0;
 }
-section > div > img, .dedication img {
+section > div > img, .dedication img, section.dif-grid > img {
     width: 330px;
     padding: 10px;
     margin-top: 30px;
@@ -237,10 +245,12 @@ section > h2, section > div > h2 {
 .facts {
     font-family: var(--paragraph-font);
     list-style-type: '♦️  ';
+    margin-bottom: 40px;
 }
 section.not-grid, section.photo-spotlight {
     display: block;
 }
+
 section.dedication {
     display: grid;
     grid-template-columns: 300px auto;
@@ -252,7 +262,7 @@ section.dedication {
 }
 section.photo-spotlight {
     border: solid 1px var(--accent1-color);
-    margin: 40px auto 10px auto;
+    margin: 50px auto 10px auto;
     width: calc(100% - 400px);
     border-radius: 10px;
     position: relative;
@@ -396,12 +406,82 @@ input[type="number"] {
 form > section:nth-of-type(1) {
     width: auto;
 }
-form > section, form > section:nth-of-type(1), form > section:nth-of-type(2) {
+form > section,
+form > section:nth-of-type(1),
+form > section:nth-of-type(2) {
     display: block;
 }
 #reservation-form {
     padding-bottom: 40px;
 }
+
+section.dif-grid {
+    padding-top: 50px;
+    display: grid;
+    grid-template-columns: 200px auto;
+    grid-gap: 20px;
+    width: auto;
+}
+section.dif-grid h3 {
+    text-align: left;
+    padding-left: 20px;
+}
+section.dif-grid:nth-of-type(1) {
+    grid-template-columns: 300px auto;
+}
+section.dif-grid:nth-of-type(1) > img {
+    margin: 0;
+    width: calc(300px - 22px);
+}
+section.dif-grid > img {
+    margin: 0;
+    width: calc(200px - 22px);
+}
+section.dif-grid > div {
+    padding-top: 10px;
+}
+section.dif-grid p {
+    margin-bottom: 0;
+}
+section.dif-grid ul {
+    margin-top: 0;
+}
+section.dif-grid:nth-of-type(even) {
+    grid-template-columns: auto 200px;
+}
+section.dif-grid:nth-of-type(even) > img {
+    grid-column: 2;
+    grid-row: 1;
+}
+section.dif-grid:nth-of-type(even) > div {
+    grid-column: 1;
+    grid-row: 1;
+}
+section.amenities-grid {
+    display: grid;
+    grid-template-columns: repeat(3, calc(100% / 3 - 60px));
+    grid-gap: 30px;
+    justify-content: center;
+    align-items: center;
+    padding-top: 30px;
+    padding-bottom: 50px;
+    width: auto;
+}
+section.amenities-grid > div {
+    box-shadow: 1px 1px 5px var(--primary-color);
+    border: dashed 1px var(--accent1-color);
+    border-radius: 10px;
+    text-align: center;
+    padding: 30px 5px;
+}
+section.amenities-grid > div > img {
+    box-shadow: none;
+    padding: 0;
+    margin: 0;
+    border: none;
+    width: 50px;
+}
+
 
 @keyframes Action {
     from {
@@ -454,6 +534,44 @@ form > section, form > section:nth-of-type(1), form > section:nth-of-type(2) {
     nav > ul {
         justify-content: center;
         padding-left: 0;
+    }
+    section.dif-grid {
+        width: auto;
+        padding: 0;
+        padding: 0 20px;
+        display: grid;
+        grid-gap: 0;
+        grid-template-columns: 100px auto;
+        justify-content: center;
+        align-items: center;
+    }
+    section.dif-grid p {
+        padding-top: 8px;
+    }
+    section.dif-grid h3 {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+    section.dif-grid:nth-of-type(even) {
+        grid-template-columns: auto 100px;
+    }
+    section.dif-grid.header-section {
+        display: block;
+    }
+    section.dif-grid.header-section img {
+        height: 200px;
+        object-fit: cover;
+    }
+    section.dif-grid img {
+        width: calc(100px - 22px);
+    }
+    section.dif-grid.header-section img {
+        margin: 40px calc(50% - 300px / 2) 0 !important;
+    }
+    section.amenities-grid {
+        grid-gap: 5px;
+        padding: 30px 20px 50px 20px;
+        grid-template-columns: repeat(3, calc(100% / 3));
     }
 }
 
