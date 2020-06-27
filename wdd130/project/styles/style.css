@@ -133,7 +133,7 @@ section > div {
     padding: 0;
     margin: 0;
 }
-section > div > img {
+section > div > img, .dedication img {
     width: 330px;
     padding: 10px;
     margin-top: 30px;
@@ -231,6 +231,9 @@ section > h2, section > div > h2 {
     border-radius: 3px;
     font-size: 14px;
 }
+.show-later {
+    display: none;
+}
 .facts {
     font-family: var(--paragraph-font);
     list-style-type: '♦️  ';
@@ -241,24 +244,105 @@ section.not-grid, section.photo-spotlight {
 section.dedication {
     display: grid;
     grid-template-columns: 300px auto;
-    grid-gap: 20px;
+    grid-gap: 50px;
 }
 .dedication img {
     max-width: 300px;
+    margin-top: 0;
 }
 section.photo-spotlight {
     border: solid 1px var(--accent1-color);
     margin: 40px auto 10px auto;
     width: calc(100% - 400px);
+    border-radius: 10px;
     position: relative;
     height: 300px;
 }
-section.photo-spotlight img {
+section.photo-spotlight > div {
+    width: 100%; height: 100%;
     position: absolute;
+    overflow: hidden;
+    top: 0; left: 0;
+    perspective: 800px;
+    perspective-origin: center calc(50% + 20px);
+}
+section.photo-spotlight > div > img {
+    box-shadow: 1px 1px 20px rgba(0,0,0,0.7);
+    transition: all 0.5s, left 1s;
     left: calc(50% - 200px);
+    border-radius: 4px;
+    position: absolute;
+    margin: 5px 0 0 0;
+    height: 300px;
+    width: 400px;
+    border: none;
+    padding: 0;
+}
+section.photo-spotlight img.img-l4 {
+    left: calc(50% - 200px - 600px);
+    transform-style: preserve-3d;
+    transform: scale(0.55) rotate3d(0,1,0,60deg);
+    transition: all 0s;
+    z-index: 2;
+}
+section.photo-spotlight img.img-l3 {
+    left: calc(50% - 200px - 500px);
+    transform-style: preserve-3d;
+    transform: scale(0.6) rotate3d(0,1,0,60deg);
+    z-index: 3;
+}
+section.photo-spotlight img.img-l2 {
+    left: calc(50% - 200px - 400px);
+    transform-style: preserve-3d;
+    transform: scale(0.65) rotate3d(0,1,0,60deg);
+    z-index: 4;
+}
+section.photo-spotlight img.img-l1 {
+    left: calc(50% - 200px - 300px);
+    transform-style: preserve-3d;
+    transform: scale(0.7) rotate3d(0,1,0,60deg);
+    z-index: 5;
+}
+section.photo-spotlight img.img-mc {
+    transform-style: preserve-3d;
+    left: calc(50% - 200px);
+    transform: scale(0.9);
+    z-index: 6;
+}
+section.photo-spotlight img.img-r1 {
+    left: calc(50% - 200px + 300px);
+    transform-style: preserve-3d;
+    transform: scale(0.7) rotate3d(0,1,0,-60deg);
+    z-index: 5;
+}
+section.photo-spotlight img.img-r2 {
+    left: calc(50% - 200px + 400px);
+    transform-style: preserve-3d;
+    transform: scale(0.65) rotate3d(0,1,0,-60deg);
+    z-index: 4;
+}
+section.photo-spotlight img.img-r3 {
+    left: calc(50% - 200px + 500px);
+    transform-style: preserve-3d;
+    transform: scale(0.6) rotate3d(0,1,0,-60deg);
+    z-index: 3;
+}
+section.photo-spotlight img.img-r4 {
+    left: calc(50% - 200px + 600px);
+    transform-style: preserve-3d;
+    transform: scale(0.55) rotate3d(0,1,0,-60deg);
+    z-index: 2;
+}
+section.photo-spotlight img.img-r5 {
+    left: calc(50% - 200px + 700px);
+    transform-style: preserve-3d;
+    transform: scale(0.5) rotate3d(0,1,0,-60deg);
+    transition: all 0s;
+    z-index: 1;
 }
 section.photo-spotlight button {
     border: solid 0.5px var(--accent1-color);
+    background-color: var(--accent2-color);
     font-family: var(--paragraph-font);
     top: calc(50% - 25px);
     transition: all 0.2s;
@@ -268,17 +352,23 @@ section.photo-spotlight button {
     padding-top: 5px;
     font-size: 20px;
     outline: none;
+    opacity: 0.6;
     height: 50px;
     width: 50px;
+    z-index: 6;
+}
+section.photo-spotlight button:hover {
+    opacity: 0.8;
+    cursor: pointer;
 }
 section.photo-spotlight button:active {
     transform: scale(0.9);
     transition: none;
 }
-section.photo-spotlight button.go-left {
+section.photo-spotlight button#go-left {
     left: -20px;
 }
-section.photo-spotlight button.go-right {
+section.photo-spotlight button#go-right {
     right: -20px;
 }
 
@@ -302,6 +392,9 @@ ul {
 }
 input[type="number"] {
     width: 2.5em;
+}
+form > section:nth-of-type(1) {
+    width: auto;
 }
 form > section, form > section:nth-of-type(1), form > section:nth-of-type(2) {
     display: block;
@@ -335,7 +428,17 @@ form > section, form > section:nth-of-type(1), form > section:nth-of-type(2) {
     .social {
         margin-right: 50px;
     }
-    section:nth-of-type(1), section:nth-of-type(2) {
+    section.photo-spotlight {
+        position: relative;
+        padding-left: 0;
+        padding-right: 0;
+        transform: scale(0.9);
+    }
+    section.photo-spotlight > div {
+        padding: 0;
+    }
+    section:nth-of-type(1), section:nth-of-type(2),
+    section.dedication, section.photo-spotlight, header {
         display: block;
     }
     section:first-child {
@@ -348,12 +451,15 @@ form > section, form > section:nth-of-type(1), form > section:nth-of-type(2) {
     section {
         padding: 5px 50px;
     }
-    header {
-        display: block;
-    }
     nav > ul {
         justify-content: center;
         padding-left: 0;
+    }
+}
+
+@media screen and (max-width: 711px) {
+    .show-later {
+        display: inline;
     }
 }
 

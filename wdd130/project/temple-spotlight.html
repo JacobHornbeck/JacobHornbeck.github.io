@@ -9,7 +9,7 @@
         <title>Temple Inn & Suites | Your Home Away From Home</title>
         <link rel="stylesheet" href="styles/style.css">
     </head>
-    <body>
+    <body onkeydown="Shift()">
         <div class="menu">
             <input type="checkbox" id="toggler">
             <label id="menu-click" for="toggler">
@@ -43,9 +43,20 @@
         </header>
         <main>
             <section class="photo-spotlight">
-                <button class="go-left">&lt;</button>
-                <img id="img-main" src="images/changing/rexburg-main.jpg" alt="The Rexburg Idaho Temple on a clear day">
-                <button class="go-right">&gt;</button>
+                <button id="go-left" onclick="Shift('right')">&lt;</button>
+                <div>
+                <img class="img-l4 img-shift" src="images/changing/rexburg-1.jpg" alt="The front of the Rexburg Temple">
+                <img class="img-l3 img-shift" src="images/changing/rexburg-2.jpg" alt="The Rexburg Temple with a stormy sky">
+                <img class="img-l2 img-shift" src="images/changing/rexburg-3.jpg" alt="The Rexburg Temple on a snowy day with blue sky">
+                <img class="img-l1 img-shift" src="images/changing/rexburg-4.jpg" alt="The Rexburg Temple at sunset">
+                <img class="img-mc img-shift" src="images/changing/rexburg-main.jpg" alt="The Rexburg Idaho Temple on a clear day">
+                <img class="img-r1 img-shift" src="images/changing/rexburg-5.jpg" alt="The Rexburg Temple with blue sky">
+                <img class="img-r2 img-shift" src="images/changing/rexburg-6.jpg" alt="Black and white photo of the Rexburg Temple">
+                <img class="img-r3 img-shift" src="images/changing/rexburg-7.jpg" alt="The Rexburg Temple across a wheat field at sunset">
+                <img class="img-r4 img-shift" src="images/changing/rexburg-8.jpg" alt="The Rexburg Temple and its grounds">
+                <img class="img-r5 img-shift" src="images/changing/rexburg-9.jpg" alt="Peaking through some wheat at the Rexburg Temple">
+                </div>
+                <button id="go-right" onclick="Shift('left')">&gt;</button>
             </section>
             <section class="not-grid">
                 <h2>Rexburg, Idaho Temple</h2>
