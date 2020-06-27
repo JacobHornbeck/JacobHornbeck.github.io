@@ -41,6 +41,7 @@ header {
     z-index: 10;
     display: flex;
     padding: 5px 1em;
+    padding-top: 8px;
     position: relative;
     text-align: center;
     align-items: center;
@@ -382,7 +383,7 @@ div.photo-spotlight button#go-right {
     right: -20px;
 }
 
-section.cover-header {
+div.cover-header {
     background-image: url("../images/paper-fixed.jpg");
     background-position: top;
     background-attachment: local;
@@ -390,7 +391,7 @@ section.cover-header {
     background-size: cover;
     height: 150px;
 }
-main.non-centered > section.cover-header + section {
+main.non-centered > div.cover-header + section, div.cover-header + section + section {
     display: block;
 }
 main.non-centered h2 {
