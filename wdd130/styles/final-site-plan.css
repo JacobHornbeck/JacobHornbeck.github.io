@@ -63,9 +63,6 @@ p {
     width: 400px;
     height: 400px;
 }
-#urlOfCoolors {
-    display: none;
-}
 
 .signature {
     font-family: var(--paragraph-font);
