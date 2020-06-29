@@ -1,0 +1,36 @@
+div.poem {
+    margin: 0 auto;
+    width: 60%;
+}
+section {
+    width: 50%;
+    border: 1px solid;
+}
+.block2 {
+    margin: 0 auto;
+}
+.block3 {
+    margin-left: auto;
+}
+.block4 {
+    margin: 0 auto;
+}
+.block1 p:nth-of-type(1),
+.block2 p:nth-of-type(1),
+.block3 p:nth-of-type(1),
+.block4 p:nth-of-type(3),
+.block4 p:nth-of-type(4) {
+    text-align: left;
+}
+.block1 p:nth-of-type(2),
+.block2 p:nth-of-type(2),
+.block3 p:nth-of-type(2),
+.block4 p:nth-of-type(2) {
+    text-align: center;
+}
+.block1 p:nth-of-type(3),
+.block2 p:nth-of-type(3),
+.block3 p:nth-of-type(3),
+.block4 p:nth-of-type(1) {
+    text-align: right;
+}
