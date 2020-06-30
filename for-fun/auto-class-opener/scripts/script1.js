@@ -106,9 +106,9 @@ function Task(name,time) {
 function OpenClassWhen() {
     var classTimes = [
         ['cit171',  ['monday', 'tuesday', 'wednesday', 'thursday'], '12:45pm'],
-        ['cse170',  [          'tuesday',              'thursday'], '2:00pm'],
-        ['ecen106', ['monday',            'wednesday'            ], '3:15pm'],
-        ['wdd130',  [          'tuesday'                         ], '8:00pm'],
+        ['cse170',  [          'tuesday',              'thursday'],  '2:00pm'],
+        ['ecen106', ['monday',            'wednesday'            ],  '3:15pm'],
+        ['wdd130',  [          'tuesday'                         ],  '8:00pm'],
     ]
     for (var i = 0; i<classTimes.length; i++) {
         for (var j = 0; j<classTimes[i][1].length; j++) {
@@ -126,9 +126,10 @@ function OpenClassWhen() {
 }
 
 var timeoutSet = false
+var removed = 0
 function ShowTime() {
     for (let i = 0; i<tasksToday.length; i++) {
-        let something = document.getElementById("timetil"+(i+1))
+        let something = document.getElementById("timetil"+((i+removed)+1))
         let t2 = BetweenDays(today,tasksToday[i].time2show)
         if (t2>=0) {
             let hr = Math.floor(t2/3600000)
@@ -144,6 +145,8 @@ function ShowTime() {
             setTimeout(() => {
                 tasksToday.splice(i,1)
                 something.remove()
+                removed++
+                timeoutSet = false
             }, 500)
             timeoutSet = true
         }
