@@ -333,7 +333,8 @@ section h2 {
 }
 .tag:hover {
     background-color: var(--accent1-color);
-    color: var(--other-color)
+    color: var(--other-color);
+    text-decoration: none;
 }
 
 
