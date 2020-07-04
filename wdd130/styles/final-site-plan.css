@@ -38,12 +38,12 @@ h3, h4, h5, h6 {
 header {
     padding: 1em;
     text-align: center;
-    color: var(--accent2-color);
-    background-color: var(--accent1-color);
+    color: var(--secondary-color);
+    background-color: var(--primary-color);
 }
 
 header > h1 {
-    color: var(--accent2-color);
+    color: var(--secondary-color);
 }
 
 footer {
