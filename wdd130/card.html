@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Making Media Cards</title>
+    <style>
+        .card {
+            width: 320px;
+            box-shadow: 1px 1px 4px 1px #888;
+            background-color: white;
+            border-radius: 3px;
+            overflow: hidden;
+        }
+        .card img {
+            max-width: 100%;
+        }
+        .card p, .card footer {
+            font-family: sans-serif;
+            font-size: 15px;
+            line-height: 140%;
+            margin: 1rem auto;
+            width: 90%;
+        }
+        .card footer {
+            display: grid;
+            grid-template-columns: 45px 45px auto;
+            align-items: center;
+        }
+        .viewButton, .editButton {
+            color: #888;
+            background-color: #fff;
+            border: solid 1px #555;
+            padding: 0.5em;
+        }
+        .viewButton {
+            border-radius: 3px 0 0 3px;
+        }
+        .editButton {
+            margin-left: -1px;
+            border-radius: 0 3px 3px 0;
+        }
+        .timeHolder {
+            justify-self: right;
+            font-size: 13px;
+            color: #888;
+        }
+        small {
+            font-family: sans-serif;
+            font-size: 14px;
+            display: block;
+            margin: 20px 5px;
+        }
+    </style>
+</head>
+<body>
+    <article class="card">
+        <img src="https://via.placeholder.com/320x240/505050/fefefe/?text=Thumbnail"
+             alt="generic image placeholder">
+        <p>
+            This is a wider card width supporting text
+            below as natural lead-in to additional
+            content. This content is a little bit longer.
+        </p>
+        <footer>
+            <button class="viewButton">View</button>
+            <button class="editButton">Edit</button>
+            <span class="timeHolder">9 mins</span>
+        </footer>
+    </article>
+    <small>Brother Blazzard: I made some of my own "media cards" in my final project homepage... could you look at my <a href="final-project/">final project</a> and tell me if that qualifies?</small>
+</body>
+</html>
