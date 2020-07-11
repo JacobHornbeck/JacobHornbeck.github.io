@@ -1,13 +1,193 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login | Genius Coding</title>
-    <link rel="icon" href="images/favicon.ico" type="icon">
-    <link rel="stylesheet" href="styles/main-style.css">
-</head>
-<body>
-    
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title id="page-title">Genius Coding</title>
+        <link rel="icon" href="images/favicon.ico">
+        <link rel="stylesheet" href="styles/main-style.css">
+        <script src="scripts/more-than-scrolling.js"></script>
+    </head>
+    <body>
+        <div class="page-loader-cover">
+            <div class="page-loading">
+                <div class="green"></div>
+                <div class="yellow"></div>
+                <div class="gray"></div>
+                <div class="blue"></div>
+            </div>
+        </div>
+        <header>
+            <div class="logo-name">
+                <div class="logo">
+                    <div class="green"></div>
+                    <div class="yellow"></div>
+                    <div class="gray"></div>
+                    <div class="blue"></div>
+                </div>
+                <h1>Genius Coding</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li>
+                        <a onclick="OpenLink(this)" href="index.html">Home</a>
+                        <img class="back-slide" src="images/yellow-bubble.png" alt="yellow bubble">
+                    </li>
+                    <li>
+                        <a onclick="OpenLink(this)" href="start-learning.html">Start Learning</a>
+                        <img class="back-slide" src="images/yellow-bubble.png" alt="yellow bubble">
+                    </li>
+                    <li>
+                        <a onclick="OpenLink(this)" href="login.html?showPage=login">Login</a>
+                        <img class="back-slide" src="images/yellow-bubble.png" alt="yellow bubble">
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <main class="bottom-padding">
+            <div class="header-image"></div>
+            <div class="form-container" id="login">
+                <section class="fitter">
+                    <p>New to Genius Coding? <a onclick="OpenLink(this)" href="login.html?showPage=create-account">Create an account.</a></p>
+                    <h2>Sign In</h2>
+                    <form action="javascript: SubmitForm('li')">
+                        <div class="input-container">
+                            <input type="text" name="username-email" id="username-login" required>
+                            <label for="username-login" class="form-label">Email/Username</label>
+                        </div>
+                        <div class="input-container">
+                            <input type="password" name="password" id="password" required>
+                            <label for="password" class="form-label">Password</label>
+                        </div>
+                        <a onclick="OpenLink(this)" href="login.html?showPage=forgot-password" id="forgot">Forgot password?</a>
+                        <input type="submit" value="Sign In">
+                    </form>
+                    <div class="or">
+                        <div></div>
+                        <p>or sign in with</p>
+                    </div>
+                    <div class="external-logins">
+                        <button class="login-with">
+                            <img src="images/github.png" alt="GitHub">
+                            <span>GitHub</span>
+                        </button>
+                        <button class="login-with">
+                            <img src="images/google.png" alt="Google">
+                            <span>Google</span>
+                        </button>
+                        <button class="login-with">
+                            <img src="images/microsoft.png" alt="Microsoft">
+                            <span>Microsoft</span>
+                        </button>
+                    </div>
+                </section>
+            </div>
+
+            <div class="form-container" id="create-account">
+                <section class="fitter">
+                    <p>Already have an account? <a onclick="OpenLink(this)" href="login.html?showPage=login">Login now.</a></p>
+                    <h2>Create Account</h2>
+                    <form action="javascript: SubmitForm('ca&email='+document.forms[1].email.value)">
+                        <div class="input-container">
+                            <input type="text" name="username" id="username-create" required>
+                            <label for="username-create" class="form-label">Username</label>
+                        </div>
+                        <div class="input-container">
+                            <input type="email" name="email" id="email-create" required>
+                            <label for="username-create" class="form-label">Email</label>
+                        </div>
+                        <div class="input-container">
+                            <input type="password" name="password" id="password-create" required>
+                            <label for="password-create" class="form-label">Password</label>
+                        </div>
+                        <div class="input-container">
+                            <input type="password" name="confirm_password" id="password-confirm" required>
+                            <label for="password-confirm" class="form-label">Confirm Password</label>
+                        </div>
+                        <input type="submit" value="Create Account">
+                    </form>
+                    <div class="or">
+                        <div></div>
+                        <p>or sign up with</p>
+                    </div>
+                    <div class="external-logins">
+                        <button class="login-with">
+                            <img src="images/github.png" alt="GitHub">
+                            <span>GitHub</span>
+                        </button>
+                        <button class="login-with">
+                            <img src="images/google.png" alt="Google">
+                            <span>Google</span>
+                        </button>
+                        <button class="login-with">
+                            <img src="images/microsoft.png" alt="Microsoft">
+                            <span>Microsoft</span>
+                        </button>
+                    </div>
+                </section>
+            </div>
+
+            <div class="form-container" id="forgot-password">
+                <section class="fitter">
+                    <h2>Forgot Password</h2>
+                    <p>Enter the email that is linked to your account</p>
+                    <form action="javascript: SubmitForm('fp&email='+document.forms[2].email.value)">
+                        <div class="input-container">
+                            <input type="email" name="email" id="username-forgot" required>
+                            <label for="username-forgot" class="form-label">Email</label>
+                        </div>
+                        <input type="submit" value="Submit">
+                    </form>
+                    <p>Remember your password? <a onclick="OpenLink(this)" href="login.html?showPage=login">Login now.</a></p>
+                </section>
+            </div>
+
+            <div class="form-container" id="form-output-fp">
+                <section class="fitter">
+                    <h2>Forgot Password</h2>
+                    <p>
+                        If the email you provided is connected to an account
+                        in our database, we sent you an email. To reset your
+                        password or choose a new username click the link in
+                        the email that we sent to <span id="email-fp"></span><br><br>
+                        You may close this window now.
+                    </p>
+                </section>
+            </div>
+            <div class="form-container" id="form-output-ca">
+                <section class="fitter">
+                    <h2>Create Account</h2>
+                    <p>
+                        Your account was successfully created. We sent an
+                        email to <span id="email-ca"></span>. Click the
+                        link in that email to confirm your email address.<br><br>
+                        You may close this window.
+                    </p>
+                </section>
+            </div>
+            <div class="form-container" id="form-output-li">
+                <section class="fitter">
+                    <h2>Logged In</h2>
+                    <p>
+                        You are now logged in. You can now access your account
+                        as well as all your progress in courses and tutorials.
+                    </p>
+                </section>
+            </div>
+        </main>
+        <footer>
+            <div class="border-top">
+                <div class="left">
+                    <div>&copy;2020 Genius Coding</div>
+                    <a href="#">Terms of Use</a>
+                    <a href="#">Privacy Policy</a>
+                </div>
+                <div class="right">
+                    <a title="Follow us on GitHub" href="https://github.com"><img src="images/github.png" alt="github logo"></a>
+                    <a title="Subscribe to us on Youtube" href="https://youtube.com"><img src="images/youtube.png" alt="youtube logo"></a>
+                    <a title="Visit us on blogger" href="https://www.blogger.com"><img src="images/blogger.png" alt="blogger logo"></a>
+                </div>
+            </div>
+        </footer>
+    </body>
 </html>

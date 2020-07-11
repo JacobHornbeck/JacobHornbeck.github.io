@@ -4,26 +4,41 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Genius Coding | Start Learning Code - Start Here, Start Now</title>
-        <link rel="icon" href="images/favicon.ico" type="icon">
+        <link rel="icon" href="images/favicon.ico">
         <link rel="stylesheet" href="styles/main-style.css">
-        <script src="scripts/partial-scrolling.js"></script>
+        <script src="scripts/more-than-scrolling.js"></script>
     </head>
-    <body onscroll="AdjustImage()" id="main-background">
+    <body onscroll="AdjustImage()">
+        <div class="page-loader-cover">
+            <div class="page-loading">
+                <div class="green"></div>
+                <div class="yellow"></div>
+                <div class="gray"></div>
+                <div class="blue"></div>
+            </div>
+        </div>
         <header>
-            <img src="images/final-logo.png" alt="Genius Coding Logo">
-            <h1>Genius Coding</h1>
+            <div class="logo-name">
+                <div class="logo">
+                    <div class="green"></div>
+                    <div class="yellow"></div>
+                    <div class="gray"></div>
+                    <div class="blue"></div>
+                </div>
+                <h1>Genius Coding</h1>
+            </div>
             <nav>
                 <ul>
                     <li>
-                        <a href="index.html">Home</a>
+                        <a onclick="OpenLink(this)" href="index.html">Home</a>
                         <img class="back-slide" src="images/yellow-bubble.png" alt="yellow bubble">
                     </li>
                     <li>
-                        <a href="start-learning.html">Start Learning</a>
+                        <a onclick="OpenLink(this)" href="start-learning.html">Start Learning</a>
                         <img class="back-slide" src="images/yellow-bubble.png" alt="yellow bubble">
                     </li>
                     <li>
-                        <a href="login.html">Login</a>
+                        <a onclick="OpenLink(this)" href="login.html?showPage=login">Login</a>
                         <img class="back-slide" src="images/yellow-bubble.png" alt="yellow bubble">
                     </li>
                 </ul>
@@ -34,7 +49,7 @@
                 <div id="action">
                     <h3>Looking to learn coding?</h3>
                     <small>Start Now, Start Here</small>
-                    <p><a href="login.html">Create an account</a></p>
+                    <p><a href="login.html?showPage=create-account">Create an account</a></p>
                 </div>
             </div>
             <section>
