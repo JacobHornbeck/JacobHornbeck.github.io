@@ -364,7 +364,7 @@ section h2 {
     padding-top: 0.5rem;
     text-align: center;
 }
-.tag {
+a.tag, div.tag {
     background-color: rgba(255,255,255,0);
     border: solid 2px var(--accent1-color);
     font-family: var(--heading-font);
@@ -374,7 +374,7 @@ section h2 {
     margin-right: 10px;
     padding: 4px;
 }
-.tag:hover {
+a.tag:hover, div.tag:hover {
     background-color: var(--accent1-color);
     color: var(--other-color);
     text-decoration: none;
@@ -454,20 +454,209 @@ section h2 {
 }
 .courses-offered {
     position: relative;
-    width: 80%;
+    width: 90%;
+    padding-top: 0;
     min-height: 100px;
     margin: 40px auto 0;
     border-radius: 10px;
     border: solid 1px var(--accent2-color);
 }
 .courses-offered > h2 {
-    background-color: var(--other-color);
     border-radius: 0 0 5px 5px;
     left: calc(50% - 200px);
     position: absolute;
     width: 400px;
-    top: -2.4rem;
     z-index: 101;
+}
+.courses-offered > h2.up {
+    background-color: var(--other-color);
+    transition: all 0.3s;
+    top: -2.4rem;
+}
+.courses-offered > h2.down {
+    background-color: transparent;
+    color: var(--other-color);
+    transition: all 0.3s;
+    top: calc(50% - 5rem);
+}
+.overflow-handler {
+    height: calc((100px + 20px) * 2);
+    transition: height 0.5s;
+    overflow: hidden;
+    padding: 20px;
+}
+.course-grid {
+    height: 100%;
+    display: grid;
+    grid-gap: 20px 10px;
+    align-items: center;
+    justify-items: center;
+    grid-template-rows: 100px;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+.course-grid > div {
+    display: grid;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 5px;
+    align-items: center;
+    background-color: #F1F1F1;
+    grid-template-rows: 50% 50%;
+    grid-template-columns: 100px auto;
+    box-shadow: 1px 1px 5px var(--primary-color);
+}
+.course-grid a {
+    text-decoration: none;
+}
+.course-grid a > h3 {
+    padding-left: 15px;
+    grid-column: 2;
+    grid-row: 1;
+    margin: 0;
+}
+.course-grid .img-holder {
+    height: 100%;
+    grid-column: 1;
+    grid-row: 1 / span 2;
+    transition: all 0.3s;
+    transform: translate(-2px, 1px) scale(1.1) rotate(-5deg);
+    box-shadow: 1px 1px 5px var(--primary-color);
+}
+.course-grid > div:hover {
+    cursor: pointer;
+}
+.course-grid > div:hover .img-holder {
+    transform: translate(-8px, 1px) scale(1.3) rotate(-8deg);
+}
+.img-holder.two {
+    background-image: linear-gradient(#E34E24 50%,#1173BC 50%);
+}
+.img-holder.two div {
+    width: 100%;
+    height: 50%;
+    background-position: center;
+    background-size: 75%;
+}
+.img-holder div {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.img-holder.java {
+    background-image: linear-gradient(#E76F00,#8C4201);
+}
+.img-holder.java div {
+    background-size: 70%;
+}
+.img-holder.pjs div {
+    background-size: 115%;
+}
+.noneT {
+    color: var(--primary-color);
+}
+.htmlT, .cssT {    
+    font-family: var(--heading-font);
+}
+.htmlT {
+    color: #E34E24;
+}
+.cssT {
+    color: #1173BC;
+}
+.cppT {
+    color: #0080CD;
+}
+.jsT {
+    color: #67A969;
+}
+.pjsT {
+    color: #012542;
+}
+.javaT {
+    color: #E76F00;
+}
+.pythonT {
+    color: #4A98C8;
+}
+.rubyT {
+    color: #F05336;
+}
+.jqT {
+    color: #3558A8;
+}
+.phpT {
+    color: #007AFF;
+}
+
+
+.tag.html {
+    color: #E34E24;
+    border: solid 2px #E34E24;
+}
+.tag.css {
+    color: #1173BC;
+    border: solid 2px #1173BC;
+}
+.tag.cpp {
+    color: #0080CD;
+    border: solid 2px #0080CD;
+}
+.tag.javascript {
+    color: #67A969;
+    border: solid 2px #67A969;
+}
+.tag.pjs {
+    color: #012542;
+    border: solid 2px #012542;
+}
+.tag.java {
+    color: #E76F00;
+    border: solid 2px #E76F00;
+}
+.tag.python {
+    color: #4A98C8;
+    border: solid 2px #4A98C8;
+}
+.tag.ruby, .tag.jquery, .tag.php {
+    background-color: var(--accent1-color);
+    color: var(--other-color);
+}
+.tag.html:hover {
+    background-color: #E34E24;
+}
+.tag.css:hover {
+    background-color: #1173BC;
+}
+.tag.cpp:hover {
+    background-color: #0080CD;
+}
+.tag.javascript:hover {
+    background-color: #67A969;
+}
+.tag.pjs:hover {
+    background-color: #012542;
+}
+.tag.java:hover {
+    background-color: #E76F00;
+}
+.tag.python:hover {
+    background-color: #4A98C8;
+}
+.course-grid .tags {
+    justify-self: end;
+    grid-column: 2;
+    grid-row: 2;
+    background-color: #F1F1F1;
+}
+.tags .tag {
+    display: inline-block;
+    margin-right: 5px;
+}
+div.tag:hover {
+    cursor: default;
 }
 .outer-container {
     overflow: hidden;
@@ -488,7 +677,7 @@ section h2 {
     justify-items: center;
     grid-template-rows: 1fr;
     grid-template-columns: 1fr;
-    background-color: #123456;
+    background-color: var(--primary-color);
 }
 #course-loader.closed {
     transition: transform 0.5s, opacity 0.5s;

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Page Not Found</title>
+        <link rel="icon" href="wdd130/final-project/images/favicon.ico">
+        <link rel="stylesheet" href="wdd130/final-project/styles/main-style.css">
+        <script src="wdd130/final-project/scripts/more-than-scrolling.js"></script>
+        <style>
+            html {
+                background: #676767;
+                color: white;
+            }
+            h1 {
+                color: white;
+            }
+            #cant-find {
+                position: fixed;
+                display: grid;
+                height: 100%;
+                width: 100%;
+                grid-template-columns: 1fr;
+                grid-template-rows: 1fr;
+                justify-items: center;
+                align-items: center;
+            }
+            #load-holder > div:nth-of-type(1),
+            #load-holder > div:nth-of-type(4) {
+                animation: gear-clockwise 0.5s infinite;
+            }
+            #load-holder > div:nth-of-type(2),
+            #load-holder > div:nth-of-type(3) {
+                animation: gear-counterclockwise 0.5s infinite;
+            }
+            #cant-find > div > #load-holder {
+                position: relative;
+                height: 70px;
+                width: 70px;
+            }
+            #cant-find > div {
+                display: grid;
+                grid-template-columns: 80px auto;
+                justify-items: center;
+                align-items: center;
+            }
+            #load-holder > div {
+                border-radius: 12%;
+                position: absolute;
+                width: calc(50% - 10px);
+                height: calc(50% - 10px);
+                transform: rotate(45deg);
+                box-shadow: 0 0 4px var(--other-color);
+            }
+            #load-holder .green {
+                z-index: 2;
+                top: 9px; left: 9px;
+                background-color: var(--accent1-color);
+            }
+            #load-holder .yellow {
+                z-index: 1;
+                top: 9px; right: 9px;
+                background-color: var(--secondary-color);
+            }
+            #load-holder .gray {
+                z-index: 1;
+                bottom: 9px; left: 9px;
+                background-color: var(--primary-color);
+            }
+            #load-holder .blue {
+                z-index: 2;
+                bottom: 9px; right: 9px;
+                background-color: #2B22E3;
+            }
+            @keyframes gear-clockwise {
+                from {
+                    transform: rotate(45deg);
+                }
+                20% {
+                    transform: rotate(45deg);
+                }
+                80% {
+                    transform: rotate(135deg);
+                }
+                to {
+                    transform: rotate(135deg);
+                }
+            }
+            @keyframes gear-counterclockwise {
+                from {
+                    transform: rotate(45deg);
+                }
+                20% {
+                    transform: rotate(45deg);
+                }
+                80% {
+                    transform: rotate(-45deg);
+                }
+                to {
+                    transform: rotate(-45deg);
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="page-loader-cover">
+            <div class="page-loading">
+                <div class="green"></div>
+                <div class="yellow"></div>
+                <div class="gray"></div>
+                <div class="blue"></div>
+            </div>
+        </div>
+        <div id="cant-find">
+            <div>
+                <div id="load-holder">
+                    <div class="green"></div>
+                    <div class="yellow"></div>
+                    <div class="gray"></div>
+                    <div class="blue"></div>
+                </div>
+                <h1>404 Error: Page Not Found</h1>
+            </div>
+            <p>The page you are trying to find does not exist please check the link and try again.</p>
+        </div>
+    </body>
+</html>
