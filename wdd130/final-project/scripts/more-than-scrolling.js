@@ -122,8 +122,8 @@ var courses = [
     */
     {
         'img': [
-            '../images/card-icons/html.png',
-            '../images/card-icons/css.png'
+            'images/card-icons/html.png',
+            'images/card-icons/css.png'
         ],
         'name': '<a class="course-title-link" onclick="OpenLink(this)" href="courses/hr82s4"><h3 class="noneT"><span class="htmlT">HTML</span> & <span class="cssT">CSS</span></h3></a>',
         'tags': ['HTML','CSS'],
@@ -131,56 +131,56 @@ var courses = [
         'sort-name': 'html/css'
     },
     {
-        'img': ['../images/card-icons/cpp.png'],
+        'img': ['images/card-icons/cpp.png'],
         'name': '<a class="course-title-link" onclick="OpenLink(this)" href="courses/fu832s"><h3 class="cppT">Consider C++</h3></a>',
         'tags': ['C++'],
         'rank': 12,
         'sort-name': 'cpp'
     },
     {
-        'img': ['../images/card-icons/javascript.png'],
+        'img': ['images/card-icons/javascript.png'],
         'name': '<a class="course-title-link" onclick="OpenLink(this)" href="courses/8f4sj3"><h3 class="jsT">JavaScript</h3></a>',
         'tags': ['JavaScript'],
         'rank': 13,
         'sort-name': 'javascript'
     },
     {
-        'img': ['../images/card-icons/pjs.png'],
+        'img': ['images/card-icons/pjs.png'],
         'name': '<a class="course-title-link" onclick="OpenLink(this)" href="courses/p12j7s"><h3 class="pjsT">Process PJS</h3></a>',
         'tags': ['PJS'],
         'rank': 8,
         'sort-name': 'pjs'
     },
     {
-        'img': ['../images/card-icons/java.png'],
+        'img': ['images/card-icons/java.png'],
         'name': '<a class="course-title-link" onclick="OpenLink(this)" href="courses/1a3va"><h3 class="javaT">Master Java</h3></a>',
         'tags': ['Java'],
         'rank': 0,
         'sort-name': 'java'
     },
     {
-        'img': ['../images/card-icons/python.png'],
+        'img': ['images/card-icons/python.png'],
         'name': '<a class="course-title-link" onclick="OpenLink(this)" href="courses/P63tOn"><h3 class="pythonT">Practice Python</h3></a>',
         'tags': ['Python'],
         'rank': 0,
         'sort-name': 'python'
     },
     {
-        'img': ['../images/card-icons/ruby.png'],
+        'img': ['images/card-icons/ruby.png'],
         'name': '<a class="course-title-link" onclick="OpenLink(this)" href="courses/r85b3y"><h3 class="rubyT">Think Ruby</h3></a>',
         'tags': ['Coming Soon!'],
         'rank': 0,
         'sort-name': 'ruby'
     },
     {
-        'img': ['../images/card-icons/jquery.png'],
+        'img': ['images/card-icons/jquery.png'],
         'name': '<a class="course-title-link" onclick="OpenLink(this)" href="courses/j3Q12y"><h3 class="jqT">Learn jQuery</h3></a>',
         'tags': ['Coming Soon!'],
         'rank': 0,
         'sort-name': 'jquery'
     },
     {
-        'img': ['../images/card-icons/php.png'],
+        'img': ['images/card-icons/php.png'],
         'name': '<a class="course-title-link" onclick="OpenLink(this)" href="courses/p1Hp41"><h3 class="phpT">Discover PHP</h3></a>',
         'tags': ['Coming Soon!'],
         'rank': 0,
