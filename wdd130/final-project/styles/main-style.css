@@ -730,6 +730,19 @@ div.tag:hover {
     bottom: 9px; right: 9px;
     background-color: #2B22E3;
 }
+.great-idea {
+    width: 45%;
+    border-radius: 10px;
+    margin: 40px auto 0;
+    padding: 0 1rem 0.6rem;
+    border: solid 1px var(--accent2-color);
+}
+.great-idea h3 {
+    text-align: center;
+}
+.great-idea p {
+    font-size: 0.9rem;
+}
 /* Start Learning */
 
 
