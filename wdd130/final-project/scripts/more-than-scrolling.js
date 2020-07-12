@@ -32,7 +32,7 @@ function CloseLoader() {
     setTimeout(() => {
         cover.style.zIndex = "-1"
     }, 501)
-    if (window.location.pathname === "/start-learning.html") {
+    if (window.location.pathname.indexOf("start-learning.html")>-1) {
         LoadCourses('close')
     }
 }
@@ -107,7 +107,7 @@ function ShowCorrectOne(show) {
         
     }
 }
-if (window.location.pathname === "/login.html") {
+if (window.location.pathname.indexOf("login.html")>-1) {
     setTimeout(ShowCorrectOne,1000,getUrlVars()['showPage'])
 }
 
