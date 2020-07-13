@@ -93,12 +93,6 @@ header {
     background-color: #2B22E3;
     box-shadow: 0 0 2px var(--other-color);
 }
-/*.logo-name > img {
-    height: 70px;
-    border-radius: 100%;
-    background-color: rgba(255,255,255,0.2);
-    box-shadow: 0 0 10px rgba(255,255,255,0.2);
-}*/
 .logo-name > h1 {
     color: var(--other-color);
     width: auto;
@@ -179,6 +173,7 @@ footer > div.border-top > div.left {
 footer > div.border-top > div.left > div {
     padding-right: 10px;
     font-weight: bold;
+    text-shadow: 0 0 5px var(--other-color);
 }
 footer > div.border-top > div.left a {
     display: block;
@@ -228,7 +223,8 @@ footer > div.border-top img:hover {
 #action > h3 {
     margin-top: 5px;
     margin-bottom: 0;
-    text-shadow: 1px 1px 5px black;
+    color: var(--secondary-color);
+    text-shadow: 0 0 3px var(--accent2-color);
 }
 #action > small {
     padding-left: 15px;
@@ -432,7 +428,7 @@ a.tag:hover, div.tag:hover {
 #mission-statement {
     width: 100%;
     padding: 5px 0 30px;
-    height: calc(200px - 30px);
+    height: calc(200px - 35px);
     background-image: url("../images/mission-photo.jpg");
     background-attachment: local;
     background-position: center;
@@ -656,7 +652,7 @@ a.tag:hover, div.tag:hover {
     margin-right: 5px;
 }
 div.tag:hover {
-    cursor: default;
+    cursor: pointer;
 }
 .outer-container {
     overflow: hidden;
