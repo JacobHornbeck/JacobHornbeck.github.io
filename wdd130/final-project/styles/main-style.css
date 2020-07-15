@@ -291,6 +291,7 @@ section h2 {
     border-radius: 4px;
     box-shadow: 1px 1px 10px var(--primary-color);
     overflow: hidden;
+    height: 100%;
 }
 .image-holder {
     position: relative;
@@ -344,10 +345,17 @@ section h2 {
 }
 .card-content {
     box-shadow: 0 0 50px var(--accent2-color);
+    grid-template-rows: 38px 90px 31px;
     background-color: #F0F0F0;
-    padding: 0 10px 20px;
+    padding: 0 10px 10px;
+    align-items: center;
     position: relative;
+    display: grid;
     z-index: 2;
+}
+.card-content p {
+    height: 100%;
+    margin: 0;
 }
 .card-content a {
     text-decoration: none;
@@ -356,8 +364,8 @@ section h2 {
     text-decoration: underline var(--accent2-color);
 }
 .card h3 {
-    margin-top: 0;
-    padding-top: 0.5rem;
+    margin: 0;
+    padding: 0.5rem 0;
     text-align: center;
 }
 a.tag, div.tag {
@@ -367,7 +375,7 @@ a.tag, div.tag {
     color: var(--accent1-color);
     text-decoration: none;
     border-radius: 5px;
-    margin-right: 10px;
+    margin-right: 5px;
     padding: 4px;
 }
 a.tag:hover, div.tag:hover {
