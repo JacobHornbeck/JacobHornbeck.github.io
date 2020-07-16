@@ -14,14 +14,17 @@
 
 /* General */
 body {
-    background-color: var(--accent1-color);
+    background-image: linear-gradient(45deg, gray, lightgray, white);
+    background-attachment: fixed;
     font-size: 16px;
     margin: 0;
 }
 header, main, footer {
-    max-width: 960px;
     margin: 0 auto;
-    background-color: var(--other-color);
+    /*background-color: var(--other-color);*/
+}
+main {
+    max-width: 960px;
 }
 img {
     max-width: 100%;
@@ -115,6 +118,13 @@ nav a {
     padding: 1rem;
     min-width: 70px;
     transition: all 0.4s;
+}
+nav a.at {
+    background-color: rgba(255,255,255,0.3);
+    border-radius: 5px;
+}
+nav a.at:hover {
+    background-color: transparent;
 }
 nav li {
     position: relative;
@@ -239,17 +249,19 @@ footer > div.border-top img:hover {
     background-image: url("../images/hero-image-scroll.jpg");
     background-attachment: scroll;
     background-position: 0 0;
+    background-size: cover;
     height: 200px;
 }
 #hero + section {
-    padding: 0 100px;
     display: grid;
-    padding-top: 30px;
+    padding: 30px 100px 0;
     grid-template-columns: auto auto;
     grid-template-rows: auto calc(200px - 50px);
     justify-items: center;
     align-items: center;
+    max-width: 900px;
     grid-gap: 20px;
+    margin: 0 auto;
 }
 #hero + section > img {
     height: 200px;
@@ -282,6 +294,7 @@ section h2 {
     justify-items: center;
     align-items: center;
     padding: 10px 0 40px;
+    max-width: 950px;
     margin: 0 auto;
     grid-gap: 30px;
     width: 90%;
@@ -390,6 +403,7 @@ a.tag:hover, div.tag:hover {
     background-image: url("../images/last-call-scroll.jpg");
     background-attachment: local;
     background-position: 0 0;
+    background-size: cover;
 }
 #last-call div {
     width: 480px;
@@ -459,6 +473,7 @@ a.tag:hover, div.tag:hover {
 .courses-offered {
     position: relative;
     width: 90%;
+    max-width: 950px;
     padding-top: 0;
     min-height: 100px;
     margin: 40px auto 0;
