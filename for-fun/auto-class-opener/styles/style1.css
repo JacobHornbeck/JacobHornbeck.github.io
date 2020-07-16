@@ -79,7 +79,7 @@ ul {
     padding: 1em;
     height: 2em;
     font-family: sans-serif;
-    background: rgba(0,0,0,0.4);
+    background: black;
     border-radius: 10px 0 0 10px;
     color: white;
     z-index: 999;
