@@ -182,7 +182,7 @@ footer > div.border-top > div.left {
     justify-self: left;
     display: grid;
     align-items: center;
-    grid-template-columns: repeat(3, auto);
+    grid-template-columns: repeat(4, auto);
     grid-column-gap: 10px;
 }
 footer > div.border-top > div.left > div {
