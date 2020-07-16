@@ -250,6 +250,7 @@ footer > div.border-top img:hover {
     background-attachment: scroll;
     background-position: 0 0;
     background-size: cover;
+    border-radius: 0 0 10px 10px;
     height: 200px;
 }
 #hero + section {
@@ -404,6 +405,7 @@ a.tag:hover, div.tag:hover {
     background-attachment: local;
     background-position: 0 0;
     background-size: cover;
+    border-radius: 10px 10px 0 0 ;
 }
 #last-call div {
     width: 480px;
@@ -455,6 +457,7 @@ a.tag:hover, div.tag:hover {
     background-attachment: local;
     background-position: center;
     background-size: cover;
+    border-radius: 0 0 10px 10px;
 }
 .inside {
     width: 50%;
@@ -766,6 +769,9 @@ div.tag:hover {
 
 
 /* Login/Create Account */
+.bottom-padding.non-transparent-background {
+    background-color: var(--other-color);
+}
 .bottom-padding {
     padding-bottom: 50px;
 }
@@ -776,7 +782,6 @@ div.tag:hover {
     background-attachment: local;
     background-position: center;
     background-size: cover;
-
 }
 .form-container {
     width: 50%;
