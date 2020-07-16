@@ -125,6 +125,10 @@ function OpenClassWhen() {
     setInterval(ShowTime,51)
 }
 
+function P(n) {
+    return (("000".substring(0,2-n.toString().length))+n.toString())
+}
+
 var timeoutSet = false
 var removed = 0
 function ShowTime() {
@@ -138,7 +142,7 @@ function ShowTime() {
             t2 -= min*60000
             let sec = Math.floor(t2/1000)
             t2 -= sec*1000
-            something.innerHTML = "Time til "+tasksToday[i].nameFor.toUpperCase()+": <strong>"+hr+" hr "+min+" min "+sec+" sec</strong>"
+            something.innerHTML = "Time til "+tasksToday[i].nameFor.toUpperCase()+":<br><strong>"+P(hr)+" hr "+P(min)+" min "+P(sec)+" sec</strong>"
         }
         else if (!timeoutSet) {
             something.style.right = "-500px"
