@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>BYU-Idaho Info Access</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="do-it.js"></script>
+    </head>
+    <body>
+        <header>
+
+        </header>
+        <main>
+            <form>
+                <div id="show-if-not-logged-in">
+                    <label for="external-login" id="login-external"></label>
+                    <input id="external-login" name="external-login" type="button" value="Login (externally)">
+                </div>
+                <p id="show-if-logged-in">
+                    Hello, <span id="users-name">[person's name]</span>!<br>
+                </p>
+                <label for="catalog-year">Select Catalog</label>
+                <select name="catalog-year" id="catalog-year">
+                    <option value="5da4ba8c040540001a7c83e2">2020-2021 BYU-Idaho Catalog</option>
+                    <option value="5ab3e6e0680e1a001a093dbc">2019-2020 BYU-Idaho Catalog</option>
+                    <option value="58dc843f984c63d67b7f3e4b">2017-2019 BYU-Idaho Catalog</option>
+                </select>
+            </form>
+        </main>
+        <footer>
+            
+        </footer>
+    </body>
+</html>

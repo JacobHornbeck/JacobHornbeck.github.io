@@ -1,0 +1,14 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#show-if-not-logged-in,
+#show-if-logged-in {
+    display: none;
+}
+
+label, input, select {
+    display: block;
+    padding: 0.4em;
+}
+
