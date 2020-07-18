@@ -810,6 +810,9 @@ div.tag:hover {
     padding-top: 0;
     margin: 30px auto;
 }
+.fitter h2 {
+    text-align: left;
+}
 .fitter > p {
     font-family: var(--heading-font);
 }
