@@ -14,10 +14,11 @@
 
 /* General */
 body {
-    background-image: linear-gradient(45deg, gray, lightgray, white);
+    background-image: linear-gradient(45deg, gray, lightgray, white, lightgray, gray);
     background-attachment: fixed;
     font-size: 16px;
     margin: 0;
+    min-height: calc(100%);
 }
 header, main, footer {
     margin: 0 auto;
@@ -30,6 +31,7 @@ header, footer {
 }
 main {
     max-width: 960px;
+    padding-top: 110px;
 }
 img {
     max-width: 100%;
@@ -50,11 +52,15 @@ p, ul, ol, span, small, button {
 
 /* Header Styles */
 header {
-    background-color: var(--primary-color);
     display: grid;
     grid-template-columns: 1fr 1fr;
+    background-color: var(--primary-color);
+    width: calc(100% - 2em);
     align-items: center;
     padding: 0 1rem;
+    position: fixed;
+    z-index: 900;
+    top: 0;
 }
 .logo-name {
     width: 330px;
@@ -63,7 +69,27 @@ header {
     grid-template-columns: 80px auto;
     justify-items: center;
     align-items: center;
-    transition: background 0.4s;
+}
+.logo-name a {
+    display: block;
+    justify-self: start;
+    text-decoration: none;
+    margin: 1.34rem 0;
+}
+header h1 {
+    margin: 0;
+    opacity: 0;
+    margin-left: -50px;
+    transform: scale(0.8);
+    color: var(--other-color);
+    transition: margin-left 0.5s, opacity 0.3s, padding-left 0.5s, transform 0.5s;
+}
+header:hover h1 {
+    opacity: 1;
+    margin-left: 0;
+    padding-left: 10px;
+    transform: scale(1);
+    transition: margin-left 0.5s, opacity 0.6s, padding-left 0.5s, transform 0.5s;
 }
 .logo-name > .logo {
     position: relative;
@@ -126,7 +152,6 @@ nav a {
 }
 nav a.at {
     background-color: rgba(255,255,255,0.3);
-    border-radius: 5px;
 }
 nav a.at:hover {
     background-color: transparent;
@@ -166,7 +191,7 @@ nav a:hover {
 /* Footer */
 footer {
     background: var(--primary-color);
-    padding: 5rem 1rem 10px;
+    padding: 3rem 1rem 10px;
     font-family: var(--paragraph-font);
     color: var(--accent2-color);
 }
@@ -252,11 +277,11 @@ footer > div.border-top img:hover {
 #hero {
     position: relative;
     background-image: url("../images/hero-image-scroll.jpg");
-    box-shadow: 2px 2px 5px var(--accent2-color);
+    box-shadow: 2px 2px 10px var(--accent2-color);
     background-attachment: scroll;
-    border-radius: 0 0 10px 10px;
     background-position: 0 0;
     background-size: cover;
+    border-radius: 10px;
     height: 200px;
     z-index: 4;
 }
@@ -278,7 +303,7 @@ footer > div.border-top img:hover {
     grid-column: 1 / span 1;
     grid-row: 1 / span 2;
     border-radius: 10px;
-    box-shadow: 2px 2px 5px var(--accent2-color);
+    box-shadow: 2px 2px 10px var(--accent2-color);
 }
 #hero + section > h2 {
     grid-column: 2 / span 1;
@@ -411,13 +436,14 @@ a.tag:hover, div.tag:hover {
 #last-call {
     padding: 75px 0;
     position: relative;
+    box-shadow: 2px 2px 10px var(--accent2-color);
     background-image: url("../images/last-call-scroll.jpg");
     background-attachment: local;
-    border-radius: 10px 10px 0 0;
     background-position: 0 0;
     background-size: cover;
+    border-radius: 10px;
+    margin-bottom: 40px;
     z-index: 4;
-    box-shadow: 2px 2px 5px var(--accent2-color);
 }
 #last-call div {
     width: 480px;
@@ -466,10 +492,12 @@ a.tag:hover, div.tag:hover {
     padding: 5px 0 30px;
     height: calc(200px - 35px);
     background-image: url("../images/mission-photo.jpg");
+    box-shadow: 2px 2px 10px var(--primary-color);
     background-attachment: local;
     background-position: center;
     background-size: cover;
-    border-radius: 0 0 10px 10px;
+    border-radius: 10px;
+    margin-top: 10px;
 }
 .inside {
     width: 50%;
@@ -486,26 +514,31 @@ a.tag:hover, div.tag:hover {
     color: var(--other-color);
 }
 .courses-offered {
-    position: relative;
     width: 90%;
-    max-width: 950px;
     padding-top: 0;
+    max-width: 950px;
     min-height: 100px;
-    margin: 40px auto 0;
+    position: relative;
+    margin: 70px auto 0;
     border-radius: 10px;
+    background-color: #DCDCDC;
     border: solid 1px var(--accent2-color);
+    box-shadow: 5px -5px 5px var(--primary-color);
 }
 .courses-offered > h2 {
-    border-radius: 5px;
-    left: calc(50% - 200px);
+    left: calc(50% - 201px);
     position: absolute;
     width: 400px;
     z-index: 101;
 }
 .courses-offered > h2.up {
-    background-image: linear-gradient(45deg, darkgray, lightgray, white);
+    box-shadow: 5px -5px 5px var(--primary-color);
+    border: solid 1px var(--accent2-color);
+    border-radius: 10px 10px 0 0;
+    background-color: #DCDCDC;
     transition: all 0.3s;
-    top: -2.4rem;
+    border-bottom: none;
+    top: -3rem;
 }
 .courses-offered > h2.down {
     background-color: transparent;
@@ -765,26 +798,34 @@ div.tag:hover {
     background-color: #2B22E3;
 }
 .great-idea {
-    width: 45%;
+    width: 50%;
     border-radius: 10px;
-    margin: 40px auto 0;
-    padding: 0 1rem 0.6rem;
+    margin: 50px auto 0;
+    padding: 0.7rem 1rem 1.3rem;
     border: solid 1px var(--accent2-color);
     background-color: rgba(255,255,255,0.3);
+    box-shadow: 2px 2px 10px var(--primary-color);
 }
-.great-idea h3 {
+.great-idea h2 {
     text-align: center;
     color: var(--accent2-color);
 }
 .great-idea p {
     font-size: 0.9rem;
+    text-align: center;
 }
 /* Start Learning */
 
 
 /* Login/Create Account */
 .bottom-padding.non-transparent-background {
+    box-shadow: 2px 2px 10px var(--primary-color);
     background-color: var(--other-color);
+    border-radius: 10px;
+    margin-bottom: 40px;
+    margin-top: 110px;
+    overflow: hidden;
+    padding-top: 0;
 }
 .bottom-padding {
     padding-bottom: 50px;
@@ -927,6 +968,133 @@ input[type="submit"]:hover, .login-with:hover {
 #email-fp, #email-ca {
     font-family: var(--heading-font);
     color: var(--primary-color);
+}
+.input-container > .valid {
+    display: none;
+}
+.input-container > input:focus ~ .valid,
+.input-container > input:valid ~ .valid {
+    position: absolute;
+    top: 0; right: 0;
+    display: block;
+    height: 32px;
+    width: 32px;
+}
+.valid > div {
+    position: absolute;
+    border-radius: 12%;
+    transition: all 0.1s;
+    width: calc(50% - 9px);
+    height: calc(50% - 9px);
+    transform: rotate(45deg);
+}
+.valid .green {
+    z-index: 2;
+    top: 9px; left: 9px;
+    background-color: var(--accent1-color);
+}
+.valid .yellow {
+    z-index: 1;
+    top: 9px; left: 16px;
+    background-color: var(--secondary-color);
+}
+.valid .gray {
+    z-index: 1;
+    top: 16px; left: 9px;
+    background-color: var(--primary-color);
+}
+.valid .blue {
+    z-index: 2;
+    top: 16px; left: 16px;
+    background-color: #2B22E3;
+}
+
+
+.valid.loading .green {
+    z-index: 2;
+    top: 9px; left: 9px;
+    background-color: var(--accent1-color);
+    animation: gear-clockwise 0.5s infinite;
+}
+.valid.loading .yellow {
+    z-index: 1;
+    top: 9px; left: 16px;
+    background-color: var(--secondary-color);
+    animation: gear-counterclockwise 0.5s infinite;
+}
+.valid.loading .gray {
+    z-index: 1;
+    top: 16px; left: 9px;
+    background-color: var(--primary-color);
+    animation: gear-counterclockwise 0.5s infinite;
+}
+.valid.loading .blue {
+    z-index: 2;
+    top: 16px; left: 16px;
+    background-color: #2B22E3;
+    animation: gear-clockwise 0.5s infinite;
+}
+
+
+.valid.true {
+    transform: rotate(360deg);
+    transition: transform 0.5s;
+}
+.valid.true > div {
+    transition: all 0.5s;
+}
+.valid.true .green {
+    z-index: 2;
+    top: 13px; left: 15px;
+    background-color: var(--accent1-color);
+}
+.valid.true .yellow {
+    z-index: 1;
+    top: 13px; left: 5px;
+    background-color: var(--accent1-color);
+}
+.valid.true .gray {
+    z-index: 1;
+    top: 8px; left: 20px;
+    background-color: var(--accent1-color);
+}
+.valid.true .blue {
+    z-index: 2;
+    top: 18px; left: 10px;
+    background-color: var(--accent1-color);
+}
+
+
+.valid.false {
+    transform: rotate(360deg);
+    transition: transform 0.5s;
+}
+.valid.false > div {
+    transition: all 0.5s;
+}
+.valid.false .green {
+    z-index: 2;
+    top: 16px; left: 16px;
+    background-color: #FF1A00;
+    transform: rotate(45deg) scale(1.5,0.8);
+}
+.valid.false .yellow {
+    z-index: 1;
+    top: 16px; left: 9px;
+    background-color: #FF1A00;
+    transform: rotate(45deg) scale(0.8,1.5);
+}
+.valid.false .gray {
+    z-index: 1;
+    top: 9px; left: 16px;
+    background-color: #FF1A00;
+    transform: rotate(45deg) scale(0.8,1.5);
+}
+.valid.false .blue {
+    z-index: 2;
+    top: 9px; left: 9px;
+    background-color: #FF1A00;
+    transform: rotate(45deg) scale(1.5,0.8);
 }
 /* Login/Create Account */
 

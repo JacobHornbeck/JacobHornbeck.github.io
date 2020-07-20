@@ -29,7 +29,7 @@
                     <div class="gray"></div>
                     <div class="blue"></div>
                 </div>
-                <h1>Genius Coding</h1>
+                <a href="/"><h1>Genius Coding</h1></a>
             </div>
             <nav>
                 <ul>
@@ -93,20 +93,32 @@
                     <h2>Create Account</h2>
                     <form action="javascript: SubmitForm('ca&email='+document.forms[1].email.value)">
                         <div class="input-container">
-                            <input type="text" name="username" id="username-create" required>
+                            <input type="text" name="username" id="username-create" required onkeypress="LoadPerCharacter(true,this)" onkeyup="CheckValue(this)">
                             <label for="username-create" class="form-label">Username</label>
+                            <div class="valid">
+                                <div class="green"></div>
+                                <div class="yellow"></div>
+                                <div class="gray"></div>
+                                <div class="blue"></div>
+                            </div>
                         </div>
                         <div class="input-container">
-                            <input type="email" name="email" id="email-create" required>
-                            <label for="username-create" class="form-label">Email</label>
+                            <input type="text" name="email" id="email-create" required>
+                            <label for="email-create" class="form-label">Email</label>
                         </div>
                         <div class="input-container">
-                            <input type="password" name="password" id="password-create" required>
+                            <input type="password" name="password" id="password-create" required onkeypress="LoadPerCharacter(true,document.getElementById('password-confirm'))" onkeyup="CheckValue(document.getElementById('password-confirm'))">
                             <label for="password-create" class="form-label">Password</label>
                         </div>
                         <div class="input-container">
-                            <input type="password" name="confirm_password" id="password-confirm" required>
+                            <input type="password" name="confirm_password" id="password-confirm" required onkeypress="LoadPerCharacter(true,this)" onkeyup="CheckValue(this)">
                             <label for="password-confirm" class="form-label">Confirm Password</label>
+                            <div class="valid">
+                                <div class="green"></div>
+                                <div class="yellow"></div>
+                                <div class="gray"></div>
+                                <div class="blue"></div>
+                            </div>
                         </div>
                         <input type="submit" value="Create Account">
                     </form>
@@ -137,7 +149,7 @@
                     <p>Enter the email that is linked to your account</p>
                     <form action="javascript: SubmitForm('fp&email='+document.forms[2].email.value)">
                         <div class="input-container">
-                            <input type="email" name="email" id="username-forgot" required>
+                            <input type="text" name="email" id="username-forgot" required>
                             <label for="username-forgot" class="form-label">Email</label>
                         </div>
                         <input type="submit" value="Submit">
