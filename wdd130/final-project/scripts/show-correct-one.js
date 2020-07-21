@@ -75,7 +75,7 @@ function LoadPerCharacter(tr,elem) {
         }
         else {
             elemLater.className = 'valid false'
-            elemLater.title = 'That username is taken... choose another'
+            elemLater.title = 'Please enter a username' /* 'That username is taken... choose another' */
         }
         checkNow = false
     }

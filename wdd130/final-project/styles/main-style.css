@@ -1042,6 +1042,7 @@ input[type="submit"]:hover, .login-with:hover {
 }
 .valid.true > div {
     transition: all 0.5s;
+    transform: scale(1.1) rotate(45deg);
 }
 .valid.true .green {
     z-index: 2;
