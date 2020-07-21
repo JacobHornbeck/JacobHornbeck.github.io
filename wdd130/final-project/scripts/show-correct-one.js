@@ -65,9 +65,11 @@ function LoadPerCharacter(tr,elem) {
                 let oPass = document.getElementById('password-create')
                 if (oPass.value == laterElem.value) {
                     elemLater.className = 'valid true'
+                    elemLater.title = 'The passwords match'
                 }
                 else {
                     elemLater.className = 'valid false'
+                    elemLater.title = 'The passwords don\'t match'
                 }
             }
         }
