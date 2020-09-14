@@ -105,10 +105,9 @@ function Task(name,time) {
 
 function OpenClassWhen() {
     var classTimes = [
-        ['cit171',  ['monday', 'tuesday', 'wednesday', 'thursday'], '12:45pm'],
-        ['cse170',  [          'tuesday',              'thursday'],  '2:00pm'],
-        ['ecen106', ['monday',            'wednesday'            ],  '3:15pm'],
-        ['wdd130',  [          'tuesday'                         ],  '8:00pm'],
+        ['cse100',  [          'tuesday'                         ], '12:45pm'],
+        ['cit112',  ['monday',            'wednesday'            ], '10:15am'],
+        ['wdd230',  [                     'wednesday'            ],  '8:00pm'],
     ]
     for (var i = 0; i<classTimes.length; i++) {
         for (var j = 0; j<classTimes[i][1].length; j++) {
