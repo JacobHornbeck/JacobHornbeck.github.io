@@ -105,7 +105,6 @@ function Task(name,time) {
 
 function OpenClassWhen() {
     var classTimes = [
-        ['cse100',   [          'tuesday'                         ], '12:45pm'],
         ['cit112',   ['monday',            'wednesday'            ], '10:15am'],
         ['wdd230',   [                     'wednesday'            ],  '8:00pm'],
         ['institute',[                                 'thursday' ],  '5:30pm']
