@@ -1,8 +1,21 @@
 * {
     font-family: 'Gugi';
 }
+html {
+    background-color: lightblue;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    justify-items: center;
+    align-items: center;
+    height: 100%;
+}
 body {
+    border-radius: 5px;
+    min-height: 406px;
+    height: 70%;
     max-width: 700px;
+    background-color: white;
 }
 header {
     background-color: seagreen;
@@ -25,11 +38,19 @@ header > img {
     border-radius: 5px;
 }
 main {
-    width: 98%;
-    margin: 40px auto;
+    width: 95%;
+    height: calc(100% - 5em - 6em - 4em);
+    margin: 2em auto;
 }
 h2 {
     border-bottom: solid 1px #cccccc;
+    margin-bottom: 0;
+}
+ul {
+    margin: 0;
+    padding-top: 10px;
+    height: 94%;
+    overflow-y: scroll;
 }
 footer {
     background-color: seagreen;
