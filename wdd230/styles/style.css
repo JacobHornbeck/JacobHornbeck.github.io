@@ -1,11 +1,14 @@
 * {
     font-family: 'Gugi';
 }
+body {
+    max-width: 700px;
+}
 header {
     background-color: seagreen;
     padding: 1em;
     display: grid;
-    grid-template-columns: auto 10%;
+    grid-template-columns: auto 20%;
     grid-template-rows: 5em;
     justify-items: center;
     border-radius: 5px;
@@ -43,4 +46,8 @@ footer a {
 footer a:hover {
     color: lightgreen;
     text-shadow: 1px 1px 10px lightblue;
+}
+#updated {
+    color: lightblue;
+    font-size: 12px;
 }
