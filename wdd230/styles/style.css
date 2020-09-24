@@ -33,25 +33,26 @@ h1 {
     align-self: center;
 }
 header > img {
-    float: right;
     width: 100%;
     box-shadow: 1px 1px 10px black;
     border-radius: 5px;
 }
 main {
-    width: 95%;
-    height: calc(100% - 5em - 6em - 4em);
-    margin: 2em auto;
+    width: 97%;
+    height: calc(100% - 5em - 6em - 4em + 5px);
+    margin: 2em 0 2em auto;
 }
 h2 {
     border-bottom: solid 1px #cccccc;
     margin-bottom: 0;
+    width: 95%;
 }
 ul {
     margin: 0;
     padding-top: 10px;
+    width: calc(100% - 40px);
     height: 94%;
-    overflow-y: scroll;
+    overflow-y: auto;
 }
 footer {
     background-color: seagreen;
@@ -72,4 +73,13 @@ footer a:hover {
 #updated {
     color: lightblue;
     font-size: 12px;
+}
+#not-reasonable-size {
+    display: none;
+}
+.brk1 {
+    display: none;
+}
+.unBrk1 {
+    display: inline;
 }

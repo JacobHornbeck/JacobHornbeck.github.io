@@ -1,0 +1,26 @@
+.brk1 {
+    display: block;
+}
+.unBrk1 {
+    display: none;
+}
+h1 {
+    justify-self: start;
+}
+@media screen and (max-width: 405px) {
+    header {
+        grid-template-columns: auto 54.8px;
+    }
+    .brk2 {
+        display: block;
+    }
+    .unBrk2 {
+        display: none;
+    }
+    h2 {
+        text-align: center;
+    }
+    ul {
+        padding-left: 20px;
+    }
+}
