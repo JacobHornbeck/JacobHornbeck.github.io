@@ -45,8 +45,8 @@ section * {
 h3 {
     margin: 0;
     font-family: 'Gugi', sans-serif;
-    padding: 6px;
-    text-align: left;
+    padding: 10px;
+    /* text-align: center; */
     background: seagreen;
     color: white;
 }
