@@ -4,8 +4,14 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Weather or Not | Color Scheme</title>
+        <meta name="description" content="Weather of Not site planning page. This
+                    page is about the target audience.">
         <link rel="icon" href="images/favicon.ico" type="icon">
+        <link rel="stylesheet" href="styles/normalize.css">
         <link rel="stylesheet" href="styles/style.css">
+        <link rel="stylesheet" href="styles/medium.css" media="(max-width: 950px)">
+        <link rel="stylesheet" href="styles/small.css" media="(max-width: 640px)">
+        <link rel="stylesheet" href="styles/tiny.css" media="(max-width: 299px)">
     </head>
     <body>
         <div class="shadow-blocker-1"></div>
@@ -32,69 +38,63 @@
                 You can view my colors on <a target="_blank" href="https://coolors.co/2e8b57-add8e6-90ee90-ffffff-2f2f2f">
                 this coolors page</a>.
             </p>
-            <p>
-                The following table show what type of elements will be using what colors.
-            </p>
-            <table class="more-spacing">
-                <thead>
-                    <tr>
-                        <th></th>
-                        <th>Header</th>
-                        <th>Heading 1</th>
-                        <th>Heading 2</th>
-                        <th>Heading 3</th>
-                        <th>Heading 4</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <th>Text color:</th>
-                        <td class="bgBlue "><span class="cDark ">#ADD8E6</span></td>
-                        <td class="bgWhite"><span class="cDark ">#FFFFFF</span></td>
-                        <td class="bgGreen"><span class="cWhite">#2E8B57</span></td>
-                        <td class="bgDark "><span class="cWhite">#2F2F2F</span></td>
-                        <td class="bgDark "><span class="cWhite">#2F2F2F</span></td>
-                    </tr>
-                    <tr>
-                        <th>Background color:</th>
-                        <td class="bgGreen"><span class="cWhite">#2E8B57</span></td>
-                        <td class="bgGreen"><span class="cWhite">#2E8B57</span></td>
-                        <td class="       "><span class="cDark ">None</span></td>
-                        <td class="       "><span class="cDark ">None</span></td>
-                        <td class="       "><span class="cDark ">None</span></td>
-                    </tr>
-                </tbody>
-            </table>
-            <table class="more-spacing">
-                <thead>
-                    <tr>
-                        <th></th>
-                        <th>nav a</th>
-                        <th>nav a.at</th>
-                        <th>nav a:hover</th>
-                        <th>Paragraphs</th>
-                        <th>Links</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <th>Text color:</th>
-                        <td class="bgWhite"><span class="cDark ">#FFFFFF</span></td>
-                        <td class="bgWhite"><span class="cDark ">#FFFFFF</span></td>
-                        <td class="bgGreen"><span class="cWhite">#2E8B57</span></td>
-                        <td class="bgDark "><span class="cWhite">#2F2F2F</span></td>
-                        <td class="bgGreen"><span class="cWhite">#2E8B57</span></td>
-                    </tr>
-                    <tr>
-                        <th>Background color:</th>
-                        <td class="bgDark "><span class="cWhite">#2F2F2F</span></td>
-                        <td class="bgGreen"><span class="cWhite">#2E8B57</span></td>
-                        <td class="bgWhite"><span class="cDark ">#FFFFFF</span></td>
-                        <td class="       "><span class="cDark ">None</span></td>
-                        <td class="       "><span class="cDark ">None</span></td>
-                    </tr>
-                </tbody>
-            </table>
+            <div id="color-scheme-wrapper">
+                <div class="color-scheme">
+                    <h4>Element Name</h4>
+                    <div title="text color" class="s-color">Text Color</div>
+                    <div title="background color" class="s-color">Background Color</div>
+                </div>
+                <div class="color-scheme">
+                    <h4>Header</h4>
+                    <div title="text color" class="s-color bgBlue cDark">#ADD8E6</div>
+                    <div title="background color" class="s-color bgGreen cWhite">#2E8B57</div>
+                </div>
+                <div class="color-scheme">
+                    <h4>Heading 1</h4>
+                    <div title="text color" class="s-color bgWhite cDark">#FFFFFF</div>
+                    <div title="background color" class="s-color bgGreen cWhite">#2E8B57</div>
+                </div>
+                <div class="color-scheme">
+                    <h4>Heading 2</h4>
+                    <div title="text color" class="s-color bgGreen cWhite">#2E8B57</div>
+                    <div title="background color" class="s-color cDark">None</div>
+                </div>
+                <div class="color-scheme">
+                    <h4>Heading 3</h4>
+                    <div title="text color" class="s-color bgDark cWhite">#2F2F2F</div>
+                    <div title="background color" class="s-color cDark">None</div>
+                </div>
+                <div class="color-scheme">
+                    <h4>Heading 4</h4>
+                    <div title="text color" class="s-color bgDark cWhite">#2F2F2F</div>
+                    <div title="background color" class="s-color cDark">None</div>
+                </div>
+                <div class="color-scheme">
+                    <h4>nav a</h4>
+                    <div title="text color" class="s-color bgWhite cDark">#FFFFFF</div>
+                    <div title="background color" class="s-color bgDark cWhite">#2F2F2F</div>
+                </div>
+                <div class="color-scheme">
+                    <h4>nav a.at</h4>
+                    <div title="text color" class="s-color bgWhite cDark">#FFFFFF</div>
+                    <div title="background color" class="s-color bgGreen cWhite">#2E8B57</div>
+                </div>
+                <div class="color-scheme">
+                    <h4>nav a:hover</h4>
+                    <div title="text color" class="s-color bgGreen cWhite">#2E8B57</div>
+                    <div title="background color" class="s-color bgWhite cDark">#FFFFFF</div>
+                </div>
+                <div class="color-scheme">
+                    <h4>Paragraphs</h4>
+                    <div title="text color" class="s-color bgDark cWhite">#2F2F2F</div>
+                    <div title="background color" class="s-color">None</div>
+                </div>
+                <div class="color-scheme">
+                    <h4>Links</h4>
+                    <div title="text color" class="s-color bgGreen cWhite">#2E8B57</div>
+                    <div title="background color" class="s-color">None</div>
+                </div>
+            </div>
             <hr>
             <h2>Help?</h2>
             <p>
@@ -107,6 +107,9 @@
             &copy;<span class="year">2020</span> Jacob Hornbeck | <a target="_blank" href="https://byui.edu/online">BYUI Online Learning</a>
             <span class="last-updated">Something didn't load right, please refresh.</span>
         </footer>
+        <div id="too-small">
+            <h3>Your screen size is too small to view this page</h3>
+        </div>
         <script src="scripts/script.js"></script>
     </body>
 </html>

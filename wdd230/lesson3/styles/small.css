@@ -1,0 +1,47 @@
+:root {
+    --main-color: #2e8b57;
+    --secondary-color: #add8e6;
+    --accent-color: #90ee90;
+    --default-light: #ffffff;
+    --default-dark: #2f2f2f;
+
+    --header-font: 'Exo 2', sans-serif;
+    --paragraph-font: 'Comfortaa', sans-serif;
+}
+
+body {
+    grid-template-columns: auto 95% auto;
+}
+header {
+    box-shadow: 0 0 10px var(--default-dark);
+}
+header h1 {
+    width: 230px;
+    margin-left: auto;
+    margin-right: auto;
+}
+nav {
+    position: static;
+}
+nav > ul {
+    grid-template-columns: 1fr;
+}
+section.grid {
+    grid-template-columns: 1fr;
+}
+section.grid img {
+    max-width: 300px;
+}
+#color-scheme-wrapper {
+    grid-template-columns: 1fr;
+}
+.color-scheme {
+    width: 70%;
+    max-width: 400px;
+    margin: 0 auto;
+}
+#typo-wrapper {
+    grid-template-columns: 1fr;
+    width: 90%;
+    margin: 0 auto;
+}
