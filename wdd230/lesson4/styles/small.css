@@ -20,6 +20,9 @@ nav li.toggler a {
     box-shadow: 0 0 10px var(--default-light), inset 0 0 10px var(--main-color);
     color: var(--main-color);
 }
+nav li.toggler a:hover {
+    cursor: pointer;
+}
 nav li.hide a {
     color: var(--default-light);
     background-color: var(--default-dark);
