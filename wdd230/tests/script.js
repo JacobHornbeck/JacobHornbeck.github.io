@@ -1,0 +1,41 @@
+var second_h2 = document.getElementById("second-h2")
+console.log("document.getElementById()")
+console.log(second_h2)
+console.log("")
+console.log("")
+
+var headings_from_class = document.getElementsByClassName("heading")
+console.log("document.getElementsByClassName()")
+console.log(headings_from_class)
+console.log("")
+console.log("")
+
+var headings0 = document.getElementsByClassName("heading")[0]
+console.log("document.getElementsByClassName()[0]")
+console.log(headings0)
+console.log("")
+console.log("")
+
+var other = document.getElementsByTagName("p")
+console.log("document.getElementsByTagName()")
+console.log(other)
+console.log("")
+console.log("")
+
+var query = document.querySelectorAll("h1, h2, h3, h4")
+console.log("document.querySelectorAll()")
+console.log(query)
+console.log("")
+console.log("")
+
+var something = document.querySelector("h1, h2, h3, h4")
+console.log("document.querySelector()")
+console.log(something)
+console.log("")
+console.log("")
+
+var some = document.getElementById("long-p")
+console.log("document.getElementById() - multiple ids")
+console.log(some)
+console.log("")
+console.log("")
