@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>SessionStorage</title>
+        <link rel="icon" href="favicon.png" type="icon">
+        <link rel="stylesheet" href="styles/styls.css">
+    </head>
+    <body>
+        <h1>SessionStorage Example #3:</h1>
+        <section class="example">
+            <h3>Store values:</h3>
+            <div id="key/value-session-inputs">
+            <input type="text" class="key" placeholder="Key name">
+            <input type="text" class="value" placeholder="Value">
+            </div>
+            <button onclick="addAnother()">Another</button>
+            <button onclick="storeVals()" class="right-button">Store Values</button>
+        </section>
+        <section class="example">
+            <h3>SessionStorage Items</h3>
+            <div id="all-session-items"></div>
+            <button onclick="getItems()" >Get Items</button>
+            <button onclick="clearStorage()" class="right-button">Clear</button>
+        </section>
+        <script src="scripts/ss-3.js"></script>
+    </body>
+</html>
