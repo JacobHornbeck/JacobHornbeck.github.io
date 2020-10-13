@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Quick Reference</title>
+        <style>
+            body {
+                background-image: url('./background.jpg');
+                background-position: center 0;
+                background-repeat: no-repeat;
+                background-size: cover;
+                grid-template-rows: 1fr 1fr;
+                grid-template-columns: 1fr;
+                justify-items: center;
+                position: absolute;
+                grid-gap: 10px;
+                display: grid;
+                height: 100%;
+                width: 100%;
+                padding: 0;
+                margin: 0;
+            }
+            #form-1 {
+                width: 80%;
+                max-width: 500px;
+                background-color: white;
+                grid-template-columns: 100px auto 50px;
+                border: solid 0.5px gray;
+                border-radius: 50px;
+                align-self: start;
+                overflow: hidden;
+                display: grid;
+                height: 46px;
+            }
+            #form-1 > * {
+                padding: 1em 0.5em;
+                border: none;
+                border-radius: 0;
+                outline: none;
+                background-color: white;
+            }
+            #form-1 > *:hover,
+            #form-1 > *:focus {
+                background-color: whitesmoke;
+            }
+            #web-reference > option {
+                background-color: seagreen;
+                color: lightblue;
+            }
+            #search-value {
+                width: 100%;
+            }
+            #search {
+                width: 50px;
+                justify-self: end;
+            }
+            #reference-logo {
+                max-width: 400px;
+                max-height: 250px;
+                align-self: end;
+                filter: drop-shadow(0 0 2px white);
+            }
+        </style>
+    </head>
+    <body>
+        <img id="reference-logo" src="./w3schools.png" alt="reference-logo">
+        <form onsubmit="submitHandler()" id="form-1">
+            <select name="reference" id="web-reference" onchange="adjustLogo()">
+                <option value="W3Schools">W3Schools</option>
+                <option value="MDN">MDN</option>
+                <option value="Wikipedia">Wikipedia</option>
+            </select>
+            <input type="text" id="search-value">
+            <input type="submit" value="&#128270;" id="search">
+        </form>
+
+        <script>
+            function submitHandler() {
+                event.preventDefault()
+                let connection = {
+                    'W3Schools': 'w3schools.com',
+                    'MDN': 'developer.mozilla.org',
+                    'Wikipedia': 'wikipedia.org'
+                }
+                let temp = document.getElementById('web-reference').value
+                let search_query = document.getElementById('search-value').value
+                let url = "https://www.bing.com/search?q=site%3A+"+connection[temp]+"+"+search_query.replace(' ','+')
+                window.open(url,'_self')
+            }
+
+            function adjustLogo() {
+                document.getElementById('reference-logo').src = "./"+
+                    document.getElementById('web-reference').value.toLowerCase()+".png"
+            }
+        </script>
+    </body>
+</html>
