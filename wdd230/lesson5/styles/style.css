@@ -177,8 +177,11 @@ section.contact-info {
     box-shadow: 0 0 10px var(--default-dark);
 }
 section.contact-info iframe {
+    width: 90%;
+    height: 200px;
     grid-column: 1;
     grid-row: span 3;
+    border: 0;
 }
 section.contact-info h3, section.contact-info ul {
     margin-top: 0;
@@ -223,7 +226,7 @@ div.social-links .fa-facebook-square:hover {
 div.social-links .fa-flickr:hover {
     cursor: pointer;
     background: linear-gradient(90deg, royalblue, deeppink);
-    background-clip: text;
+    background-clip: padding-box;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -232,7 +235,7 @@ div.hero {
     z-index: 1;
     position: relative;
     background-image: url("../images/hero-image.jpg");
-    background-size: 100%;
+    background-size: cover;
     background-position: left bottom;
     min-height: 200px;
     overflow: hidden;
@@ -252,9 +255,9 @@ div.hero section {
 div.hero section h4 {
     margin-top: 0.5rem; 
 }
-div.hero .shout-out {
+div .shout-out {
     display: block;
-    background-color: rgba(255,255,255,0.2);
+    background-color: rgba(255,255,255,0.8);
     position: absolute;
     bottom: -80px; right: 0;
     font-size: 12px;
@@ -262,12 +265,12 @@ div.hero .shout-out {
     transition: bottom 0.3s;
     transition-delay: 2s;
 }
-div.hero:hover .shout-out {
+div:hover .shout-out {
     transition-delay: 0.2s;
     bottom: 0;
 }
 .shout-out a {
-    color: var(--accent-color);
+    color: var(--main-color);
 }
 section.article {
     background-color: var(--secondary-color);
@@ -278,11 +281,20 @@ section.article {
     margin-bottom: 20px;
     max-width: 900px;
 }
-section.article img {
+section.article .img-holder {
     float: right;
     width: 50%;
     max-width: 300px;
-    padding: 0.5rem 0 0.5rem 0.5rem;
+    padding: 0.5rem 0 0 0.5rem;
+    position: relative;
+    overflow: hidden;
+}
+section.article:hover .shout-out {
+    transition-delay: 0.2s;
+    bottom: 4px;
+}
+.img-holder img {
+    width: 100%;
 }
 section.article h3 {
     margin-top: 0.5rem;
@@ -313,25 +325,30 @@ section.forecast h3 {
     text-align: center;
 }
 .five-day {
-    border-spacing: 0;
+    display: grid;
     margin: 0 auto;
+    grid-template-columns: repeat(5, 1fr);
+    max-width: 650px;
+}
+.five-day section {
+    border: solid 0.5px var(--default-dark);
+    padding: 0;
 }
 .five-day div {
     margin: 0 auto;
 }
-.five-day th, td {
-    border: solid 0.5px var(--default-dark);
-}
-.five-day th {
+.five-day h4 {
     background-color: var(--main-color);
     color: var(--default-light);
     text-align: center;
     padding: 0.5rem;
+    margin: 0;
 }
-.five-day td {
+.five-day span {
     color: var(--default-dark);
     text-align: center;
     padding: 0.5rem;
+    display: block;
 }
 .weather-icon {
     width: 60px;

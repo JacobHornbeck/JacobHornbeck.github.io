@@ -58,44 +58,39 @@
         </div>
         <section class="forecast">
             <h3>5 Day Forecast</h3>
-            <table class="five-day">
-                <thead>
-                    <tr>
-                        <th id="day1">Day 1</th>
-                        <th id="day2">Day 2</th>
-                        <th id="day3">Day 3</th>
-                        <th id="day4">Day 4</th>
-                        <th id="day5">Day 5</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>
-                            <div class="weather-icon partly-cloudy"></div>
-                            <span>89&deg;F</span>
-                        </td>
-                        <td>
-                            <div class="weather-icon cloudy"></div>
-                            <span>87&deg;F</span>
-                        </td>
-                        <td>
-                            <div class="weather-icon raining"></div>
-                            <span>78&deg;F</span>
-                        </td>
-                        <td>
-                            <div class="weather-icon sunny-raining"></div>
-                            <span>75&deg;F</span>
-                        </td>
-                        <td>
-                            <div class="weather-icon partly-cloudy"></div>
-                            <span>72&deg;F</span>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+            <div class="five-day">
+                <section>
+                    <h4 id="day1">Day 1</h4>
+                    <div class="weather-icon"></div>
+                    <span>89&deg;F</span>
+                </section>
+                <section>
+                    <h4 id="day2">Day 2</h4>
+                    <div class="weather-icon"></div>
+                    <span>87&deg;F</span>
+                </section>
+                <section>
+                    <h4 id="day3">Day 3</h4>
+                    <div class="weather-icon"></div>
+                    <span>78&deg;F</span>
+                </section>
+                <section>
+                    <h4 id="day4">Day 4</h4>
+                    <div class="weather-icon"></div>
+                    <span>75&deg;F</span>
+                </section>
+                <section>
+                    <h4 id="day5">Day 5</h4>
+                    <div class="weather-icon"></div>
+                    <span>72&deg;F</span>
+                </section>
+            </div>
         </section>
         <section class="article">
-            <img src="./images/article-placeholder.jpg" alt="pavilion">
+            <div class="img-holder">
+                <img src="./images/article-placeholder.jpg" alt="pavilion">
+                <span class="shout-out">Photo by <a href="https://unsplash.com/@aarsoph?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Kristijan Arsov</a> on <a href="https://unsplash.com/s/photos/city-park?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></span>
+            </div>
             <h3>Article Title</h3>
             <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut perferendis fugiat ullam animi porro magni
@@ -111,8 +106,7 @@
         <section class="contact-info">
             <iframe
                 src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d47366.34469339145!2d-111.87517579490891!3d42.098977407066165!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4v1602872714788!5m2!1sen!2sus"
-                width="90%" height="200px" frameborder="0" style="border:0;" allowfullscreen="false" aria-hidden="false"
-                tabindex="0"></iframe>
+                allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
             <h3>Contact Information</h3>
             <ul class="fa-ul">
                 <li><i class="fa-li fa fa-location-arrow"></i>123 S<sup>th</sup> Somewhere St.<span

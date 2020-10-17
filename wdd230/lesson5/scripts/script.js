@@ -32,5 +32,5 @@ var days = [
 ]
 var today = new Date().getDay()
 for (let i = 0; i<5; i++) {
-    document.getElementById("day"+(i+1)).innerHTML = days[i%days.length]
+    document.getElementById("day"+(i+1)).innerHTML = days[(today+i)%days.length]
 }
