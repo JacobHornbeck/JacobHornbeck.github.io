@@ -65,9 +65,10 @@ p, span, div, li, td, a {
     font-weight: bold;
     padding: 1rem;
     z-index: 25;
-}
-#big-banner span {
-    padding-left: 1em;
+    grid-template-columns: 30px auto 30px;
+    justify-items: center;
+    align-items: center;
+    grid-gap: 10px;
 }
 #big-banner i:last-child:hover {
     color: var(--main-color);
@@ -259,7 +260,63 @@ div.hero section h4 {
 .shout-out a {
     color: var(--accent-color);
 }
-
+section.article {
+    background-color: var(--secondary-color);
+    margin: 0 auto;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    max-width: 900px;
+}
+section.article img {
+    float: right;
+    max-width: 300px;
+    padding: 0.5rem 0 0.5rem 0.5rem;
+}
+section.article h3 {
+    margin-top: 0.5rem;
+}
+section.article p {
+    padding-left: 10px;
+}
+.days5 {
+    width: 90%;
+    margin: 0 auto;
+    border: solid 1px var(--default-dark);
+    grid-template-columns: repeat(5,1fr);
+    justify-items: center;
+    align-items: center;
+    padding: 0.6rem 0;
+    display: grid;
+    background-color: var(--secondary-color);
+}
+.day {
+    width: 100%;
+    max-width: 80px;
+    height: 80px;
+    background-image: url("../images/17-Free-Weather-Vector-Icons.jpg");
+}
+.day:nth-child(1) {
+    background-position-x: 311px;
+    background-position-y: 530px;
+}
+.day:nth-child(2) {
+    background-position-x: 440px;
+    background-position-y: 530px;
+}
+.day:nth-child(3) {
+    background-position-x: 697px;
+    background-position-y: 406px;
+}
+.day:nth-child(4) {
+    background-position-x: 567px;
+    background-position-y: 406px;
+}
+.day:nth-child(5) {
+    background-position-x: 311px;
+    background-position-y: 530px;
+}
 
 /* Styles for the footer and it's child elements */
 footer {

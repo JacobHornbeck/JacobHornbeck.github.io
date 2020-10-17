@@ -1,83 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Preston Town Page</title>
-        <meta name="description" content="Weather or Not's page for Preston Idaho.
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preston Town Page</title>
+    <meta name="description" content="Weather or Not's page for Preston Idaho.
                         Information about the weather for the city of Preston and
                         neighboring towns, cities, and areas.">
-        <link rel="shortcut icon" href="images/favicon.ico">
-        <link rel="stylesheet" href="styles/normalize.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="styles/style.css">
-        <link rel="stylesheet" href="styles/medium.css" media="(max-width: 1040px)">
-        <link rel="stylesheet" href="styles/small.css" media="(max-width: 850px)">
-        <link rel="stylesheet" href="styles/tiny.css" media="(max-width: 299px)">
-    </head>
-    <body>
-        <div class="shadow-blocker-1"></div>
-        <div class="shadow-blocker-2"></div>
-        <div id="big-banner">
-            <i class="fa fa-bell fa-pull-left"></i>
-            <span>Saturday = Preston Pancakes in the Park! 9:00 a.m. Saturday at the city park pavilion.</span>
-            <i onclick="closeBanner()" class="fa fa-close fa-pull-right"></i>
-        </div>
-        <header>
-            <h1>Weather or Not</h1>
-            <span>We've got the weather info you need</span>
-        </header>
-        <nav>
-            <ul>
-                <li class="toggler hide"><a onclick="toggleMenu()">&#9776; Menu</a></li>
-                <li><a class="  " href="#">Home</a></li>
-                <li><a class="at" href="#">Preston</a></li>
-                <li><a class="  " href="#">Soda Springs</a></li>
-                <li><a class="  " href="#">Fish Haven</a></li>
-                <li><a class="  " href="#">Storm Center</a></li>
-                <li><a class="  " href="#">Gallery</a></li>
-            </ul>
-        </nav>
-        <main>
-            <h2>Preston Idaho</h2>
-            <div class="hero">
-                <section>
-                    <h4>Weather Summary</h4>
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/medium.css" media="(max-width: 1040px)">
+    <link rel="stylesheet" href="styles/small.css" media="(max-width: 850px)">
+    <link rel="stylesheet" href="styles/tiny.css" media="(max-width: 299px)">
+</head>
 
-                </section>
-                <span class="shout-out">Photo by <a target="_blank" href="https://unsplash.com/@jdiegoph?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Diego PH</a> on <a target="_blank" href="https://unsplash.com/s/photos/sky-clouds?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></span>
+<body>
+    <div class="shadow-blocker-1"></div>
+    <div class="shadow-blocker-2"></div>
+    <div id="big-banner">
+        <i class="fa fa-bell"></i>
+        <span>Saturday = Preston Pancakes in the Park! 9:00 a.m. Saturday at the city park pavilion.</span>
+        <i onclick="closeBanner()" class="fa fa-close"></i>
+    </div>
+    <header>
+        <h1>Weather or Not</h1>
+        <span>We've got the weather info you need</span>
+    </header>
+    <nav>
+        <ul>
+            <li class="toggler hide"><a onclick="toggleMenu()">&#9776; Menu</a></li>
+            <li><a class="  " href="#">Home</a></li>
+            <li><a class="at" href="#">Preston</a></li>
+            <li><a class="  " href="#">Soda Springs</a></li>
+            <li><a class="  " href="#">Fish Haven</a></li>
+            <li><a class="  " href="#">Storm Center</a></li>
+            <li><a class="  " href="#">Gallery</a></li>
+        </ul>
+    </nav>
+    <main>
+        <h2>Preston Idaho</h2>
+        <div class="hero">
+            <section>
+                <h4>Weather Summary</h4>
+                
+            </section>
+            <span class="shout-out">Photo by <a target="_blank"
+                    href="https://unsplash.com/@jdiegoph?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Diego
+                    PH</a> on <a target="_blank"
+                    href="https://unsplash.com/s/photos/sky-clouds?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></span>
+        </div>
+        <section class="forecast">
+            <h3>5 Day Forecast</h3>
+            <div class="days5">
+                <div class="day"></div>
+                <div class="day"></div>
+                <div class="day"></div>
+                <div class="day"></div>
+                <div class="day"></div>
             </div>
-            <section class="forecast">
-                <h3>5 Day Forecast</h3>
-                <div class="5-days">
+        </section>
+        <section class="article">
+            <img src="./images/article-placeholder.jpg" alt="pavilion">
+            <h3>Article Title</h3>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut perferendis fugiat ullam animi porro magni
+                beatae voluptatum error saepe? Officia repellendus deserunt fugiat odio quo a obcaecati dolorem,
+                reprehenderit possimus esse, molestiae nihil. Veniam labore reprehenderit atque esse molestiae? Eaque
+                beatae doloribus quos placeat facere, hic saepe cum ea pariatur distinctio! Sapiente, aperiam blanditiis
+                non eos rerum consectetur ex quod sed molestiae ipsum tempore, ea, reiciendis dolorum. Consequatur
+                aspernatur modi doloribus repellat nostrum debitis natus maxime? Itaque aspernatur necessitatibus nobis
+                ratione explicabo illo voluptates recusandae dolorum ducimus expedita quibusdam facere ex alias
+                consequatur numquam, atque cum quis placeat fuga perferendis.
+            </p>
+        </section>
+        <section class="contact-info">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d47366.34469339145!2d-111.87517579490891!3d42.098977407066165!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4v1602872714788!5m2!1sen!2sus"
+                width="90%" height="200px" frameborder="0" style="border:0;" allowfullscreen="false" aria-hidden="false"
+                tabindex="0"></iframe>
+            <h3>Contact Information</h3>
+            <ul class="fa-ul">
+                <li><i class="fa-li fa fa-location-arrow"></i>123 S<sup>th</sup> Somewhere St.<span
+                        id="brk1"></span>Preston, ID 83263</li>
+                <li><i class="fa-li fa fa-phone"></i>(208) 123-4567</li>
+                <li><i class="fa-li fa fa-envelope"></i>info@weather-or-not.org</li>
+            </ul>
+            <div class="social-links">
+                <a href="https://currents.google.com/" target="_blank" class="fa fa-google-plus-square"></a>
+                <a href="https://facebook.com/" target="_blank" class="fa fa-facebook-square"></a>
+                <a href="https://flickr.com/" target="_blank" class="fa fa-flickr"></a>
+            </div>
+        </section>
+    </main>
+    <footer>
+        &copy;<span class="year">2020</span> Jacob Hornbeck | <a target="_blank" href="https://byui.edu/online">BYUI Online Learning</a>
+        <span class="last-updated">Something didn't load right, please refresh.</span>
+    </footer>
+    <div id="too-small">
+        <h3>Your screen size is too small to view this page</h3>
+    </div>
+    <script src="scripts/script.js"></script>
+</body>
 
-                </div>
-            </section>
-            <section class="article">
-                <h3>Article Title</h3>
-            </section>
-            <section class="contact-info">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d47366.34469339145!2d-111.87517579490891!3d42.098977407066165!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4v1602872714788!5m2!1sen!2sus" width="90%" height="200px" frameborder="0" style="border:0;" allowfullscreen="false" aria-hidden="false" tabindex="0"></iframe>
-                <h3>Contact Information</h3>
-                <ul class="fa-ul">
-                    <li><i class="fa-li fa fa-location-arrow"></i>123 S<sup>th</sup> Somewhere St.<span id="brk1"></span>Preston, ID 83263</li>
-                    <li><i class="fa-li fa fa-phone"></i>(208) 123-4567</li>
-                    <li><i class="fa-li fa fa-envelope"></i>info@weather-or-not.org</li>
-                </ul>
-                <div class="social-links">
-                    <a href="https://currents.google.com/" target="_blank" class="fa fa-google-plus-square"></a>
-                    <a href="https://facebook.com/" target="_blank" class="fa fa-facebook-square"></a>
-                    <a href="https://flickr.com/" target="_blank" class="fa fa-flickr"></a>
-                </div>
-            </section>
-        </main>
-        <footer>
-            &copy;<span class="year">2020</span> Jacob Hornbeck | <a target="_blank" href="https://byui.edu/online">BYUI Online Learning</a>
-            <span class="last-updated">Something didn't load right, please refresh.</span>
-        </footer>
-        <div id="too-small">
-            <h3>Your screen size is too small to view this page</h3>
-        </div>
-        <script src="scripts/script.js"></script>
-    </body>
 </html>

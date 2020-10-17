@@ -12,7 +12,7 @@ function toggleMenu() {
 }
 
 if (new Date().getDay() == 5) {
-    document.getElementById("big-banner").style.display = "block"
+    document.getElementById("big-banner").style.display = "grid"
 }
 
 function closeBanner() {
