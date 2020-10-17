@@ -56,7 +56,27 @@ section.contact-info h3,
 section.contact-info .social-links {
     margin-left: calc(35% - 120px);
 }
+div.hero:hover section {
+    transition-delay: 0s;
+    top: 10px;
+}
 
+
+@media screen and (max-width: 657px) {
+    h2, h3 {
+        text-align: center;
+    }
+    section.forecast {
+        display: none;
+    }
+    section.article img {
+        width: 70%;
+        max-width: 400px;
+        float: none;
+        margin: 0 auto;
+        display: block;
+    }
+}
 
 @media screen and (max-width: 425px) {
     #brk1 {

@@ -43,9 +43,13 @@
     <main>
         <h2>Preston Idaho</h2>
         <div class="hero">
-            <section>
+            <section class="summary">
                 <h4>Weather Summary</h4>
-                
+                <span>Currently:</span> <span class="colored">Sunny</span>
+                <span>High:</span>      <span class="colored">76&deg;F</span>
+                <span>Wind Chill:</span><span class="colored">&deg;F</span>
+                <span>Humidity:</span>  <span class="colored">69%</span>
+                <span>Wind Speed:</span><span class="colored">5 mph</span>
             </section>
             <span class="shout-out">Photo by <a target="_blank"
                     href="https://unsplash.com/@jdiegoph?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Diego
@@ -54,13 +58,41 @@
         </div>
         <section class="forecast">
             <h3>5 Day Forecast</h3>
-            <div class="days5">
-                <div class="day"></div>
-                <div class="day"></div>
-                <div class="day"></div>
-                <div class="day"></div>
-                <div class="day"></div>
-            </div>
+            <table class="five-day">
+                <thead>
+                    <tr>
+                        <th id="day1">Day 1</th>
+                        <th id="day2">Day 2</th>
+                        <th id="day3">Day 3</th>
+                        <th id="day4">Day 4</th>
+                        <th id="day5">Day 5</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <div class="weather-icon partly-cloudy"></div>
+                            <span>89&deg;F</span>
+                        </td>
+                        <td>
+                            <div class="weather-icon cloudy"></div>
+                            <span>87&deg;F</span>
+                        </td>
+                        <td>
+                            <div class="weather-icon raining"></div>
+                            <span>78&deg;F</span>
+                        </td>
+                        <td>
+                            <div class="weather-icon sunny-raining"></div>
+                            <span>75&deg;F</span>
+                        </td>
+                        <td>
+                            <div class="weather-icon partly-cloudy"></div>
+                            <span>72&deg;F</span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
         </section>
         <section class="article">
             <img src="./images/article-placeholder.jpg" alt="pavilion">

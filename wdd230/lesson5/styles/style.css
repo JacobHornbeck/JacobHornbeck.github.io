@@ -232,30 +232,39 @@ div.hero {
     z-index: 1;
     position: relative;
     background-image: url("../images/hero-image.jpg");
-    background-size: cover;
-    background-position: center bottom;
+    background-size: 100%;
+    background-position: left bottom;
     min-height: 200px;
+    overflow: hidden;
 }
 div.hero section {
     top: 20px;
     left: 20px;
-    position: absolute;
     width: 160px;
+    position: absolute;
     height: calc(100% - 40px);
     background: rgba(255,255,255,0.3);
-    background-image: linear-gradient(-135deg, rgba(255,255,255,0.3), rgba(100,100,100,0.3));
+    background-image: linear-gradient(-160deg, rgba(255,255,255,0.4) 50%, rgba(100,100,100,0.3));
     animation: come-in 2s ease-in-out;
+    transition: top 0.3s;
+    transition-delay: 2.3s;
 }
 div.hero section h4 {
-    margin-top: 0.5rem;
+    margin-top: 0.5rem; 
 }
-.shout-out {
+div.hero .shout-out {
     display: block;
-    background-color: rgba(255,255,255,0.1);
+    background-color: rgba(255,255,255,0.2);
     position: absolute;
-    bottom: 0; right: 0;
+    bottom: -80px; right: 0;
     font-size: 12px;
     padding: 0.3rem;
+    transition: bottom 0.3s;
+    transition-delay: 2s;
+}
+div.hero:hover .shout-out {
+    transition-delay: 0.2s;
+    bottom: 0;
 }
 .shout-out a {
     color: var(--accent-color);
@@ -271,6 +280,7 @@ section.article {
 }
 section.article img {
     float: right;
+    width: 50%;
     max-width: 300px;
     padding: 0.5rem 0 0.5rem 0.5rem;
 }
@@ -280,42 +290,55 @@ section.article h3 {
 section.article p {
     padding-left: 10px;
 }
-.days5 {
-    width: 90%;
-    margin: 0 auto;
-    border: solid 1px var(--default-dark);
-    grid-template-columns: repeat(5,1fr);
-    justify-items: center;
-    align-items: center;
-    padding: 0.6rem 0;
+section.summary {
     display: grid;
-    background-color: var(--secondary-color);
+    grid-template-columns: 3fr 2fr;
 }
-.day {
-    width: 100%;
-    max-width: 80px;
-    height: 80px;
-    background-image: url("../images/17-Free-Weather-Vector-Icons.jpg");
+section.summary h4 {
+    grid-column: span 2;
+    margin-bottom: 0;
+    text-align: center;
 }
-.day:nth-child(1) {
-    background-position-x: 311px;
-    background-position-y: 530px;
+section.summary span {
+    font-size: 13px;
+    text-align: right;
+    font-weight: bold;
 }
-.day:nth-child(2) {
-    background-position-x: 440px;
-    background-position-y: 530px;
+section.summary span.colored {
+    text-align: left;
+    padding-left: 5px;
+    color: var(--main-color);
 }
-.day:nth-child(3) {
-    background-position-x: 697px;
-    background-position-y: 406px;
+section.forecast h3 {
+    text-align: center;
 }
-.day:nth-child(4) {
-    background-position-x: 567px;
-    background-position-y: 406px;
+.five-day {
+    border-spacing: 0;
+    margin: 0 auto;
 }
-.day:nth-child(5) {
-    background-position-x: 311px;
-    background-position-y: 530px;
+.five-day div {
+    margin: 0 auto;
+}
+.five-day th, td {
+    border: solid 0.5px var(--default-dark);
+}
+.five-day th {
+    background-color: var(--main-color);
+    color: var(--default-light);
+    text-align: center;
+    padding: 0.5rem;
+}
+.five-day td {
+    color: var(--default-dark);
+    text-align: center;
+    padding: 0.5rem;
+}
+.weather-icon {
+    width: 60px;
+    height: 60px;
+    background-image: url("../images/weather-icons-dark.png");
+    background-position: -11px -13px;
+    transform: scale(0.9);
 }
 
 /* Styles for the footer and it's child elements */
