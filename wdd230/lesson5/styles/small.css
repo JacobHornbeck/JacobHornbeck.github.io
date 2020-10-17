@@ -33,3 +33,41 @@ nav ul li.hide ~ * a {
     padding: 0;
     height: 0;
 }
+
+
+section.contact-info {
+    grid-template-columns: 1fr;
+}
+section.contact-info iframe {
+    width: 100%;
+    height: 300px;
+    grid-column: 1;
+    grid-row: span 1;
+    grid-gap: 10px;
+}
+section.contact-info h3 {
+    margin-top: 1rem;
+}
+section.contact-info ul {
+    margin-left: calc(2.14285714em + (35% - 120px));
+    margin-bottom: 15px;
+}
+section.contact-info h3,
+section.contact-info .social-links {
+    margin-left: calc(35% - 120px);
+}
+
+
+@media screen and (max-width: 425px) {
+    #brk1 {
+        display: block;
+    }
+    section.contact-info ul {
+        margin-left: calc(2.14285714em + (30% - 70px));
+        margin-bottom: 15px;
+    }
+    section.contact-info h3,
+    section.contact-info .social-links {
+        margin-left: calc(30% - 70px);
+    }
+}
