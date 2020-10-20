@@ -4,11 +4,6 @@ body {
 header {
     box-shadow: 0 0 10px var(--default-dark);
 }
-header h1 {
-    width: 230px;
-    margin-left: auto;
-    margin-right: auto;
-}
 nav ul {
     grid-template-columns: 1fr;
 }
@@ -56,10 +51,6 @@ section.contact-info h3,
 section.contact-info .social-links {
     margin-left: calc(35% - 120px);
 }
-div.hero:hover section {
-    transition-delay: 0s;
-    top: 10px;
-}
 
 
 @media screen and (max-width: 657px) {
@@ -81,6 +72,12 @@ div.hero:hover section {
     section.article .img-holder {
         min-width: 0px;
         width: 100%;
+    }
+    header h1 {
+        font-size: 2rem;
+    }
+    header span {
+        font-size: 0.8rem;
     }
 }
 
@@ -105,5 +102,12 @@ div.hero:hover section {
     .five-day section:nth-child(1),
     .five-day section:nth-child(2) {
         grid-column: span 3;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    div.hero:hover section {
+        transition-delay: 0s;
+        top: 10px;
     }
 }
