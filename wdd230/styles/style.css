@@ -54,6 +54,9 @@ ul {
     height: 94%;
     overflow-y: auto;
 }
+ul li {
+    padding-bottom: 5px;
+}
 footer {
     background-color: seagreen;
     color: white;
@@ -82,4 +85,25 @@ footer a:hover {
 }
 .unBrk1 {
     display: inline;
+}
+
+
+::-webkit-scrollbar {
+    width: 7px;
+}
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+::-webkit-scrollbar-thumb {
+    background-image: linear-gradient(
+        45deg,
+        seagreen,
+        seagreen,
+        lightblue,
+        lightblue,
+        seagreen,
+        seagreen,
+        lightblue,
+        lightblue
+    );
 }
