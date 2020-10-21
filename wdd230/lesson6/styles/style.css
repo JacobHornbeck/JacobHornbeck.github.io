@@ -234,23 +234,26 @@ div.social-links .fa-flickr:hover {
 div.hero {
     z-index: 1;
     position: relative;
-    background-image: url("../images/hero-image.jpg");
+    /* background-image: url("../images/hero-image.jpg");
     background-size: cover;
-    background-position: left bottom;
-    min-height: 200px;
+    background-position: left bottom; */
     overflow: hidden;
+}
+div.hero picture, div.hero picture img {
+    width: 100%;
 }
 div.hero section {
     top: 20px;
     left: 20px;
     width: 160px;
+    height: 160px;
     position: absolute;
-    height: calc(100% - 40px);
     background: rgba(255,255,255,0.3);
     background-image: linear-gradient(-160deg, rgba(255,255,255,0.4) 50%, rgba(100,100,100,0.3));
     animation: come-in 2s ease-in-out;
     transition: top 0.3s;
-    transition-delay: 2.3s;
+    /* transition-delay: 2.3s; */
+    transition-delay: 0s;
 }
 div.hero section h4 {
     margin-top: 0.5rem; 
