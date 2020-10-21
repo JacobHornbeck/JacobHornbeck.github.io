@@ -122,7 +122,7 @@ function OpenClassWhen() {
         }
     }
     console.log(tasksToday.length+" task"+"s".substring(0,tasksToday.length)+" for today")
-    setInterval(ShowTime,51)
+    setInterval(ShowTime,501)
 }
 
 function P(n) {
