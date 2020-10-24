@@ -208,6 +208,11 @@ section.contact-info div.social-links {
     align-items: flex-start;
     padding-left: 35px;
 }
+div.social-links a {
+    width: 36px;
+    height: 37px;
+    overflow: hidden;
+}
 div.social-links .fa-google-plus-square,
 div.social-links .fa-facebook-square,
 div.social-links .fa-flickr {
@@ -255,7 +260,7 @@ div.hero section {
     /* transition-delay: 2.3s; */
     transition-delay: 0s;
 }
-div.hero section h4 {
+div.hero section h3 {
     margin-top: 0.5rem; 
 }
 div .shout-out {
@@ -309,7 +314,7 @@ section.summary {
     display: grid;
     grid-template-columns: 3fr 2fr;
 }
-section.summary h4 {
+section.summary h3 {
     grid-column: span 2;
     margin-bottom: 0;
     text-align: center;
