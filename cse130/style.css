@@ -1,0 +1,38 @@
+* {
+    font-family: 'Courier New', Courier, monospace;
+}
+body {
+    overflow-y: scroll;
+}
+section {
+    padding-top: 1px;
+    margin-top: 10px;
+    height: 401px;
+    overflow: hidden;
+    transition: all 0.3s;
+    background-color: #dddddd;
+}
+section:hover {
+    background-color: #bbbbbb;
+    cursor: pointer;
+}
+section.collapsed {
+    height: 66.8px;
+    overflow: hidden;
+}
+h2 {
+    display: block;
+    width: calc(100% - 19.92px * 2);
+    padding: 0 19.92px;
+}
+section h2 span {
+    transition: all 0.2s;
+    float: right;
+}
+section.collapsed h2 span {
+    transform: rotate(180deg);
+}
+
+section iframe {
+    margin-left: 50px;
+}

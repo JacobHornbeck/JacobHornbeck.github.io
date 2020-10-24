@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>CSE 130 Lab Demonstration Videos</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <h1>Lab Demonstrations</h1>
+        <section class="collapsed">
+            <h2>Lab 06 <span>&#9650;</span></h2>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/DoVpqE55NEE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </section>
+        <section class="collapsed">
+            <h2>Lab 04 <span>&#9650;</span></h2>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/NgTbg8hCNh8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </section>
+        <section class="collapsed">
+            <h2>Lab 02 <span>&#9650;</span></h2>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/tOiS5QiwMq8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </section>
+        <section class="collapsed">
+            <h2>Lab 01 <span>&#9650;</span></h2>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/uMOwKuBR-RE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </section>
+        <script>
+            function Open(elem) {
+                elem.classList.toggle("collapsed")
+            }
+            let temp = document.getElementsByTagName("section")
+            for (let i = 0; i < temp.length; i++) {
+                temp[i].addEventListener('click',() => {
+                    Open(temp[i])
+                })
+            }
+        </script>
+    </body>
+</html>
