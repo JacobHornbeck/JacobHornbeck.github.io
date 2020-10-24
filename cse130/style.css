@@ -4,10 +4,24 @@
 body {
     overflow-y: scroll;
 }
+header {
+    display: grid;
+    grid-template-columns: 100px auto;
+    justify-items: center;
+    align-items: center;
+    max-width: 500px;
+    margin: 0 auto;
+    grid-gap: 10px;
+}
+header img {
+    width: 100px;
+    height: 100px;
+    border-radius: 100px;
+}
 section {
     padding-top: 1px;
     margin-top: 10px;
-    height: 401px;
+    height: 263.25px;
     overflow: hidden;
     transition: all 0.3s;
     background-color: #dddddd;
@@ -34,5 +48,78 @@ section.collapsed h2 span {
 }
 
 section iframe {
-    margin-left: 50px;
+    display: block;
+    margin: 0 auto;
+    width: 315px;
+    height: 177.1875px;
+}
+
+
+@media screen and (max-width: 340px) {
+    body::before {
+        position: fixed;
+        top: 0; left: 0;
+        width: 100%;
+        height: 100%;
+        background: white;
+        z-index: 100;
+        text-align: center;
+        padding-top: 100px;
+        content: 'This display width is too small, try a bigger screen or try a landscape orientation';
+    }
+}
+
+@media screen and (max-width: 410px) {
+    h1 {
+        font-size: 1.8em;
+    }
+}
+@media screen and (max-width: 380px) {
+    h1 {
+        font-size: 1.6em;
+    }
+}
+
+@media screen and (min-width: 465px) {
+    section {
+        height: 322.25px;
+    }
+    section iframe {
+        display: block;
+        margin: 0 auto;
+        width: 420px;
+        height: 236.25px;
+    }
+}
+
+@media screen and (min-width: 600px) {
+    section {
+        height: 401px;
+    }
+    section iframe {
+        display: block;
+        margin: 0 auto;
+        width: 560px;
+        height: 315px;
+    }
+}
+
+@media screen and (min-width: 880px) {
+    section {
+        height: 558.5px;
+    }
+    section iframe {
+        width: 840px;
+        height: 472.5px;
+    }
+}
+
+@media screen and (min-width: 1160px) {
+    section {
+        height: 716px;
+    }
+    section iframe {
+        width: 1120px;
+        height: 630px;
+    }
 }
