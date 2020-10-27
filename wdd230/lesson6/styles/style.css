@@ -257,14 +257,33 @@ div.hero section {
     height: 160px;
     position: absolute;
     background: rgba(255,255,255,0.3);
-    background-image: linear-gradient(-160deg, rgba(255,255,255,0.4) 50%, rgba(100,100,100,0.3));
+    background-image: linear-gradient(-160deg, rgba(255,255,255,0.6) 50%, rgba(100,100,100,0.6));
     animation: come-in 2s ease-in-out;
     transition: top 0.3s;
     /* transition-delay: 2.3s; */
     transition-delay: 0s;
 }
 div.hero section h3 {
-    margin-top: 0.5rem; 
+    margin-top: 0.5rem;
+}
+section.summary {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+}
+section.summary h3 {
+    grid-column: span 2;
+    margin-bottom: 0;
+    text-align: center;
+}
+section.summary span {
+    font-size: 13px;
+    text-align: right;
+    font-weight: bold;
+}
+section.summary span.colored {
+    text-align: left;
+    padding-left: 5px;
+    color: var(--main-color);
 }
 div .shout-out {
     display: block;
@@ -312,25 +331,6 @@ section.article h3 {
 }
 section.article p {
     padding-left: 10px;
-}
-section.summary {
-    display: grid;
-    grid-template-columns: 3fr 2fr;
-}
-section.summary h3 {
-    grid-column: span 2;
-    margin-bottom: 0;
-    text-align: center;
-}
-section.summary span {
-    font-size: 13px;
-    text-align: right;
-    font-weight: bold;
-}
-section.summary span.colored {
-    text-align: left;
-    padding-left: 5px;
-    color: var(--main-color);
 }
 section.forecast h3 {
     text-align: center;

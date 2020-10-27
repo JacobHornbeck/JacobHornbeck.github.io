@@ -111,6 +111,23 @@ section.contact-info .social-links {
 }
 
 @media screen and (max-width: 400px) {
+    @keyframes come-in {
+        from {
+            opacity: 0;
+            filter: blur(2px);
+            top: 0;
+        }
+        50% {
+            opacity: 0;
+            filter: blur(2px);
+            top: 0;
+        }
+        to {
+            top: -84px;
+            opacity: 1;
+            border: solid 1px var(--default-dark);
+        }
+    }
     section.article .img-holder {
         min-width: 0px;
         width: 100%;
@@ -128,20 +145,3 @@ section.contact-info .social-links {
 
 
 
-@keyframes come-in {
-    from {
-        opacity: 0;
-        filter: blur(2px);
-        top: 0;
-    }
-    50% {
-        opacity: 0;
-        filter: blur(2px);
-        top: 0;
-    }
-    to {
-        top: -84px;
-        opacity: 1;
-        border: solid 1px var(--default-dark);
-    }
-}
