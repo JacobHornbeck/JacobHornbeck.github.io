@@ -84,6 +84,7 @@ header {
     text-align: center;
     background-color: var(--main-color);
     box-shadow: 0 0 10px var(--main-color);
+    text-shadow: 1px 1px 1px var(--default-dark);
 }
 header > span {
     display: block;
@@ -134,11 +135,13 @@ nav a {
 }
 nav a.at, nav a:active {
     background-color: var(--main-color);
+    text-shadow: 1px 1px 1px var(--default-dark);
     box-shadow: 0 0 10px var(--main-color);
     z-index: 9;
 }
 nav a:hover {
     background-color: var(--default-light);
+    text-shadow: none;
     box-shadow: 0 0 10px var(--default-light), inset 0 0 10px var(--main-color);
     color: var(--main-color);
     z-index: 7;
@@ -346,6 +349,7 @@ section.forecast h3 {
     margin: 0 auto;
 }
 .five-day h4 {
+    text-shadow: 1px 1px 1px var(--default-dark);
     background-color: var(--main-color);
     color: var(--default-light);
     text-align: center;
@@ -368,6 +372,7 @@ section.forecast h3 {
 
 /* Styles for the footer and it's child elements */
 footer {
+    text-shadow: 1px 1px 1px var(--default-dark);
     box-shadow: 0 0 10px var(--default-dark);
     background-color: var(--main-color);
     font-family: var(--paragraph-font);
