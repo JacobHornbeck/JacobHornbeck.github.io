@@ -8,18 +8,18 @@ const code = [
 ]
 const cnt = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 const sequence = [
-    ["A", 0, "/"],
-    ["B", 0, "/"],
-    ["C", 0, "1"],
-    ["D", 1, "1"],
-    ["C", 1, "2"],
-    ["D", 3, "2"],
-    ["C", 3, "4"],
-    ["D", 7, "4"],
-    ["C", 7, "8"],
-    ["D",15, "8"],
-    ["C",15,"16"],
-    ["E",15,"16"],
+    ["A", 0, "/"," (1)"],
+    ["B", 0, "/"," (2)"],
+    ["C", 0, "1"," (3)"],
+    ["D", 1, "1"," (4)"],
+    ["C", 1, "2"," (3)"],
+    ["D", 3, "2"," (4)"],
+    ["C", 3, "4"," (3)"],
+    ["D", 7, "4"," (4)"],
+    ["C", 7, "8"," (3)"],
+    ["D",15, "8"," (4)"],
+    ["C",15,"16"," (3)"],
+    ["E",15,"16"," (5)"],
 ]
 
 code.forEach((lineOfCode,index) => {
@@ -32,7 +32,7 @@ function animateTrace(n) {
         if (n < sequence.length) {
             document.querySelector('.code-line:nth-child('+(cnt.indexOf(sequence[n][0])+1)+')').classList.toggle('active')
             document.querySelector('.trace-table tbody').innerHTML
-                += "<th>"+sequence[n][0]+"</th><td>"+sequence[n][1]+"</td><td>"+sequence[n][2]+"</td>"
+                += "<th>"+sequence[n][0]+sequence[n][3]+"</th><td>"+sequence[n][1]+"</td><td>"+sequence[n][2]+"</td>"
         }
         if (n > 0) {
             document.querySelector('.code-line:nth-child('+(cnt.indexOf(sequence[n-1][0])+1)+')').classList.toggle('active')
