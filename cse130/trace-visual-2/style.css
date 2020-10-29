@@ -1,0 +1,41 @@
+* {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.code-line {
+    display: grid;
+    grid-template-columns: 1.5em auto;
+    grid-column-gap: 5px;
+}
+.code-line.active {
+    background-color: #dddddd;
+}
+.code-line span {
+    display: grid;
+    justify-self: end;
+    align-items: center;
+    justify-items: center;
+    border-right: solid 2px forestgreen;
+    padding-right: 5px;
+    height: 100%;
+}
+.code-line div {
+    padding: 0.2em 0;
+}
+.code-line div span {
+    display: inline-block;
+    width: 1.5em;
+}
+.trace-table {
+    margin-top: 20px;
+}
+.trace-table th {
+    padding: 0.2em 0.7em;
+    background: lightskyblue;
+}
+.trace-table td {
+    padding: 0.2em 0.7em;
+    text-align: center;
+}
+
+
