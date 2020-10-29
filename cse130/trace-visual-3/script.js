@@ -20,7 +20,7 @@ const sequence = [
     ["B", "4", "/", 3],
     ["C", "5", "/", 4],
     ["B", "5", "/", 3],
-    ["B", "5", "count == $count", 7]
+    ["B", "5", "count == 5", 7]
 ]
 
 code.forEach((lineOfCode,index) => {
