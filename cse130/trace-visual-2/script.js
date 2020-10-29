@@ -6,7 +6,6 @@ const code = [
     "}",
     "print (\"there are \\(total) legs\")"
 ]
-const cnt = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 const sequence = [
     ["A","[\"snake\": 0, ...]","/",        "/","/", 1],
     ["B","[\"snake\": 0, ...]",  0,        "/","/", 2],
@@ -22,6 +21,7 @@ const sequence = [
     ["D","[\"snake\": 0, ...]", 13,"butterfly",  6, 4],
     ["C","[\"snake\": 0, ...]", 13,     "crab",  8, 3],
     ["D","[\"snake\": 0, ...]", 21,     "crab",  8, 4],
+    ["C","[\"snake\": 0, ...]", 21,     "crab",  8, 3],
     ["E","[\"snake\": 0, ...]", 21,     "crab",  8, 6],
 ]
 
