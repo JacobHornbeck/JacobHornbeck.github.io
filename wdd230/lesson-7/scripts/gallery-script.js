@@ -24,7 +24,7 @@ function toggleMenu() {
 const allImages = document.querySelectorAll("img[data-src]")
 
 const lazyLoad = (img) => {
-    let timeout = (parseInt(img.parentElement.offsetLeft)+parseInt(img.parentElement.offsetTop))/3
+    let timeout = (parseInt(img.parentElement.offsetLeft)*parseInt(img.parentElement.offsetTop))/10
     setTimeout(() => {
         img.setAttribute("src", img.getAttribute("data-src"))
         img.onload = () => {

@@ -394,8 +394,8 @@ main.gallery picture.in {
     animation: img-come-in 1s;
 }
 main.gallery picture:hover {
-    transform: translate(-3px, -3px);
-    box-shadow: 3px 3px 6px var(--default-dark), inset 0 0 3px var(--default-dark);
+    transform: translate(-12px, -12px);
+    box-shadow: 12px 12px 24px var(--default-dark), inset 0 0 3px var(--default-dark);
 }
 main.gallery picture img {
     display: block;
