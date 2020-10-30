@@ -24,18 +24,19 @@ function toggleMenu() {
 const allImages = document.querySelectorAll("img[data-src]")
 
 const lazyLoad = (img) => {
+    let timeout = (parseInt(img.parentElement.offsetLeft)+parseInt(img.parentElement.offsetTop))/3
     setTimeout(() => {
         img.setAttribute("src", img.getAttribute("data-src"))
         img.onload = () => {
             img.removeAttribute("data-src")
             img.parentElement.className = "in"
         }
-    },parseInt(img.parentElement.offsetLeft))
+    },timeout)
 }
 
 
 const options = {
-    threshold: 1,
+    threshold: 0.5,
     rootMargin: "0px 0px 0px 0px"
 }
 

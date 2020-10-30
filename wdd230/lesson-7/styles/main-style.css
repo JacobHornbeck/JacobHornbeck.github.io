@@ -48,7 +48,7 @@ h4 {
 h1, h2, h3, h4, th {
     font-family: var(--header-font);
 }
-p, span, div, li, td, a {
+p, span, div, li, td, a, figcaption {
     font-family: var(--paragraph-font);
 }
 
@@ -381,6 +381,7 @@ main.gallery h2 {
     grid-column: 1 / -1;
 }
 main.gallery picture {
+    transform: scale(0);
     max-width: 300px;
     box-shadow: 1px 1px 3px var(--default-dark), inset 0 0 3px var(--default-dark);
     padding: 0.5em;
@@ -389,6 +390,7 @@ main.gallery picture {
     transition: all 0.3s;
 }
 main.gallery picture.in {
+    transform: scale(1);
     animation: img-come-in 1s;
 }
 main.gallery picture:hover {
@@ -452,11 +454,11 @@ footer a:hover {
 @keyframes img-come-in {
     from {
         opacity: 0;
-        transform: scale(0.9) rotateY(-180deg);
+        transform: scale(0.5) rotate(45deg);
     }
     to {
         opacity: 1;
-        transform: scale(1) rotateY(0deg);
+        transform: scale(1) rotate(0deg);
     }
 }
 
