@@ -406,6 +406,25 @@ main.gallery picture figcaption {
     text-align: center;
 }
 
+main.gallery.refs {
+    padding: 0 calc(100% - 1000px) 30px;
+}
+main.gallery.refs picture {
+    max-width: 200px;
+}
+main.gallery.refs picture img {
+    display: block;
+    margin: 0 auto;
+    border-radius: 10px;
+    max-width: 200px;
+}
+main.gallery.refs picture figcaption {
+    font-size: 0.8em;
+}
+main.gallery > a {
+    grid-column: 1 / -1;
+}
+
 
 /* Styles for the footer and it's child elements */
 footer {
