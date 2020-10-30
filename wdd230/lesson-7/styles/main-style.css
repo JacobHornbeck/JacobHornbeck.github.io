@@ -1,0 +1,470 @@
+:root {
+    --main-color: #2e8b57;
+    --secondary-color: #add8e6;
+    --accent-color: #90ee90;
+    --default-light: #ffffff;
+    --default-dark: #2f2f2f;
+
+    --header-font: 'Exo 2', sans-serif;
+    --paragraph-font: 'Comfortaa', sans-serif;
+}
+
+/* Random styling for html and body */
+html { background-color: var(--secondary-color); }
+body {
+    margin: 0;
+    display: grid;
+    grid-template-columns: auto 80% auto;
+}
+body > * {
+    grid-column: 2;
+}
+.shadow-blocker-1, .shadow-blocker-2 {
+    background-color: var(--secondary-color);
+    position: relative;
+    z-index: 24;
+    width: 100%;
+    height: 100%;
+    grid-column: 1;
+    grid-row: 1 / span 5;
+}
+.shadow-blocker-2 {
+    grid-column: 3;
+}
+
+/* Global Font Styles */
+h1 {
+    font-size: 2.8em;
+}
+h2 {
+    font-size: 1.75em;
+}
+h3 {
+    font-size: 1.25em;
+}
+h4 {
+    font-size: 1.1em;
+}
+h1, h2, h3, h4, th {
+    font-family: var(--header-font);
+}
+p, span, div, li, td, a {
+    font-family: var(--paragraph-font);
+}
+
+
+/* Styles for the header banner */
+#big-banner {
+    position: relative;
+    display: none;
+    background-color: var(--default-dark);
+    border: double;
+    color: var(--default-light);
+    font-weight: bold;
+    padding: 1rem;
+    z-index: 25;
+    grid-template-columns: 30px auto 30px;
+    justify-items: center;
+    align-items: center;
+    grid-gap: 10px;
+}
+#big-banner i:last-child:hover {
+    color: var(--main-color);
+    cursor: pointer;
+}
+
+
+/* Styles for the header and elements inside the header */
+header {
+    z-index: 10;
+    padding: 0.5rem 1rem;
+    position: relative;
+    text-align: center;
+    background-color: var(--main-color);
+    box-shadow: 0 0 10px var(--main-color);
+    text-shadow: 1px 1px 1px var(--default-dark);
+}
+header > span {
+    display: block;
+    color: var(--secondary-color);
+    padding-bottom: 1rem;
+}
+h1 {
+    color: var(--default-light);
+    margin-bottom: 0.75rem;
+    margin-top: 0.75rem;
+}
+nav {
+    position: sticky;
+    z-index: 5;
+    top: 0;
+}
+nav > ul {
+    margin: 0;
+    padding: 0;
+    display: grid;
+    list-style: none;
+    grid-template-columns: repeat(6,1fr);
+    box-shadow: 0 0 10px var(--default-dark);
+}
+nav > ul .toggler {
+    display: none;
+}
+nav > ul .toggler + li {
+    grid-column: 1;
+}
+nav a {
+    z-index: 8;
+    padding: 1em 0;
+    display: block;
+    margin-right: 0;
+    overflow: hidden;
+    width: calc(100%);
+    font-weight: bold;
+    text-align: center;
+    position: relative;
+    text-decoration: none;
+    height: calc(100% - 2em);
+    color: var(--default-light);
+    background-color: var(--default-dark);
+    box-shadow: 0 0 10px var(--default-dark);
+    transition: padding 0.2s, height 0.2s;
+    height: 18px;
+}
+nav a.at, nav a:active {
+    background-color: var(--main-color);
+    text-shadow: 1px 1px 1px var(--default-dark);
+    box-shadow: 0 0 10px var(--main-color);
+    z-index: 9;
+}
+nav a:hover {
+    background-color: var(--default-light);
+    text-shadow: none;
+    box-shadow: 0 0 10px var(--default-light), inset 0 0 10px var(--main-color);
+    color: var(--main-color);
+    z-index: 7;
+}
+
+/* Styles for the main and the children of main */
+main {
+    padding: 1px 1em;
+    background-color: var(--default-light);
+}
+h2 {
+    color: var(--main-color);
+}
+h3, h4 {
+    color: var(--default-dark);
+}
+section {
+    padding: 0 1em;
+}
+div.place-holder {
+    padding: 1rem;
+    background-color: #eee;
+    border: dashed 1px var(--default-dark);
+    margin-bottom: 20px;
+    font-style: italic;
+}
+
+section.contact-info {
+    position: relative;
+    left: -1rem;
+    width: 100%;
+    padding: 1rem;
+    display: grid;
+    background-color: var(--default-dark);
+    grid-template-columns: 50% auto;
+    box-shadow: 0 0 10px var(--default-dark);
+}
+section.contact-info iframe {
+    width: 90%;
+    height: 200px;
+    grid-column: 1;
+    grid-row: span 3;
+    border: 0;
+}
+section.contact-info h3, section.contact-info ul {
+    margin-top: 0;
+    color: var(--default-light);
+}
+section.contact-info ul {
+    margin-bottom: 0;
+}
+section.contact-info li {
+    padding-top: 3px;
+}
+section.contact-info li i {
+    transition: transform 0.5s, color 0.3s;
+}
+section.contact-info li:hover i {
+    color: var(--main-color);
+    transform: scale(1.5);
+}
+section.contact-info div.social-links {
+    display: grid;
+    grid-gap: 5px;
+    grid-template-columns: repeat(3,50px);
+    justify-items: center;
+    align-items: flex-start;
+    padding-left: 35px;
+}
+div.social-links a {
+    width: 36px;
+    height: 37px;
+    overflow: hidden;
+}
+div.social-links .fa-google-plus-square,
+div.social-links .fa-facebook-square,
+div.social-links .fa-flickr {
+    color: var(--default-light);
+    transition: transform 0.5s;
+    font-size: 40px;
+}
+div.social-links .fa-google-plus-square:hover {
+    cursor: pointer;
+    color: tomato;
+}
+div.social-links .fa-facebook-square:hover {
+    cursor: pointer;
+    color: royalblue;
+}
+div.social-links .fa-flickr:hover {
+    cursor: pointer;
+    background: linear-gradient(90deg, royalblue, deeppink);
+    background-clip: padding-box;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+div.hero {
+    z-index: 1;
+    position: relative;
+    /* background-image: url("../images/hero-image.jpg");
+    background-size: cover;
+    background-position: left bottom; */
+    overflow: hidden;
+}
+div.hero picture, div.hero picture img {
+    width: 100%;
+}
+div.hero section {
+    top: 20px;
+    left: 20px;
+    width: 160px;
+    height: 160px;
+    position: absolute;
+    background: rgba(255,255,255,0.3);
+    background-image: linear-gradient(-160deg, rgba(255,255,255,0.6) 50%, rgba(100,100,100,0.6));
+    animation: come-in 2s ease-in-out;
+    transition: top 0.3s;
+    /* transition-delay: 2.3s; */
+    transition-delay: 0s;
+}
+div.hero section h3 {
+    margin-top: 0.5rem;
+}
+section.summary {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+}
+section.summary h3 {
+    grid-column: span 2;
+    margin-bottom: 0;
+    text-align: center;
+}
+section.summary span {
+    font-size: 13px;
+    text-align: right;
+    font-weight: bold;
+}
+section.summary span.colored {
+    text-align: left;
+    padding-left: 5px;
+    color: var(--main-color);
+}
+div .shout-out {
+    display: block;
+    background-color: rgba(255,255,255,0.8);
+    position: absolute;
+    bottom: -80px; right: 0;
+    font-size: 12px;
+    padding: 0.3rem;
+    transition: bottom 0.3s;
+    transition-delay: 2s;
+}
+div:hover .shout-out {
+    transition-delay: 0.2s;
+    bottom: 0;
+}
+.shout-out a {
+    color: var(--main-color);
+}
+section.article {
+    background-color: var(--secondary-color);
+    margin: 0 auto;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    max-width: 900px;
+}
+section.article .img-holder {
+    float: right;
+    width: 50%;
+    max-width: 300px;
+    padding: 0.5rem 0 0 0.5rem;
+    position: relative;
+    overflow: hidden;
+}
+section.article:hover .shout-out {
+    transition-delay: 0.2s;
+    bottom: 4px;
+}
+.img-holder img {
+    width: 100%;
+}
+section.article h3 {
+    margin-top: 0.5rem;
+}
+section.article p {
+    padding-left: 10px;
+}
+section.forecast h3 {
+    text-align: center;
+}
+.five-day {
+    display: grid;
+    margin: 0 auto;
+    grid-template-columns: repeat(5, 1fr);
+    max-width: 650px;
+}
+.five-day section {
+    border: solid 0.5px var(--default-dark);
+    padding: 0;
+}
+.five-day div {
+    margin: 0 auto;
+}
+.five-day h4 {
+    text-shadow: 1px 1px 1px var(--default-dark);
+    background-color: var(--main-color);
+    color: var(--default-light);
+    text-align: center;
+    padding: 0.5rem;
+    margin: 0;
+}
+.five-day span {
+    color: var(--default-dark);
+    text-align: center;
+    padding: 0.5rem;
+    display: block;
+}
+.weather-icon {
+    width: 60px;
+    height: 60px;
+    background-image: url("../images/weather-icons-dark.png");
+    background-position: -11px -13px;
+    transform: scale(0.9);
+}
+
+main.gallery {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-items: center;
+    align-items: center;
+    grid-gap: 30px;
+    padding-bottom: 30px;
+}
+main.gallery h2 {
+    margin-top: 1.25em;
+    grid-column: 1 / -1;
+}
+main.gallery picture {
+    max-width: 300px;
+    box-shadow: 1px 1px 3px var(--default-dark), inset 0 0 3px var(--default-dark);
+    padding: 0.5em;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: all 0.3s;
+}
+main.gallery picture.in {
+    animation: img-come-in 1s;
+}
+main.gallery picture:hover {
+    transform: translate(-3px, -3px);
+    box-shadow: 3px 3px 6px var(--default-dark), inset 0 0 3px var(--default-dark);
+}
+main.gallery picture img {
+    display: block;
+    border-radius: 10px;
+}
+main.gallery picture figcaption {
+    padding: 0.5em;
+    text-align: center;
+}
+
+
+/* Styles for the footer and it's child elements */
+footer {
+    text-shadow: 1px 1px 1px var(--default-dark);
+    box-shadow: 0 0 10px var(--default-dark);
+    background-color: var(--main-color);
+    font-family: var(--paragraph-font);
+    color: var(--default-light);
+    text-align: center;
+    position: relative;
+    padding: 1rem;
+    z-index: 10;
+}
+footer a {
+    color: var(--default-light);
+    text-decoration: underline var(--secondary-color);
+}
+footer a:hover {
+    text-shadow: 1px 1px 10px var(--secondary-color);
+}
+.last-updated {
+    padding-top: 0.5rem;
+    display: block;
+    font-size: 0.9rem;
+    color: var(--secondary-color);
+}
+
+#too-small {
+    display: none;
+}
+
+
+@keyframes come-in {
+    from {
+        opacity: 0;
+        filter: blur(2px);
+    }
+    50% {
+        opacity: 0;
+        filter: blur(2px);
+    }
+    to {
+        opacity: 1;
+    }
+}
+@keyframes img-come-in {
+    from {
+        opacity: 0;
+        transform: scale(0.9) rotateY(-180deg);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) rotateY(0deg);
+    }
+}
+
+@media screen and (max-width: 1280px) {
+    main.gallery {
+        grid-template-columns: 1fr 1fr;
+    }
+    main.gallery picture:last-child {
+        grid-column: span 2;
+    }
+}
