@@ -390,8 +390,8 @@ main.gallery picture {
     transition: all 0.3s;
 }
 main.gallery picture.in {
-    transform: scale(1);
     animation: img-come-in 1s;
+    transform: scale(1);
 }
 main.gallery picture:hover {
     transform: translate(-12px, -12px);
