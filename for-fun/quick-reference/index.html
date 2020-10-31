@@ -6,7 +6,11 @@
         <title>Quick Reference</title>
         <style>
             body {
-                background-color: seagreen;
+                background-image: url("./background.jpg");
+                background-position: center 0;
+                background-attachment: fixed;
+                background-repeat: no-repeat;
+                background-size: cover;
                 grid-template-rows: 1fr 1fr;
                 grid-template-columns: 1fr;
                 justify-items: center;
@@ -53,9 +57,11 @@
                 justify-self: end;
             }
             #reference-logo {
+                padding: 1em;
+                align-self: end;
                 max-width: 400px;
                 max-height: 250px;
-                align-self: end;
+                background-color: rgba(255,255,255,0.2);
                 filter: drop-shadow(0 0 2px white);
             }
         </style>
