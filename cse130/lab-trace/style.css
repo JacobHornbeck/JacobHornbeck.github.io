@@ -21,6 +21,7 @@ h1 {
     display: grid;
     grid-template-columns: 1.9em auto;
     grid-column-gap: 5px;
+    font-size: 0.8em;
 }
 .code-line.active {
     background-color: #dddddd;
@@ -47,10 +48,12 @@ h1 {
 .trace-table th {
     padding: 0.2em 0.7em;
     background: lightskyblue;
+    font-size: 0.9em;
 }
 .trace-table td {
     padding: 0.2em 0.7em;
     text-align: center;
+    font-size: 0.9em;
 }
 
 
