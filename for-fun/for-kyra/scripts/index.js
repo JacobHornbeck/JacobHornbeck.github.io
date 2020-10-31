@@ -1,7 +1,7 @@
 var xhr = new XMLHttpRequest(),
     jsonArr,
     method = "GET",
-    jsonRequestURL = "./sources/index.php"
+    jsonRequestURL = "./sources/"
 
 xhr.open(method, jsonRequestURL, true)
 xhr.onreadystatechange = function() {
