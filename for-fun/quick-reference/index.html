@@ -6,10 +6,7 @@
         <title>Quick Reference</title>
         <style>
             body {
-                background-image: url('./background.jpg');
-                background-position: center 0;
-                background-repeat: no-repeat;
-                background-size: cover;
+                background-color: seagreen;
                 grid-template-rows: 1fr 1fr;
                 grid-template-columns: 1fr;
                 justify-items: center;
@@ -24,7 +21,7 @@
             #form-1 {
                 width: 80%;
                 max-width: 500px;
-                background-color: white;
+                background-color: white;;
                 grid-template-columns: 100px auto 50px;
                 border: solid 0.5px gray;
                 border-radius: 50px;
@@ -67,21 +64,34 @@
         <img id="reference-logo" src="./w3schools.png" alt="reference-logo">
         <form onsubmit="submitHandler()" id="form-1">
             <select name="reference" id="web-reference" onchange="adjustLogo()">
-                <option value="W3Schools">W3Schools</option>
-                <option value="MDN">MDN</option>
-                <option value="Wikipedia">Wikipedia</option>
+                <option value="w3schools">W3Schools</option>
+                <option value="mdn">MDN</option>
+                <option value="wikipedia">Wikipedia</option>
             </select>
             <input type="text" id="search-value">
             <input type="submit" value="&#128270;" id="search">
         </form>
 
         <script>
+            function getUrlVars() {
+                var vars = {}
+                window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+                    vars[key] = value
+                })
+                return vars
+            }
+
+            if (getUrlVars()['source']!=undefined) {
+                document.querySelector('#web-reference').value = getUrlVars()['source'].toLowerCase()
+                adjustLogo()
+            }
+
             function submitHandler() {
                 event.preventDefault()
                 let connection = {
-                    'W3Schools': 'w3schools.com',
-                    'MDN': 'developer.mozilla.org',
-                    'Wikipedia': 'wikipedia.org'
+                    'w3schools': 'w3schools.com',
+                    'mdn': 'developer.mozilla.org',
+                    'wikipedia': 'wikipedia.org'
                 }
                 let temp = document.getElementById('web-reference').value
                 let search_query = document.getElementById('search-value').value
