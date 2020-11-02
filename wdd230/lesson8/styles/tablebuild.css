@@ -1,0 +1,32 @@
+table {
+    font-family: Ubuntu, sans-serif;
+    text-align: center;
+    border-collapse: collapse;
+}
+table * {
+    padding: 0.5rem;
+    border: solid 1px lightgray;
+}
+thead, tfoot {
+    background-color: #7fb9c2;
+}
+thead {
+    font-size: 1.7rem;
+}
+tbody th, .november {
+    background-color: #628ca6;
+    color: white;
+}
+tbody tr {
+    background-color: #e7ffed;
+}
+tbody tr:nth-child(even) {
+    background-color: #e7f0ed;
+}
+tbody tr:nth-child(6) td:first-child {
+    font-style: italic;
+}
+tfoot {
+    font-size: 0.8rem;
+}
+/* color scheme: #e7f0ed, #e7ffed, and #628ca6, #7fb9c2 */
