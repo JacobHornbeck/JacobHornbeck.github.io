@@ -13,7 +13,7 @@ table {
     font-family: Ubuntu, sans-serif;
     text-align: center;
     border-collapse: collapse;
-    box-shadow: 8px 8px 10px gray;
+    box-shadow: 8px 8px 10px #628ca6;
 }
 table * {
     padding: 0.5rem;
@@ -34,9 +34,6 @@ tbody tr {
 }
 tbody tr:nth-child(even) {
     background-color: #e7f0ed;
-}
-tbody tr:nth-child(6) td:first-child {
-    font-style: italic;
 }
 tfoot {
     font-size: 0.8rem;
