@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Gallery | Weather or Not</title>
+        <meta name="description" content="Weather or Not's storm center 
+            for anyone to report a storm of unusual weather.">
+        <link rel="shortcut icon" href="../lesson6/images/favicon.ico">
+        <link rel="stylesheet" href="styles/normalize.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="styles/main-style.css">
+        <link rel="stylesheet" href="styles/medium.css"
+              media="(max-width: 1040px)">
+        <link rel="stylesheet" href="styles/small.css"
+              media="(max-width: 850px)">
+        <link rel="stylesheet" href="styles/tiny.css"
+              media="(max-width: 299px)">
+    </head>
+    <body>
+        <div class="shadow-blocker-1"></div>
+        <div class="shadow-blocker-2"></div>
+        <header>
+            <h1>Weather or Not</h1>
+            <span>We've got the weather info you need</span>
+        </header>
+        <nav>
+            <ul>
+                <li class="toggler hide">
+                    <a onclick="toggleMenu()">&#9776; Menu</a></li>
+                <li><a class="  " href="#">Home</a></li>
+                <li><a class="  " href="../lesson6/preston-6.html">Preston</a></li>
+                <li><a class="  " href="#">Soda Springs</a></li>
+                <li><a class="  " href="#">Fish Haven</a></li>
+                <li><a class="at" href="../lesson8/stormcenter.html">Storm Center</a></li>
+                <li><a class="  " href="../lesson-7/gallery-7.html">Gallery</a></li>
+            </ul>
+        </nav>
+        <main>
+            <form action="thanks.html">
+                <label>Full Name
+                    <input type="text" required>
+                </label>
+                <label>Email
+                    <input type="email" placeholder="someone@gmail.com">
+                </label>
+                <label>Phone Number
+                    <input type="tel" required>
+                </label>
+                <label>Zip Code
+                    <input type="number" required>
+                </label>
+                <label>Storm Date
+                    <input type="date">
+                </label>
+                <label>Storm Type
+                    <input list="weather-types" name="weather-types">
+                </label>
+                <datalist id="weather-types">
+                    <option value="Flash Flood">
+                    <option value="Hail">
+                    <option value="Hurricane">
+                    <option value="Thunderstorm">
+                    <option value="Tornado">
+                </datalist>
+                <div>Storm Severity
+                    <input type="range" id="severity" name="severity" min="1" max="10" step="1" value="1">
+                    <label for="severity"></label>
+                </div>
+                <label>Storm Region
+                    <select name="region">
+                        <option value="">Select Region...</option>
+                        <option value="preston">Preston</option>
+                        <option value="soda springs">Soda Springs</option>
+                        <option value="fish haven">Fish Haven</option>
+                    </select>
+                </label>
+                <div>Are you in danger?
+                    <label><input type="radio" name="in-danger" value="yes"> Yes</label>
+                    <label><input type="radio" name="in-danger" value="maybe"> Maybe</label>
+                    <label><input type="radio" name="in-danger" value="no"> No</label>
+                </div>
+                <label>Any Additional Comments?
+                <textarea name="additional-comments"></textarea>
+                </label>
+                <input type="submit" value="Report Storm">
+            </form>
+        </main>
+        <footer>
+            &copy;<span class="year">2020</span> Jacob Hornbeck |
+            <a target="_blank" href="https://byui.edu/online" rel="noopener">
+                BYUI Online Learning</a>
+            <span class="last-updated">Something didn't load right,
+                please refresh.</span>
+        </footer>
+        <div id="too-small">
+            <h3>Your screen size is too small to view this page</h3>
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
+        <script src="scripts/script.js"></script>
+    </body>
+</html>
