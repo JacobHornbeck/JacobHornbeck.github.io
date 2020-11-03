@@ -38,4 +38,7 @@ tbody tr:nth-child(even) {
 tfoot {
     font-size: 0.8rem;
 }
+table em {
+    border: none;
+}
 /* color scheme: #e7f0ed, #e7ffed, and #628ca6, #7fb9c2 */
