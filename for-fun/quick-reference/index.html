@@ -72,6 +72,7 @@
             <select name="reference" id="web-reference" onchange="adjustLogo()">
                 <option value="w3schools">W3Schools</option>
                 <option value="mdn">MDN</option>
+                <option value="stackoverflow">StackOverflow</option>
                 <option value="wikipedia">Wikipedia</option>
             </select>
             <input type="text" id="search-value" autofocus required>
@@ -92,16 +93,38 @@
                 adjustLogo()
             }
 
+            function formatSearchText(txt) {
+                let str = ""
+                for (let i = 0; i<txt.length; i++) {
+                    if (txt[i] == " ") {
+                        str += "+"
+                    }
+                    else {
+                        str += txt[i]
+                    }
+                }
+                return str
+            }
+
             function submitHandler() {
                 event.preventDefault()
                 let connection = {
                     'w3schools': 'w3schools.com',
                     'mdn': 'developer.mozilla.org',
+                    'stackoverflow': 'stackoverflow.com',
                     'wikipedia': 'wikipedia.org'
                 }
                 let temp = document.getElementById('web-reference').value
-                let search_query = document.getElementById('search-value').value
-                let url = "https://www.bing.com/search?q=site%3A+"+connection[temp]+"+"+search_query.replace(' ','+')
+                let search_query = formatSearchText(document.getElementById('search-value').value)
+                let url = "https://www.bing.com/search?q=site%3A+"+connection[temp]+"+"+search_query
+                switch (temp.toLowerCase()) {
+                    case 'stackoverflow':
+                        url = "https://stackoverflow.com/search?q="+search_query
+                    break;
+                    case 'mdn':
+                        url = "https://developer.mozilla.org/en-US/search?q="+search_query
+                    break;
+                }
                 window.open(url,'_self')
             }
 
