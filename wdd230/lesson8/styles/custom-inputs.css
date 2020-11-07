@@ -1,10 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Testing</title>
-        <style>
+/*  This code is based on Aaron Iker's code pen (https://codepen.io/aaroniker/pen/ZEYoxEY)
+    that was shared in CSS-Tricks tutorial on customizing html inputs:
+    https://css-tricks.com/custom-styling-form-inputs-with-modern-css-features/
+    
+    The code that is commented out is for a switch and the checkbox... and since
+    I am not using either, I don't need it right now...  */
+
+@supports (not(-webkit-appearance: none)) and (not(-moz-appearance: none)) {
+    form label input[type="radio"] {
+        display: initial;
+        width: auto;
+    }
+}
 @supports (-webkit-appearance: none) or (-moz-appearance: none) {
     .container {
         position: relative;
@@ -16,19 +22,19 @@
     .container *:before, .container *:after {
         box-sizing: inherit;
     }
-    input[type='checkbox'],
+    /* input[type='checkbox'], */
     input[type='radio'] {
-        --active: seagreen;
+        --active: var(--main-color);
         --active-inner: #fff;
         --focus: 2px rgba(39, 94, 254, .3);
-        --border: #2f2f2f;
-        --border-hover: seagreen;
+        --border: var(--default-dark);
+        --border-hover: var(--main-color);
         --background: #fff;
         --disabled: #F6F8FF;
         --disabled-inner: #14161b;
         -webkit-appearance: none;
         -moz-appearance: none;
-        height: 21px;
+        height: 18px;
         outline: none;
         display: inline-block;
         vertical-align: top;
@@ -40,7 +46,7 @@
         -webkit-transition: background .3s, border-color .3s, box-shadow .2s;
         transition: background .3s, border-color .3s, box-shadow .2s;
     }
-    input[type='checkbox']:after,
+    /* input[type='checkbox']:after, */
     input[type='radio']:after {
         content: '';
         display: block;
@@ -52,7 +58,7 @@
         transition: transform var(--d-t, 0.3s) var(--d-t-e, ease), opacity var(--d-o, 0.2s);
         transition: transform var(--d-t, 0.3s) var(--d-t-e, ease), opacity var(--d-o, 0.2s), -webkit-transform var(--d-t, 0.3s) var(--d-t-e, ease);
     }
-    input[type='checkbox']:checked,
+    /* input[type='checkbox']:checked, */
     input[type='radio']:checked {
         --b: var(--active);
         --bc: var(--active);
@@ -60,42 +66,42 @@
         --d-t: .6s;
         --d-t-e: cubic-bezier(.2, .85, .32, 1.2);
     }
-    input[type='checkbox']:disabled,
+    /* input[type='checkbox']:disabled, */
     input[type='radio']:disabled {
         --b: var(--disabled);
         cursor: not-allowed;
         opacity: .9;
     }
-    input[type='checkbox']:disabled:checked,
+    /* input[type='checkbox']:disabled:checked, */
     input[type='radio']:disabled:checked {
         --b: var(--disabled-inner);
         --bc: var(--border);
     }
-    input[type='checkbox']:disabled + label,
+    /* input[type='checkbox']:disabled + label, */
     input[type='radio']:disabled + label {
         cursor: not-allowed;
     }
-    input[type='checkbox']:hover:not(:checked):not(:disabled),
+    /* input[type='checkbox']:hover:not(:checked):not(:disabled), */
     input[type='radio']:hover:not(:checked):not(:disabled) {
         --bc: var(--border-hover);
     }
-    input[type='checkbox']:focus,
+    /* input[type='checkbox']:focus, */
     input[type='radio']:focus {
         box-shadow: 0 0 0 var(--focus);
     }
-    input[type='checkbox']:not(.switch),
+    /* input[type='checkbox']:not(.switch), */
     input[type='radio']:not(.switch) {
-        width: 21px;
+        width: 18px;
     }
-    input[type='checkbox']:not(.switch):after,
+    /* input[type='checkbox']:not(.switch):after, */
     input[type='radio']:not(.switch):after {
         opacity: var(--o, 0);
     }
-    input[type='checkbox']:not(.switch):checked,
+    /* input[type='checkbox']:not(.switch):checked, */
     input[type='radio']:not(.switch):checked {
         --o: 1;
     }
-    input[type='checkbox'] + label,
+    /* input[type='checkbox'] + label, */
     input[type='radio'] + label {
         font-size: 14px;
         line-height: 21px;
@@ -105,7 +111,7 @@
         margin-left: 4px;
     }
 
-    input[type='checkbox']:not(.switch) {
+    /* input[type='checkbox']:not(.switch) {
         border-radius: 7px;
     }
     input[type='checkbox']:not(.switch):after {
@@ -142,79 +148,21 @@
     }
     input[type='checkbox'].switch:disabled:not(:checked):after {
         opacity: .6;
-    }
+    }*/
 
     input[type='radio'] {
         border-radius: 50%;
     }
     input[type='radio']:after {
-        width: 19px;
-        height: 19px;
+        width: 20px;
+        height: 20px;
         border-radius: 50%;
         background: var(--active-inner);
         opacity: 0;
-        -webkit-transform: scale(var(--s, 0.7));
-        transform: scale(var(--s, 0.7));
+        -webkit-transform: translate(-2px, -2px) scale(var(--s, 0.7));
+        transform: translate(-2px, -2px) scale(var(--s, 0.7));
     }
     input[type='radio']:checked {
         --s: .5;
     }
 }
-        </style>
-    </head>
-    <body>
-        <ul>
-            <li>
-              <input id="c1" type="checkbox">
-              <label for="c1">Checkbox</label>
-            </li>
-            <li>
-              <input id="c2" type="checkbox" checked>
-              <label for="c2">Checkbox</label>
-            </li>
-            <li>
-              <input id="r1" type="radio" name="radio" value="1">
-              <label for="r1">Radio</label>
-            </li>
-            <li>
-              <input id="r2" type="radio" name="radio" value="2" checked>
-              <label for="r2">Radio</label>
-            </li>
-            <li>
-              <input id="s1" type="checkbox" class="switch">
-              <label for="s1">Switch</label>
-            </li>
-            <li>
-              <input id="s2" type="checkbox" class="switch" checked>
-              <label for="s2">Switch</label>
-            </li>
-          </ul>
-          
-          <ul>
-            <li>
-              <input id="c1d" type="checkbox" disabled>
-              <label for="c1d">Checkbox</label>
-            </li>
-            <li>
-              <input id="c2d" type="checkbox" checked disabled>
-              <label for="c2d">Checkbox</label>
-            </li>
-            <li>
-              <input id="r1d" type="radio" name="radiod" value="1" disabled>
-              <label for="r1d">Radio</label>
-            </li>
-            <li>
-              <input id="r2d" type="radio" name="radiod" value="2" checked disabled>
-              <label for="r2d">Radio</label>
-            </li>
-            <li>
-              <input id="s1d" type="checkbox" class="switch" disabled>
-              <label for="s1d">Switch</label>
-            </li>
-            <li>
-              <input id="s2d" type="checkbox" class="switch" checked disabled>
-              <label for="s2d">Switch</label>
-            </li>
-          </ul>
-    </body>
-</html>

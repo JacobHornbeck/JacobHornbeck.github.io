@@ -61,6 +61,9 @@ section.contact-info .social-links {
     main.gallery picture:last-child {
         grid-column: span 1;
     }
+    form {
+        margin: 0 auto;
+    }
 }
 
 @media screen and (max-width: 657px) {

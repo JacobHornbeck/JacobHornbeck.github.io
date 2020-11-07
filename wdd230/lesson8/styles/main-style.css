@@ -427,16 +427,38 @@ main.gallery > a {
 
 form {
     padding: 1rem 0;
+    max-width: 450px;
+}
+fieldset {
+    border: solid 2px var(--default-dark);
+    border-radius: 5px;
+    margin-bottom: 1.25rem;
+}
+fieldset legend {
+    padding: 0.25rem;
 }
 form label, form div {
-    padding-top: 1rem;
+    margin-top: 1rem;
     padding-bottom: 0.3rem;
 }
+form label span {
+    color: red;
+}
 div label {
-    padding-top: 0.5rem;
+    margin-top: 0;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
 }
 div input + label {
     padding-top: 0;
+}
+form input:not([type="range"]), form select, form textarea {
+    outline: none;
+    box-shadow: 0 0 0 7px transparent;
+    transition: box-shadow 0.3s;
+}
+form input:not([type="range"]):not([type="radio"]):focus, form select:focus, form textarea:focus {
+    box-shadow: 0 0 0 4px var(--main-color);
 }
 form label, form input, form select, form textarea {
     display: block;
@@ -452,16 +474,135 @@ form input[type="range"] {
     padding: 0;
 }
 form select {
+    margin-top: 5px;
     padding: 0.75rem;
 }
-form label input[type="radio"] {
-    display: initial;
-    width: auto;
+form input, form select, form textarea {
+    background-color: var(--default-light);
+    border: solid 1px var(--default-dark);
+    border-radius: 4px;
 }
 form input[type="submit"] {
+    background-color: var(--main-color);
+    color: var(--default-light);
+    text-shadow: 1px 1px 1px var(--default-dark);
     width: 100%;
     margin-top: 10px;
 }
+form input[type="submit"]:hover {
+    cursor: pointer;
+    background-color: var(--default-dark);
+}
+form textarea {
+    width: calc(100% - 5px);
+    height: 4em;
+    margin-top: 5px;
+}
+form div.split {
+    display: grid;
+    grid-template-columns: auto 30px;
+    justify-items: center;
+    align-items: center;
+}
+form div.split span {
+    grid-column: 1 / -1;
+    justify-self: start;
+}
+form div.split label {
+    text-align: center;
+    margin-top: 0;
+    padding: 6px;
+    width: 15px;
+}
+form div.split input {
+    margin-top: 0;
+}
+
+/* The following CSS is based on W3Schools custom checkbox and radio buttons */
+        /* The container */
+        /* .container {
+            display: block;
+            position: relative;
+            padding-left: 35px;
+            margin-bottom: 6px;
+            cursor: pointer;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        } */
+        
+        /* Hide the browser's default checkbox */
+        /* .container input {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+            height: 0;
+            width: 0;
+        } */
+        
+        /* Create a custom checkbox */
+        /* .check-mark, .radio {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 25px;
+            width: 25px;
+            background-color: #eee;
+            border: solid 1px var(--default-dark);
+        }
+        .radio {
+            border-radius: 50%;
+        } */
+        
+        /* On mouse-over, add a grey background color */
+        /* .container:hover input ~ .check-mark,
+        .container:hover input ~ .radio {
+            background-color: #ccc;
+        } */
+        
+        /* When the checkbox is checked, add a blue background */
+        /* .container input:checked ~ .check-mark,
+        .container input:checked ~ .radio {
+            background-color: var(--main-color);
+        } */
+        
+        /* Create the check-mark/indicator (hidden when not checked) */
+        /* .check-mark:after,
+        .radio:after {
+            content: "";
+            position: absolute;
+            display: none;
+        } */
+        
+        /* Show the check-mark when checked */
+        /* .container input:checked ~ .check-mark:after,
+        .container input:checked ~ .radio:after {
+            display: block;
+        } */
+        
+        /* Style the check-mark/indicator */
+        /* .container .check-mark:after {
+            left: 9px;
+            top: 5px;
+            width: 5px;
+            height: 10px;
+            border: solid white;
+            border-width: 0 3px 3px 0;
+            -webkit-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            transform: rotate(45deg);
+        } */
+
+        /* Style the indicator (dot/circle) */
+        /* .container .radio:after {
+            top: 7px;
+            left: 7px;
+            width: 11px;
+            height: 11px;
+            border-radius: 50%;
+            background: white;
+        } */
 
 
 /* Styles for the footer and it's child elements */
