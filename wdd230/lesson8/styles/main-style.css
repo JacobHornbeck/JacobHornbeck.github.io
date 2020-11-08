@@ -437,6 +437,12 @@ fieldset {
 fieldset legend {
     padding: 0.25rem;
 }
+form label {
+    font-size: 0.8em;
+}
+form div label {
+    font-size: 1rem;
+}
 form label, form div {
     margin-top: 1rem;
     padding-bottom: 0.3rem;
