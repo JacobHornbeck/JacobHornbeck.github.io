@@ -21,3 +21,12 @@ else {
     document.getElementById("updated").innerHTML = "Last Updated: "+
         temp+" am"
 }
+
+function scrollDown(elem) {
+    if (elem.scrollTop < 100) {
+        document.querySelector('#scroll-down').className = "up"
+    }
+    else {
+        document.querySelector('#scroll-down').className = ""
+    }
+}
