@@ -64,6 +64,9 @@ section.contact-info .social-links {
     form {
         margin: 0 auto;
     }
+    main.form h2 {
+        text-align: center;
+    }
 }
 
 @media screen and (max-width: 657px) {
