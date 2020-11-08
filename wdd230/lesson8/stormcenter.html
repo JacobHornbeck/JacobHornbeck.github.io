@@ -43,16 +43,16 @@
                 <fieldset>
                     <legend>Contact Information</legend>
                     <label>Full Name<span>*</span>
-                        <input name="name" pattern="^[a-zA-Z]+$" type="text" oninput="" required>
+                        <input name="name" pattern="^[a-zA-Z ]{5,}[a-zA-Z]$" type="text" oninput="" required>
                     </label>
                     <label>Email
                         <input name="email" type="email" placeholder="someone@gmail.com">
                     </label>
                     <label>Phone Number<span>*</span>
-                        <input name="phone" type="tel" required>
+                        <input name="phone" type="tel" minlength="7" required>
                     </label>
                     <label>Zip Code<span>*</span>
-                        <input name="zip" type="number" required>
+                        <input name="zip" type="number" min="10000" required>
                     </label>
                 </fieldset>
                 <fieldset>
@@ -76,7 +76,7 @@
                     </div>
                     <label>Storm Region
                         <select name="region">
-                            <option value="">Select Region...</option>
+                            <option value="" disabled selected>Select Region...</option>
                             <option value="preston">Preston</option>
                             <option value="soda springs">Soda Springs</option>
                             <option value="fish haven">Fish Haven</option>

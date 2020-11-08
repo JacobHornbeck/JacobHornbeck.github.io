@@ -484,7 +484,7 @@ form select {
     padding: 0.75rem;
 }
 form input, form select, form textarea {
-    background-color: var(--default-light);
+    background-color: #eeeeee;
     border: solid 1px var(--default-dark);
     border-radius: 4px;
 }
@@ -503,6 +503,22 @@ form textarea {
     width: calc(100% - 5px);
     height: 4em;
     margin-top: 5px;
+}
+form input:required:not(:valid) {
+    box-shadow: inset 0 0 0 2px red, 0 0 0 7px transparent;
+    transition: box-shadow 0.3s;
+}
+form input:required:valid {
+    box-shadow: inset 0 0 0 2px var(--main-color), 0 0 0 7px transparent;
+    transition: box-shadow 0.3s;
+}
+form input:required:not(:valid):focus {
+    box-shadow: inset 0 0 0 2px red, 0 0 0 4px var(--main-color);
+    transition: box-shadow 0.3s;
+}
+form input:required:valid:focus {
+    box-shadow: inset 0 0 0 2px var(--main-color), 0 0 0 4px var(--main-color);
+    transition: box-shadow 0.3s;
 }
 form div.split {
     display: grid;
@@ -523,92 +539,6 @@ form div.split label {
 form div.split input {
     margin-top: 0;
 }
-
-/* The following CSS is based on W3Schools custom checkbox and radio buttons */
-        /* The container */
-        /* .container {
-            display: block;
-            position: relative;
-            padding-left: 35px;
-            margin-bottom: 6px;
-            cursor: pointer;
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
-            user-select: none;
-        } */
-        
-        /* Hide the browser's default checkbox */
-        /* .container input {
-            position: absolute;
-            opacity: 0;
-            cursor: pointer;
-            height: 0;
-            width: 0;
-        } */
-        
-        /* Create a custom checkbox */
-        /* .check-mark, .radio {
-            position: absolute;
-            top: 0;
-            left: 0;
-            height: 25px;
-            width: 25px;
-            background-color: #eee;
-            border: solid 1px var(--default-dark);
-        }
-        .radio {
-            border-radius: 50%;
-        } */
-        
-        /* On mouse-over, add a grey background color */
-        /* .container:hover input ~ .check-mark,
-        .container:hover input ~ .radio {
-            background-color: #ccc;
-        } */
-        
-        /* When the checkbox is checked, add a blue background */
-        /* .container input:checked ~ .check-mark,
-        .container input:checked ~ .radio {
-            background-color: var(--main-color);
-        } */
-        
-        /* Create the check-mark/indicator (hidden when not checked) */
-        /* .check-mark:after,
-        .radio:after {
-            content: "";
-            position: absolute;
-            display: none;
-        } */
-        
-        /* Show the check-mark when checked */
-        /* .container input:checked ~ .check-mark:after,
-        .container input:checked ~ .radio:after {
-            display: block;
-        } */
-        
-        /* Style the check-mark/indicator */
-        /* .container .check-mark:after {
-            left: 9px;
-            top: 5px;
-            width: 5px;
-            height: 10px;
-            border: solid white;
-            border-width: 0 3px 3px 0;
-            -webkit-transform: rotate(45deg);
-            -ms-transform: rotate(45deg);
-            transform: rotate(45deg);
-        } */
-
-        /* Style the indicator (dot/circle) */
-        /* .container .radio:after {
-            top: 7px;
-            left: 7px;
-            width: 11px;
-            height: 11px;
-            border-radius: 50%;
-            background: white;
-        } */
 
 
 /* Styles for the footer and it's child elements */
