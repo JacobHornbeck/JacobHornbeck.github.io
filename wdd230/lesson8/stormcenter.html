@@ -38,12 +38,14 @@
             </ul>
         </nav>
         <main class="form">
+            <!-- Notes: For the space to the right of the form maybe have a box that will show
+                details of the selected form entry or show some images -->
             <h2>Report a Storm to Our Storm Center</h2>
             <form action="thanks.html">
                 <fieldset>
                     <legend>Contact Information</legend>
                     <label>Full Name<span>*</span>
-                        <input name="name" pattern="^[a-zA-Z ]{5,}[a-zA-Z]$" type="text" oninput="" required>
+                        <input name="name" pattern="^[a-zA-Z ]{5,}[a-zA-Z]$" type="text" required>
                     </label>
                     <label>Email
                         <input name="email" type="email" placeholder="someone@gmail.com">
@@ -58,7 +60,7 @@
                 <fieldset>
                     <legend>Storm Information</legend>
                     <label>Storm Date
-                        <input name="" type="date">
+                        <input name="storm-date" type="date">
                     </label>
                     <label>Storm Type
                         <input list="weather-types" name="weather-types">
