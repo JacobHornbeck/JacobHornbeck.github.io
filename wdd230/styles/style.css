@@ -41,6 +41,7 @@ main {
     width: 97%;
     height: calc(100% - 5em - 6em - 4em + 5px);
     margin: 2em 0 2em auto;
+    position: relative;
 }
 h2 {
     border-bottom: solid 1px #cccccc;
@@ -91,9 +92,9 @@ footer a:hover {
 
 
 #scroll-down {
-    position: fixed;
+    position: absolute;
     transition: all 0.4s;
-    top: calc(100% - 15% - 2rem - 0.75rem * 2);
+    top: calc(100% + 40px);
     background-color: rgba(0,0,0,0.8);
     transform: translate(-50%,0);
     padding: 0.25rem 0.5rem;
@@ -103,7 +104,7 @@ footer a:hover {
     left: 50%;
 }
 #scroll-down.up {
-    top: calc(100% - 15% - 2rem - 0.75rem * 2 - 30px);
+    top: calc(100%);
 }
 
 
