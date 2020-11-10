@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&family=Exo+2:wght@800&display=swap');
+
+* {
+    font-family: 'Comfortaa', Verdana, sans-serif;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Exo 2', Verdana, sans-serif;
+    color: whitesmoke;
+}
+h1 {
+    color: #F4B400
+}
+
+header, footer {
+    text-align: center;
+}
+footer {
+    padding-top: 20px;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 5px;
+    padding: 1rem;
+    background-color: #737373;
+    box-shadow: 0 0 30px gray;
+    justify-items: center;
+}
+
+.cards section {
+    text-align: center;
+    padding: 1rem;
+    border: solid 2px #F4B400;
+    background-color: #4285F4;
+    max-width: 300px;
+}
+.cards section * {
+    display: block;
+    margin: 0 auto;
+    padding: 0.25rem;
+}
+.cards section img {
+    width: 60%;
+}
+
+@media screen and (max-width: 1280px) {
+    .cards {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+@media screen and (max-width: 668px) {
+    body {
+        margin: 0;
+    }
+    .cards {
+        grid-template-columns: 1fr;
+    }
+}
