@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Storm Center | Weather or Not</title>
+    <meta name="description" content="Weather or Not's storm center 
+            for anyone to report a storm of unusual weather.">
+    <link rel="shortcut icon" href="./images/favicon.ico">
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="styles/main-style.css">
+    <link rel="stylesheet" href="styles/custom-inputs.css">
+    <link rel="stylesheet" href="styles/medium.css" media="(max-width: 1040px)">
+    <link rel="stylesheet" href="styles/small.css" media="(max-width: 850px)">
+    <link rel="stylesheet" href="styles/tiny.css" media="(max-width: 299px)">
+</head>
+
+<body>
+    <div class="shadow-blocker-1"></div>
+    <div class="shadow-blocker-2"></div>
+    <header>
+        <h1>Weather or Not</h1>
+        <span>We've got the weather info you need</span>
+    </header>
+    <nav>
+        <ul>
+            <li class="toggler hide">
+                <a onclick="toggleMenu()">&#9776; Menu</a></li>
+            <li><a class="  " href="./home.html">Home</a></li>
+            <li><a class="  " href="./preston.html">Preston</a></li>
+            <li><a class="  " href="./soda-springs.html">Soda Springs</a></li>
+            <li><a class="  " href="./fish-haven.html">Fish Haven</a></li>
+            <li><a class="at" href="./stormcenter.html">Storm Center</a></li>
+            <li><a class="  " href="./gallery.html">Gallery</a></li>
+        </ul>
+    </nav>
+    <main class="form">
+        <!-- Notes: For the space to the right of the form maybe have a box that will show
+                details of the selected form entry or show some images -->
+        <section>
+            <h2>Report a Storm to Our Storm Center</h2>
+            <form action="thanks.html">
+                <fieldset>
+                    <legend>Contact Information</legend>
+                    <label>Full Name<span>*</span>
+                        <input name="name" pattern="^[a-zA-Z ]{5,}[a-zA-Z]$" type="text" required>
+                    </label>
+                    <label>Email
+                        <input name="email" type="email" placeholder="someone@gmail.com">
+                    </label>
+                    <label>Phone Number<span>*</span>
+                        <input name="phone" type="tel" minlength="7" required>
+                    </label>
+                    <label>Zip Code<span>*</span>
+                        <input name="zip" type="number" min="10000" required>
+                    </label>
+                </fieldset>
+                <fieldset>
+                    <legend>Storm Information</legend>
+                    <label>Storm Date
+                        <input name="storm-date" type="date">
+                    </label>
+                    <label>Storm Type
+                        <input list="weather-types" name="weather-types">
+                    </label>
+                    <datalist id="weather-types">
+                        <option value="Flash Flood">
+                        <option value="Hail">
+                        <option value="Hurricane">
+                        <option value="Thunderstorm">
+                        <option value="Tornado">
+                    </datalist>
+                    <div class="split"><span>Storm Severity</span>
+                        <input type="range" id="severity" name="severity" min="1" max="10" step="1" value="1"
+                            oninput="adjustLabel(this)">
+                        <label for="severity">1</label>
+                    </div>
+                    <label>Storm Region
+                        <select name="region">
+                            <option value="" disabled selected>Select Region...</option>
+                            <option value="preston">Preston</option>
+                            <option value="soda springs">Soda Springs</option>
+                            <option value="fish haven">Fish Haven</option>
+                        </select>
+                    </label>
+                    <div>Are you in danger?
+                        <label class="container"><input type="radio" name="in-danger" value="yes"> Yes</label>
+                        <label class="container"><input type="radio" name="in-danger" value="maybe"> Maybe</label>
+                        <label class="container"><input type="radio" name="in-danger" value="no"> No</label>
+                    </div>
+                    <label>Any Additional Comments?
+                        <textarea name="additional-comments"></textarea>
+                    </label>
+                </fieldset>
+                <input type="submit" value="Report Storm">
+            </form>
+        </section>
+        <section class="help">
+            <h2>Form Help</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis accusamus porro earum neque commodi
+                id quam deleniti. Dicta corrupti facere nesciunt minus exercitationem eos harum voluptatum labore.
+                Reiciendis, fugiat amet.</p>
+        </section>
+    </main>
+    <footer>
+        &copy;<span class="year">2020</span> Jacob Hornbeck |
+        <a target="_blank" href="https://byui.edu/online" rel="noopener">
+            BYUI Online Learning</a>
+        <span class="last-updated">Something didn't load right,
+            please refresh.</span>
+    </footer>
+    <div id="too-small">
+        <h3>Your screen size is too small to view this page</h3>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
+    <script src="scripts/script.js"></script>
+</body>
+
+</html>
