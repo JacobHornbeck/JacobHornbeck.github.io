@@ -1,0 +1,79 @@
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap");
+
+:root {
+    --green-gray: #dedbd2;
+    --dark-green-gray: #4a5759;
+    --trans-dark-green-gray: rgba(74, 87, 89, .2);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: 'Merriweather', sans-serif;
+    font-size: 12pt;
+    padding: 10px;
+    color: var(--dark-green-gray);
+}
+
+h1 {
+    margin: 2rem auto;
+    text-align: center;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 1rem;
+    box-shadow: 0 0 25px var(--green-gray);
+}
+
+.underlined {
+    display: inline-block;
+    padding-bottom: .2rem;
+    border-bottom: 2px dashed var(--trans-dark-green-gray);
+}
+
+#template {
+    display: none !important;
+}
+
+.prophet-card {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    grid-template-rows: calc(1.5rem + 0.2rem + 2px + 1.66rem), max-content(calc(1.5rem * 2 + 0.2rem + 2px + 1.66rem))
+                        calc(1rem * 2 + 1.2rem)
+                        auto;
+    background-color: var(--green-gray);
+    border: 1px solid var(--dark-green-gray);
+    padding: 1.2rem;
+    text-align: center;
+}
+
+.prophet-card h2 {
+    display: inline-block;
+    align-self: flex-end;
+    color: var(--dark-green-gray);
+    margin-bottom: 1rem;
+}
+
+.prophet-card img {
+    align-self: center;
+    box-shadow: 0 0 25px #333;
+    width: 90%;
+    max-width: 300px;
+}
+
+.prophet-card .info {
+    font-size: .8rem;
+    line-height: 1rem;
+    margin-bottom: 1.2rem;
+}
+
+footer {
+    margin: 2rem 0
+}

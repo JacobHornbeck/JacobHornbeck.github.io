@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Prophets via fetch</title>
+        <meta name="description" content="A webpage example of loading JSON via the JavaScript fetch API." />
+        <link rel="stylesheet" href="./small.css" />
+        <link rel="stylesheet" href="./medium.css" />
+        <link rel="stylesheet" href="./large.css" />
+    </head>
+    <body>
+        <header>
+            <h1>Latter-day Prophets</h1>
+        </header>
+        <main>
+            <div class="cards">
+                <section id="template" class="prophet-card">
+                    <h2>
+                        <span class="underlined"><span data-name></span> <span data-lastname></span></span>
+                    </h2>
+                    <div class="info">
+                        <p>Date of Birth: <span data-birthdate></span></p>
+                        <p>Place of Birth: <span data-birthplace></span></p>
+                    </div>
+                    <img src="" alt="Picture of the prophet" data-imageurl="src" width="300" />
+                </section>
+            </div>
+        </main>
+        <footer>John Sudds | BYU-Idaho | WDD 230</footer>
+        <script src="./prophets.js"></script>
+    </body>
+</html>
