@@ -67,6 +67,12 @@ section.contact-info .social-links {
     main.form h2 {
         text-align: center;
     }
+    main.form {
+        grid-template-columns: 1fr;
+    }
+    main.form section.help {
+        display: none;
+    }
 }
 
 @media screen and (max-width: 657px) {

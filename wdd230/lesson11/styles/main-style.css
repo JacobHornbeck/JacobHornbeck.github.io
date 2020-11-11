@@ -426,18 +426,16 @@ main.gallery > a {
 }
 
 form {
-    padding: 1rem 0;
+    padding: 1rem 0 1.5rem;
     max-width: 450px;
+    width: 100%;
 }
 fieldset {
     border: solid 2px var(--default-dark);
-    box-shadow: 3px 3px 10px var(--default-dark);
-    border-radius: 5px;
     margin-bottom: 1.25rem;
+    border-radius: 5px;
 }
 fieldset legend {
-    box-shadow: 3px 3px 10px var(--default-dark);
-    background: var(--default-light);
     padding: 0.25rem;
 }
 form label {
@@ -452,6 +450,7 @@ form label, form div {
 }
 form label span {
     color: red;
+    font-size: large;
 }
 div label {
     margin-top: 0;
@@ -543,20 +542,57 @@ form div.split input {
     margin-top: 0;
 }
 main.form {
-    position: relative;
-    display: grid;
     grid-template-columns: 1fr 1fr;
-
+    justify-items: center;
+    align-items: flex-start;
+    position: relative;
+    grid-gap: 20px;
+    display: grid;
+}
+main.form h2 {
+    grid-column: 1 / span 2;
+    text-align: center;
+    margin-bottom: 0;
 }
 main.form section.help {
-    margin-top: 4.5rem;
-    max-height: 300px;
-    position: sticky;
-    border: solid 1px var(--default-dark);
-    top: 50px;
     transition: opacity 0.3s, transform 0.3s;
+    border: solid 1px var(--default-dark);
+    box-shadow: 3px 3px 10px #555555;
+    width: calc(100% - 2.5em);
+    margin-bottom: 1.5rem;
+    border-radius: 10px;
+    margin-top: 1.5rem;
+    max-width: 450px;
+    position: sticky;
+    grid-column: 2;
+    top: 70px;
 }
-
+main.form section.help img {
+    width: 50%;
+    display: block;
+    margin: 0 auto;
+    padding-top: 10px;
+}
+main.form section.help h2 {
+    text-align: left;
+    font-size: 1.5rem;
+}
+main.form section.help p {
+    font-size: 0.9rem;
+}
+section.submitted {
+    margin: 1rem auto 1.5rem;
+    text-align: center;
+    width: 80%;
+}
+section.submitted h2 {
+    margin-top: 0.5rem;
+}
+section.submitted img {
+    display: block;
+    margin: 0 auto;
+    width: 150px;
+}
 
 /* Styles for the footer and it's child elements */
 footer {

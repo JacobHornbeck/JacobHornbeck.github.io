@@ -39,69 +39,66 @@
     <main class="form">
         <!-- Notes: For the space to the right of the form maybe have a box that will show
                 details of the selected form entry or show some images -->
-        <section>
-            <h2>Report a Storm to Our Storm Center</h2>
-            <form action="thanks.html">
-                <fieldset>
-                    <legend>Contact Information</legend>
-                    <label>Full Name<span>*</span>
-                        <input name="name" pattern="^[a-zA-Z ]{5,}[a-zA-Z]$" type="text" required>
-                    </label>
-                    <label>Email
-                        <input name="email" type="email" placeholder="someone@gmail.com">
-                    </label>
-                    <label>Phone Number<span>*</span>
-                        <input name="phone" type="tel" minlength="7" required>
-                    </label>
-                    <label>Zip Code<span>*</span>
-                        <input name="zip" type="number" min="10000" required>
-                    </label>
-                </fieldset>
-                <fieldset>
-                    <legend>Storm Information</legend>
-                    <label>Storm Date
-                        <input name="storm-date" type="date">
-                    </label>
-                    <label>Storm Type
-                        <input list="weather-types" name="weather-types">
-                    </label>
-                    <datalist id="weather-types">
-                        <option value="Flash Flood">
-                        <option value="Hail">
-                        <option value="Hurricane">
-                        <option value="Thunderstorm">
-                        <option value="Tornado">
-                    </datalist>
-                    <div class="split"><span>Storm Severity</span>
-                        <input type="range" id="severity" name="severity" min="1" max="10" step="1" value="1"
-                            oninput="adjustLabel(this)">
-                        <label for="severity">1</label>
-                    </div>
-                    <label>Storm Region
-                        <select name="region">
-                            <option value="" disabled selected>Select Region...</option>
-                            <option value="preston">Preston</option>
-                            <option value="soda springs">Soda Springs</option>
-                            <option value="fish haven">Fish Haven</option>
-                        </select>
-                    </label>
-                    <div>Are you in danger?
-                        <label class="container"><input type="radio" name="in-danger" value="yes"> Yes</label>
-                        <label class="container"><input type="radio" name="in-danger" value="maybe"> Maybe</label>
-                        <label class="container"><input type="radio" name="in-danger" value="no"> No</label>
-                    </div>
-                    <label>Any Additional Comments?
-                        <textarea name="additional-comments"></textarea>
-                    </label>
-                </fieldset>
-                <input type="submit" value="Report Storm">
-            </form>
-        </section>
+        <h2>Report a Storm to Our Storm Center</h2>
+        <form action="thanks.html">
+            <fieldset>
+                <legend>Contact Information</legend>
+                <label>Full Name<span>*</span>
+                    <input name="name" pattern="^[a-zA-Z ]{5,}[a-zA-Z]$" type="text" required>
+                </label>
+                <label>Email
+                    <input name="email" type="email" placeholder="someone@gmail.com">
+                </label>
+                <label>Phone Number<span>*</span>
+                    <input name="phone" type="tel" minlength="7" required>
+                </label>
+                <label>Zip Code<span>*</span>
+                    <input name="zip" type="number" min="10000" required>
+                </label>
+            </fieldset>
+            <fieldset>
+                <legend>Storm Information</legend>
+                <label>Storm Date
+                    <input name="storm-date" type="date">
+                </label>
+                <label>Storm Type
+                    <input list="weather-types" name="weather-types">
+                </label>
+                <datalist id="weather-types">
+                    <option value="Flash Flood">
+                    <option value="Hail">
+                    <option value="Hurricane">
+                    <option value="Thunderstorm">
+                    <option value="Tornado">
+                </datalist>
+                <div class="split"><span>Storm Severity</span>
+                    <input type="range" id="severity" name="severity" min="1" max="10" step="1" value="1"
+                        oninput="adjustLabel(this)">
+                    <label for="severity">1</label>
+                </div>
+                <label>Storm Region
+                    <select name="region">
+                        <option value="" disabled selected>Select Region...</option>
+                        <option value="preston">Preston</option>
+                        <option value="soda springs">Soda Springs</option>
+                        <option value="fish haven">Fish Haven</option>
+                    </select>
+                </label>
+                <div>Are you in danger?
+                    <label class="container"><input type="radio" name="in-danger" value="yes"> Yes</label>
+                    <label class="container"><input type="radio" name="in-danger" value="maybe"> Maybe</label>
+                    <label class="container"><input type="radio" name="in-danger" value="no"> No</label>
+                </div>
+                <label>Any Additional Comments?
+                    <textarea name="additional-comments"></textarea>
+                </label>
+            </fieldset>
+            <input type="submit" value="Report Storm">
+        </form>
         <section class="help">
-            <h2>Form Help</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis accusamus porro earum neque commodi
-                id quam deleniti. Dicta corrupti facere nesciunt minus exercitationem eos harum voluptatum labore.
-                Reiciendis, fugiat amet.</p>
+            <img src="./images/form-help.png" alt="form-help">
+            <h2 class="title">Form Help</h2>
+            <p class="details">Select an input field to show specific help info.</p>
         </section>
     </main>
     <footer>
@@ -115,7 +112,7 @@
         <h3>Your screen size is too small to view this page</h3>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
-    <script src="scripts/script.js"></script>
+    <script src="./scripts/script.js"></script>
 </body>
 
 </html>

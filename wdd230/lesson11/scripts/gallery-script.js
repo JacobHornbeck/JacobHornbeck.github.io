@@ -37,8 +37,3 @@ else {
         lazyLoad(img)
     })
 }
-
-
-adjustLabel = (elem) => {
-    document.querySelector("label[for='severity']").innerHTML = elem.value
-}
