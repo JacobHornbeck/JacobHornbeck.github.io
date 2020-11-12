@@ -5,6 +5,12 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>homepage.png</title>
         <style>
+            body {
+                margin: 0 auto;
+                height: 615px;
+                width: 675px;
+                overflow: hidden;
+            }
             a {
                 top: 5px;
                 left: 5px;
@@ -15,19 +21,56 @@
                 padding: 1em 1.4em 1.2em 1.2em;
                 transition: all 0.2s;
                 font-size: 0.8rem;
+                z-index: 10;
             }
             a:hover {
                 transform: scale(1.2);
             }
-            img {
-                display: block;
-                margin: 0 auto;
-                width: 50%;
+            div {
+                position: absolute;
+                display: grid;
+                grid-template: 1fr / 1fr;
+                justify-items: center;
+                align-items: center;
+                height: 100%;
+                width: 100%;
+                z-index: 1;
+            }
+            div#d1 {
+                width: 675px;
+                height: 615px;
+                transform: scale(1.1);
+                transition: transform 0.3s;
+            }
+            img#i1 {
+                width: 100%;
+                z-index: 3;
+            }
+            img#i2 {
+                position: relative;
+                height: 100%;
+                z-index: 2;
+            }
+            div > div {
+                position: absolute;
+                margin-bottom: 1px;
+                margin-right: 3px;
+                width: calc(100% - 443px);
+                height: calc(100% - 203px);
+                border-radius: 5px;
+                overflow-y: scroll;
+                overflow-x: hidden;
+                z-index: 3;
             }
         </style>
     </head>
     <body>
         <a title="back" href="../home-wireframes.html">&#9664;</a>
-        <img src="./homepage-mobile.png" alt="homepage wire-frame">
+        <div id="d1">
+            <div>
+                <img id="i1" src="./homepage-mobile.jpg" alt="homepage wire-frame">
+            </div>
+            <img id="i2" src="./phone-outline.png" alt="phone">
+        </div>
     </body>
 </html>
