@@ -178,14 +178,15 @@ section.contact-info {
     box-shadow: 0 0 10px var(--default-dark);
 }
 section.contact-info iframe {
-    width: 90%;
-    height: 200px;
-    grid-column: 1;
     grid-row: span 3;
+    grid-column: 1;
+    height: 200px;
+    width: 90%;
     border: 0;
 }
 section.contact-info h3, section.contact-info ul {
     margin-top: 0;
+    text-align: left;
     color: var(--default-light);
 }
 section.contact-info ul {
@@ -538,6 +539,60 @@ form div.split label {
 }
 form div.split input {
     margin-top: 0;
+}
+
+#towns {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 20px;
+    margin: 30px auto;
+}
+#towns > div {
+    width: calc(90% - 1em);
+    margin: 30px auto;
+    text-align: center;
+    box-shadow: 3px 3px 10px var(--default-dark);
+    border-radius: 10px;
+    padding: 1em;
+}
+#towns > div img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+#towns > div h2 {
+    margin: 0;
+    margin-top: 0.5em;
+    letter-spacing: 2px;
+}
+#towns > div span {
+    font-size: small;
+}
+
+@media screen and (min-width: 851px) and (max-width: 1111px) {
+    #towns {
+        grid-template-columns: 1fr 1fr;
+    }
+    #towns > div {
+        margin: 0 auto;
+    }
+    #towns > div:nth-child(3) {
+        grid-column: span 2;
+        display: grid;
+        grid-template-columns: auto calc(214px + 2em);
+        justify-items: center;
+        align-items: center;
+        max-width: 600px;
+    }
+    #towns > div:nth-child(3) h2 {
+        margin-top: 0;
+    }
+    #towns > div:nth-child(3) img {
+        width: 100%;
+        height: 100%;
+        max-width: 325px;
+        object-fit: cover;
+        object-position: center;
+    }
 }
 
 

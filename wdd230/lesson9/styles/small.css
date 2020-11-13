@@ -53,6 +53,37 @@ section.contact-info .social-links {
 }
 
 
+#towns {
+    grid-template-columns: 1fr;
+    grid-gap: 0;
+}
+
+@media screen and (min-width: 601px) {
+    #towns > div {
+        display: grid;
+        grid-template-columns: auto calc(214px + 2em);
+        justify-items: center;
+        align-items: center;
+        max-width: 600px;
+    }
+    #towns > div img {
+        width: 100%;
+        height: 100%;
+        max-width: 325px;
+        object-fit: cover;
+        object-position: center;
+    }
+    #towns > div:nth-child(even) {
+        grid-template-columns: calc(214px + 2em) auto;
+    }
+    #towns > div:nth-child(even) img {
+        grid-column: 2;
+        grid-row: 1;
+    }
+    #towns > div:nth-child(even) section {
+        grid-row: 1;
+    }
+}
 
 @media screen and (max-width: 710px) {
     main.gallery {
@@ -81,6 +112,52 @@ section.contact-info .social-links {
         margin: 0 auto;
         display: block;
         padding-left: 0;
+    }
+}
+
+@media screen and (min-width: 546px) and (max-width: 600px) {
+    #towns > div img {
+        max-width: 140%;
+        position: absolute;
+        left: calc(-20%);
+        margin: 0 auto;
+        width: 140%;
+        top: -150px;
+        z-index: 3;
+    }
+    #towns > div {
+        position: relative;
+        align-items: center;
+        grid-template-columns: 1fr;
+        justify-items: center;
+        margin-top: 200px;
+        box-shadow: none;
+        display: static;
+        width: 60%;
+        z-index: 4;
+        padding: 0;
+    }
+    #towns > div section {
+        border-radius: 10px;
+        box-shadow: 3px 3px 10px var(--default-dark);
+        background: rgba(255,255,255,0.8);
+        position: relative;
+        margin: 0 auto;
+        padding: 1em;
+        z-index: 4;
+    }
+}
+
+@media screen and (max-width: 545px) {
+    #towns > div {
+        max-width: 300px;
+    }
+    #towns > div img {
+        width: 100%;
+        max-width: 300px;
+    }
+    #towns > div h2 {
+        margin-top: 0.5em;
     }
 }
 
