@@ -60,6 +60,12 @@ ul {
 ul li {
     padding-bottom: 5px;
 }
+a {
+    color: seagreen;
+}
+a:active {
+    color: tomato;
+}
 footer {
     background-color: seagreen;
     position: relative;
