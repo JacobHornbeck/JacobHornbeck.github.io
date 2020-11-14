@@ -52,6 +52,11 @@ section.contact-info .social-links {
     margin-left: calc(35% - 120px);
 }
 
+section.offered-services {
+    margin: 0 auto 40px;
+    grid-template-columns: 1fr;
+    width: 80%;
+}
 
 #towns {
     grid-template-columns: 1fr;
@@ -225,10 +230,12 @@ section.contact-info .social-links {
         min-width: 0px;
         width: 100%;
     }
-    header h1 {
+    header h1,
+    section.offered-services h2 {
         font-size: 2rem;
     }
-    header span {
+    header span,
+    section.offered-services span {
         font-size: 0.8rem;
     }
     div.hero {

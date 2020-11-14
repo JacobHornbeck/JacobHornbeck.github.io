@@ -67,3 +67,18 @@ fetch(townDataURL)
                 document.querySelector('#towns').appendChild(div)
             })
     })
+
+
+let pages = {
+    '🏠 Home': './',
+    '🏴󠁵󠁳󠁩󠁤󠁿 Preston': './preston.html',
+    '🥤 Soda Springs': './soda-springs.html',
+    '🎣 Fish Haven': './fish-haven.html',
+    '⛈️ Storm Center': './stormcenter.html',
+    '🖼️ Gallery': './gallery.html'
+}
+
+function openPage(elem) {
+    let el = elem.querySelector('h3')
+    window.open(pages[el.textContent],'_self')
+}
