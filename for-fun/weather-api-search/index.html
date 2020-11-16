@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>API City ID Search</title>
+    </head>
+    <body>
+        <form action="javascript: search()">
+            <input placeholder="Country" type="text" id="country" value="US">
+            <input placeholder="State" type="text" id="state" value="ID">
+            <input placeholder="City" type="text" id="city" autofocus>
+            <input type="submit" value="Search">
+        </form>
+        <br><br>
+        <div id="cities">
+            <h2>City Name</h2>
+            <code>The link that you will use will be here.</code>
+        </div>
+    </body>
+    <script>
+        function search() {
+            let country = document.getElementById("country").value.toLowerCase()
+            let state = document.getElementById("state").value.toLowerCase()
+            let city = document.getElementById("city").value.toLowerCase()
+
+            fetch("./city-list.json")
+                .then((response) => {
+                    return response.json()
+                })
+                .then((jsonData) => {
+                    let data = jsonData.filter(item => (item.country.toLowerCase() == country && item.state.toLowerCase() == state && String(item.name).toLowerCase().includes(city)))
+                    data.forEach(el => {
+                        document.getElementById('cities').innerHTML = "<h2>"+city.toUpperCase()+", "+state.toUpperCase()+"</h2><code>api.openweathermap.org/data/2.5/weather?id="+el.id+"&appid={API key}</code>"
+                    })
+                    if (data.length == 0) {
+                        alert("Nothing found!")
+                    }
+                })
+        }
+    </script>
+</html>
