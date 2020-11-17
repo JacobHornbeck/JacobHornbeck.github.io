@@ -382,6 +382,7 @@ section.forecast h3 {
 .weather-icon img {
     display: block;
     margin: 10px auto;
+    transform: scale(1.5);
 }
 
 main.gallery {
