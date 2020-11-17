@@ -13,7 +13,7 @@ fetch('https://api.openweathermap.org/data/2.5/weather?id='+cityId+'&appid='+api
         return res.json()
     })
     .then(jsonData => {
-        document.querySelector('.summary .currently').innerHTML = rnd(k2f(jsonData.main.temp),1)+'&deg;F'
+        document.querySelector('.summary .currently').innerHTML = rnd(k2f(jsonData.main.temp),1)+'&deg;F and '+jsonData.weather[0].main
         document.querySelector('.summary .temperature').textContent = rnd(k2f(jsonData.main.temp_max),1)
         document.querySelector('.summary .humidity').textContent = jsonData.main.humidity+'%'
         document.querySelector('.summary .wind-speed').textContent = jsonData.wind.speed
