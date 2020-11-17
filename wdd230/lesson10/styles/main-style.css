@@ -270,7 +270,7 @@ div.hero picture, div.hero picture img {
 div.hero section {
     top: 20px;
     left: 20px;
-    width: 160px;
+    width: 200px;
     height: 160px;
     position: absolute;
     background: rgba(255,255,255,0.3);
@@ -285,7 +285,7 @@ div.hero section h3 {
 }
 section.summary {
     display: grid;
-    grid-template-columns: 3fr 2fr;
+    grid-template-columns: 1fr 1fr;
 }
 section.summary h3 {
     grid-column: span 2;
