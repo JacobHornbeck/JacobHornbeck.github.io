@@ -17,7 +17,6 @@ fetch('https://api.openweathermap.org/data/2.5/weather?id='+cityId+'&units=imper
 
         let t = parseFloat(document.querySelector('.currently span').innerHTML)
         let s = parseFloat(document.querySelector('.wind-speed').innerHTML)
-        console.log(t)
         let chillFactor = 35.74 + (0.6215 * t) - (35.75 * Math.pow(s,0.16)) + (0.4275 * t * Math.pow(s,0.16))
         if (t <= 50.0 && s > 3.0) {
             document.querySelector('.wind-chill').innerHTML = rnd(chillFactor,1)
