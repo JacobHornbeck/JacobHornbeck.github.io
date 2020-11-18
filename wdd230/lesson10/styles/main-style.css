@@ -259,10 +259,11 @@ div.social-links a:hover .fa-flickr {
 div.hero {
     z-index: 1;
     position: relative;
-    /* background-image: url("../images/hero-image.jpg");
+    background-image: url("../images/hero-image.jpg");
     background-size: cover;
-    background-position: left bottom; */
+    background-position: left bottom;
     overflow: hidden;
+    height: 250px;
 }
 div.hero picture, div.hero picture img {
     width: 100%;
@@ -271,13 +272,13 @@ div.hero section {
     top: 20px;
     left: 20px;
     width: 200px;
-    height: 160px;
+    height: 180px;
     position: absolute;
     background: rgba(255,255,255,0.3);
     background-image: linear-gradient(-160deg, rgba(255,255,255,0.6) 50%, rgba(100,100,100,0.6));
     animation: come-in 2s ease-in-out;
     transition: top 0.3s;
-    /* transition-delay: 2.3s; */
+    transition-delay: 2.3s;
     transition-delay: 0s;
 }
 div.hero section h3 {
@@ -383,6 +384,7 @@ section.forecast h3 {
     display: block;
     margin: 10px auto;
     transform: scale(1.5);
+    filter: drop-shadow(1px 1px 1px var(--default-dark));
 }
 
 main.gallery {
