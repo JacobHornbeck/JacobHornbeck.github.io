@@ -52,6 +52,7 @@ fetch(townDataURL)
                 let p3 = document.createElement('p')
 
                 img.setAttribute('src','./images/'+i)
+                img.setAttribute('alt','header image for '+n)
                 h2.textContent = n
                 spn.textContent = m
                 p1.textContent = 'Year Founded: '+f

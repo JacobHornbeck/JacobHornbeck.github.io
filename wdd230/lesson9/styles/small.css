@@ -137,7 +137,7 @@ section.offered-services {
         justify-items: center;
         margin-top: 200px;
         box-shadow: none;
-        display: static;
+        display: block;
         width: 60%;
         z-index: 4;
         padding: 0;
