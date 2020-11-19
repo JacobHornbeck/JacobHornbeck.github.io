@@ -82,7 +82,7 @@ header {
     text-align: center;
     background-color: var(--main-color);
     box-shadow: 0 0 10px var(--main-color);
-    text-shadow: 1px 1px 1px var(--default-dark);
+    text-shadow: 1px 1px 2px var(--default-dark);
 }
 header > span {
     display: block;
