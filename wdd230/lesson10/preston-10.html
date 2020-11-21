@@ -7,7 +7,7 @@
         <meta name="description" content="Weather or Not's page for Preston
                     Idaho. Information about the weather for the city of
                     Preston and neighboring towns, cities, and areas.">
-        <link rel="shortcut icon" href="images/favicon.ico">
+        <link rel="shortcut icon" href="images/favicon.png">
         <link rel="stylesheet" href="styles/normalize.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="styles/main-style.css">
@@ -28,8 +28,11 @@
             <i onclick="closeBanner()" class="fa fa-close"></i>
         </div>
         <header>
-            <h1>Weather or Not</h1>
-            <span>We've got the weather info you need</span>
+            <div>
+                <img src="./images/header-logo.gif" alt="header logo">
+                <h1>Weather or Not</h1>
+                <span>We've got the weather info you need</span>
+            </div>
         </header>
         <nav>
             <ul>
@@ -149,10 +152,8 @@
         </main>
         <footer>
             &copy;<span class="year">2020</span> Jacob Hornbeck |
-            <a target="_blank" href="https://byui.edu/online">
-                BYUI Online Learning</a>
-            <span class="last-updated">Something didn't load right,
-                please refresh.</span>
+            <span class="current-date"></span> |
+            <a href="#">Terms of Use</a>
         </footer>
         <div id="too-small">
             <h3>Your screen size is too small to view this page</h3>
