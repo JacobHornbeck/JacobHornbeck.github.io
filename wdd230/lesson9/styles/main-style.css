@@ -152,12 +152,12 @@ nav a.at, nav a:active {
     transform: scale(1.2);
     z-index: 9 !important;
 }
-nav a.at:hover {
-    background-color: var(--default-light);
-    text-shadow: none;
-    box-shadow: 0 0 10px var(--default-light), inset 0 0 10px var(--main-color);
-    color: var(--main-color);
-    z-index: 7;
+nav:active a.at:not(:active) {
+    background-color: var(--default-dark);
+    box-shadow: 0 0 10px var(--default-dark);
+    transform: scale(1);
+    color: var(--default-light);
+    z-index: 8;
 }
 
 /* Styles for the main and the children of main */
@@ -563,6 +563,16 @@ form div.split input {
     margin-top: 0;
 }
 
+div.hero.homepage {
+    z-index: 1;
+    margin-top: -1px;
+    position: relative;
+    background-image: url("../images/hero.jpg");
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    height: 250px;
+}
 #towns {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -618,7 +628,7 @@ form div.split input {
 }
 
 
-section.offered-services {
+section.quick-links {
     margin: 0 auto 40px;
     grid-template-columns: 1fr 1fr;
     border: solid 1px var(--default-dark);
@@ -628,16 +638,16 @@ section.offered-services {
     display: grid;
     width: 85%;
 }
-section.offered-services > h2 {
+section.quick-links > h2 {
     grid-column: 1 / -1;
     font-size: 2.4rem;
     margin-bottom: 0.25rem;
 }
-section.offered-services > span {
+section.quick-links > span {
     grid-column: 1 / -1;
     margin-bottom: 1rem;
 }
-section.offered-services section {
+section.quick-links section {
     margin: 0.5rem;
     padding: 0.2rem;
     padding-bottom: 1rem;
@@ -647,16 +657,16 @@ section.offered-services section {
     box-shadow: 0 0 2px var(--default-dark);
     transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s;
 }
-section.offered-services section:hover {
+section.quick-links section:hover {
     box-shadow: 0 0 5px var(--default-dark);
     background-color: #dddddd;
     transform: scale(1);
     cursor: pointer;
 }
-section.offered-services h3 {
+section.quick-links h3 {
     margin-bottom: 0.25rem;
 }
-section.offered-services span {
+section.quick-links span {
     font-size: 0.85rem;
 }
 
