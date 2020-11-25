@@ -10,7 +10,34 @@ WebFont.load({
     }
 })
 
-document.getElementsByClassName('last-updated')[0].innerHTML = "Last Updated: "+document.lastModified
+let now = new Date()
+let months = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December"
+]
+let weekDays = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday"
+]
+document.querySelector('footer .current-date').innerHTML = weekDays[now.getDay()]+", "
+                                                          +months[now.getMonth()]+" "
+                                                          +now.getDate()+", "
+                                                          +now.getFullYear()
 
 function toggleMenu() {
     var temp = document.getElementsByClassName("toggler")[0]
@@ -23,17 +50,80 @@ function toggleMenu() {
     }
 }
 
-if (new Date().getDay() == 5) {
-    document.getElementById("big-banner").style.display = "grid"
+
+
+if (temp.substring(temp.length-10,temp.length) == "/lesson11/") {
+    const townDataURL = 'https://byui-cit230.github.io/weather/data/towndata.json'
+    const towns2get = [
+        'Preston',
+        'Fish Haven',
+        'Soda Springs'
+    ]
+
+    fetch(townDataURL)
+        .then((response) => {
+            return response.json()
+        })
+        .then((jsonData) => {
+            jsonData['towns'].filter(item => towns2get.includes(item.name))
+                .forEach(town => {
+                    let i = town.photo
+                    let n = town.name
+                    let m = town.motto
+                    let f = town.yearFounded
+                    let p = town.currentPopulation
+                    let r = town.averageRainfall
+                    
+                    let div = document.createElement('div')
+                    let img = document.createElement('img')
+                    let sect = document.createElement('section')
+                    let h2 = document.createElement('h2')
+                    let spn = document.createElement('span')
+                    let p1 = document.createElement('p')
+                    let p2 = document.createElement('p')
+                    let p3 = document.createElement('p')
+
+                    img.setAttribute('src','./images/'+i)
+                    img.setAttribute('alt','header image for '+n)
+                    h2.textContent = n
+                    spn.textContent = m
+                    p1.textContent = 'Year Founded: '+f
+                    p2.textContent = 'Population: '+p
+                    p3.textContent = 'Annual Rain Fall: '+r
+                    sect.appendChild(h2)
+                    sect.appendChild(spn)
+                    sect.appendChild(p1)
+                    sect.appendChild(p2)
+                    sect.appendChild(p3)
+                    div.appendChild(img)
+                    div.appendChild(sect)
+                    document.querySelector('#towns').appendChild(div)
+                })
+        })
+
+
+    let pages = {
+        '🏠 Home': './',
+        '🏴󠁵󠁳󠁩󠁤󠁿 Preston': './preston.html',
+        '🥤 Soda Springs': './soda-springs.html',
+        '🎣 Fish Haven': './fish-haven.html',
+        '⛈️ Storm Center': './stormcenter.html',
+        '🖼️ Gallery': './gallery.html'
+    }
+
+    function openPage(elem) {
+        let el = elem.querySelector('h3')
+        window.open(pages[el.textContent],'_self')
+    }
 }
+else if (temp.includes('preston') || temp.includes('fish-haven') || temp.includes('soda-springs')) {
+    if (new Date().getDay() == 5) {
+        document.getElementById("big-banner").style.display = "grid"
+    }
+    function closeBanner() {
+        document.getElementById("big-banner").style.display = "none"
+    }
 
-function closeBanner() {
-    document.getElementById("big-banner").style.display = "none"
-}
-
-
-/* For the 5-day weather forecast */
-if (temp.substring(temp.length-12,temp.length) == "preston.html") {
     var days = [
         "Sun",
         "Mon",
@@ -48,8 +138,7 @@ if (temp.substring(temp.length-12,temp.length) == "preston.html") {
         document.getElementById("day"+(i+1)).innerHTML = days[(today+i)%days.length]
     }
 }
-
-if (temp.substring(temp.length-16,temp.length) == "stormcenter.html") {
+else if (temp.includes('stormcenter.html')) {
     adjustLabel = (elem) => {
         document.querySelector("label[for='severity']").innerHTML = elem.value
     }
@@ -124,6 +213,7 @@ if (temp.substring(temp.length-16,temp.length) == "stormcenter.html") {
     ]
     
     let temp = document.forms
+    var temp2 = null
     for (let i = 0; i<temp[0].length; i++) {
         for (let j = 0; j<helps.length; j++) {
             if (temp[0][i].name == helps[j].name) {
@@ -133,11 +223,15 @@ if (temp.substring(temp.length-16,temp.length) == "stormcenter.html") {
                 let el3 = document.querySelector('section.help p.details')
                 elem.forEach((item) => {
                     item.addEventListener('blur', () => {
-                        el1.src       = helps[0].image
-                        el2.innerHTML = helps[0].title
-                        el3.innerHTML = helps[0].content
+                        clearTimeout(temp2)
+                        temp2 = setTimeout(() => {
+                            el1.src       = helps[0].image
+                            el2.innerHTML = helps[0].title
+                            el3.innerHTML = helps[0].content
+                        }, 500)
                     })
                     item.addEventListener('focus',() => {
+                        clearTimeout(temp2)
                         el1.src       = helps[j].image
                         el2.innerHTML = helps[j].title
                         el3.innerHTML = helps[j].content
