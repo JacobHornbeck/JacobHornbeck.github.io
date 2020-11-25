@@ -7,33 +7,38 @@
     <title>Storm Center | Weather or Not</title>
     <meta name="description" content="Weather or Not's storm center 
             for anyone to report a storm of unusual weather.">
-    <link rel="shortcut icon" href="./images/favicon.ico">
-    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="shortcut icon" href="./images/favicon.png">
+    <link rel="stylesheet" href="./styles/normalize.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="styles/main-style.css">
-    <link rel="stylesheet" href="styles/custom-inputs.css">
-    <link rel="stylesheet" href="styles/medium.css" media="(max-width: 1040px)">
-    <link rel="stylesheet" href="styles/small.css" media="(max-width: 850px)">
-    <link rel="stylesheet" href="styles/tiny.css" media="(max-width: 299px)">
+    <link rel="stylesheet" href="./styles/main-style.css">
+    <link rel="stylesheet" href="./styles/custom-inputs.css">
+    <link rel="stylesheet" href="./styles/medium.css"
+            media="(max-width: 1040px)">
+    <link rel="stylesheet" href="./styles/small.css"
+            media="(max-width: 850px)">
+    <link rel="stylesheet" href="./styles/tiny.css"
+            media="(max-width: 299px)">
 </head>
 
 <body>
     <div class="shadow-blocker-1"></div>
     <div class="shadow-blocker-2"></div>
     <header>
-        <h1>Weather or Not</h1>
-        <span>We've got the weather info you need</span>
+        <div>
+            <img src="./images/header-logo.gif" alt="header logo">
+            <h1>Weather or Not</h1>
+            <span>We've got the weather info you need</span>
+        </div>
     </header>
     <nav>
         <ul>
-            <li class="toggler hide">
-                <a onclick="toggleMenu()">&#9776; Menu</a></li>
-            <li><a class="  " href="./home.html">Home</a></li>
-            <li><a class="  " href="./preston.html">Preston</a></li>
-            <li><a class="  " href="./soda-springs.html">Soda Springs</a></li>
-            <li><a class="  " href="./fish-haven.html">Fish Haven</a></li>
-            <li><a class="at" href="./stormcenter.html">Storm Center</a></li>
-            <li><a class="  " href="./gallery.html">Gallery</a></li>
+            <li class="toggler hide"><a onclick="toggleMenu()">&#9776; Menu</a></li>
+            <li><a class="  " href="./">🏠 Home</a></li>
+            <li><a class="  " href="./preston.html">🏴󠁵󠁳󠁩󠁤󠁿 Preston</a></li>
+            <li><a class="  " href="./soda-springs.html">🥤 Soda Springs</a></li>
+            <li><a class="  " href="./fish-haven.html">🎣 Fish Haven</a></li>
+            <li><a class="at" href="./stormcenter.html">⛈️ Storm Center</a></li>
+            <li><a class="  " href="./gallery.html">🖼️ Gallery</a></li>
         </ul>
     </nav>
     <main class="form">
@@ -103,10 +108,8 @@
     </main>
     <footer>
         &copy;<span class="year">2020</span> Jacob Hornbeck |
-        <a target="_blank" href="https://byui.edu/online" rel="noopener">
-            BYUI Online Learning</a>
-        <span class="last-updated">Something didn't load right,
-            please refresh.</span>
+            <span class="current-date"></span> |
+            <a href="#">Terms of Use</a>
     </footer>
     <div id="too-small">
         <h3>Your screen size is too small to view this page</h3>

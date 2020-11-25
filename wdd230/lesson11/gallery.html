@@ -6,15 +6,15 @@
         <title>Gallery | Weather or Not</title>
         <meta name="description" content="Weather or Not's weather gallery
                     page, where you can see cool photos.">
-        <link rel="shortcut icon" href="./images/favicon.ico">
-        <link rel="stylesheet" href="styles/normalize.css">
+        <link rel="shortcut icon" href="./images/favicon.png">
+        <link rel="stylesheet" href="./styles/normalize.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="styles/main-style.css">
-        <link rel="stylesheet" href="styles/medium.css"
+        <link rel="stylesheet" href="./styles/main-style.css">
+        <link rel="stylesheet" href="./styles/medium.css"
               media="(max-width: 1040px)">
-        <link rel="stylesheet" href="styles/small.css"
+        <link rel="stylesheet" href="./styles/small.css"
               media="(max-width: 850px)">
-        <link rel="stylesheet" href="styles/tiny.css"
+        <link rel="stylesheet" href="./styles/tiny.css"
               media="(max-width: 299px)">
     </head>
     <body>
@@ -27,76 +27,76 @@
             <i onclick="closeBanner()" class="fa fa-close"></i>
         </div>
         <header>
-            <h1>Weather or Not</h1>
-            <span>We've got the weather info you need</span>
+            <div>
+                <img src="./images/header-logo.gif" alt="header logo">
+                <h1>Weather or Not</h1>
+                <span>We've got the weather info you need</span>
+            </div>
         </header>
         <nav>
             <ul>
-                <li class="toggler hide">
-                    <a onclick="toggleMenu()">&#9776; Menu</a></li>
-                    <li><a class="  " href="./home.html">Home</a></li>
-                    <li><a class="  " href="./preston.html">Preston</a></li>
-                    <li><a class="  " href="./soda-springs.html">Soda Springs</a></li>
-                    <li><a class="  " href="./fish-haven.html">Fish Haven</a></li>
-                    <li><a class="  " href="./stormcenter.html">Storm Center</a></li>
-                    <li><a class="at" href="./gallery.html">Gallery</a></li>
+                <li class="toggler hide"><a onclick="toggleMenu()">&#9776; Menu</a></li>
+                <li><a class="  " href="./">🏠 Home</a></li>
+                <li><a class="  " href="./preston.html">🏴󠁵󠁳󠁩󠁤󠁿 Preston</a></li>
+                <li><a class="  " href="./soda-springs.html">🥤 Soda Springs</a></li>
+                <li><a class="  " href="./fish-haven.html">🎣 Fish Haven</a></li>
+                <li><a class="  " href="./stormcenter.html">⛈️ Storm Center</a></li>
+                <li><a class="at" href="./gallery.html">🖼️ Gallery</a></li>
             </ul>
         </nav>
         <main class="gallery">
             <h2>Weather Gallery</h2>
-            <picture>
+            <figure>
                 <img src="https://dummyimage.com/300x200/ddd/000&text=Placeholder"
                      data-src="./images/clear-sky.jpg" alt="Placeholder">
                 <figcaption>What a nice day!</figcaption>
-            </picture>
-            <picture>
+            </figure>
+            <figure>
                 <img src="https://dummyimage.com/300x200/ddd/000&text=Placeholder"
                      data-src="./images/a-little-wet.jpg" alt="Placeholder">
                 <figcaption>Just a <em>little</em> wet.</figcaption>
-            </picture>
-            <picture>
+            </figure>
+            <figure>
                 <img src="https://dummyimage.com/300x200/ddd/000&text=Placeholder"
                      data-src="./images/beautiful-evening-sky.jpg" alt="Placeholder">
                 <figcaption>Weather can be just <em>so</em> pretty</figcaption>
-            </picture>
-            <picture>
+            </figure>
+            <figure>
                 <img src="https://dummyimage.com/300x200/ddd/000&text=Placeholder"
                      data-src="./images/clear-night-sky.jpg" alt="Placeholder">
                 <figcaption>Clear night sky, beautiful moon</figcaption>
-            </picture>
-            <picture>
+            </figure>
+            <figure>
                 <img src="https://dummyimage.com/300x200/ddd/000&text=Placeholder"
                      data-src="./images/dangerous-but-beautiful.jpg" alt="Placeholder">
                 <figcaption>Dangerous and beautiful</figcaption>
-            </picture>
-            <picture>
+            </figure>
+            <figure>
                 <img src="https://dummyimage.com/300x200/ddd/000&text=Placeholder"
                      data-src="./images/just-a-little-cold.jpg" alt="Placeholder">
                 <figcaption>It's only a <em>little</em> cold out...</figcaption>
-            </picture>
-            <picture>
+            </figure>
+            <figure>
                 <img src="https://dummyimage.com/300x200/ddd/000&text=Placeholder"
                      data-src="./images/like-a-strike-of-lightning.jpg" alt="Placeholder">
                 <figcaption>Sometimes weather changes like a strike of lightning</figcaption>
-            </picture>
-            <picture>
+            </figure>
+            <figure>
                 <img src="https://dummyimage.com/300x200/ddd/000&text=Placeholder"
                      data-src="./images/winter-tire-may-be-needed.jpg" alt="Placeholder">
                 <figcaption>When outside looks like this make sure you have winter tires</figcaption>
-            </picture>
-            <picture>
+            </figure>
+            <figure>
                 <img src="https://dummyimage.com/300x200/ddd/000&text=Placeholder"
                      data-src="./images/you-never-know-what-might-happen.jpg" alt="Placeholder">
                 <figcaption>With weather, you never know what might happen!</figcaption>
-            </picture>
+            </figure>
             <a href="./references.html">Photo references</a>
         </main>
         <footer>
             &copy;<span class="year">2020</span> Jacob Hornbeck |
-            <a target="_blank" href="https://byui.edu/online" rel="noopener">
-                BYUI Online Learning</a>
-            <span class="last-updated">Something didn't load right,
-                please refresh.</span>
+            <span class="current-date"></span> |
+            <a href="#">Terms of Use</a>
         </footer>
         <div id="too-small">
             <h3>Your screen size is too small to view this page</h3>

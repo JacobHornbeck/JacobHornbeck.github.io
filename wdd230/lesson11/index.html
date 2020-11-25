@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Weather or Not Homepage</title>
+        <meta name="description" content="Weather or Not's homepage. A little
+                information about each area and some quick links.">
+        <link rel="shortcut icon" href="./images/favicon.png">
+        <link rel="stylesheet" href="./styles/normalize.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="./styles/main-style.css">
+        <link rel="stylesheet" href="./styles/medium.css"
+                media="(max-width: 1040px)">
+        <link rel="stylesheet" href="./styles/small.css"
+                media="(max-width: 850px)">
+        <link rel="stylesheet" href="./styles/tiny.css"
+                media="(max-width: 299px)">
+    </head>
+    <body>
+        <div class="shadow-blocker-1"></div>
+        <div class="shadow-blocker-2"></div>
+        <header>
+            <div>
+                <img src="./images/header-logo.gif" alt="header logo">
+                <h1>Weather or Not</h1>
+                <span>We've got the weather info you need</span>
+            </div>
+        </header>
+        <nav>
+            <ul>
+                <li class="toggler hide">
+                    <a onclick="toggleMenu()">&#9776; Menu</a></li>
+                <li><a class="at" href="./">🏠 Home</a></li>
+                <li><a class="  " href="./preston.html">🏴󠁵󠁳󠁩󠁤󠁿 Preston</a></li>
+                <li><a class="  " href="./soda-springs.html">🥤 Soda Springs</a></li>
+                <li><a class="  " href="./fish-haven.html">🎣 Fish Haven</a></li>
+                <li><a class="  " href="./stormcenter.html">⛈️ Storm Center</a></li>
+                <li><a class="  " href="./gallery.html">🖼️ Gallery</a></li>
+            </ul>
+        </nav>
+        <main>
+            <div class="hero homepage"></div>
+            <div id="towns"></div>
+            <section class="quick-links">
+                <h2>Weather or Not</h2>
+                <span>has your back, for more than weather</span>
+                <section onclick="openPage(this)">
+                    <h3>🏠 Home</h3>
+                    <span>Our homepage with a little information</span>
+                </section>
+                <section onclick="openPage(this)">
+                    <h3>🏴󠁵󠁳󠁩󠁤󠁿 Preston</h3>
+                    <span>Events, weather, and more</span>
+                </section>
+                <section onclick="openPage(this)">
+                    <h3>🥤 Soda Springs</h3>
+                    <span>More than just the weather for the area</span>
+                </section>
+                <section onclick="openPage(this)">
+                    <h3>🎣 Fish Haven</h3>
+                    <span>Even find the best fishing spots</span>
+                </section>
+                <section onclick="openPage(this)">
+                    <h3>⛈️ Storm Center</h3>
+                    <span>Report storms to our Storm Center</span>
+                </section>
+                <section onclick="openPage(this)">
+                    <h3>🖼️ Gallery</h3>
+                    <span>See some awesome photos!</span>
+                </section>
+            </section>
+            <section class="contact-info">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d47366.34469339145!2d-111.87517579490891!3d42.098977407066165!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4v1602872714788!5m2!1sen!2sus"
+                    title="embedded map" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                <h3>Contact Information</h3>
+                <ul class="fa-ul">
+                    <li><i class="fa-li fa fa-location-arrow"></i>123 S<sup>th</sup>
+                        Somewhere St.<span id="brk1"></span>
+                        Preston, ID 83263</li>
+                    <li><i class="fa-li fa fa-phone"></i>(208) 123-4567</li>
+                    <li><i class="fa-li fa fa-envelope"></i>
+                        info@weather-or-not.org</li>
+                </ul>
+                <div class="social-links">
+                    <a href="https://currents.google.com/" target="_blank" rel="noopener">
+                       <i class="fa fa-google-plus-square"></i>Google Plus</a>
+                    <a href="https://facebook.com/" target="_blank" rel="noopener">
+                       <i class="fa fa-facebook-square"></i>Facebook</a>
+                    <a href="https://flickr.com/" target="_blank" rel="noopener">
+                       <i class="fa fa-flickr"></i>Flickr</a>
+                </div>
+            </section>
+        </main>
+        <footer>
+            &copy;<span class="year">2020</span> Jacob Hornbeck |
+            <span class="current-date"></span> |
+            <a href="#">Terms of Use</a>
+        </footer>
+        <div id="too-small">
+            <h3>Your screen size is too small to view this page</h3>
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
+        <script src="scripts/script.js"></script>
+    </body>
+</html>
