@@ -1,12 +1,12 @@
 :root {
-    --main-color: #2e8b57;
+    --main-color: #1e7b47;
     --secondary-color: #add8e6;
     --accent-color: #90ee90;
     --default-light: #ffffff;
     --default-dark: #2f2f2f;
 
-    --header-font: 'Exo 2', sans-serif;
-    --paragraph-font: 'Comfortaa', sans-serif;
+    --header-font: 'Exo 2', impact, sans-serif;
+    --paragraph-font: 'Comfortaa', arial, sans-serif;
 }
 
 /* Random styling for html and body */
@@ -83,16 +83,33 @@ header {
     background-color: var(--main-color);
     box-shadow: 0 0 10px var(--main-color);
     text-shadow: 1px 1px 1px var(--default-dark);
+    grid-template-columns: 1fr;
+    display: grid;
 }
-header > span {
+header > div {
+    display: grid;
+    
+}
+header > div > img {
+    display: block;
+    grid-column: 1;
+    grid-row: span 2;
+    justify-self: end;
+}
+header> div > span {
     display: block;
     color: var(--secondary-color);
     padding-bottom: 1rem;
+    justify-self: start;
+    grid-column: 2;
+    padding-left: 10px;
 }
 h1 {
+    grid-column: 2;
+    justify-self: start;
     color: var(--default-light);
-    margin-bottom: 0.75rem;
     margin-top: 0.75rem;
+    margin-bottom: 0;
 }
 nav {
     position: sticky;
@@ -115,34 +132,47 @@ nav > ul .toggler + li {
 }
 nav a {
     z-index: 8;
-    padding: 1em 0;
     display: block;
     margin-right: 0;
     overflow: hidden;
+    font-size: 0.9em;
     width: calc(100%);
-    font-weight: bold;
+    font-weight: bolder;
+    line-height: 0.9em;
     text-align: center;
     position: relative;
     text-decoration: none;
     height: calc(100% - 2em);
-    color: var(--default-light);
+    font-family: var(--header-font);
     background-color: var(--default-dark);
     box-shadow: 0 0 10px var(--default-dark);
     transition: padding 0.2s, height 0.2s;
+    color: var(--default-light);
+    padding: 1.3em 0 0.7em;
+    transition: all 0.2s;
     height: 18px;
+}
+nav a:hover {
+    text-shadow: none;
+    background-color: var(--default-light);
+    box-shadow: 0 0 10px var(--default-light),
+                inset 0 0 10px var(--main-color);
+    color: var(--main-color);
+    z-index: 7;
 }
 nav a.at, nav a:active {
     background-color: var(--main-color);
-    text-shadow: 1px 1px 1px var(--default-dark);
+    text-shadow: 1px 1px var(--default-dark);
     box-shadow: 0 0 10px var(--main-color);
-    z-index: 9;
+    color: var(--default-light);
+    z-index: 9 !important;
+    transition: none;
 }
-nav a:hover {
-    background-color: var(--default-light);
-    text-shadow: none;
-    box-shadow: 0 0 10px var(--default-light), inset 0 0 10px var(--main-color);
-    color: var(--main-color);
-    z-index: 7;
+nav:active a.at:not(:active) {
+    background-color: var(--default-dark);
+    box-shadow: 0 0 10px var(--default-dark);
+    color: var(--default-light);
+    z-index: 8 !important;
 }
 
 /* Styles for the main and the children of main */
@@ -178,14 +208,15 @@ section.contact-info {
     box-shadow: 0 0 10px var(--default-dark);
 }
 section.contact-info iframe {
-    width: 90%;
-    height: 200px;
-    grid-column: 1;
     grid-row: span 3;
+    grid-column: 1;
+    height: 200px;
+    width: 90%;
     border: 0;
 }
 section.contact-info h3, section.contact-info ul {
     margin-top: 0;
+    text-align: left;
     color: var(--default-light);
 }
 section.contact-info ul {
@@ -195,7 +226,7 @@ section.contact-info li {
     padding-top: 3px;
 }
 section.contact-info li i {
-    transition: transform 0.5s, color 0.3s;
+    transition: transform 0.2s, color 0.4s;
 }
 section.contact-info li:hover i {
     color: var(--main-color);
@@ -210,8 +241,9 @@ section.contact-info div.social-links {
     padding-left: 35px;
 }
 div.social-links a {
-    width: 36px;
-    height: 37px;
+    width: 33px;
+    height: 33px;
+    border-radius: 7px;
     overflow: hidden;
 }
 div.social-links .fa-google-plus-square,
@@ -221,15 +253,21 @@ div.social-links .fa-flickr {
     transition: transform 0.5s;
     font-size: 40px;
 }
-div.social-links .fa-google-plus-square:hover {
+div.social-links a i {
+    line-height: 35px;
+}
+div.social-links a:hover {
+    background: white;
+}
+div.social-links a:hover .fa-google-plus-square {
     cursor: pointer;
     color: tomato;
 }
-div.social-links .fa-facebook-square:hover {
+div.social-links a:hover .fa-facebook-square {
     cursor: pointer;
     color: royalblue;
 }
-div.social-links .fa-flickr:hover {
+div.social-links a:hover .fa-flickr {
     cursor: pointer;
     background: linear-gradient(90deg, royalblue, deeppink);
     background-clip: padding-box;
@@ -240,33 +278,33 @@ div.social-links .fa-flickr:hover {
 div.hero {
     z-index: 1;
     position: relative;
-    /* background-image: url("../images/hero-image.jpg");
+    background-image: url("../images/hero-image.jpg");
     background-size: cover;
-    background-position: left bottom; */
+    background-position: left bottom;
     overflow: hidden;
+    height: 250px;
 }
-div.hero picture, div.hero picture img {
+div.hero figure, div.hero figure img {
     width: 100%;
 }
 div.hero section {
     top: 20px;
     left: 20px;
-    width: 160px;
-    height: 160px;
+    width: 200px;
+    height: 180px;
     position: absolute;
     background: rgba(255,255,255,0.3);
     background-image: linear-gradient(-160deg, rgba(255,255,255,0.6) 50%, rgba(100,100,100,0.6));
     animation: come-in 2s ease-in-out;
     transition: top 0.3s;
-    /* transition-delay: 2.3s; */
-    transition-delay: 0s;
+    transition-delay: 2.3s;
 }
 div.hero section h3 {
     margin-top: 0.5rem;
 }
 section.summary {
     display: grid;
-    grid-template-columns: 3fr 2fr;
+    grid-template-columns: 1fr 1fr;
 }
 section.summary h3 {
     grid-column: span 2;
@@ -360,12 +398,11 @@ section.forecast h3 {
     padding: 0.5rem;
     display: block;
 }
-.weather-icon {
-    width: 60px;
-    height: 60px;
-    background-image: url("../images/weather-icons-dark.png");
-    background-position: -11px -13px;
-    transform: scale(0.9);
+.weather-icon img {
+    display: block;
+    margin: 10px auto;
+    transform: scale(1.5);
+    filter: drop-shadow(1px 1px 1px var(--default-dark));
 }
 
 main.gallery {
@@ -380,7 +417,7 @@ main.gallery h2 {
     margin-top: 1.25em;
     grid-column: 1 / -1;
 }
-main.gallery picture {
+main.gallery figure {
     transform: scale(0);
     max-width: 300px;
     box-shadow: 1px 1px 3px var(--default-dark), inset 0 0 3px var(--default-dark);
@@ -389,19 +426,19 @@ main.gallery picture {
     overflow: hidden;
     transition: all 0.3s;
 }
-main.gallery picture.in {
+main.gallery figure.in {
     animation: img-come-in 1s;
     transform: scale(1);
 }
-main.gallery picture:hover {
+main.gallery figure:hover {
     transform: translate(-6px, -6px);
     box-shadow: 6px 6px 12px var(--default-dark), inset 0 0 3px var(--default-dark);
 }
-main.gallery picture img {
+main.gallery figure img {
     display: block;
     border-radius: 10px;
 }
-main.gallery picture figcaption {
+main.gallery figure figcaption {
     padding: 0.5em;
     text-align: center;
 }
@@ -409,16 +446,16 @@ main.gallery picture figcaption {
 main.gallery.refs {
     padding: 0 calc(100% - 1000px) 30px;
 }
-main.gallery.refs picture {
+main.gallery.refs figure {
     max-width: 200px;
 }
-main.gallery.refs picture img {
+main.gallery.refs figure img {
     display: block;
     margin: 0 auto;
     border-radius: 10px;
     max-width: 200px;
 }
-main.gallery.refs picture figcaption {
+main.gallery.refs figure figcaption {
     font-size: 0.8em;
 }
 main.gallery > a {
@@ -478,6 +515,7 @@ form input {
     padding: 0.75rem;
 }
 form input[type="range"] {
+    outline: none;
     width: 100%;
     padding: 0;
 }
@@ -594,6 +632,118 @@ section.submitted img {
     width: 150px;
 }
 
+
+div.hero.homepage {
+    margin-top: -1px;
+    background-image: url('../images/hero.jpg');
+}
+#towns {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 20px;
+    margin: 30px auto 20px;
+}
+#towns > div {
+    width: calc(90% - 1em);
+    margin: 30px auto;
+    text-align: center;
+    box-shadow: 3px 3px 10px var(--default-dark);
+    border-radius: 10px;
+    padding: 1em;
+}
+#towns > div img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+#towns > div h2 {
+    margin: 0;
+    margin-top: 0.5em;
+    letter-spacing: 2px;
+}
+#towns > div span {
+    font-size: small;
+}
+
+
+div.hero.fish-haven {
+    background-image: url('../images/hero-image-fish-haven.jpg');
+    background-position: center top;
+}
+div.hero.soda-springs {
+    background-image: url('../images/hero-image-soda-springs.jpg');
+    background-position: left center;
+}
+
+@media screen and (min-width: 851px) and (max-width: 1111px) {
+    #towns {
+        grid-template-columns: 1fr 1fr;
+    }
+    #towns > div {
+        margin: 0 auto;
+    }
+    #towns > div:nth-child(3) {
+        grid-template-columns: auto calc(214px + 2em);
+        justify-items: center;
+        align-items: center;
+        grid-column: span 2;
+        max-width: 600px;
+        display: grid;
+    }
+    #towns > div:nth-child(3) h2 {
+        margin-top: 0;
+    }
+    #towns > div:nth-child(3) img {
+        width: 100%;
+        height: 100%;
+        max-width: 325px;
+        object-fit: cover;
+        object-position: center;
+    }
+}
+
+
+section.quick-links {
+    margin: 0 auto 40px;
+    grid-template-columns: 1fr 1fr;
+    border: solid 1px var(--default-dark);
+    padding-bottom: 30px;
+    border-radius: 10px;
+    text-align: center;
+    display: grid;
+    width: 85%;
+}
+section.quick-links > h2 {
+    grid-column: 1 / -1;
+    font-size: 2.4rem;
+    margin-bottom: 0.25rem;
+}
+section.quick-links > span {
+    grid-column: 1 / -1;
+    margin-bottom: 1rem;
+}
+section.quick-links section {
+    margin: 0.5rem;
+    padding: 0.2rem;
+    padding-bottom: 1rem;
+    background-color: #eeeeee;
+    transform: scale(0.95);
+    border-radius: 5px;
+    box-shadow: 0 0 2px var(--default-dark);
+    transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s;
+}
+section.quick-links section:hover {
+    box-shadow: 0 0 5px var(--default-dark);
+    background-color: #dddddd;
+    transform: scale(1);
+    cursor: pointer;
+}
+section.quick-links h3 {
+    margin-bottom: 0.25rem;
+}
+section.quick-links span {
+    font-size: 0.85rem;
+}
+
 /* Styles for the footer and it's child elements */
 footer {
     text-shadow: 1px 1px 1px var(--default-dark);
@@ -653,7 +803,7 @@ footer a:hover {
     main.gallery {
         grid-template-columns: 1fr 1fr;
     }
-    main.gallery picture:last-child {
+    main.gallery figure:last-child {
         grid-column: span 2;
     }
 }
