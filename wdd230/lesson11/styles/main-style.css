@@ -293,8 +293,8 @@ div.hero section {
     width: 200px;
     height: 180px;
     position: absolute;
-    background: rgba(255,255,255,0.3);
-    background-image: linear-gradient(-160deg, rgba(255,255,255,0.6) 50%, rgba(100,100,100,0.6));
+    background: rgba(255,255,255,0.7);
+    background-image: linear-gradient(-160deg, rgba(255,255,255,0.7) 50%, rgba(100,100,100,0.7));
     animation: come-in 2s ease-in-out;
     transition: top 0.3s;
     transition-delay: 2.3s;
@@ -358,15 +358,27 @@ section.article .img-holder {
 section.article:hover .shout-out {
     transition-delay: 0.2s;
     bottom: 4px;
+    opacity: 1;
 }
 .img-holder img {
     width: 100%;
 }
 section.article h3 {
     margin-top: 0.5rem;
+    margin-bottom: 0;
+}
+section.article span:not(.shout-out) {
+    font-size: 0.9em;
+    opacity: 0.7;
+}
+section.article span.author {
+    padding-left: 10px;
+    font-size: 0.8em;
+    opacity: 0.5;
 }
 section.article p {
     padding-left: 10px;
+    line-height: 1.5em;
 }
 section.forecast h3 {
     text-align: center;
