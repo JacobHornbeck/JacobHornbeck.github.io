@@ -1,5 +1,5 @@
 const pathN = window.location.pathname
-const api_key = '30dab8ad616006464c6fcefabccd5254'
+const api_key = '\x33\x30\x64\x61\x62\x38\x61\x64\x36\x31\x36\x30\x30\x36\x34\x36\x34\x63\x36\x66\x63\x65\x66\x61\x62\x63\x63\x64\x35\x32\x35\x34'
 var cityId = ''
 var url = 'https://api.openweathermap.org/data/2.5/'
 if (pathN.includes('preston')) {
