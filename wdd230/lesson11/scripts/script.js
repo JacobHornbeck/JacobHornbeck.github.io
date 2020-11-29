@@ -1,58 +1,29 @@
 const temp = window.location.href
 
+/* Using WebFont to load the fonts */
+WebFont.load({ google: { families: [ 'Comfortaa', 'Exo 2' ] } })
 
-WebFont.load({
-    google: {
-        families: [
-            'Comfortaa',
-            'Exo 2'
-        ]
-    }
-})
-
+/* Show the current date in the footer */
 let now = new Date()
-let months = [
-    "January",
-    "February",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July",
-    "August",
-    "September",
-    "October",
-    "November",
-    "December"
-]
-let weekDays = [
-    "Sunday",
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday"
-]
+let months = [ "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" ]
+let weekDays = [ "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday" ]
 document.querySelector('footer .current-date').innerHTML = weekDays[now.getDay()]+", "
                                                           +months[now.getMonth()]+" "
                                                           +now.getDate()+", "
                                                           +now.getFullYear()
 
+/* Function to open and close menu */
 function toggleMenu() {
     var temp = document.getElementsByClassName("toggler")[0]
     temp.classList.toggle("hide")
-    if (temp.classList[1]=="hide") {
-        document.querySelector(".toggler > a").innerHTML = "&#9776; Menu"
-    }
-    else {
-        document.querySelector(".toggler > a").innerHTML = "&#10006; Close"
-    }
+    if (temp.classList[1]=="hide") document.querySelector(".toggler > a").innerHTML = "&#9776; Menu"
+    else document.querySelector(".toggler > a").innerHTML = "&#10006; Close"
 }
 
 
 
 if (temp.substring(temp.length-10,temp.length) == "/lesson11/") {
+    /* Initialize variables to use for fetching town data */
     const townDataURL = 'https://byui-cit230.github.io/weather/data/towndata.json'
     const towns2get = [
         'Preston',
@@ -60,13 +31,16 @@ if (temp.substring(temp.length-10,temp.length) == "/lesson11/") {
         'Soda Springs'
     ]
 
+    /* Fetch town data from source */
     fetch(townDataURL)
         .then((response) => {
             return response.json()
         })
         .then((jsonData) => {
+            /* Display the town data on the page */
             jsonData['towns'].filter(item => towns2get.includes(item.name))
                 .forEach(town => {
+                    /* Set the values needed to simple variables */
                     let i = town.photo
                     let n = town.name
                     let m = town.motto
@@ -74,6 +48,7 @@ if (temp.substring(temp.length-10,temp.length) == "/lesson11/") {
                     let p = town.currentPopulation
                     let r = town.averageRainfall
                     
+                    /* Create needed elements */
                     let div = document.createElement('div')
                     let img = document.createElement('img')
                     let sect = document.createElement('section')
@@ -83,6 +58,7 @@ if (temp.substring(temp.length-10,temp.length) == "/lesson11/") {
                     let p2 = document.createElement('p')
                     let p3 = document.createElement('p')
 
+                    /* Give the elements content */
                     img.setAttribute('src','./images/'+i)
                     img.setAttribute('alt','header image for '+n)
                     h2.textContent = n
@@ -90,6 +66,8 @@ if (temp.substring(temp.length-10,temp.length) == "/lesson11/") {
                     p1.textContent = 'Year Founded: '+f
                     p2.textContent = 'Population: '+p
                     p3.textContent = 'Annual Rain Fall: '+r
+
+                    /* Move the elements into reality */
                     sect.appendChild(h2)
                     sect.appendChild(spn)
                     sect.appendChild(p1)
@@ -101,7 +79,7 @@ if (temp.substring(temp.length-10,temp.length) == "/lesson11/") {
                 })
         })
 
-
+    /* Stuff for quick links */
     let pages = {
         '🏠 Home': './',
         '🏴󠁵󠁳󠁩󠁤󠁿 Preston': './preston.html',
@@ -117,32 +95,124 @@ if (temp.substring(temp.length-10,temp.length) == "/lesson11/") {
     }
 }
 else if (temp.includes('preston') || temp.includes('fish-haven') || temp.includes('soda-springs')) {
-    if (new Date().getDay() == 5) {
+    /* If the page is Preston and is Friday show event banner */
+    if (temp.includes('preston') && new Date().getDay() == 5) {
         document.getElementById("big-banner").style.display = "grid"
-    }
-    function closeBanner() {
-        document.getElementById("big-banner").style.display = "none"
+        function closeBanner() {
+            document.getElementById("big-banner").style.display = "none"
+        }
     }
 
-    var days = [
-        "Sun",
-        "Mon",
-        "Tues",
-        "Wed",
-        "Thurs",
-        "Fri",
-        "Sat"
-    ]
+    /* Make a parseDate function */
+    const parseDate = (str => {
+        let tYear = now.getFullYear()
+        let dt = str.split(' ')
+        let tMonth = months.indexOf(dt[0])
+        let tDay = dt[1].split('-')
+        let tDate = [new Date(tYear,tMonth,tDay[0])]
+        if (tDay.length > 1) {
+            tDate.push(new Date(tYear,tMonth,tDay[1]))
+        }
+        return tDate
+    })
+
+    /* Function to calculate the months/days until another date */
+    const untilThen = ((d1,factor) => {
+        let d1Y = now.getFullYear()
+        let d2Y = d1.getFullYear()
+        let d1M
+        let d2M
+        switch (factor) {
+            case 12:
+                d1M = now.getMonth()
+                d2M = d1.getMonth()
+            break;
+            case 30:
+                d1M = now.getDate()
+                d2M = d1.getDate()
+        }
+
+        return ((d2M+factor*d2Y)-(d1M+factor*d1Y));
+    })
+
+    /* Making the 5-day forecast show the days */
+    var days = [ "Sun", "Mon", "Tues", "Wed", "Thurs", "Fri", "Sat" ]
     var today = new Date().getDay()
-    for (let i = 0; i<5; i++) {
-        document.getElementById("day"+(i+1)).innerHTML = days[(today+i)%days.length]
-    }
+    for (let i = 0; i<5; i++) document.getElementById("day"+(i+1)).innerHTML = days[(today+i)%days.length]
+
+    /* Adding events into the Events Section */
+        /* Initialize variables to use for fetching town data */
+        const townDataURL = 'https://byui-cit230.github.io/weather/data/towndata.json'
+
+        /* Fetch town data from source */
+        fetch(townDataURL)
+            .then((response) => {
+                return response.json()
+            })
+            .then((jsonData) => {
+                /* Set a variable to the events element */
+                let events = document.querySelector('section.events')
+                events.innerHTML = ""
+
+                /* Display the town data on the page */
+                let eventData = jsonData['towns'].filter(item => temp.includes(item.name.replace(' ','-').toLowerCase()))[0]
+                let tempEl = document.createElement('h3')
+                tempEl.innerText=eventData.name+" Events"
+                events.appendChild(tempEl)
+                eventData['events'].forEach((event) => {
+                    let sect = document.createElement('section')
+                    let h4 = document.createElement('h4')
+                    let span1 = document.createElement('span')
+                    let span2 = document.createElement('span')
+                    let span3 = document.createElement('span')
+
+                    let txt = event.split(': ')
+                    let tDate = parseDate(txt[0])
+                    h4.innerHTML = txt[1]
+                    /*  I might add this so they can add it to their calendar:
+                        https://calendar.google.com/calendar/u/0/r/eventedit?text=[event+name]&dates=[year][month][day]/[year][month][day]&sf=true&output=xml */
+                    if (tDate.length > 1) {
+                        span1.innerHTML = "When: <span class=\"underlined-dotted\">"+months[tDate[0].getMonth()]+" "+tDate[0].getDate()+" to "
+                                                  +months[tDate[1].getMonth()]+" "+tDate[1].getDate()+"</span>"
+                    }
+                    else
+                        span1.innerHTML = "When: <span class=\"underlined-dotted\">"+months[tDate[0].getMonth()]+" "+tDate[0].getDate()+"</span>"
+
+                    if (tDate[tDate.length-1] < now) {
+                        span2.innerText = "Sorry, it looks like this event is over."
+                        let tempDy = new Date(tDate[0])
+                        tempDy.setFullYear(now.getFullYear()+1)
+                        let tTime = untilThen(tempDy,12)
+                        span3.innerText = "It will happen again in "+tTime+" month"+"s".substring(0,tTime-1)
+                    }
+                    else if (tDate[0] <= now && now <= tDate[tDate.length-1]) {
+                        span2.innerText = "It looks like this event is currently happening!"
+                        if (tDate.length > 1) {
+                            let tTime = untilThen(tDate[0],30)
+                            span3.innerText = "It ends in "+tTime+" day"+"s".substring(0,tTime-1)
+                        }
+                        else
+                            span3.innerText = "Same time next year, if you want to do it then!"
+                    }
+                    else {
+                        span2.innerText = "This event starts later this year."
+                        let tTime = untilThen(tDate[0],12)
+                        span3.innerText = "It starts in "+tTime+" month"+"s".substring(0,tTime-1)
+                    }
+
+
+                    events.appendChild(sect)
+                          .append(h4, span1, span2, span3)
+                })
+            })
 }
 else if (temp.includes('stormcenter.html')) {
+    /* Changing the display value for the range input */
     adjustLabel = (elem) => {
         document.querySelector("label[for='severity']").innerHTML = elem.value
     }
     
+    /* Making the form help section actually show help! */
     const helps = [
         {
             name:       'none',
