@@ -118,6 +118,9 @@ section.quick-links {
     main.form section.help {
         display: none;
     }
+    section.events {
+        grid-template-columns: 1fr;
+    }
 }
 
 @media screen and (max-width: 657px) {

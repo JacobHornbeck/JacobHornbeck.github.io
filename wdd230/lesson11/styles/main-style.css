@@ -677,6 +677,49 @@ div.hero.homepage {
 }
 
 
+section.events {
+    margin: 30px auto 70px;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+    align-items: center;
+    text-align: center;
+    grid-gap: 30px;
+    display: grid;
+}
+section.events h3 {
+    grid-column: 1 / -1;
+    margin-bottom: 0;
+    border-bottom: solid 1px var(--default-dark);
+}
+section.events i.fa-spin {
+    margin-bottom: 20px;
+    margin-left: 30px;
+    font-size: larger;
+}
+section.events h4 {
+    margin-top: 10px;
+    color: var(--default-light);
+}
+section.events section {
+    color: var(--default-light);
+    background-color: var(--default-dark);
+    max-width: 300px;
+    padding: 1rem;
+}
+span.underlined-dotted {
+    border-bottom: dashed 1px var(--secondary-color);
+}
+section.events span:not(.underlined-dotted) {
+    font-size: 0.9rem;
+    line-height: 2em;
+    display: block;
+}
+section.events span:nth-of-type(2),
+section.events span:nth-of-type(3) {
+    font-size: 0.8rem;
+}
+
+
 div.hero.fish-haven {
     background-image: url('../images/hero-image-fish-haven.jpg');
     background-position: center top;
@@ -787,6 +830,64 @@ footer a:hover {
 }
 
 
+/* Override the original fa-spin animation */
+.fa-spin {
+    -webkit-animation: fa-spin 3s infinite ease-in-out;
+    animation: fa-spin 3s infinite ease-in-out;
+}
+@keyframes fa-spin {
+    from {
+        transform: rotate(0deg);
+    }
+    7.5% {
+        transform: rotate(0deg);
+    }
+    12.5% {
+        transform: rotate(45deg);
+    }
+    20% {
+        transform: rotate(45deg);
+    }
+    25% {
+        transform: rotate(90deg);
+    }
+    32.5% {
+        transform: rotate(90deg);
+    }
+    37.5% {
+        transform: rotate(135deg);
+    }
+    45% {
+        transform: rotate(135deg);
+    }
+    50% {
+        transform: rotate(180deg);
+    }
+    57.5% {
+        transform: rotate(180deg);
+    }
+    62.5% {
+        transform: rotate(225deg);
+    }
+    70% {
+        transform: rotate(225deg);
+    }
+    75% {
+        transform: rotate(270deg);
+    }
+    82.5% {
+        transform: rotate(270deg);
+    }
+    87.5% {
+        transform: rotate(315deg);
+    }
+    95% {
+        transform: rotate(315deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
 @keyframes come-in {
     from {
         opacity: 0;
@@ -817,5 +918,8 @@ footer a:hover {
     }
     main.gallery figure:last-child {
         grid-column: span 2;
+    }
+    section.events {
+        grid-template-columns: 1fr 1fr;
     }
 }
