@@ -23,15 +23,15 @@ fetch(url+'weather?'+cityId+'&units=imperial&appid='+api_key)
     })
     .then(jsonData => {
         setTimeout(() => {
-            document.querySelector('.summary .currently').innerHTML = jsonData.weather[0].main+' <span>'+rnd(jsonData.main.temp,1)+'</span>&deg;F'
+            let currentTemp = rnd(jsonData.main.temp,1)
+            let windSpeed = jsonData.wind.speed
+            document.querySelector('.summary .currently').innerHTML = jsonData.weather[0].main+' <span>'+currentTemp+'</span>&deg;F'
             document.querySelector('.summary .temperature').innerHTML = "<span>"+rnd(jsonData.main.temp_max,1)+"</span>&deg;F"
             document.querySelector('.summary .humidity').textContent = jsonData.main.humidity+'%'
-            document.querySelector('.summary .wind-speed').innerHTML = "<span>"+jsonData.wind.speed+"</span> mph"
+            document.querySelector('.summary .wind-speed').innerHTML = "<span>"+windSpeed+"</span> mph"
 
-            let t = parseFloat(document.querySelector('.currently span').innerHTML)
-            let s = parseFloat(document.querySelector('.wind-speed').innerHTML)
-            let chillFactor = 35.74 + (0.6215 * t) - (35.75 * Math.pow(s,0.16)) + (0.4275 * t * Math.pow(s,0.16))
-            if (t <= 50.0 && s > 3.0) {
+            let chillFactor = 35.74 + (0.6215 * currentTemp) - (35.75 * Math.pow(windSpeed,0.16)) + (0.4275 * currentTemp * Math.pow(windSpeed,0.16))
+            if (currentTemp <= 50.0 && windSpeed > 3.0) {
                 document.querySelector('.colored.chill').innerHTML = "<span class=\"wind-chill\">"+rnd(chillFactor,1)+"</span>&deg;F"
             }
             else {
