@@ -707,8 +707,13 @@ section.events section {
     max-width: 300px;
     padding: 1rem;
 }
-span.underlined-dotted {
+a.underlined-dotted {
+    color: var(--default-light);
+    text-decoration: none;
     border-bottom: dashed 1px var(--secondary-color);
+}
+a.underlined-dotted:hover {
+    color: var(--secondary-color);
 }
 section.events span:not(.underlined-dotted) {
     font-size: 0.9rem;

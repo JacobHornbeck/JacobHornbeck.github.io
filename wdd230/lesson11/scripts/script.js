@@ -135,6 +135,22 @@ else if (temp.includes('preston') || temp.includes('fish-haven') || temp.include
         return ((d2M+factor*d2Y)-(d1M+factor*d1Y));
     })
 
+    const getEventLink = ((name, date1, date2) => {
+        const _year = (dt => { return dt.getFullYear() })
+        const _month = (dt => { return "0".substring(0,dt.getMonth()>9?0:1)+(dt.getMonth()+1) })
+        const _day = (dt => { return "0".substring(0,dt.getDate()>9?0:1)+dt.getDate() })
+        return "https://calendar.google.com/calendar/u/0/r/eventedit?text="+name+"&dates="+_year(date1)+""+_month(date1)+""+_day(date1)+"/"+_year(date2)+""+_month(date2)+""+_day(date2)+"&ctz=America%2FBoise&sf=true&output=xml"
+    })
+
+    /** This function return the day after the input date... for
+     *  some reason the calendar link would show the day before
+     *  even when it specifically uses that same date number */
+    const nextDay = (dt => {
+        let temp = new Date(dt)
+        temp.setDate(temp.getDate()+1)
+        return temp
+    })
+
     /* Making the 5-day forecast show the days */
     var days = [ "Sun", "Mon", "Tues", "Wed", "Thurs", "Fri", "Sat" ]
     var today = new Date().getDay()
@@ -169,14 +185,15 @@ else if (temp.includes('preston') || temp.includes('fish-haven') || temp.include
                     let txt = event.split(': ')
                     let tDate = parseDate(txt[0])
                     h4.innerHTML = txt[1]
-                    /*  I might add this so they can add it to their calendar:
-                        https://calendar.google.com/calendar/u/0/r/eventedit?text=[event+name]&dates=[year][month][day]/[year][month][day]&sf=true&output=xml */
                     if (tDate.length > 1) {
-                        span1.innerHTML = "When: <span class=\"underlined-dotted\">"+months[tDate[0].getMonth()]+" "+tDate[0].getDate()+" to "
-                                                  +months[tDate[1].getMonth()]+" "+tDate[1].getDate()+"</span>"
+                        let eventUrl = getEventLink(txt[1],tDate[0],nextDay(tDate[1]))
+                        span1.innerHTML = "When: <a target=\"_blank\" href=\""+eventUrl+"\" class=\"underlined-dotted\">"+months[tDate[0].getMonth()]+" "+tDate[0].getDate()+" to "
+                                                  +months[tDate[1].getMonth()]+" "+tDate[1].getDate()+"</a>"
                     }
-                    else
-                        span1.innerHTML = "When: <span class=\"underlined-dotted\">"+months[tDate[0].getMonth()]+" "+tDate[0].getDate()+"</span>"
+                    else {
+                        let eventUrl = getEventLink(txt[1],tDate[0],nextDay(tDate[0]))
+                        span1.innerHTML = "When: <a target=\"_blank\" href=\""+eventUrl+"\" class=\"underlined-dotted\">"+months[tDate[0].getMonth()]+" "+tDate[0].getDate()+"</a>"
+                    }
                     
                     let tDate2 = new Date(tDate[tDate.length-1])
                     tDate2.setHours(23,59,59) // Make the temp date be the VERY end of the day
