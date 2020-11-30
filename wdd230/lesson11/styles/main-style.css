@@ -197,6 +197,7 @@ div.place-holder {
 }
 
 section.contact-info {
+    grid-column: 1 / -1;
     position: relative;
     left: -1rem;
     width: 100%;
@@ -417,7 +418,7 @@ section.forecast h3 {
     filter: drop-shadow(1px 1px 1px var(--default-dark));
 }
 
-main.gallery {
+section.gallery {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     justify-items: center;
@@ -425,11 +426,11 @@ main.gallery {
     grid-gap: 30px;
     padding-bottom: 30px;
 }
-main.gallery h2 {
+section.gallery h2 {
     margin-top: 1.25em;
     grid-column: 1 / -1;
 }
-main.gallery figure {
+section.gallery figure {
     transform: scale(0);
     max-width: 300px;
     box-shadow: 1px 1px 3px var(--default-dark), inset 0 0 3px var(--default-dark);
@@ -438,39 +439,39 @@ main.gallery figure {
     overflow: hidden;
     transition: all 0.3s;
 }
-main.gallery figure.in {
+section.gallery figure.in {
     animation: img-come-in 1s;
     transform: scale(1);
 }
-main.gallery figure:hover {
+section.gallery figure:hover {
     transform: translate(-6px, -6px);
     box-shadow: 6px 6px 12px var(--default-dark), inset 0 0 3px var(--default-dark);
 }
-main.gallery figure img {
+section.gallery figure img {
     display: block;
     border-radius: 10px;
 }
-main.gallery figure figcaption {
+section.gallery figure figcaption {
     padding: 0.5em;
     text-align: center;
 }
 
-main.gallery.refs {
+section.gallery.refs {
     padding: 0 calc(100% - 1000px) 30px;
 }
-main.gallery.refs figure {
+section.gallery.refs figure {
     max-width: 200px;
 }
-main.gallery.refs figure img {
+section.gallery.refs figure img {
     display: block;
     margin: 0 auto;
     border-radius: 10px;
     max-width: 200px;
 }
-main.gallery.refs figure figcaption {
+section.gallery.refs figure figcaption {
     font-size: 0.8em;
 }
-main.gallery > a {
+section.gallery > a {
     grid-column: 1 / -1;
 }
 
@@ -591,7 +592,7 @@ form div.split label {
 form div.split input {
     margin-top: 0;
 }
-main.form {
+div.form {
     grid-template-columns: 1fr 1fr;
     justify-items: center;
     align-items: flex-start;
@@ -599,12 +600,12 @@ main.form {
     grid-gap: 20px;
     display: grid;
 }
-main.form h2 {
+div.form h2 {
     grid-column: 1 / span 2;
     text-align: center;
     margin-bottom: 0;
 }
-main.form section.help {
+div.form section.help {
     transition: opacity 0.3s, transform 0.3s;
     border: solid 1px var(--default-dark);
     box-shadow: 3px 3px 10px #555555;
@@ -617,17 +618,17 @@ main.form section.help {
     grid-column: 2;
     top: 70px;
 }
-main.form section.help img {
+div.form section.help img {
     width: 50%;
     display: block;
     margin: 0 auto;
     padding-top: 10px;
 }
-main.form section.help h2 {
+div.form section.help h2 {
     text-align: left;
     font-size: 1.5rem;
 }
-main.form section.help p {
+div.form section.help p {
     font-size: 0.9rem;
 }
 section.submitted {
@@ -913,10 +914,10 @@ footer a:hover {
 }
 
 @media screen and (max-width: 1280px) {
-    main.gallery {
+    section.gallery {
         grid-template-columns: 1fr 1fr;
     }
-    main.gallery figure:last-child {
+    section.gallery figure:last-child {
         grid-column: span 2;
     }
     section.events {

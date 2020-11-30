@@ -100,22 +100,22 @@ section.quick-links {
 
 
 @media screen and (max-width: 710px) {
-    main.gallery {
+    section.gallery {
         grid-template-columns: 1fr;
     }
-    main.gallery figure:last-child {
+    section.gallery figure:last-child {
         grid-column: span 1;
     }
     form {
         margin: 0 auto;
     }
-    main.form h2 {
+    div.form h2 {
         text-align: center;
     }
-    main.form {
+    div.form {
         grid-template-columns: 1fr;
     }
-    main.form section.help {
+    div.form section.help {
         display: none;
     }
     section.events {
@@ -245,12 +245,12 @@ section.quick-links {
     div.hero {
         max-height: 310px;
     }
-    main.gallery figure {
+    section.gallery figure {
         transform: scale(0.9);
     }
 }
 @media screen and (max-width: 330px) {
-    main.gallery figure {
+    section.gallery figure {
         transform: scale(0.8);
     }
 }

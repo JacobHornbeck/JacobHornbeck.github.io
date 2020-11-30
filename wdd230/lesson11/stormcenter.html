@@ -41,69 +41,90 @@
             <li><a class="  " href="./gallery.html">🖼️ Gallery</a></li>
         </ul>
     </nav>
-    <main class="form">
-        <!-- Notes: For the space to the right of the form maybe have a box that will show
-                details of the selected form entry or show some images -->
-        <h2>Report a Storm to Our Storm Center</h2>
-        <form action="thanks.html">
-            <fieldset>
-                <legend>Contact Information</legend>
-                <label>Full Name<span>*</span>
-                    <input name="name" pattern="^[a-zA-Z ]{5,}[a-zA-Z]$" type="text" required>
-                </label>
-                <label>Email
-                    <input name="email" type="email" placeholder="someone@gmail.com">
-                </label>
-                <label>Phone Number<span>*</span>
-                    <input name="phone" type="tel" minlength="7" required>
-                </label>
-                <label>Zip Code<span>*</span>
-                    <input name="zip" type="number" min="10000" required>
-                </label>
-            </fieldset>
-            <fieldset>
-                <legend>Storm Information</legend>
-                <label>Storm Date
-                    <input name="storm-date" type="date">
-                </label>
-                <label>Storm Type
-                    <input list="weather-types" name="weather-types">
-                </label>
-                <datalist id="weather-types">
-                    <option value="Flash Flood">
-                    <option value="Hail">
-                    <option value="Hurricane">
-                    <option value="Thunderstorm">
-                    <option value="Tornado">
-                </datalist>
-                <div class="split"><span>Storm Severity</span>
-                    <input type="range" id="severity" name="severity" min="1" max="10" step="1" value="1"
-                        oninput="adjustLabel(this)">
-                    <label for="severity">1</label>
-                </div>
-                <label>Storm Region
-                    <select name="region">
-                        <option value="" disabled selected>Select Region...</option>
-                        <option value="preston">Preston</option>
-                        <option value="soda springs">Soda Springs</option>
-                        <option value="fish haven">Fish Haven</option>
-                    </select>
-                </label>
-                <div>Are you in danger?
-                    <label class="container"><input type="radio" name="in-danger" value="yes"> Yes</label>
-                    <label class="container"><input type="radio" name="in-danger" value="maybe"> Maybe</label>
-                    <label class="container"><input type="radio" name="in-danger" value="no"> No</label>
-                </div>
-                <label>Any Additional Comments?
-                    <textarea name="additional-comments"></textarea>
-                </label>
-            </fieldset>
-            <input type="submit" value="Report Storm">
-        </form>
-        <section class="help">
-            <img src="./images/form-help.png" alt="form-help">
-            <h2 class="title">Form Help</h2>
-            <p class="details">Select an input field to show specific help info.</p>
+    <main>
+        <div class="form">
+            <h2>Report a Storm to Our Storm Center</h2>
+            <form action="thanks.html">
+                <fieldset>
+                    <legend>Contact Information</legend>
+                    <label>Full Name<span>*</span>
+                        <input name="name" pattern="^[a-zA-Z ]{5,}[a-zA-Z]$" type="text" required>
+                    </label>
+                    <label>Email
+                        <input name="email" type="email" placeholder="someone@gmail.com">
+                    </label>
+                    <label>Phone Number<span>*</span>
+                        <input name="phone" type="tel" minlength="7" required>
+                    </label>
+                    <label>Zip Code<span>*</span>
+                        <input name="zip" type="number" min="10000" required>
+                    </label>
+                </fieldset>
+                <fieldset>
+                    <legend>Storm Information</legend>
+                    <label>Storm Date
+                        <input name="storm-date" type="date">
+                    </label>
+                    <label>Storm Type
+                        <input list="weather-types" name="weather-types">
+                    </label>
+                    <datalist id="weather-types">
+                        <option value="Flash Flood">
+                        <option value="Hail">
+                        <option value="Hurricane">
+                        <option value="Thunderstorm">
+                        <option value="Tornado">
+                    </datalist>
+                    <div class="split"><span>Storm Severity</span>
+                        <input type="range" id="severity" name="severity" min="1" max="10" step="1" value="1"
+                            oninput="adjustLabel(this)">
+                        <label for="severity">1</label>
+                    </div>
+                    <label>Storm Region
+                        <select name="region">
+                            <option value="" disabled selected>Select Region...</option>
+                            <option value="preston">Preston</option>
+                            <option value="soda springs">Soda Springs</option>
+                            <option value="fish haven">Fish Haven</option>
+                        </select>
+                    </label>
+                    <div>Are you in danger?
+                        <label class="container"><input type="radio" name="in-danger" value="yes"> Yes</label>
+                        <label class="container"><input type="radio" name="in-danger" value="maybe"> Maybe</label>
+                        <label class="container"><input type="radio" name="in-danger" value="no"> No</label>
+                    </div>
+                    <label>Any Additional Comments?
+                        <textarea name="additional-comments"></textarea>
+                    </label>
+                </fieldset>
+                <input type="submit" value="Report Storm">
+            </form>
+            <section class="help">
+                <img src="./images/form-help.png" alt="form-help">
+                <h2 class="title">Form Help</h2>
+                <p class="details">Select an input field to show specific help info.</p>
+            </section>
+        </div>
+        <section class="contact-info">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d47366.34469339145!2d-111.87517579490891!3d42.098977407066165!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4v1602872714788!5m2!1sen!2sus"
+                title="embedded map" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+            <h3>Contact Information</h3>
+            <ul class="fa-ul">
+                <li><i class="fa-li fa fa-location-arrow"></i>123 S<sup>th</sup>
+                    Somewhere St.<span id="brk1"></span>
+                    Preston, ID 83263</li>
+                <li><i class="fa-li fa fa-phone"></i>(208) 123-4567</li>
+                <li><i class="fa-li fa fa-envelope"></i>
+                    info@weather-or-not.org</li>
+            </ul>
+            <div class="social-links">
+                <a href="https://currents.google.com/" target="_blank" rel="noopener">
+                   <i class="fa fa-google-plus-square"></i>Google Plus</a>
+                <a href="https://facebook.com/" target="_blank" rel="noopener">
+                   <i class="fa fa-facebook-square"></i>Facebook</a>
+                <a href="https://flickr.com/" target="_blank" rel="noopener">
+                   <i class="fa fa-flickr"></i>Flickr</a>
+            </div>
         </section>
     </main>
     <footer>
