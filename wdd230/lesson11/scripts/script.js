@@ -127,7 +127,7 @@ else if (temp.includes('preston') || temp.includes('fish-haven') || temp.include
                 d1M = now.getMonth()
                 d2M = d1.getMonth()
             break;
-            case 30:
+            case 1:
                 d1M = now.getDate()
                 d2M = d1.getDate()
         }
@@ -177,27 +177,44 @@ else if (temp.includes('preston') || temp.includes('fish-haven') || temp.include
                     }
                     else
                         span1.innerHTML = "When: <span class=\"underlined-dotted\">"+months[tDate[0].getMonth()]+" "+tDate[0].getDate()+"</span>"
-
-                    if (tDate[tDate.length-1] < now) {
+                    
+                    let tDate2 = new Date(tDate[tDate.length-1])
+                    tDate2.setHours(23,59,59) // Make the temp date be the VERY end of the day
+                    if (tDate[0] <= now && now <= tDate2) {
+                        span2.innerText = "This event is currently happening!"
+                        if (tDate.length > 1) {
+                            let tTime = untilThen(tDate[tDate.length-1],1)
+                            if (tTime > 1)
+                                span3.innerText = "It ends in "+tTime+" day"+"s".substring(0,tTime-1)
+                            else if (tTime == 1)
+                                span3.innerText = "It ends tomorrow!"
+                            else
+                                span3.innerText = "It ends today!"
+                        }
+                        else
+                            span3.innerText = "It's happening next year too!"
+                    }
+                    else if (tDate[tDate.length-1] < now) {
                         span2.innerText = "Sorry, it looks like this event is over."
                         let tempDy = new Date(tDate[0])
                         tempDy.setFullYear(now.getFullYear()+1)
                         let tTime = untilThen(tempDy,12)
                         span3.innerText = "It will happen again in "+tTime+" month"+"s".substring(0,tTime-1)
                     }
-                    else if (tDate[0] <= now && now <= tDate[tDate.length-1]) {
-                        span2.innerText = "It looks like this event is currently happening!"
-                        if (tDate.length > 1) {
-                            let tTime = untilThen(tDate[0],30)
-                            span3.innerText = "It ends in "+tTime+" day"+"s".substring(0,tTime-1)
-                        }
-                        else
-                            span3.innerText = "Same time next year, if you want to do it then!"
-                    }
                     else {
                         span2.innerText = "This event starts later this year."
+                        let tempDy = new Date(tDate[0])
+                        tempDy.setFullYear(now.getFullYear()+1)
                         let tTime = untilThen(tDate[0],12)
-                        span3.innerText = "It starts in "+tTime+" month"+"s".substring(0,tTime-1)
+                        if (tTime > 0)
+                            span3.innerText = "It starts in "+tTime+" month"+"s".substring(0,tTime-1)
+                        else {
+                            tTime = untilThen(tempDy,1)-1
+                            if (tTime == 1)
+                                span3.innerText = "It starts tomorrow!"
+                            else
+                                span3.innerText = "It starts in "+tTime+" day"+"s".substring(0,tTime-1)
+                        }
                     }
 
 
