@@ -1,0 +1,94 @@
+{
+    "rentals": [
+        {
+            "name": "~Honda Metropolitan",
+            "type": "Scooter",
+            "max-capacity": 1,
+            "max-speed": "49cc",
+            "details": "",
+            "reservation": {
+                "half-day": 20,
+                "full-day": 30
+            },
+            "walk-in": {
+                "half-day": 25,
+                "full-day": 35
+            }
+        },
+        {
+            "name": "~Honda Dio",
+            "type": "Scooter",
+            "max-capacity": 2,
+            "max-speed": "110cc",
+            "details": "",
+            "reservation": {
+                "half-day": 30,
+                "full-day": 40
+            },
+            "walk-in": {
+                "half-day": 35,
+                "full-day": 45
+            }
+        },
+        {
+            "name": "~Honda PCX150",
+            "type": "Scooter",
+            "max-capacity": 2,
+            "max-speed": "149cc",
+            "details": "",
+            "reservation": {
+                "half-day": 40,
+                "full-day": 50
+            },
+            "walk-in": {
+                "half-day": 45,
+                "full-day": 55
+            }
+        },
+        {
+            "name": "Honda Pioneer 1000",
+            "type": "ATV",
+            "max-capacity": 4,
+            "max-speed": "",
+            "details": "",
+            "reservation": {
+                "half-day": 50,
+                "full-day": 70
+            },
+            "walk-in": {
+                "half-day": 60,
+                "full-day": 80
+            }
+        },
+        {
+            "name": "2-Door Jeep Wrangler",
+            "type": "Jeep",
+            "max-capacity": 4,
+            "max-speed": "",
+            "details": "open air and manual",
+            "reservation": {
+                "half-day": 60,
+                "full-day": 85
+            },
+            "walk-in": {
+                "half-day": 70,
+                "full-day": 90
+            }
+        },
+        {
+            "name": "4-Door Jeep Wrangler",
+            "type": "Jeep",
+            "max-capacity": 5,
+            "max-speed": "",
+            "details": "manual with A/C",
+            "reservation": {
+                "half-day": 70,
+                "full-day": 100
+            },
+            "walk-in": {
+                "half-day": 85,
+                "full-day": 125
+            }
+        }
+    ]
+}
