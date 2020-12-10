@@ -320,6 +320,9 @@
     .forecast section img {
         border-radius: 50%;
     }
+    .forecast section h3, .weather section h4 {
+        font-family: var(--paragraph);
+    }
 /* End Homepage Styling */
     
 
