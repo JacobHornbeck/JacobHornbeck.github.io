@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>~Scoots Reservations</title>
+        <link rel="stylesheet" href="./css/normalize.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Marck+Script&family=Ruluko&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="./css/index.css">
+        <link rel="shortcut icon" href="./images/scoots-logo.png" type="image/x-icon">
+    </head>
+    <body>
+        <div class="alert">
+            <img src="./images/placeholder.png" alt="temp">
+            <span></span>
+            <img src="./images/placeholder.png" alt="temp">
+        </div>
+        <header>
+            <h1>~Scoots</h1>
+            <nav>
+                <ul>
+                    <li><a class="  " href="./"><span>Home</span></a></li>
+                    <li><a class="  " href="./rentals.html"><span>Rentals</span></a></li>
+                    <li><a class="at" href="./reservations.html"><span>Reservations</span></a></li>
+                    <li><a class="  " href="./tours.html"><span>Tours</span></a></li>
+                    <li><a class="  " href="./contact.html"><span>Contact</span></a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <div class="grid">
+                <section class="rental-agreement">
+                    <h2>Rental Agreement</h2>
+                    <p>Loading Data...</p>
+                </section>
+                <form action="./submit-confirmation.html">
+                    <fieldset>
+                        <legend>Customer Information</legend>
+                        <label>
+                            Name <span>*</span>
+                            <input type="text" name="name" required>
+                        </label>
+                        <label>
+                            Phone Number <span>*</span>
+                            <input type="tel" name="phone" required>
+                        </label>
+                        <label>
+                            Email
+                            <input type="email" name="email">
+                        </label>
+                        <label>
+                            Home Country <span>*</span>
+                            <input type="text" name="country" list="countries" required>
+                            <datalist id="countries">
+                                <option value="United States"></option>
+                                <option value="China"></option>
+                                <option value="Japan"></option>
+                                <option value="Germany"></option>
+                                <option value="India"></option>
+                                <option value="France"></option>
+                                <option value="United Kingdom"></option>
+                                <option value="Brazil"></option>
+                                <option value="Italy"></option>
+                                <option value="Canada"></option>
+                                <option value="South Korea"></option>
+                                <option value="Russia"></option>
+                                <option value="Australia"></option>
+                                <option value="Spain"></option>
+                                <option value="Mexico"></option>
+                                <option value="Indonesia"></option>
+                                <option value="Turkey"></option>
+                                <option value="Netherlands"></option>
+                                <option value="Saudi Arabia"></option>
+                                <option value="Switzerland"></option>
+                                <option value="Argentina"></option>
+                                <option value="Sweden"></option>
+                                <option value="Thailand"></option>
+                                <option value="Poland"></option>
+                                <option value="Belgium"></option>
+                                <option value="Nigeria"></option>
+                                <option value="Iran"></option>
+                                <option value="Austria"></option>
+                                <option value="Egypt"></option>
+                                <option value="Norway"></option>
+                                <option value="United Arab Emirates"></option>
+                                <option value="Philippines"></option>
+                                <option value="Israel"></option>
+                                <option value="Ireland"></option>
+                                <option value="Malaysia"></option>
+                                <option value="South Africa"></option>
+                                <option value="Columbia"></option>
+                                <option value="Singapore"></option>
+                                <option value="Pakistan"></option>
+                                <option value="Bangladesh"></option>
+                                <option value="Chile"></option>
+                                <option value="Finland"></option>
+                                <option value="Portugal"></option>
+                                <option value="Peru"></option>
+                                <option value="Vietnam"></option>
+                                <option value="New Zealand"></option>
+                                <option value="Venezuela"></option>
+                                <option value="Romania"></option>
+                                <option value="Czech Republic"></option>
+                                <option value="Greece"></option>
+                            </datalist>
+                        </label>
+                        <label id="state">
+                            State <span>*</span>
+                            <input type="text" name="state" list="states" required>
+                            <datalist id="states">
+                                <option value="AL">Alabama</option>
+                                <option value="AK">Alaska</option>
+                                <option value="AZ">Arizona</option>
+                                <option value="AR">Arkansas</option>
+                                <option value="CA">California</option>
+                                <option value="CO">Colorado</option>
+                                <option value="CT">Connecticut</option>
+                                <option value="DE">Delaware</option>
+                                <option value="FL">Florida</option>
+                                <option value="GA">Georgia</option>
+                                <option value="HI">Hawaii</option>
+                                <option value="ID">Idaho</option>
+                                <option value="IL">Illinois</option>
+                                <option value="IN">Indiana</option>
+                                <option value="IA">Iowa</option>
+                                <option value="KS">Kansas</option>
+                                <option value="KY">Kentucky</option>
+                                <option value="LA">Louisiana</option>
+                                <option value="ME">Maine</option>
+                                <option value="MD">Maryland</option>
+                                <option value="MA">Massachusetts</option>
+                                <option value="MI">Michigan</option>
+                                <option value="MN">Minnesota</option>
+                                <option value="MS">Mississippi</option>
+                                <option value="MO">Missouri</option>
+                                <option value="MT">Montana</option>
+                                <option value="NE">Nebraska</option>
+                                <option value="NV">Nevada</option>
+                                <option value="NH">New Hampshire</option>
+                                <option value="NJ">New Jersey</option>
+                                <option value="NM">New Mexico</option>
+                                <option value="NY">New York</option>
+                                <option value="NC">North Carolina</option>
+                                <option value="ND">North Dakota</option>
+                                <option value="OH">Ohio</option>
+                                <option value="OK">Oklahoma</option>
+                                <option value="OR">Oregon</option>
+                                <option value="PA">Pennsylvania</option>
+                                <option value="RI">Rhode Island</option>
+                                <option value="SC">South Carolina</option>
+                                <option value="SD">South Dakota</option>
+                                <option value="TN">Tennessee</option>
+                                <option value="TX">Texas</option>
+                                <option value="UT">Utah</option>
+                                <option value="VT">Vermont</option>
+                                <option value="VA">Virginia</option>
+                                <option value="WA">Washington</option>
+                                <option value="WV">West Virginia</option>
+                                <option value="WI">Wisconsin</option>
+                                <option value="WY">Wyoming</option>
+                            </datalist>
+                        </label>
+                        <label>
+                            Cruise Line (if applicable)
+                            <input type="text" name="cruise-line">
+                        </label>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Rental Details</legend>
+                        <label>
+                            Rental Start Date <span>*</span>
+                            <input type="datetime-local" name="rental-start" required>
+                        </label>
+                        <div class="radios">
+                            Rental Period <span>*</span>
+                            <label>
+                                <input type="radio" name="rental-period" value="half-day" required>
+                                Half day (3 hours)
+                            </label>
+                            <label>
+                                <input type="radio" name="rental-period" value="full-day" required>
+                                Full day
+                            </label>
+                            <label>
+                                <input type="radio" name="rental-period" value="multiple-days" onfocus="SelectOtherOne(this)" required>
+                                Multiple days <input id="test1" type="number" name="rental-period" class="not-block" min="2" onfocus="SelectOtherOne(this)">
+                            </label>
+                            <p>Return Time: <span>select a start date and a rental period to find out</span></p>
+                        </div>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Other Details</legend>
+                        <label>
+                            Additional Comments
+                            <textarea name="comments"></textarea>
+                        </label>
+                        <div class="checkboxes">
+                            Rental Agreement <span>*</span>
+                            <label>
+                                <input type="checkbox" name="time-responsible" onclick="CheckForm(this)" required>
+                                <span class="not-colored">By making this reservation you agree to everything stated <a href="#agreement-info"><span class="not-colored">above</span></a></span>
+                            </label>
+                            <label>
+                                <input type="checkbox" name="allow-texts">
+                                You authorize us to send you text notices letting you know weather alerts we get or specific information for your reservations/rentals.
+                            </label>
+                        </div>
+                    </fieldset>
+                    <input type="submit" value="Make Reservation" disabled>
+                </form>
+                <div class="social-links">
+                    <a target="_blank" href="https://www.facebook.com" class="facebook"><img src="./images/facebook-white.png" alt="Facebook link"> <span>Facebook</span></a>
+                    <a target="_blank" href="https://www.instagram.com" class="instagram"><img src="./images/instagram-white.png" alt="Instagram link"> <span>Instagram</span></a>
+                    <a target="_blank" href="https://www.linkedin.com" class="linked-in"><img src="./images/linked-in-white.png" alt="LinkedIn link"> <span>LinkedIn</span></a>
+                    <a target="_blank" href="https://www.youtube.com" class="youtube"><img src="./images/youtube-white.png" alt="YouTube link"> <span>YouTube</span></a>
+                    <a target="_blank" href="https://www.twitter.com" class="twitter"><img src="./images/twitter-white.png" alt="Twitter link"> <span>Twitter</span></a>
+                </div>
+            </div>
+        </main>
+        <footer>
+            <p>&copy;<span id="year">2020</span> ~Scoots All Rights Reserved</p>
+            <a href="./terms-of-use.html"><span>Terms of Use</span></a>
+            <a href="./privacy-policy.html"><span>Privacy Policy</span></a>
+        </footer>
+        <script src="js/index.js"></script>
+    </body>
+</html>

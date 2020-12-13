@@ -44,6 +44,7 @@ if (check.substring(check.length-14,check.length) == "final-project/") {
             let p = document.querySelector('.weather > section p')
 
             img.setAttribute('src',imgURL+jsonData.weather[0].icon+'.png')
+            img.setAttribute('alt',jsonData.weather[0].description)
             h4.innerHTML = rnd(jsonData.main.temp,1)+"&deg;F "+jsonData.weather[0].main
             p.innerHTML = "Humidity: "+rnd(jsonData.main.humidity,1)+"%"
         })
@@ -53,6 +54,7 @@ if (check.substring(check.length-14,check.length) == "final-project/") {
             return res.json()
         })
         .then(jsonData => {
+            let days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday']
             jsonData.list.filter(item => item['dt_txt'].includes('18:00:00'))
                 .forEach((elem,index) => {
                     if (document.querySelector('.forecast > section:nth-child('+(index+1)+')') !== null) {
@@ -61,10 +63,62 @@ if (check.substring(check.length-14,check.length) == "final-project/") {
                         let p = document.querySelector('.forecast > section:nth-child('+(index+1)+') p')
 
                         img.setAttribute('src',imgURL+elem.weather[0].icon+'.png')
-                        h3.innerHTML = rnd(elem.main.temp,1)+"&deg;F "+elem.weather[0].main
-                        p.innerHTML = "Humidity: "+rnd(elem.main.humidity,1)+"%"
+                        img.setAttribute('alt',elem.weather[0].description)
+                        h3.innerHTML = days[((new Date().getDay())+index)%days.length]
+                        p.innerHTML = "Temp: "+rnd(elem.main.temp,1)+"&deg;F"
                     }
                 })
         })
         
+}
+else if (check.includes('reservations.html')) {
+    fetch('./data/rentals.json')
+        .then((response) => {
+            return response.json()
+        })
+        .then((jsonData) => {
+            let elem = document.querySelector('section.rental-agreement')
+            elem.innerHTML = "<h2 id=\"agreement-info\">Rental Agreement</h2>"
+            jsonData['agreement-info'].forEach((item) => {
+                let el = document.createElement('p')
+                el.innerText = item
+                elem.appendChild(el)
+            })
+        })
+
+    function CheckForm(agree) {
+        let form = agree.parentElement.parentElement.parentElement.parentElement
+        if (form.checkValidity()) {
+            document.querySelector('form input[type="submit"]').disabled = false
+        }
+        else {
+            if (agree.checked) {
+                if (window.confirm("Complete the required field(s) above before you agreeing to this!")) {
+                    document.querySelector('form input[type="submit"]').disabled = false
+                    document.querySelector('form input[type="submit"]').click()
+                }
+                agree.checked = false
+            }
+            document.querySelector('form input[type="submit"]').disabled = true
+        }
+    }
+
+    let radioOn = false
+    let numOn = false
+    function SelectOtherOne(input) {
+        if (input.type == "radio" && !radioOn) {
+            numOn = true
+            input.parentElement.querySelector('input[type="number"]').focus()
+        }
+        if (input.type == "number" && !numOn) {
+            radioOn = true
+            numOn = true
+            input.parentElement.querySelector('input[type="radio"]').click()
+            input.focus()
+        }
+        setTimeout(() => {
+            radioOn = false
+            numOn = false
+        }, 200);
+    }
 }

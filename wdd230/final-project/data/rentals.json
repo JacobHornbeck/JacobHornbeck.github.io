@@ -90,5 +90,17 @@
                 "full-day": 125
             }
         }
+    ],
+    "agreement-info": [
+        "No one under 12 years of age are allowed to ride on the scooters.",
+        "Fuel charge not included. (Renters pay for fuel as needed, and are required to fill tank before returning)",
+        "If rentals are not returned on time renters will be charged for the next time slot."
+    ],
+    "other-info": [
+        "A valid drivers license is required in hand at time of rental.",
+        "Unlimited mileage.",
+        "Liability insurance is free of charge.",
+        "Free delivery to Cozumel hotel, Airbnb, or private residence for 2+ day rentals.",
+        "Rentals may be returned to either location."
     ]
 }

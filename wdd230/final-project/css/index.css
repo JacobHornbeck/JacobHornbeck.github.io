@@ -23,6 +23,7 @@
     }
     main {
         background-color: white;
+        padding: 1px 0;
     }
     * {
         color: var(--gray);
@@ -101,31 +102,55 @@
         height: calc(30px * 5);
         padding: 20px 0 50px;
     }
-    .social-links > * {
+    .social-links > a {
+        display: grid;
+        box-shadow: 2px 2px 4px var(--dark-gray);
+        grid-template-columns: 36px calc(140px - 36px);
+        grid-gap: 10px;
+        align-items: center;
+        justify-items: start;
         width: 36px;
         height: 36px;
-        background-size: cover;
-        background-position: center;
-        transition: width 0.3s;
+        overflow: hidden;
+        background-color: var(--dark-gray);
+        transition: none;
+        text-decoration: none;
     }
-    .social-links > *:hover {
-        width: 40px;
-        cursor: pointer;
+    .social-links span, .social-links > *:hover span {
+        color: white;
+        font-weight: bold;
+        border-bottom: none;
+        transition: none;
     }
-    .facebook {
-        background-image: url('../images/facebook.png');
+    .social-links > a img {
+        width: 36px;
     }
-    .instagram {
-        background-image: url('../images/instagram.png');
+    .social-links > a:hover {
+        width: 140px;
     }
-    .linked-in {
-        background-image: url('../images/linked-in.png');
+    .social-links > .facebook:hover {
+        background-color: #4267B2;
     }
-    .youtube {
-        background-image: url('../images/youtube.png');
+    .social-links > .instagram:hover {
+        background-image: linear-gradient(45deg,
+                                        #ffdc80,
+                                        #fcaf45,
+                                        #f77737,
+                                        #f56040,
+                                        #fd1d1d,
+                                        #e1306c,
+                                        #c13584,
+                                        #833ab4,
+                                        #5b51d8);
     }
-    .twitter {
-        background-image: url('../images/twitter.png');
+    .social-links > .linked-in:hover {
+        background-color: #006192;
+    }
+    .social-links > .youtube:hover {
+        background-color: #FF0000;
+    }
+    .social-links > .twitter:hover {
+        background-color: #1DA1F2;
     }
     .alert {
         display: none;  
@@ -196,15 +221,20 @@
     .hero, .weather {
         width: 100%;
         height: 200px;
-        background-image: url('../images/placeholder-image.jpg');
         background-position: center;
         background-size: cover;
     }
     .home .hero {
         display: grid;
+        background-image: url('../images/home-hero.jpg');
+        /* <span>Photo by <a href="https://unsplash.com/@j_cobnasyr1?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">jcob nasyr</a> on <a href="https://unsplash.com/s/photos/island?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span> */
         grid-template-columns: 1fr;
         justify-items: start;
         align-items: center;
+    }
+    .home .weather {
+        background-image: url('../images/weather-hero-sunny.jpg');
+        /* <span>Photo by <a href="https://unsplash.com/@frankiefoto?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">frank mckenna</a> on <a href="https://unsplash.com/s/photos/sun?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span> */
     }
     .hero div {
         text-align: center;
@@ -313,8 +343,8 @@
         grid-column: 1;
         grid-row: span 2;
         background-color: white;
-        width: calc(100% - 3em);
-        padding: 0.5rem;
+        width: calc(100% - 2.5em);
+        padding: 0.25rem;
         margin: 1rem;
     }
     .forecast section img {
@@ -324,6 +354,191 @@
         font-family: var(--paragraph);
     }
 /* End Homepage Styling */
+
+
+
+
+/* Begin Reservations Styling */
+    section.rental-agreement p {
+        padding-left: 15px;
+    }
+    form {
+        margin: 20px 0;
+    }
+    form fieldset {
+        border-color: var(--blue);
+        margin-bottom: 20px;
+    }
+    form legend {
+        padding: 5px;
+        font-family: var(--header);
+        font-size: 1.2rem;
+        font-weight: bold;
+        color: var(--dark-gray);
+    }
+    form legend + label {
+        margin-top: 0;
+    }
+    form div > label:first-child {
+        margin-top: 10px;
+    }
+    form input, form textarea {
+        width: 95%;
+        padding: 0.5rem;
+        max-width: 300px;
+        margin-top: 5px;
+        border-radius: 3px;
+        border: 1px solid var(--dark-gray);
+        box-shadow: 0 0 0 10px rgba(255,255,255,0);
+        transition: box-shadow 0.3s;
+        outline: none;
+    }
+    form input:required:not(:valid) {
+        box-shadow: inset 0 0 0 2px tomato,
+                    0 0 0 10px rgba(255,255,255,0);
+    }
+    form input:required:valid {
+        box-shadow: inset 0 0 0 2px limegreen,
+                    0 0 0 10px rgba(255,255,255,0);
+    }
+    form input:not([type="radio"]):not([type="checkbox"]):focus, form textarea:focus {
+        box-shadow: 0 0 0 3px var(--orange);
+    }
+    form input:required:not(:valid):not([type="radio"]):not([type="checkbox"]):focus {
+        box-shadow: inset 0 0 0 2px tomato,
+                    0 0 0 3px var(--orange);
+    }
+    form input:required:valid:not([type="radio"]):not([type="checkbox"]):focus {
+        box-shadow: inset 0 0 0 2px limegreen,
+                    0 0 0 3px var(--orange);
+    }
+    form label, form input:not(.not-block), form textarea {
+        display: block;
+    }
+    form div span:not(.not-colored), form label span:not(.not-colored) {
+        color: tomato;
+        font-weight: bold;
+    }
+    form label, form div {
+        margin-top: 2px;
+        padding: 7px 7px 9px;
+    }
+    form label:hover, form div:hover, form label:hover span.not-colored {
+        color: var(--dark-gray);
+    }
+    @media screen and (min-width: 660px) {
+        form label:hover, form div:hover {
+            color: var(--dark-gray);
+            background-color: #dedede;
+        }
+    }
+    form input.not-block {
+        display: inline-block;
+        padding: 3px 5px;
+        width: 50px;
+    }
+    form div label {
+        display: grid;
+        align-items: center;
+        padding: 0;
+    }
+    form div.radios label {
+        grid-template-columns: 30px 130px auto;
+        height: 1.8rem;
+        margin-top: 5px;
+    }
+    form div.checkboxes label {
+        grid-template-columns: 30px auto;
+        margin-top: 15px;
+    }
+    form input[type="submit"] {
+        width: 95%;
+        margin: 0 auto;
+        max-width: 100%;
+    }
+    form input[type="submit"]:disabled {
+        opacity: 0.5;
+        border: 2px solid var(--gray);
+    }
+    form input[type="submit"]:disabled:hover {
+        cursor: not-allowed;
+    }
+    form input[type="submit"]:not(:disabled) {
+        background-color: var(--blue);
+        border: 2px solid var(--gray);
+        font-weight: bold;
+        color: white;
+    }
+    form input[type="submit"]:not(:disabled):hover {
+        border-color: var(--blue);
+        background-color: var(--orange);
+        cursor: pointer;
+    }
+
+    /* Begin Custom Input Styling */
+        input[type="radio"],
+        input[type="checkbox"] {
+            width: 0;
+            height: 0;
+            margin-left: 5px;
+            margin-right: 20px;
+            position: relative;
+        }
+        input[type="radio"]::before,
+        input[type="checkbox"]::before {
+            content: '';
+            position: absolute;
+            display: inline-block;
+            background-color: white;
+            border: 2px solid var(--blue);
+            border-radius: 50%;
+            height: 14px;
+            width: 14px;
+            top: -12px;
+        }
+        input[type="radio"]:after,
+        input[type="checkbox"]:after {
+            content: '';
+            position: absolute;
+            display: inline-block;
+            background-color: var(--blue);
+            transform: scale(0);
+            border-radius: 50%;
+            border: none;
+            height: 10px;
+            width: 10px;
+            top: -8px;
+            left: 4px;
+            transition: transform 0.3s;
+        }
+        input[type="radio"]:checked:after {
+            transform: scale(0.8);
+        }
+        input[type="checkbox"]::before,
+        input[type="checkbox"]:after {
+            border-radius: 3px;
+        }
+        input[type="checkbox"]:after {
+            content: '✔';
+            padding: 1px 2px 3px;
+            width: 14px;
+            height: 14px;
+            top: -12px;
+            left: 0;
+            color: white;
+        }
+        input[type="checkbox"]:checked:after {
+            transform: scale(1);
+        }
+    /* End Custom Input Styling */
+
+    form div input {
+        display: initial;
+    }
+    main.padded {
+        padding: 1px 15px;
+    }
+/* End Reservation Styling */
     
 
 
@@ -340,12 +555,14 @@
         color: white;
     }
     footer a {
-        color: white;
         text-align: center;
         text-decoration: none;
-        padding: 0.5rem;
+        padding: 0 0.5rem;
     }
     footer a span {
         border-color: var(--orange);
+    }
+    footer a:hover span {
+        color: white;
     }
 /* End Footer Styling */
