@@ -93,7 +93,7 @@ else if (check.includes('reservations.html')) {
         }
         else {
             if (agree.checked) {
-                if (window.confirm("Complete the required field(s) above before you agreeing to this!")) {
+                if (window.confirm("Complete all the required fields!")) {
                     document.querySelector('form input[type="submit"]').disabled = false
                     document.querySelector('form input[type="submit"]').click()
                 }
@@ -109,10 +109,12 @@ else if (check.includes('reservations.html')) {
         if (input.type == "radio" && !radioOn) {
             numOn = true
             input.parentElement.querySelector('input[type="number"]').focus()
+            input.parentElement.querySelector('input[type="number"]').setAttribute('required',true)
         }
         if (input.type == "number" && !numOn) {
             radioOn = true
             numOn = true
+            input.setAttribute('required',true)
             input.parentElement.querySelector('input[type="radio"]').click()
             input.focus()
         }
@@ -121,4 +123,37 @@ else if (check.includes('reservations.html')) {
             numOn = false
         }, 200);
     }
+    function UnRequire() {
+        document.querySelector('#otherInput').removeAttribute('required')
+    }
+    function HideUnHide(country) {
+        if (country.value == "United States") {
+            document.querySelector('#state').className = ""
+            document.querySelector('#state input').setAttribute('required',true)
+            document.querySelector('#state input').setAttribute('name','state')
+        }
+        else {
+            document.querySelector('#state').className = "hide"
+            document.querySelector('#state input').removeAttribute('required')
+            document.querySelector('#state input').removeAttribute('name')
+        }
+    }
+    setTimeout(() => {
+        CheckForm(document.querySelector('form input[name=\"responsible\"]'))
+        HideUnHide(document.querySelector('form input[name=\"country\"]'))
+    }, 500);
+}
+else if (check.includes('rentals.html')) {
+    /* fetch('./data/rentals.json')
+        .then((response) => {
+            return response.json()
+        })
+        .then((jsonData) => {
+            let elem = document.querySelector('section.all-rental-info')
+            elem.innerHTML = "<h2>Rental Information</h2>"
+            console.log(jsonData['rentals'][0])
+            jsonData['rentals'].forEach((item) => {
+                
+            })
+        }) */
 }

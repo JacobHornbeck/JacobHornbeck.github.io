@@ -307,7 +307,7 @@
         align-self: end;
         margin: 0;
     }
-    .home section p {
+    main section p {
         align-self: start;
         margin: 0;
     }
@@ -339,7 +339,7 @@
     .forecast section * {
         color: white;
     }
-    .home section img {
+    main section img {
         grid-column: 1;
         grid-row: span 2;
         background-color: white;
@@ -354,6 +354,15 @@
         font-family: var(--paragraph);
     }
 /* End Homepage Styling */
+
+
+
+
+/* Begin Rentals Styling */
+    section.all-rental-info > section div.grid {
+        grid-template-columns: 1fr 1fr;
+    }
+/* End Rentals Styling */
 
 
 
@@ -474,6 +483,9 @@
         background-color: var(--orange);
         cursor: pointer;
     }
+    .hide {
+        display: none;
+    }
 
     /* Begin Custom Input Styling */
         input[type="radio"],
@@ -509,7 +521,7 @@
             width: 10px;
             top: -8px;
             left: 4px;
-            transition: transform 0.3s;
+            transition: transform 0.2s;
         }
         input[type="radio"]:checked:after {
             transform: scale(0.8);

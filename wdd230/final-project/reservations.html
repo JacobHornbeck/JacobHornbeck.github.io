@@ -34,7 +34,7 @@
                     <h2>Rental Agreement</h2>
                     <p>Loading Data...</p>
                 </section>
-                <form action="./submit-confirmation.html">
+                <form action="./submit-confirmation.html" onchange="CheckForm(document.querySelector('form input[name=\'responsible\']'))">
                     <fieldset>
                         <legend>Customer Information</legend>
                         <label>
@@ -51,7 +51,7 @@
                         </label>
                         <label>
                             Home Country <span>*</span>
-                            <input type="text" name="country" list="countries" required>
+                            <input type="text" name="country" list="countries" onchange="HideUnHide(this)" required>
                             <datalist id="countries">
                                 <option value="United States"></option>
                                 <option value="China"></option>
@@ -105,9 +105,9 @@
                                 <option value="Greece"></option>
                             </datalist>
                         </label>
-                        <label id="state">
+                        <label id="state" class="hide">
                             State <span>*</span>
-                            <input type="text" name="state" list="states" required>
+                            <input type="text" name="state" list="states">
                             <datalist id="states">
                                 <option value="AL">Alabama</option>
                                 <option value="AK">Alaska</option>
@@ -175,16 +175,16 @@
                         <div class="radios">
                             Rental Period <span>*</span>
                             <label>
-                                <input type="radio" name="rental-period" value="half-day" required>
+                                <input type="radio" name="rental-period" value="half-day" onfocus="UnRequire()" required>
                                 Half day (3 hours)
                             </label>
                             <label>
-                                <input type="radio" name="rental-period" value="full-day" required>
+                                <input type="radio" name="rental-period" value="full-day" onfocus="UnRequire()" required>
                                 Full day
                             </label>
                             <label>
                                 <input type="radio" name="rental-period" value="multiple-days" onfocus="SelectOtherOne(this)" required>
-                                Multiple days <input id="test1" type="number" name="rental-period" class="not-block" min="2" onfocus="SelectOtherOne(this)">
+                                Multiple days <input id="otherInput" type="number" name="rental-period" class="not-block" min="2" onfocus="SelectOtherOne(this)" value="2">
                             </label>
                             <p>Return Time: <span>select a start date and a rental period to find out</span></p>
                         </div>
@@ -198,12 +198,12 @@
                         <div class="checkboxes">
                             Rental Agreement <span>*</span>
                             <label>
-                                <input type="checkbox" name="time-responsible" onclick="CheckForm(this)" required>
+                                <input type="checkbox" name="responsible" onclick="CheckForm(this)" required>
                                 <span class="not-colored">By making this reservation you agree to everything stated <a href="#agreement-info"><span class="not-colored">above</span></a></span>
                             </label>
                             <label>
                                 <input type="checkbox" name="allow-texts">
-                                You authorize us to send you text notices letting you know weather alerts we get or specific information for your reservations/rentals.
+                                (OPTIONAL) We will send you texts informing you on any weather alerts we receive or specific information about your reservations/rentals.
                             </label>
                         </div>
                     </fieldset>
