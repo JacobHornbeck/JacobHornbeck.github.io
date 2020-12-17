@@ -4,22 +4,24 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Contact ~Scoots</title>
+        <meta name="description" content="Contact information for both of
+                our locations. Phone numbers, email addresses, and location addresses.
+                We also have a comment submission form so customers can leave comments
+                and we can improve our services and our website based on these comments.">
         <link rel="stylesheet" href="./css/normalize.css">
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Marck+Script&family=Ruluko&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="./css/index.css">
+        <link rel="stylesheet" href="./css/medium.css" media="(max-width: 650px)">
+        <link rel="stylesheet" href="./css/small.css" media="(max-width: 600px)">
         <link rel="shortcut icon" href="./images/scoots-logo.png" type="image/x-icon">
     </head>
     <body>
-        <div class="alert">
-            <img src="./images/placeholder.png" alt="temp">
-            <span></span>
-            <img src="./images/placeholder.png" alt="temp">
-        </div>
         <header>
             <h1>~Scoots</h1>
-            <nav>
+            <nav class="out">
                 <ul>
+                    <li><span></span><span></span><span></span></li>
                     <li><a class="  " href="./"><span>Home</span></a></li>
                     <li><a class="  " href="./rentals.html"><span>Rentals</span></a></li>
                     <li><a class="  " href="./reservations.html"><span>Reservations</span></a></li>
@@ -29,8 +31,52 @@
             </nav>
         </header>
         <main>
-
-            <iframe src="https://www.google.com/maps/d/embed?mid=1DSX4mzybnEug-d3q6uIhe61GneeWVina" width="500" height="300" frameborder="0"></iframe>
+            <div class="grid">
+                <h2>Contact Information</h2>
+                <ul class="contact-list">
+                    <li>Dockside Location:
+                        <ul>
+                            <li>Phone: <a href="tel:+5219871234567"><span>(987) 123 45 67</span></a></li>
+                            <li>Email: <a href="mailto:scoots.dockside@scoots.com"><span>scoots.dockside@scoots.com</span></a></li>
+                            <li>Location: <a target="_blank" rel="noopener" href="https://www.google.com/maps/dir//20.5106448,-86.9500069/@20.5078353,-86.9524403,17z"><span>77600 San Miguel de Cozumel</span></a></li>
+                        </ul>
+                    </li>
+                    <li>Cruiseside Location:
+                        <ul>
+                            <li>Phone: <a href="tel:+5219872461380"><span>(987) 246 13 80</span></a></li>
+                            <li>Email: <a href="mailto:scoots.cruiseside@scoots.com"><span>scoots.cruiseside@scoots.com</span></a></li>
+                            <li>Location: <a target="_blank" rel="noopener" href="https://www.google.com/maps/dir//20.4757473,-86.9747698/@20.475808,-87.0448024,12z"><span>Puerta Maya Cruise Ship Terminal</span></a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <iframe src="https://www.google.com/maps/d/embed?mid=1DSX4mzybnEug-d3q6uIhe61GneeWVina" title="~Scoots Locations" frameborder="0"></iframe>
+                <p>If you have a big group and are wondering about special discount email us at <a href="mailto:group.discounts@scoots.com"><span>group.discounts@scoots.com</span></a></p>
+                <form onsubmit="ShowThankYou(this)">
+                    <fieldset>
+                        <legend>Contact Form</legend>
+                        <label>
+                            Name <span>*</span>
+                            <input type="text" name="name" required>
+                        </label>
+                        <label>
+                            Email <span>*</span>
+                            <input type="email" name="email" required>
+                        </label>
+                        <label>
+                            Comment <span>*</span>
+                            <textarea name="comment" required></textarea>
+                        </label>
+                    </fieldset>
+                    <input type="submit" value="Send Comment">
+                </form>
+                <div class="social-links">
+                    <a target="_blank" rel="noopener" href="https://www.facebook.com" class="facebook"><img src="./images/facebook-white.png" alt="Facebook link"> <span>Facebook</span></a>
+                    <a target="_blank" rel="noopener" href="https://www.instagram.com" class="instagram"><img src="./images/instagram-white.png" alt="Instagram link"> <span>Instagram</span></a>
+                    <a target="_blank" rel="noopener" href="https://www.linkedin.com" class="linked-in"><img src="./images/linked-in-white.png" alt="LinkedIn link"> <span>LinkedIn</span></a>
+                    <a target="_blank" rel="noopener" href="https://www.youtube.com" class="youtube"><img src="./images/youtube-white.png" alt="YouTube link"> <span>YouTube</span></a>
+                    <a target="_blank" rel="noopener" href="https://www.twitter.com" class="twitter"><img src="./images/twitter-white.png" alt="Twitter link"> <span>Twitter</span></a>
+                </div>
+            </div>
         </main>
         <footer>
             <p>&copy;<span id="year">2020</span> ~Scoots All Rights Reserved</p>

@@ -1,5 +1,5 @@
 :root {
-    --blue: #4285f4;
+    --blue: #2265f4;
     --gray: #737373;
     --orange: #F4B400;
     --dark-gray: #424242;
@@ -19,11 +19,11 @@
     body {
         max-width: 900px;
         margin: 0 auto;
+        overflow-x: hidden;
         box-shadow: 1px 0 10px var(--dark-gray);
     }
     main {
         background-color: white;
-        padding: 1px 0;
     }
     * {
         color: var(--gray);
@@ -152,21 +152,20 @@
     .social-links > .twitter:hover {
         background-color: #1DA1F2;
     }
-    .alert {
-        display: none;  
-    }
 /* End Global Styling */
-
-
-
-
+    
+    
+    
+    
 /*Being Header and Nav Styling */
     header {
         padding: 0 1em;
         grid-template-columns: auto auto;
         background-color: var(--blue);
+        grid-template-rows: 87px;
         align-items: center;
         display: grid;
+        height: 87px;
     }
     h1 {
         color: white;
@@ -185,7 +184,11 @@
         list-style-type: none;
         display: grid;
         grid-template-columns: repeat(5, auto);
+        margin: 0;
         padding: 0;
+    }
+    nav ul li:nth-child(1) {
+        display: none;
     }
     nav a {
         text-decoration: none;
@@ -213,11 +216,55 @@
         border-bottom: solid 3px var(--orange);
     }
 /* End Header and Nav Styling */
-
-
-
-
+    
+    
+    
+    
 /* Begin Homepage Styling */
+    .alert {
+        display: grid;
+        background: var(--dark-gray);
+        padding: 1.5rem 1.5rem 1.5rem 1rem;
+        grid-template-columns: 32px auto;
+        align-items: center;
+        position: relative;
+        overflow: hidden;
+        grid-gap: 5px;
+    }
+    .alert.not-show {
+        transition: padding 0.3s;
+        padding: 0 1.5rem 0 1rem;
+        height: 0;
+    }
+    .alert *:not(img) {
+        grid-column: 2;
+    }
+    .alert img {
+        padding: 0;
+        margin: 0;
+        width: 100%;
+    }
+    .alert span {
+        color: white;
+        opacity: 0.7;
+    }
+    .alert h2, .alert p {
+        color: white;
+        margin: 0;
+    }
+    .alert .close {
+        font-weight: bold;
+        color: var(--blue);
+        padding: 0.3rem 0.5rem 0.2rem;
+        position: absolute;
+        right: 10px;
+        top: 10px;
+    }
+    .alert .close:hover {
+        cursor: pointer;
+        background-color: var(--gray);
+        color: tomato;
+    }
     .hero, .weather {
         width: 100%;
         height: 200px;
@@ -307,6 +354,9 @@
         align-self: end;
         margin: 0;
     }
+    .forecast > p {
+        grid-column: 1 / -1;
+    }
     main section p {
         align-self: start;
         margin: 0;
@@ -317,6 +367,7 @@
     .weather section h3 {
         padding-top: 5px;
         padding-left: 10px;
+        border-radius: 3px 3px 0 0;
         background-color: var(--gray);
         color: white;
         grid-column: 1 / -1;
@@ -325,16 +376,17 @@
     .forecast {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
+        justify-items: center;
         padding: 2rem 1rem;
-        grid-column-gap: 30px;
+        grid-gap: 30px;
     }
     .forecast section {
         display: grid;
+        border-radius: 3px;
         grid-template-columns: 80px auto;
         background-color: var(--gray);
         align-items: center;
-        max-width: 300px;
-        width: 100%;
+        width: 210px;
     }
     .forecast section * {
         color: white;
@@ -342,16 +394,34 @@
     main section img {
         grid-column: 1;
         grid-row: span 2;
-        background-color: white;
-        width: calc(100% - 2.5em);
         padding: 0.25rem;
         margin: 1rem;
     }
+    .weather section img {
+        background: var(--gray);
+        width: calc(100% - 2.5em);
+        border-radius: 3px;
+    }
     .forecast section img {
         border-radius: 50%;
+        width: 56px;
+        padding: 0;
     }
     .forecast section h3, .weather section h4 {
         font-family: var(--paragraph);
+    }
+    @media screen and (min-width: 651px) and (max-width: 850px) {
+        .forecast section {
+            grid-template-columns: 1fr;
+            grid-template-rows: 56px auto auto;
+            justify-items: center;
+            align-items: center;
+            padding: 1rem;
+            width: 110px;
+        }
+        .forecast section img {
+            margin: 0;
+        }
     }
 /* End Homepage Styling */
 
@@ -359,8 +429,14 @@
 
 
 /* Begin Rentals Styling */
-    section.all-rental-info > section div.grid {
-        grid-template-columns: 1fr 1fr;
+    section.all-rental-info > section {
+        grid-row-gap: 0.5rem;
+    }
+    section.all-rental-info > section img {
+        grid-row: span 5;
+    }
+    div.grid > section.all-rental-info > p {
+        margin: 1rem;
     }
 /* End Rentals Styling */
 
@@ -377,6 +453,7 @@
     form fieldset {
         border-color: var(--blue);
         margin-bottom: 20px;
+        width: calc(100% - 40px);
     }
     form legend {
         padding: 5px;
@@ -391,37 +468,50 @@
     form div > label:first-child {
         margin-top: 10px;
     }
-    form input, form textarea {
+    form input, form textarea, form select {
         width: 95%;
         padding: 0.5rem;
         max-width: 300px;
         margin-top: 5px;
         border-radius: 3px;
+        background-color: white;
         border: 1px solid var(--dark-gray);
         box-shadow: 0 0 0 10px rgba(255,255,255,0);
         transition: box-shadow 0.3s;
         outline: none;
     }
-    form input:required:not(:valid) {
+    form select {
+        max-width: calc(300px + 1rem + 2px);
+        width: calc(95% + 1rem + 2px);
+    }
+    form select option:disabled {
+        color: #dedede;
+    }
+    form input:required:not(:valid), form select:required:not(:valid),
+    form textarea:required:not(:valid) {
         box-shadow: inset 0 0 0 2px tomato,
                     0 0 0 10px rgba(255,255,255,0);
     }
-    form input:required:valid {
+    form input:required:valid, form select:required:valid,
+    form textarea:required:valid {
         box-shadow: inset 0 0 0 2px limegreen,
                     0 0 0 10px rgba(255,255,255,0);
     }
-    form input:not([type="radio"]):not([type="checkbox"]):focus, form textarea:focus {
+    form input:not([type="radio"]):not([type="checkbox"]):focus,
+    form textarea:focus, form select:focus {
         box-shadow: 0 0 0 3px var(--orange);
     }
-    form input:required:not(:valid):not([type="radio"]):not([type="checkbox"]):focus {
+    form input:required:not(:valid):not([type="radio"]):not([type="checkbox"]):focus,
+    form select:required:not(:valid):focus, form textarea:required:not(:valid):focus {
         box-shadow: inset 0 0 0 2px tomato,
                     0 0 0 3px var(--orange);
     }
-    form input:required:valid:not([type="radio"]):not([type="checkbox"]):focus {
+    form input:required:valid:not([type="radio"]):not([type="checkbox"]):focus,
+    form select:required:valid:focus, form textarea:required:valid:focus {
         box-shadow: inset 0 0 0 2px limegreen,
                     0 0 0 3px var(--orange);
     }
-    form label, form input:not(.not-block), form textarea {
+    form label, form input:not(.not-block), form textarea, form select {
         display: block;
     }
     form div span:not(.not-colored), form label span:not(.not-colored) {
@@ -441,8 +531,22 @@
             background-color: #dedede;
         }
     }
+    form .payment-icon div.grid {
+        grid-template-columns: 29px auto;
+        grid-template-rows: 20px;
+        align-items: center;
+    }
+    form .payment-icon div.grid p {
+        margin: 0 0 0 5px;
+        justify-self: start;
+    }
+    form .payment-icon div.grid img {
+        max-width: 100px;
+        height: 100%;
+    }
     form input.not-block {
         display: inline-block;
+        margin-left: 10px;
         padding: 3px 5px;
         width: 50px;
     }
@@ -452,7 +556,7 @@
         padding: 0;
     }
     form div.radios label {
-        grid-template-columns: 30px 130px auto;
+        grid-template-columns: 30px max-content max-content;
         height: 1.8rem;
         margin-top: 5px;
     }
@@ -464,6 +568,9 @@
         width: 95%;
         margin: 0 auto;
         max-width: 100%;
+    }
+    fieldset input[type="submit"] {
+        margin-top: 10px;
     }
     form input[type="submit"]:disabled {
         opacity: 0.5;
@@ -551,6 +658,37 @@
         padding: 1px 15px;
     }
 /* End Reservation Styling */
+
+
+
+
+/* Begin Tours Styling */
+    h2 {
+        margin-bottom: 0.5rem;
+    }
+    ul {
+        margin-top: 0;
+    }
+    ul li {
+        padding: 0.5rem 0;
+    }
+    .specific section, .specific hr,
+    .specific section p,
+    .specific section ul,
+    .specific section a {
+        margin-left: 15px !important;
+    }
+/* End Tours Styling */
+
+
+
+
+/* Begin Contact Styling */
+    iframe {
+        width: 100%;
+        height: 300px;
+    }
+/* End Contact Styling */
     
 
 

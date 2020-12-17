@@ -1,0 +1,35 @@
+.forecast {
+    grid-template-columns: 1fr;
+}
+footer {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 50px 35px;
+    grid-column-gap: 10px;
+}
+footer p {
+    grid-column: 1 / -1;
+    text-align: center;
+}
+footer a {
+    align-self: start;
+}
+footer a:nth-of-type(1) {
+    justify-self: end;
+}
+footer a:nth-of-type(2) {
+    justify-self: start;
+}
+.specific section, .specific hr,
+.specific section p,
+.specific section ul,
+.specific section a {
+    margin-left: 5px !important;
+}
+.contact-list a {
+    display: block;
+    width: max-content;
+}
+ul.contact-list,
+.contact-list ul {
+    padding-left: 20px;
+}

@@ -4,22 +4,23 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>~Scoots Reservations</title>
+        <meta name="description" content="The page were customers can make
+                reservations and see the agreement info, that they have
+                to agree to in order to make a reservation.">
         <link rel="stylesheet" href="./css/normalize.css">
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Marck+Script&family=Ruluko&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="./css/index.css">
+        <link rel="stylesheet" href="./css/medium.css" media="(max-width: 650px)">
+        <link rel="stylesheet" href="./css/small.css" media="(max-width: 600px)">
         <link rel="shortcut icon" href="./images/scoots-logo.png" type="image/x-icon">
     </head>
     <body>
-        <div class="alert">
-            <img src="./images/placeholder.png" alt="temp">
-            <span></span>
-            <img src="./images/placeholder.png" alt="temp">
-        </div>
         <header>
             <h1>~Scoots</h1>
-            <nav>
+            <nav class="out">
                 <ul>
+                    <li><span></span><span></span><span></span></li>
                     <li><a class="  " href="./"><span>Home</span></a></li>
                     <li><a class="  " href="./rentals.html"><span>Rentals</span></a></li>
                     <li><a class="at" href="./reservations.html"><span>Reservations</span></a></li>
@@ -166,8 +167,14 @@
                             <input type="text" name="cruise-line">
                         </label>
                     </fieldset>
-                    <fieldset>
+                    <fieldset class="payment-specific">
                         <legend>Rental Details</legend>
+                        <label>
+                            Rental Vehicle <span>*</span>
+                            <select name="vehicle" required>
+                                <option value="" selected disabled>Select Vehicle</option>
+                            </select>
+                        </label>
                         <label>
                             Rental Start Date <span>*</span>
                             <input type="datetime-local" name="rental-start" required>
@@ -184,10 +191,29 @@
                             </label>
                             <label>
                                 <input type="radio" name="rental-period" value="multiple-days" onfocus="SelectOtherOne(this)" required>
-                                Multiple days <input id="otherInput" type="number" name="rental-period" class="not-block" min="2" onfocus="SelectOtherOne(this)" value="2">
+                                Multiple days <input type="number" name="rental-days" class="not-block" min="2" onfocus="SelectOtherOne(this)" value="2">
                             </label>
-                            <p>Return Time: <span>select a start date and a rental period to find out</span></p>
                         </div>
+                        <label>
+                            Drop-off Location
+                            <input type="text" name="drop-off">
+                        </label>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Payment</legend>
+                        <label>
+                            <p>Total Price: <span id="total-price">Fill out the required fields above</span></p>
+                            Payment Type <span>*</span>
+                            <select name="payment-type" onchange="AdjustImg(this)" required>
+                                <option value="" selected disabled>Select Payment Type</option>
+                                <option value="g-pay">Google Pay</option>
+                                <option value="cash">Cash</option>
+                                <option value="card">Credit/Debit</option>
+                                <option value="pay-pal">PayPal</option>
+                            </select>
+                            <p class="payment-icon">&nbsp;</p>
+                            <p>If you are paying with cash or card you will need to pay when you pick up your rental or when we drop it off.</p>
+                        </label>
                     </fieldset>
                     <fieldset>
                         <legend>Other Details</legend>
@@ -210,11 +236,11 @@
                     <input type="submit" value="Make Reservation" disabled>
                 </form>
                 <div class="social-links">
-                    <a target="_blank" href="https://www.facebook.com" class="facebook"><img src="./images/facebook-white.png" alt="Facebook link"> <span>Facebook</span></a>
-                    <a target="_blank" href="https://www.instagram.com" class="instagram"><img src="./images/instagram-white.png" alt="Instagram link"> <span>Instagram</span></a>
-                    <a target="_blank" href="https://www.linkedin.com" class="linked-in"><img src="./images/linked-in-white.png" alt="LinkedIn link"> <span>LinkedIn</span></a>
-                    <a target="_blank" href="https://www.youtube.com" class="youtube"><img src="./images/youtube-white.png" alt="YouTube link"> <span>YouTube</span></a>
-                    <a target="_blank" href="https://www.twitter.com" class="twitter"><img src="./images/twitter-white.png" alt="Twitter link"> <span>Twitter</span></a>
+                    <a target="_blank" rel="noopener" href="https://www.facebook.com" class="facebook"><img src="./images/facebook-white.png" alt="Facebook link"> <span>Facebook</span></a>
+                    <a target="_blank" rel="noopener" href="https://www.instagram.com" class="instagram"><img src="./images/instagram-white.png" alt="Instagram link"> <span>Instagram</span></a>
+                    <a target="_blank" rel="noopener" href="https://www.linkedin.com" class="linked-in"><img src="./images/linked-in-white.png" alt="LinkedIn link"> <span>LinkedIn</span></a>
+                    <a target="_blank" rel="noopener" href="https://www.youtube.com" class="youtube"><img src="./images/youtube-white.png" alt="YouTube link"> <span>YouTube</span></a>
+                    <a target="_blank" rel="noopener" href="https://www.twitter.com" class="twitter"><img src="./images/twitter-white.png" alt="Twitter link"> <span>Twitter</span></a>
                 </div>
             </div>
         </main>
