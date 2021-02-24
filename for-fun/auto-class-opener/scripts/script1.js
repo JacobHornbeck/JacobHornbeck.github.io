@@ -26,7 +26,7 @@ function BetweenDays(t1,t2) {
 function ParseTime(time) {
     var colon = time.indexOf(':')
     if (time.substring(0,2)=='12' && time.substring(time.length-2,time.length)=='pm') {
-        return [12,45]
+        return [12,parseInt(time.substring(colon+1,time.length-2))]
     }
     else {
         switch (time.substring(time.length-2,time.length)) {
@@ -104,6 +104,12 @@ function Task(name,time) {
 }
 
 function OpenClassWhen() {
+    tasksToday = []
+    day = [
+        today.getDate(),
+        today.getMonth(),
+        today.getFullYear(),
+    ]
     var classTimes = [
         ['cse220c',     [          'tuesday',             'thursday' ],  '3:15pm'],
         ['cse340-team', [          'tuesday',             'thursday' ],  '5:30pm'],
@@ -158,3 +164,6 @@ function ShowTime() {
         document.getElementsByClassName("timetil")[document.getElementsByClassName("timetil").length-1].remove()
     }
 }
+
+
+setTimeout(() => {document.location.reload()}, 3600000);
