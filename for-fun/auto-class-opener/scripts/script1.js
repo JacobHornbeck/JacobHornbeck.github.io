@@ -14,6 +14,9 @@ var day = [
     today.getFullYear(),
 ]
 var tasksToday = []
+var timeoutSet = false
+var removed = 0
+var hidden = 0
 function GetDay() {
     today = new Date()
 }
@@ -110,6 +113,9 @@ function OpenClassWhen() {
         today.getMonth(),
         today.getFullYear(),
     ]
+    timeoutSet = false
+    removed = 0
+    hidden = 0
     var classTimes = [
         ['cse220c',     [          'tuesday',             'thursday' ],  '3:15pm'],
         ['cse340-team', [          'tuesday',             'thursday' ],  '5:30pm'],
@@ -134,8 +140,7 @@ function P(n) {
     return (("000".substring(0,2-n.toString().length))+n.toString())
 }
 
-var timeoutSet = false
-var removed = 0
+
 function ShowTime() {
     for (let i = 0; i<tasksToday.length; i++) {
         let something = document.getElementById("timetil"+((i+removed)+1))
@@ -153,7 +158,7 @@ function ShowTime() {
             something.style.right = "-500px"
             setTimeout(() => {
                 tasksToday.splice(i,1)
-                something.remove()
+                something.className = "timePassed"
                 removed++
                 timeoutSet = false
             }, 500)
@@ -161,9 +166,20 @@ function ShowTime() {
         }
     }
     if (tasksToday.length < document.getElementsByClassName("timetil").length) {
-        document.getElementsByClassName("timetil")[document.getElementsByClassName("timetil").length-1].remove()
+        let somethingElse = document.getElementsByClassName("timetil")[document.getElementsByClassName("timetil").length-1]
+        somethingElse.style.right = "-500px"
+        setTimeout(() => {
+            somethingElse.className = "timePassed"
+        }, 300)
     }
 }
 
 
-setTimeout(() => {document.location.reload()}, 3600000);
+setInterval(() => {
+    if (new Date().getDate() != day[0]) {
+        document.getElementsByClassName("timePassed").forEach((item) => {
+            item.className = "timetil"
+        })
+        OpenClassWhen()
+    }
+}, 18000000);

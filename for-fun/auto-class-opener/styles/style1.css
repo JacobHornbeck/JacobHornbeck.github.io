@@ -97,3 +97,7 @@ ul {
 .timetil:nth-of-type(5) {
     top: calc((4em + 10px) * 4 + 10px);
 }
+
+.timePassed {
+    display: none;
+}
