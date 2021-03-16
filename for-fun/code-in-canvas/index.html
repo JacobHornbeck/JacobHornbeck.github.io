@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Code in Canvas</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="shortcut icon" href="favicon.ico">
+    </head>
+    <body>
+        <h3>Enter Details Here</h3>
+        <form>
+            <input name="language" id="language" type="text" placeholder="Programming Language" oninput="updateView()">
+            <textarea name="code" id="code" placeholder="Write your code here" oninput="updateView()"></textarea>
+            <label>
+                Choose your color: 
+                <input name="code-color" id="code-color" type="color" value="#4169e1" oninput="updateView()">
+            </label>
+            <label title="If the white text isn't very readable on the color you picked above, uncheck this to make the text black" style="width: 100%;">
+                White text? <input type="checkbox" name="white-text" id="white-text" checked oninput="updateView()">
+            </label>
+        </form>
+<hr>
+<h3>See Output Here</h3>
+<div id="language-view" style="padding: 5px 50px; width: max-content; text-align: center; background: royalblue; color: white;">[Language]</div>
+<pre id="code-view" style="width: max-content; max-width: 800px; margin-top: -3px; border: 5px solid royalblue; padding: 10px; padding-right: 50px;">
+[Code Here]
+</pre>
+        <hr>
+        <h3>Copy Code Here</h3>
+        <textarea name="output" id="output" readonly></textarea>
+        <button onclick="CopyText(this)">Copy</button>
+
+        <script src="script.js"></script>
+    </body>
+</html>

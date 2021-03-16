@@ -1,0 +1,47 @@
+* {
+    font-family: sans-serif;
+}
+form {
+    width: 100%;
+}
+form > * {
+    display: block;
+    margin-bottom: 10px;
+    width: max-content;
+    outline: none;
+}
+input[type="text"] {
+    min-width: 400px;
+    padding: 0.5rem;
+    border: 3px solid royalblue;
+}
+input[type="color"] {
+    width: 18px;
+    height: 20px;
+}
+textarea {
+    font-family: monospace;
+    height: max-content;
+    width: max-content;
+    min-height: 95px;
+    min-width: 400px;
+    padding: 0.5rem;
+    outline: none;
+    border: 3px solid royalblue;
+}
+pre {
+    min-width: 300px;
+    font-family: monospace;
+    border-radius: 5px;
+}
+button {
+    padding: 0.5rem 0.75rem;
+    border: 3px solid royalblue;
+    background: #eeeeee;
+    display: block;
+    outline: none;
+}
+button:hover {
+    background: #dddddd;
+    cursor: pointer;
+}
