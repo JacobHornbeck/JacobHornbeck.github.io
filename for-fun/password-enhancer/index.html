@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Password Enhancer</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <h2>Create Your Password</h2>
+        <div class="input-holder">
+            <input type="text" id="password" name="password" placeholder=" " oninput="adjustOutput(this)">
+            <label for="password">Password</label>
+        </div>
+        <p>In order of highest priority (meaning the one at the top will go first, the next ones won't have a chance to do for that specific character)</p>
+        <div class="indent">
+            <label>
+                <input type="checkbox" id="forSymbols" name="forSymbols" oninput="adjustOutput(this)">
+                Replace letters with symbols<br><small>(i.e. replace "<span>a</span>" with "<span>@</span>")</small>
+            </label>
+            <label>
+                <input type="checkbox" id="forNumbers" name="forNumbers" oninput="adjustOutput(this)">
+                Replace letters with number groups<br><small>(i.e. replace "<span>E</span>" with "<span>3</span>")</small>
+            </label>
+            <label>
+                <input type="checkbox" id="forCharacters" name="forCharacters" oninput="adjustOutput(this)">
+                Replace letters with character groups<br><small>(i.e. replace "<span>H</span>" with "<span>|-|</span>")</small>
+            </label>
+        </div>
+        <div class="input-holder only-value">
+            <input type="text" id="output" name="output" placeholder=" " readonly>
+            <label for="output">Output</label>
+        </div>
+        <hr>
+        <h2>Learn Your Password</h2>
+        <p id="showOnlyWhenShowing" class="hide">Just remember the word/phrase you put in to start with, and then remember these rules:</p>
+        <ul>
+            <li class="hide" id="pForSymbols">Because this one is of highest priority, all <span>a's</span> will be <span>@</span>, all <span>i's</span> will be <span>!</span>, and all <span>s's</span> will be <span>$</span>.</li>
+            <li class="hide" id="pForNumbers">All <span>o's</span> will be changed to <span>0</span> and all <span>e's</span> will be turned to <span>3</span>.<br>If you don't have it replace with symbols, then all <span>i's</span> will be <span>1</span>.</li>
+            <li class="hide" id="pForCharacters">Here is a list of all the changes it can make (unless you have the other ones turned on):
+                <ul>
+                    <li><span>A</span> will be <span>/-\</span></li>
+                    <li><span>C</span> will be <span>(</span></li>
+                    <li><span>D</span> will be <span>|)</span></li>
+                    <li><span>H</span> will be <span>|-|</span></li>
+                    <li><span>I</span> will be <span>][</span></li>
+                    <li><span>K</span> will be <span>|&lt;</span></li>
+                    <li><span>L</span> will be <span>|_</span></li>
+                    <li><span>M</span> will be <span>|\/|</span></li>
+                    <li><span>N</span> will be <span>|\|</span></li>
+                    <li><span>O</span> will be <span>()</span></li>
+                    <li><span>V</span> will be <span>\/</span></li>
+                    <li><span>W</span> will be <span>\/\/</span></li>
+                    <li><span>X</span> will be <span>&gt;&lt;</span></li>
+                </ul>
+            </li>
+        </ul>
+        <script src="script.js"></script>
+    </body>
+</html>

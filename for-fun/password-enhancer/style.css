@@ -1,0 +1,85 @@
+* {
+    font-family: sans-serif;
+}
+
+
+body > *:not(h2) {
+    margin-left: 10px !important;
+}
+
+div.special {
+    width: 200px;
+    display: grid;
+    margin-left: 30px;
+    grid-template-columns: auto 50px auto;
+    justify-items: center;
+    align-items: center;
+}
+div.special > hr {
+    width: 100%;
+    height: 1px;
+}
+div.indent {
+    padding-left: 10px;
+    margin-left: 10px;
+}
+
+label {
+    width: max-content;
+    padding: 0.5rem;
+    display: block;
+}
+label > small {
+    padding-left: 30px;
+}
+label span,
+ul span,
+p span {
+    font-family: monospace;
+    font-size: 1.1rem;
+}
+input[type="text"] {
+    font-family: monospace;
+    width: 300px;
+}
+div.input-holder {
+    position: relative;
+    margin: 10px 0;
+}
+div.input-holder > input {
+    display: block;
+    padding: 0.5rem;
+    height: 15px;
+}
+div.input-holder > label {
+    position: absolute;
+    top: calc(15px / 2);
+    background-color: white;
+    padding: 0.1rem 0.3rem;
+    font-size: 0.95rem;
+    left: 10px;
+    transition: all 0.3s;
+}
+div.input-holder:not(.only-value) > input:focus + label,
+div.input-holder > input:not(:placeholder-shown) + label {
+    font-size: small;
+    top: -7px;
+    left: 5px;
+}
+
+input#output {
+    margin-top: 30px;
+}
+
+
+.hide {
+    display: none;
+}
+
+li > ul > li {
+    margin: 10px 0;
+}
+*:not(li) > ul > li {
+    margin: 15px 0;
+}
+
