@@ -24,9 +24,9 @@
             }
             #form-1 {
                 width: 80%;
-                max-width: 500px;
+                max-width: 600px;
                 background-color: white;;
-                grid-template-columns: 100px auto 50px;
+                grid-template-columns: 125px auto 80px 50px;
                 border: solid 0.5px gray;
                 border-radius: 50px;
                 align-self: start;
@@ -43,14 +43,10 @@
             }
             #form-1 > *:hover,
             #form-1 > *:focus {
-                background-color: whitesmoke;
-            }
-            #web-reference > option {
-                background-color: seagreen;
-                color: lightblue;
+                box-shadow: inset 0 0 10px gray;
             }
             #search-value {
-                width: 100%;
+                width: calc(100% - 1em);
             }
             #search {
                 width: 50px;
@@ -76,6 +72,10 @@
                 <option value="wikipedia">Wikipedia</option>
             </select>
             <input type="text" id="search-value" autofocus required>
+            <select name="search-engine" id="engine">
+                <option value="bing">Bing</option>
+                <option value="google">Google</option>
+            </select>
             <input type="submit" value="&#128270;" id="search">
         </form>
 
@@ -90,20 +90,12 @@
 
             if (getUrlVars()['source']!=undefined) {
                 document.querySelector('#web-reference').value = getUrlVars()['source'].toLowerCase()
+                document.querySelector('#engine').value = getUrlVars()['engine'].toLowerCase()
                 adjustLogo()
             }
 
             function formatSearchText(txt) {
-                let str = ""
-                for (let i = 0; i<txt.length; i++) {
-                    if (txt[i] == " ") {
-                        str += "+"
-                    }
-                    else {
-                        str += txt[i]
-                    }
-                }
-                return str
+                return txt.replace(/\ /, '+')
             }
 
             function submitHandler() {
@@ -116,7 +108,8 @@
                 }
                 let temp = document.getElementById('web-reference').value
                 let search_query = formatSearchText(document.getElementById('search-value').value)
-                let url = "https://www.bing.com/search?q=site%3A+"+connection[temp]+"+"+search_query
+                let search_engine = document.querySelector('#engine').value
+                let url = "https://www."+search_engine+".com/search?q=site%3A+"+connection[temp]+"+"+search_query
                 switch (temp.toLowerCase()) {
                     case 'stackoverflow':
                         url = "https://stackoverflow.com/search?q="+search_query
