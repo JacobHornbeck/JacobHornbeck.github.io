@@ -36,16 +36,22 @@ main {
 
 .weeks {
     display: grid;
-    grid-template-columns: auto auto auto;
+    grid-template-columns: auto auto auto auto;
     align-items: center;
 }
 .weeks a {
     text-decoration: none;
     color: black;
+    padding: 5px;
     display: grid;
     height: 40px;
     grid-template-columns: 40px min-content;
+    border-radius: 10px;
     align-items: center;
+    font-size: 0.85em;
+}
+.weeks a:hover {
+    box-shadow: 2px 2px 8px darkslategray;
 }
 .weeks a img {
     width: 100%;
