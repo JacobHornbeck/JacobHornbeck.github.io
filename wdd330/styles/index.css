@@ -77,7 +77,7 @@ pre {
 section.note h2 {
     margin-bottom: 0;
 }
-a.source {
+.source {
     font-size: 0.75rem;
     padding-left: 5px;
 }
