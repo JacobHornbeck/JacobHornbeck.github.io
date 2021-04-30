@@ -74,6 +74,9 @@ pre {
     padding: 10px;
     padding-right: 50px;
 }
+pre * {
+    font-family: monospace;
+}
 
 section.note h2 {
     margin-bottom: 0;
