@@ -66,6 +66,7 @@ div.codeLanguage {
     color: #FFFFFF;
 }
 pre {
+    font-family: monospace;
     width: max-content;
     max-width: 800px;
     margin-top: -5px;
