@@ -36,18 +36,21 @@ main {
 
 .weeks {
     display: grid;
-    grid-template-columns: auto auto auto auto;
+    grid-template-columns: auto max-content max-content max-content;
+    grid-column-gap: 15px;
     align-items: center;
 }
 .weeks a {
-    text-decoration: none;
     color: black;
+    height: 40px;
     padding: 5px;
     display: grid;
-    height: 40px;
+    text-decoration: none;
     grid-template-columns: 40px min-content;
+    transition: all 0.3s;
     border-radius: 10px;
     align-items: center;
+    position: relative;
     font-size: 0.85em;
 }
 .weeks a:hover {
@@ -55,6 +58,33 @@ main {
 }
 .weeks a img {
     width: 100%;
+}
+.weeks a span {
+    top: -0.5em;
+    right: -0.5em;
+    font-weight: bold;
+    position: absolute;
+    border-radius: 1em;
+    background-color: royalblue;
+    box-shadow: 2px 2px 4px darkslategray;
+    transform: scale(0.5);
+    text-align: center;
+    color: royalblue;
+    font-size: 0.7em;
+    padding: 4px;
+    height: 1em;
+    width: 1em;
+    transition: transform 0.3s,
+                color 0.2s;
+}
+.weeks a span.showOnHover {
+    transform: scale(0);
+}
+.weeks a:hover span {
+    color: white;
+    transform: scale(1.5);
+    transition: transform 0.3s,
+                color 0.2s;
 }
 
 
