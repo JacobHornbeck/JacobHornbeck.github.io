@@ -77,6 +77,18 @@ pre {
 pre * {
     font-family: monospace;
 }
+pre .reservedWord {
+    color: royalblue;
+}
+pre .functionName {
+    color: chocolate;
+}
+pre .text {
+    color: darkgreen;
+}
+pre .parameter, pre .object {
+    color: darkblue;
+}
 
 section.note h2 {
     margin-bottom: 0;
