@@ -7,6 +7,7 @@ html {
 }
 body {
     max-width: 600px;
+    min-width: 500px;
     position: relative;
     align-self: center;
     background: white;
@@ -156,6 +157,9 @@ footer {
 @media screen and (max-width: 500px) {
     html {
         display: block;
+    }
+    body {
+        min-width: 0;
     }
     header, footer {
         border-radius: 0;
