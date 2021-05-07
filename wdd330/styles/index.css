@@ -105,7 +105,7 @@ pre {
     border: 5px solid #4169e1;
     padding-right: 50px;
     padding: 10px;
-    overflow: scroll hidden;
+    overflow: auto hidden;
 }
 pre * {
     font-family: monospace;
@@ -188,5 +188,8 @@ footer {
     .weeks a {
         grid-column: 2;
         width: max-content
+    }
+    a.back {
+        border-radius: 0;
     }
 }
