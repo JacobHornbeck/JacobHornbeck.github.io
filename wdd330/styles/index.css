@@ -110,17 +110,29 @@ pre {
 pre * {
     font-family: monospace;
 }
-pre .reservedWord {
-    color: royalblue;
+pre .varName {
+    color: #0471C1;
 }
-pre .functionName {
-    color: chocolate;
+pre .reservedWord {
+    color: #0306FF;
+}
+pre > .number {
+    color: #098658;
+}
+pre .functionName, pre .method {
+    color: #795E26;
 }
 pre .text {
-    color: darkgreen;
+    color: #A31515;
+}
+pre .comment {
+    color: #398310;
 }
 pre .parameter, pre .object {
-    color: darkblue;
+    color: #021180;
+}
+pre .return {
+    color: #dd00dd;
 }
 
 section.note h2 {

@@ -1,68 +1,36 @@
 /* A Syntax Highlighter Function... Still In Progress */
 function HighlightPreCode(codeTxt, language) {
     let outputCodeString = ""
-    codeTxt.split('\n').forEach((item,index) => {
-        const functionStart = item.indexOf('function ')
-        const openingParentheses = item.indexOf('(')
-        const closingParentheses = item.indexOf(')')
-        const variable = item.indexOf('var')
-        const constant = item.indexOf('const')
-        const varLet = item.indexOf('let')
-        const equalSign = item.indexOf('=')
-        const beginText = item.indexOf('"') >= 0 ? item.indexOf('"') : item.indexOf('\'')
-        const endText = item.indexOf('"', beginText+1) >= 0 ? item.indexOf('"', beginText+1) : item.indexOf('\'', beginText+1)
-        const consoleObj = item.indexOf('console')
-        const period = item.indexOf('.')
-        const emptyFunctionCall = item.indexOf('()')
 
-        if (index > 0)
-            outputCodeString += "\n"
-
-        switch (language) {
-            case 'JavaScript':
-                if (functionStart >= 0) {
-                    outputCodeString += `${item.substring(0, functionStart)}<span class='reservedWord'>function</span> `
-
-                    if (openingParentheses >= 0 && closingParentheses >= 0) {
-                        outputCodeString += `<span class='functionName'>${item.substring(functionStart+9, openingParentheses)}</span>(<span class="parameter">${item.substring(openingParentheses+1, closingParentheses).split(',').join('</span>, <span class="parameter">')}</span>) {`
-                    }
-                }
-                else if (variable >= 0) {
-                    if (equalSign > variable)
-                        outputCodeString += `${item.substring(0, variable)}<span class='reservedWord'>var</span> <span class='variableName'>${item.substring(variable+4,equalSign)}</span> = `
-                    else
-                        outputCodeString += `${item.substring(0, variable)}<span class='reservedWord'>var</span> <span class='variableName'>${item.substring(variable+4,equalSign)}</span>`
-                    // Check for the different variable types like string or number
-                }
-                else if (constant >= 0) {
-                    if (equalSign > constant)
-                        outputCodeString += `${item.substring(0, constant)}<span class='reservedWord'>var</span> <span class='variableName'>${item.substring(constant+4,equalSign)}</span> = `
-                    else
-                        outputCodeString += `${item.substring(0, constant)}<span class='reservedWord'>var</span> <span class='variableName'>${item.substring(constant+4,equalSign)}</span>`
-                    // Check for the different variable types like string or number
-                }
-                else if (varLet >= 0) {
-                    if (equalSign > varLet)
-                        outputCodeString += `${item.substring(0, varLet)}<span class='reservedWord'>var</span> <span class='variableName'>${item.substring(varLet+4,equalSign)}</span> = `
-                    else
-                        outputCodeString += `${item.substring(0, varLet)}<span class='reservedWord'>var</span> <span class='variableName'>${item.substring(varLet+4,equalSign)}</span>`
-                    // Check for the different variable types like string or number
-                }
-                else if (consoleObj >= 0) {
-                    if (period > consoleObj && openingParentheses > period && closingParentheses > openingParentheses)
-                        outputCodeString += `${item.substring(0, consoleObj)}<span class="object">console</span>.<span class="functionName">${item.substring(consoleObj+8,openingParentheses)}</span><span class="text">(${item.substring(openingParentheses+1,closingParentheses).split("${").join("<span class=\"object\">${</span><span class=\"parameter\">").split("}").join("</span><span class=\"object\">}</span>")}</span>)`
-                }
-                else if (emptyFunctionCall >= 0) {
-                    outputCodeString += `${item.substring(0, item.lastIndexOf(' ')+1)}<span class="functionName">${item.substring(item.lastIndexOf(' ')+1,emptyFunctionCall)}</span>()`
-                }
-                else if (item.trim() == "}")
-                    outputCodeString += `${item.substring(0, item.indexOf('}'))}}`
-                else {
-                    outputCodeString += item
-                }
-            break;
-        }
-    })
+    switch (language.toLowerCase()) {
+        case 'javascript':
+            /* The Following Is Based On: https://idiallo.com/blog/javascript-syntax-highlighter */
+            outputCodeString = codeTxt.replace(/"(.*?)"/g, '<span class="text">"$1"</span>')
+                                      .replace(/'(.*?)'/g, "<span class=\"text\">'$1'</span>")
+                                      .replace(/`(.*?|\s)`/g, '<span class="text">`$1`</span>')
+                                      .replace(/`(.*?|\s)\$\{(.*?)\}(.*?|\s)`/g, '`$1<span class="reservedWord">${<span class="parameter">$2</span>}</span>$3`')
+                                      .replace(/\((.*?)\) =>/g, '($1) <span class="reservedWord">=></span>')
+                                      .replace(/([A-Za-z_0-9]+)\((.*?)\)/g, '<span class="functionName">$1</span>($2)')
+                                      .replace(/(\d+)/g, '<span class="number">$1</span>')
+                                      .replace(/\ ([A-Za-z_0-9]+)\./g, ' <span class="object">$1</span>.')
+                                      .replace(/\.([A-Za-z_0-9]+)\./g, '.<span class="object">$1</span>.')
+                                      .replace(/\.([A-Za-z_0-9]+)\(/g, '.<span class="method">$1</span>(')
+                                      .replace(/([A-Za-z_0-9]+):/g, '<span class="object">$1</span>:')
+                                      .replace(/\.([A-Za-z_0-9]+)/g, '.<span class="object">$1</span>')
+                                      .replace(/\(([A-Za-z_0-9]+),/g, '(<span class="parameter">$1</span>,')
+                                      .replace(/,([A-Za-z_0-9]+),/g, ', <span class="parameter">$1</span>,')
+                                      .replace(/,([A-Za-z_0-9]+)\)/g, ', <span class="parameter">$1</span>)')
+                                      .replace(/\b(return)(?=[^\w])/g, '<span class="return">$1</span>')
+                                      .replace(/\b(var|let|const)(?=[^\w])\ ([A-Za-z_0-9]+)/g, '$1 <span class="varName">$2</span>')
+                                      .replace(/\b(function)(?=[^\w]) (.*?)\(/g, '$1 <span class="functionName">$2</span>(')
+                                      .replace(/\b(new|var|const|let|if|do|function|while|switch|for|foreach|in|continue|break)(?=[^\w])/g, '<span class="reservedWord">$1</span>')
+                                      .replace(/\b(document|window|Array|String|Object|Number|\$)(?=[^\w])/g, '<span class="object">$1</span>')
+                                      .replace(/\b(getElementsBy(TagName|ClassName|Name)|getElementById|typeof|instanceof)(?=[^\w])/g, '<span class="method">$1</span>')
+                                      .replace(/\b(indexOf|match|replace|toString|length)(?=[^\w])/g, '<span class="method">$1</span>')
+                                      .replace(/(\/\*.*\*\/)/g, '<span class="comment">$1</span>')
+                                      .replace(/(\/\/.*)/g, '<span class="comment">$1</span>')
+        break;
+    }
 
     return outputCodeString
 }
