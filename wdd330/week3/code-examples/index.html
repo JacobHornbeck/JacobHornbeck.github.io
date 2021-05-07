@@ -14,11 +14,29 @@
         </header>
         <main>
             <section class="note">
-                <h2 class="title">[Title]</h2>
-                <a class="source" href="#">[Source]</a>
+                <h2 class="title">Array.prototype.sort()</h2>
+                <a class="source" href="https://www.w3schools.com/jsref/jsref_sort.asp">W3Schools</a>
                 <p class="content">
-                    [Content]
+                    I never knew that the <code>Array.prototype.sort()</code>
+                    method allowed a function input... I thought it just sorted
+                    the array, though I guess it makes sense, because arrays
+                    sometimes have objects in them, and the regular sorting
+                    algorithm, can't sort objects in the correct way.
                 </p>
+                <div class="codeLanguage">JavaScript</div>
+                <pre>
+const someArray = [
+    { name: "Someone1", rank: 56 },
+    { name: "Someone2", rank: 25 },
+    { name: "Someone3", rank: 73 },
+    { name: "Someone4", rank: 15 },
+    { name: "Someone5", rank: 5 },
+    { name: "Someone6", rank: 26 },
+    { name: "Someone7", rank: 59 }
+]
+const sortedArray = someArray.sort((a,b) => {
+    return b.rank - a.rank
+})</pre>
             </section>
         </main>
         <footer>&copy;2021 Jacob Hornbeck</footer>
