@@ -125,7 +125,7 @@ pre .functionName, pre .method {
 pre .text {
     color: #A31515;
 }
-pre .comment {
+pre .comment, pre .comment * {
     color: #398310;
 }
 pre .parameter, pre .object {
@@ -133,6 +133,20 @@ pre .parameter, pre .object {
 }
 pre .return {
     color: #dd00dd;
+}
+pre .normal {
+    color: black;
+}
+
+pre .html-tag {
+    color: grey;
+}
+pre .html-tag > .html-attribute {
+    font-style: italic;
+    color: orangered;
+}
+pre .html-tag > .html-text {
+    color: royalblue;
 }
 
 section.note h2 {

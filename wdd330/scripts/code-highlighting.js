@@ -30,6 +30,11 @@ function HighlightPreCode(codeTxt, language) {
                                       .replace(/(\/\*.*\*\/)/g, '<span class="comment">$1</span>')
                                       .replace(/(\/\/.*)/g, '<span class="comment">$1</span>')
         break;
+        case 'html':
+            outputCodeString = codeTxt.replace(/<(.*?)>/g, '<span class = "html-tag">&lt;$1&gt;</span>')
+                                      .replace(/([A-Za-z_0-9]+)=\'(.*?)\'/g, '<span class = "html-attribute">$1</span><span class = "normal">=</span><span class = "html-text">\'$2\'</span>')
+                                      .replace(/([A-Za-z_0-9]+)=\"(.*?)\"/g, '<span class = "html-attribute">$1</span><span class = "normal">=</span><span class = "html-text">"$2"</span>')
+        break;
     }
 
     return outputCodeString
