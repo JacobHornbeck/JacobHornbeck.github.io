@@ -10,15 +10,31 @@
     <body>
         <a href="../../" class="back">&blacktriangleleft;</a>
         <header>
-            <h1>Notes</h1>
+            <h1>Code Examples</h1>
         </header>
         <main>
             <section class="note">
-                <h2 class="title">[Title]</h2>
-                <a class="source" href="#">[Source]</a>
+                <h2 class="title">Accessing Forms By Their Names</h2>
+                <a class="source" href="https://www.sitepoint.com/premium/books/javascript-novice-to-ninja-2nd-edition/read/8/k01nwugx?fromShare=true">SitePoint JavaScript - Novice to Ninja</a>
                 <p class="content">
-                    [Content]
+                    In the first part of this chapter is shows a form:
                 </p>
+                <div class="codeLanguage">HTML</div>
+                <pre>
+&lt;form name='search' action='/search'&gt;
+    &lt;input name='searchInput'&gt;
+    &lt;button type='submit'&gt;Search&lt;/button&gt;
+&lt;/form&gt;</pre>
+                <p>And then is shows it being accessed in the following three ways:</p>
+                <div class="codeLanguage">JavaScript</div>
+                <pre>
+// Only works if there is only one form or this form is always first
+const form = document.forms[0]
+
+const form = document.forms.search
+
+const form = document.forms['search']</pre>
+                <p>I knew the first one, but I didn't know that you could access the form elements by a name.</p>
             </section>
         </main>
         <footer>&copy;2021 Jacob Hornbeck</footer>
