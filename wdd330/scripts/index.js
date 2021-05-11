@@ -1,10 +1,10 @@
-const weekOn = 3
+const weekOn = 4
 const numbers = [
     [],
     [1,0],
     [1,1],
     [0,1],
-    [0,0],
+    [0,1],
     [0,0],
     [0,0],
     [0,0],
