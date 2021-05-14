@@ -17,11 +17,16 @@
 
             .wrapper {
                 display: grid;
+                width: max-content;
+                margin: 0 auto;
             }
             .wrapper div {
                 justify-content: center;
                 display: flex;
                 align-items: center;
+            }
+            .wrapper div:hover {
+                box-shadow: inset 0 0 10px gray;
             }
             .wrapper div:nth-child(3n+1), .wrapper div:nth-child(3n+2) {
                 border-right: 3px solid black;
