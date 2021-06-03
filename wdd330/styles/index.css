@@ -150,6 +150,16 @@ pre .html-tag > .html-text {
     color: royalblue;
 }
 
+code {
+    font-family: monospace;
+    background-color: #dddddd;
+    padding: 0.25rem 0.5rem;
+    margin-bottom: 0.5rem;
+    border-radius: 5px;
+    font-weight: 400;
+    font-size: 0.9em;
+}
+
 section.note h2 {
     margin-bottom: 0;
 }
