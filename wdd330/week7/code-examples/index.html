@@ -14,10 +14,37 @@
         </header>
         <main>
             <section class="note">
-                <h2 class="title">[Title]</h2>
-                <a class="source" href="#">[Source]</a>
+                <h2 class="title"><code>try</code>, <code>catch</code>, and <code>finally</code></h2>
+                <a class="source" href="https://www.sitepoint.com/premium/books/javascript-novice-to-ninja-2nd-edition/read/10/k01nwuw4?fromShare=true">SitePoint Book Chapter 10</a>
                 <p class="content">
-                    [Content]
+                    <div class="codeLanguage">JavaScript</div>
+                    <pre>
+function imaginarySquareRoot(number) {
+    'use strict';
+    try {
+        return String(squareRoot(number));
+    }
+    catch(error) {
+        return squareRoot(-number)+'i';
+    }
+}</pre>
+                    <p>I knew this was an option, but the <code>finally</code> I did not know...</p>
+                    <div class="codeLanguage">JavaScript</div>
+                    <pre>
+function imaginarySquareRoot(number) {
+    'use strict';
+    let answer;
+    try {
+        answer = String(squareRoot(number));
+    }
+    catch(error) {
+        answer = squareRoot(-number)+"i";
+    }
+    finally {
+        return `+ or - ${answer}`;
+    }
+}</pre>
+                    <p>I don't know if I'd ever use this, but it is nice to know that it is an available tool.</p>
                 </p>
             </section>
         </main>
