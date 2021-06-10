@@ -5,8 +5,32 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Week 8 Team Activity</title>
+        <style>
+            h1, p {
+                text-align: center;
+            }
+            #pageSkip {
+                width: 3rem;
+            }
+            .grid {
+                display: flex;
+                justify-content: space-between;
+            }
+        </style>
     </head>
     <body>
         <a href="../../" class="back">&blacktriangleleft; Back</a>
+
+        <h1>Starwars</h1>
+        <p>Characters</p>
+        <ul id="starwarsPeopleList"></ul>
+        
+        <div class="grid">
+            <button onclick="LoadPrevious()" id="previous">Previous</button>
+            <input type="number" id="pageSkip" value='1'>
+            <button id="goTo">Go to Page</button>
+            <button onclick="LoadNext()" id="next">Next</button>
+        </div>
+        <script src="starWarsAPI.js"></script>
     </body>
 </html>
