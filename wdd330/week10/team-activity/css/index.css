@@ -1,0 +1,13 @@
+#quakeList li {
+    margin-bottom: 15px;
+}
+
+#quakeDetails {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+#quakeDetails.hide {
+    display: none;
+}
