@@ -6,19 +6,22 @@ export default class QuakesView {
         }).join('')
     }
     renderQuake(quake, element) {
-        const quakeProperties = Object.entries(quake.properties)
+        const qp = quake.properties
+        const qpDate = new Date(qp.time)
         const title = element.querySelector(`#${element.id} .quakeTitle`)
         const propertyList = element.querySelector(`#${element.id} .quakeProperties`)
-        
-        console.log(quakeProperties)
+        const quakeProperties = [
+            ['Magnitude', qp.mag+' '+qp.magType],
+            ['Depth', quake.geometry.coordinates[2]+' km'],
+            ['Date', `${qpDate.getMonth()+1}/${qpDate.getDate()}/${qpDate.getFullYear()}`],
+            ['More Info', `<a href="${qp.url}" target="_blank">click here</a>`]
+        ]
 
-        title.innerHTML = `${quakeProperties.filter(item => item[0] === "title")[0][1]}`
+        title.innerHTML = `${qp.title}`
         propertyList.innerHTML = ''
 
         quakeProperties.forEach((property) => {
-            if (property[0] !== "title") {
-                propertyList.innerHTML += `<li>${property[0]}: ${property[1]}</li>`
-            }
+            propertyList.innerHTML += `<li>${property[0]}: ${property[1]}</li>`
         })
     }
 }

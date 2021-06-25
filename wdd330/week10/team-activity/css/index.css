@@ -6,8 +6,19 @@
     position: fixed;
     top: 50%;
     left: 50%;
+    background-color: white;
+    width: calc(100% - 2rem + 1px);
+    height: calc(100% - 2rem + 1px);
+    padding: 1rem;
+    overflow: hidden auto;
     transform: translate(-50%, -50%);
 }
 #quakeDetails.hide {
     display: none;
+}
+#quakeDetails .close {
+    position: absolute;
+    top: 0; right: 0;
+    padding: 10px;
+    background-color: tomato;
 }

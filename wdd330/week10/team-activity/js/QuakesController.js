@@ -47,15 +47,15 @@ export default class QuakesController {
         
         this.quakesView.renderQuakeList(quakeList, this.parentElement);
         this.parentElement.addEventListener('touchend', e => {
-            this.getQuakeDetails(e.target.dataset.id);
+            if (e.target.localName === "li")
+                this.getQuakeDetails(e.target.dataset.id);
         });
     }
     async getQuakeDetails(quakeId) {
         // get the details for the quakeId provided from the model, then send them to the view to be displayed
         const quake = this.quakes.getQuakeById(quakeId)
-        console.log(quake)
         this.quakesView.renderQuake(quake, document.querySelector('#quakeDetails'))
 
-        document.querySelector('#quakeDetails')
+        document.querySelector('#quakeDetails').classList.remove('hide')
     }
 }
