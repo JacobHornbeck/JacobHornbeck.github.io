@@ -1,4 +1,4 @@
-const weekOn = 9
+const weekOn = 10
 const numbers = [
     [],
     [1,0],
