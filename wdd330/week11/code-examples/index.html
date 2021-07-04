@@ -14,10 +14,28 @@
         </header>
         <main>
             <section class="note">
-                <h2 class="title">[Title]</h2>
-                <a class="source" href="#">[Source]</a>
+                <h2 class="title">Async and Await</h2>
+                <a class="source" href="../team-activity/">Team Activity</a>
                 <p class="content">
-                    [Content]
+                    In the <a href="../team-activity/">Team Activity</a> some of the code contains <code>async</code>
+                    functions. I learned about <code>async</code> and <code>await</code> in my Backend Development class,
+                    and since it comes up in this weeks <a href="../team-activity/">Team Activity</a>, I will put a few
+                    examples...
+                </p>
+                <div class="codeLanguage">JavaScript</div>
+                <pre>
+async function someFunction() {
+    // ...
+    return someValue
+}
+
+const returnedValue = await someFunction()</pre>
+                <p>
+                    The <code>await</code> keyword is required when calling any <code>async</code> function, which are ones like
+                    <code>fetch</code>, any function declared with <code>async</code>, and any function that returns a promise.
+                </p>
+                <p>
+                    Any function that has an <code>await</code> request, needs to be declared as an <code>async</code> function.
                 </p>
             </section>
         </main>

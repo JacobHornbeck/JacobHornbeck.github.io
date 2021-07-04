@@ -22,7 +22,7 @@ function HighlightPreCode(codeTxt, language) {
                                       .replace(/\b(return)(?=[^\w])/g, '<span class="return">$1</span>')
                                       .replace(/\b(var|let|const)(?=[^\w])\ ([A-Za-z_0-9]+)/g, '$1 <span class="varName">$2</span>')
                                       .replace(/\b(function)(?=[^\w]) (.*?)\(/g, '$1 <span class="functionName">$2</span>(')
-                                      .replace(/\b(new|var|const|let|if|do|function|while|switch|for|foreach|in|continue|break|try|catch|finally)(?=[^\w])/g, '<span class="reservedWord">$1</span>')
+                                      .replace(/\b(new|var|const|let|if|do|function|while|switch|for|foreach|in|continue|break|try|catch|finally|async|await)(?=[^\w])/g, '<span class="reservedWord">$1</span>')
                                       .replace(/\b(document|window|Array|String|Object|Number|\$)(?=[^\w])/g, '<span class="object">$1</span>')
                                       .replace(/\b(getElementsBy(TagName|ClassName|Name)|getElementById|typeof|instanceof)(?=[^\w])/g, '<span class="method">$1</span>')
                                       .replace(/\b(indexOf|match|replace|toString|length)(?=[^\w])/g, '<span class="method">$1</span>')

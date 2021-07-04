@@ -5,8 +5,40 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Week 11 Team Activity</title>
+        <script src="week11.js" type="module"> </script>
+        <style>
+            .jwt-login-form *,
+            .jwt-post-form * {
+                display: block;
+                margin-top: 10px;
+                border: 2px solid black;
+                padding: 0.5rem;
+                outline: none;
+            }
+            .hidden {
+                display: none;
+            }
+        </style>
     </head>
     <body>
         <a href="../../" class="back">&blacktriangleleft; Back</a>
+        <main>
+            <h1>Week 11 Team Activity</h1>
+
+            <form class="jwt-login-form">
+                <input type="text" id="username">
+                <input type="password" id="password">
+                <button id="submit">Submit</button>
+            </form>
+
+            <div class="jwt-posts hidden">
+                <div class="jwt-post-form">
+                    <textarea id="post-content"></textarea>
+                    <button id="postSubmit">Add Post</button>
+                </div>
+                <h3>Posts:</h3>
+                <ul id="post-list"></ul>
+            </div>
+        </main>
     </body>
 </html>
