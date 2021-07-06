@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temporary Document</title>
+    <style>
+        body {
+            perspective: 800px;
+            perspective-origin: calc(400px / 2) calc((300px / 2) + 10px);
+        }
+        .holder {
+            position: relative;
+            height: 300px;
+            width: 400px;
+            transform-style: preserve-3d;
+            transform-origin: center;
+            transform: rotateY(30deg);
+            animation: flip 3s ease-in-out 0s infinite;
+        }
+        .holder > div {
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            border-radius: 10px;
+            box-shadow: 2px 0 10px gray;
+        }
+        .green {
+            transform: translate(-50%, -50%) rotate(45deg);
+            background-color: #10D15A;
+            left: calc(50% - 53px);
+            top: calc(50% - 53px);
+            z-index: 5;
+        }
+        .yellow {
+            transform: translate(-50%, -50%) rotate(45deg);
+            background-color: #FFFF64;
+            left: calc(50% + 53px);
+            top: calc(50% - 53px);
+            z-index: 2;
+        }
+        .grey {
+            transform: translate(-50%, -50%) rotate(45deg);
+            background-color: #676767;
+            left: calc(50% - 53px);
+            top: calc(50% + 53px);
+            z-index: 2;
+        }
+        .blue {
+            transform: translate(-50%, -50%) rotate(45deg);
+            background-color: #2B22E3;
+            left: calc(50% + 53px);
+            top: calc(50% + 53px);
+            z-index: 5;
+        }
+    </style>
+</head>
+<body>
+    <div class="holder">
+        <div class="green"></div>
+        <div class="yellow"></div>
+        <div class="grey"></div>
+        <div class="blue"></div>
+    </div>
+</body>
+</html>

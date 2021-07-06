@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Shows all the courses we offer and
+            even some that we are planning on offering in the future. Wanting
+            to start learning? Start here, start now!">
+        <title>Start Leaning with Genius Coding</title>
+        <link rel="icon" href="images/favicon.ico">
+        <link rel="stylesheet" href="styles/main-style.css">
+        <script src="scripts/pre-loader-and-more.js"></script>
+        <script src="scripts/load-courses.js"></script>
+    </head>
+    <body>
+        <div class="page-loader-cover">
+            <div class="page-loading">
+                <div class="green"></div>
+                <div class="yellow"></div>
+                <div class="gray"></div>
+                <div class="blue"></div>
+            </div>
+        </div>
+        <header>
+            <div class="logo-name">
+                <div class="logo">
+                    <div class="green"></div>
+                    <div class="yellow"></div>
+                    <div class="gray"></div>
+                    <div class="blue"></div>
+                </div>
+                <a href="./" onclick="OpenLink(this)"><h1>Genius Coding</h1></a>
+            </div>
+            <nav>
+                <ul>
+                    <li>
+                        <a onclick="OpenLink(this)" href="./">Home</a>
+                        <img class="back-slide" src="images/yellow-bubble.png" alt="yellow bubble">
+                    </li>
+                    <li>
+                        <a class="at" onclick="OpenLink(this)" href="start-learning.html">Start Learning</a>
+                        <img class="back-slide" src="images/yellow-bubble.png" alt="yellow bubble">
+                    </li>
+                    <li>
+                        <a onclick="OpenLink(this)" href="login.html?showPage=login">Login</a>
+                        <img class="back-slide" src="images/yellow-bubble.png" alt="yellow bubble">
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <main class="bottom-padding">
+            <div id="mission-statement">
+                <div class="inside">
+                    <h2>Our Mission</h2>
+                    <p>The mission of Genius Coding is to provide coding (and someday computer) education simply to allow everyone the opportunity and the ability to learn coding for free from anywhere.</p>
+                </div>
+            </div>
+            <section class="courses-offered">
+                <h2 class="down">Courses offered by Genius Coding</h2>
+                <div class="overflow-handler">
+                    <div class="course-grid">
+                        <p>Something didn't load correctly...</p>
+                    </div>
+                </div>
+                <div class="outer-container">
+                    <div id="course-loader" class="open">
+                        <div class="courses-loading">
+                            <div class="green"></div>
+                            <div class="yellow"></div>
+                            <div class="gray"></div>
+                            <div class="blue"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <div class="great-idea">
+                <h2>Got a Great Idea?</h2>
+                <p>If you have a great idea for a tutorial or a new course, please send us your suggestion <a href="suggest-or-request-form.html" onclick="OpenLink(this)">here</a>.</p>
+            </div>
+        </main>
+        <footer>
+            <div class="border-top">
+                <div class="left">
+                    <div>&copy;2020 Genius Coding</div>
+                    <a href="terms-of-use.html" onclick="OpenLink(this)">Terms of Use</a>
+                    <a href="privacy-policy.html" onclick="OpenLink(this)">Privacy Policy</a>
+                    <a href="../final-site-plan.html" title="I forgot to put this in here...">Final Site-plan</a>
+                </div>
+                <div class="right">
+                    <a title="Follow us on GitHub" href="https://github.com"><img src="images/github.png" alt="github logo"></a>
+                    <a title="Subscribe to us on Youtube" href="https://youtube.com"><img src="images/youtube.png" alt="youtube logo"></a>
+                    <a title="Visit us on blogger" href="https://www.blogger.com"><img src="images/blogger.png" alt="blogger logo"></a>
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>
