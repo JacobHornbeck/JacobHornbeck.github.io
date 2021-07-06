@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Todo App</title>
+        <link rel="stylesheet" href="index.css">
+    </head>
+    <body>
+        <h1 id="pageTitle">Tasks Todo</h1>
+        <div class="todoContainer">
+            <div class="todoFilters">
+                <button id="filterAll">All</button>
+                <button id="filterTodo" class="active">Todo</button>
+                <button id="filterDone">Done</button>
+            </div>
+            <ul class="todoList"></ul>
+        </div>
+        <form class="addTodo">
+            <input type="text" id="todoContent" required>
+            <button type="submit">+</button>
+        </form>
+        
+
+        <script type="module" src="index.js"></script>
+    </body>
+</html>

@@ -1,0 +1,210 @@
+* {
+    font-family: sans-serif;
+}
+body {
+    padding: 0;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+h1 {
+    padding: 1rem 0;
+    text-align: center;
+    background-color: white;
+    position: relative;
+    z-index: 101;
+    margin: 0;
+}
+
+
+.todoContainer {
+    width: 100%;
+}
+
+.todoFilters {
+    display: flex;
+    position: sticky;
+    box-shadow: 0 0 8px black;
+    z-index: 100;
+    width: 100%;
+    top: 0;
+}
+.todoFilters button {
+    border: none;
+    color: white;
+    background-color: orange;
+    border-left: 1px solid gray;
+    border-right: 1px solid gray;
+    transition: width 0.3s;
+    font-weight: bold;
+    height: 3rem;
+}
+.todoFilters button.active {
+    /* transform: scale(1.2); */
+    box-shadow: 0 0 8px black;
+    width: 50%;
+    z-index: 51;
+}
+.todoFilters button:not(.active) {
+    width: 25%;
+    z-index: 50;
+}
+
+
+.todoList {
+    padding: 0;
+    list-style-type: none;
+    flex-direction: column;
+    padding-bottom: 4rem;
+    display: flex;
+}
+.todoList li {
+    margin: 0.5rem auto;
+    box-shadow: 2px 2px 8px black;
+    justify-content: space-between;
+    padding: 1rem 0.75rem;
+    flex-direction: row;
+    border-radius: 40px;
+    align-items: center;
+    display: flex;
+    width: 75%;
+}
+.todoList li label span {
+    display: block;
+    width: 100%;
+}
+.todoList li .delete {
+    background: none;
+    border-radius: 50%;
+    background-color: tomato;
+    transform: scale(0.7);
+    font-weight: bold;
+    font-size: 1rem;
+    color: white;
+    border: none;
+    height: 30px;
+    width: 30px;
+}
+.todoList li .delete:active {
+    transform: scale(0.5);
+}
+
+
+/* Begin Custom Input Styling */
+    li label {
+        display: grid;
+        align-items: center;
+        grid-template-columns: 30px 1fr;
+        grid-column-gap: 10px;
+        width: 100%;
+        padding: 0;
+    }
+    input {
+        display: initial;
+    }
+    input[type="checkbox"] {
+        width: 0;
+        height: 0;
+        margin-left: 5px;
+        margin-right: 20px;
+        position: relative;
+    }
+    input[type="checkbox"]::before {
+        content: '';
+        position: absolute;
+        display: inline-block;
+        background-color: white;
+        border: 2px solid orange;
+        border-radius: 50%;
+        height: 18px;
+        width: 18px;
+        top: -12px;
+    }
+    input[type="checkbox"]:after {
+        content: '✔';
+        position: absolute;
+        display: inline-block;
+        background-color: orange;
+        transition: transform 0.2s;
+        padding: 2px 0 3px 6px;
+        transform: scale(0);
+        border-radius: 50%;
+        color: white;
+        border: none;
+        height: 18px;
+        width: 16px;
+        top: -12px;
+        left: 0;
+    }
+    input[type="checkbox"]:checked:after {
+        transform: scale(1);
+    }
+/* End Custom Input Styling */
+
+
+
+.addTodo {
+    bottom: 20px;
+    display: flex;
+    position: fixed;
+    box-shadow: 0 0 10px black;
+    transition: width 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    height: calc(1em + 2rem - 1px);
+    border-radius: 40px;
+    overflow: hidden;
+    width: 50px;
+    right: 5%;
+}
+.addTodo:hover {
+    width: calc(90%);
+}
+.addTodo input {
+    width: 100%;
+    padding: 1rem;
+    outline: none;
+    border: none;
+    display: none;
+}
+.addTodo:hover input {
+    display: block;
+}
+.addTodo button {
+    font-size: 2rem;
+    background-color: orange;
+    padding-right: 4px;
+    color: white;
+    border: none;
+    width: 60px;
+    text-align: center;
+}
+
+
+.centered {
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+@keyframes newTask {
+    from {
+        transform: scale(0);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+@keyframes deleteTask {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(0);
+    }
+}
+@keyframes completeTask {
+    from {
+        transform: translate(0px, 0px) scale(1);
+    }
+    to {
+        transform: translate(200%, 0px) scale(0);
+    }
+}
