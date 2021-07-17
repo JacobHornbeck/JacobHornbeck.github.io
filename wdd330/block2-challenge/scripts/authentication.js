@@ -193,6 +193,7 @@ let loggedInUser = null
                                         (snapshot) => {
                                             let progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100
                                             // Use the progress somewhere...
+                                            // Possibly use this: https://www.foolishdeveloper.com/2021/05/circular-progress-bar-using-html-and-css.html
                                         },
                                         (error) => {
                                             console.log({code: error.code, message: error.message})
