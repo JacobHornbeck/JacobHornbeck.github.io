@@ -288,3 +288,39 @@ function MicrosoftSignUp() {
     alert("That sign up method is currently unavailable")
 }
 
+function GitHubSignUp() {
+    let provider = new firebase.auth.GithubAuthProvider()
+
+    firebase.auth()
+        .signInWithPopup(provider)
+        .then((result) => {
+            // var credential = result.credential;
+            // var token = credential.accessToken;
+            // var user = result.user;
+            
+            StoreNotif('Your account was created', 'success')
+            OpenTxtLink("./")
+        })
+        .catch((error) => {
+            console.log({code: error.code, message: error.message})
+        })
+}
+
+function GoogleSignUp() {
+    let provider = new firebase.auth.GoogleAuthProvider();
+
+    firebase.auth()
+        .signInWithPopup(provider)
+        .then((result) => {
+            // let credential = result.credential
+            // let token = credential.accessToken
+            // let user = result.user
+
+            StoreNotif('Your account was created', 'success')
+            OpenTxtLink("./")
+        })
+        .catch((error) => {
+            console.log({code: error.code, message: error.message})
+        })
+}
+
