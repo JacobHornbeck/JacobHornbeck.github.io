@@ -176,7 +176,7 @@ let loggedInUser = null
                             document.querySelector('#userImage + .btn').disabled = false
                             const reader = new FileReader()
                             reader.addEventListener('load', () => {
-                                document.querySelector('#userImage ~ img').setAttribute('src', reader.result)
+                                document.querySelector('#imagePreview').setAttribute('src', reader.result)
                             })
                             reader.readAsDataURL(photoUpload.files[0])
                         })
@@ -211,7 +211,7 @@ let loggedInUser = null
                             }
                         })
                     if (user.photoURL) {
-                        let imagePreview = document.querySelector('#userImage ~ img')
+                        let imagePreview = document.querySelector('#imagePreview')
                             imagePreview.src = user.photoURL
                             imagePreview.alt = `${user.displayName}'s profile picture`
                     }   
@@ -220,6 +220,9 @@ let loggedInUser = null
             else {
                 document.querySelector('.navAccountDropdown').parentElement.style.display = "none"
                 document.querySelector('.desktopAccountOptions').style.display = "none"
+                document.querySelectorAll('.loggedIn').forEach((elem) => {
+                    elem.parentElement.style.display = "none"
+                })
                 if (window.location.href.includes('my-account') && !loggingOut) {
                     StoreNotif('You must be logged in to access that page')
                     OpenTxtLink('./')

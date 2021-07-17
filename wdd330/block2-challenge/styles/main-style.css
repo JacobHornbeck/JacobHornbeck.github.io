@@ -1255,7 +1255,7 @@
         max-width: 500px;
         grid-gap: 10px;
         display: grid;
-        width: 95%;
+        width: 100%;
         margin: 0;
     }
     .account-container form input {
@@ -1505,6 +1505,13 @@
         footer > div.border-top > div.right {
             justify-self: center;
         }
+        .account-container form {
+            grid-template-rows: max-content 50px max-content 50px max-content 50px max-content;
+        }
+        .account-container form label {
+            grid-column: 1 / -1;
+            padding: 0;
+        }
     }
 
     /* Smaller Mobile Phone Screens */
@@ -1540,6 +1547,17 @@
         footer > div.border-top > div.left > * {
             padding: 0;
             margin: 5px auto;
+        }
+        .account-container form {
+            grid-template-rows: max-content 50px 60px max-content 50px 60px max-content 50px 60px max-content;
+            grid-row-gap: 0;
+        }
+        .account-container form button.btn {
+            align-self: start;
+            grid-column: 2;
+        }
+        .account-container form input {
+            grid-column: 2 / -1;
         }
     }
 /* Responsive Design Styles */
