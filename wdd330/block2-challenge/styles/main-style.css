@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300&family=Nova+Mono&family=Play:wght@700&family=Play:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300&family=Gafata&family=Play:wght@700&family=Play:wght@300&display=swap');
 
 :root {
     --primary-color: #676767;
@@ -7,7 +7,7 @@
     --accent2-color: #202020;
     --other-color: #FEFEFE;
     --heading-font: 'Play', arial bold, sans-serif;
-    --paragraph-font: 'Nova Mono', arial, serif;
+    --paragraph-font: 'Gafata', arial, serif;
     --code-font: 'Fira Code', Courier, monospace;
 }
 
@@ -45,6 +45,9 @@
     h3, h4, h5, h6 {
         font-family: var(--heading-font);
         color: var(--accent1-color)
+    }
+    p {
+        font-size: 1.13rem;
     }
     .notif {
         top: 80px;
@@ -387,23 +390,39 @@
 /* Homepage Styles */
     #action {
         left: 30px;
+        display: grid;
         position: absolute;
+        height: max-content;
+        width: calc(250px - 2rem);
+        box-shadow: 2px 2px 8px black;
+        background-color: rgba(200,200,200,0.9);
+        grid-template-rows: max-content 20px 30px;
+        max-width: calc(95% - 2rem);
+        grid-template-columns: 1fr;
         top: calc(50% - 40px);
+        align-items: center;
+        border-radius: 3px;
         padding: 1rem;
-        background-color: rgba(200,200,200,0.7);
     }
     #action > h3 {
-        margin-top: 5px;
-        margin-bottom: 0;
+        margin: 0;
         color: var(--secondary-color);
         text-shadow: 0 0 3px var(--accent2-color);
     }
     #action > small {
-        padding-left: 15px;
+        display: block;
+        margin-left: 10px;
+        align-self: start;
     }
-    #action > p {
-        font-size: 0.9rem;
+    #action > a.btn {
         margin-bottom: 0;
+        font-size: 0.9rem;
+        position: relative;
+        padding: 0.25rem 0.5rem;
+        text-decoration: none;
+        width: max-content;
+        align-self: end;
+        margin: 0;
     }
 
     #hero {
@@ -447,6 +466,7 @@
     }
     #hero + section > p {
         padding: 0 10px;
+        line-height: 1.7rem;
         height: 100%;
     }
 
@@ -459,7 +479,7 @@
     #grid-card-view {
         display: flex;
         flex-wrap: wrap;
-        align-items: center;
+        align-items: start;
         justify-content: space-around;
         padding: 10px 0 40px;
         max-width: 950px;
@@ -526,8 +546,9 @@
     }
     .card-content {
         box-shadow: 0 0 50px var(--accent2-color);
-        grid-template-rows: 38px 90px 31px;
+        grid-template-rows: max-content max-content 31px;
         background-color: #F0F0F0;
+        grid-row-gap: 0.55rem;
         padding: 0 10px 10px;
         align-items: center;
         position: relative;
@@ -546,7 +567,7 @@
     }
     .card h3 {
         margin: 0;
-        padding: 0.5rem 0;
+        padding: 0.5rem 0 0;
         text-align: center;
     }
     a.tag, div.tag {
@@ -574,7 +595,7 @@
         background-position: center 0;
         background-attachment: local;
         background-repeat: no-repeat;
-        background-size: auto 200%;
+        background-size: auto 250%;
         border-radius: 10px;
         margin-bottom: 40px;
         z-index: 4;
@@ -1029,7 +1050,7 @@
         border: solid 1px var(--accent2-color);
         font-family: Arial, Helvetica, sans-serif;
     }
-    input[type="submit"], form button.btn {
+    input[type="submit"], form button.btn, a.btn {
         margin-top: 20px;
         padding: 0.7rem;
         width: auto;
@@ -1039,7 +1060,7 @@
         font-family: var(--heading-font);
         background-color: var(--accent1-color);
     }
-    input[type="submit"]:hover, .login-with:hover, form button.btn {
+    input[type="submit"]:hover, .login-with:hover, form button.btn, a.btn:hover {
         cursor: pointer;
     }
     #forgot {
@@ -1531,7 +1552,15 @@
             font-size: 1.5rem;
         }
         #action {
-            left: calc(50% - 250px/2)
+            left: calc(50% - 250px/2);
+            justify-items: center;
+        }
+        #action > h3, #action > small {
+            text-align: center;
+            margin: 0;
+        }
+        p {
+            font-size: 1rem;
         }
     }
 
@@ -1558,6 +1587,13 @@
         }
         .account-container form input {
             grid-column: 2 / -1;
+        }
+    }
+
+    /* Fixing the #action display for very small screens */
+    @media screen and (max-width: 279px) {
+        #action {
+            left: 2.5%;
         }
     }
 /* Responsive Design Styles */

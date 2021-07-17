@@ -33,7 +33,7 @@ function CloseLoader() {
     }
 }
 
-setTimeout(CloseLoader, 2000+Math.random()*500)
+setTimeout(CloseLoader, 503)
 
 function OpenCourse(elem) {
     elem.querySelector(".course-title-link").click()
