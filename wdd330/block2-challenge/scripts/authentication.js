@@ -288,7 +288,7 @@ function MicrosoftSignUp() {
     alert("That sign up method is currently unavailable")
 }
 
-function GitHubSignUp() {
+function GitHubSignUp(signUp) {
     let provider = new firebase.auth.GithubAuthProvider()
 
     firebase.auth()
@@ -298,7 +298,8 @@ function GitHubSignUp() {
             // var token = credential.accessToken;
             // var user = result.user;
             
-            StoreNotif('Your account was created', 'success')
+            if (signUp)
+                StoreNotif('Your account was created', 'success')
             OpenTxtLink("./")
         })
         .catch((error) => {
@@ -306,7 +307,7 @@ function GitHubSignUp() {
         })
 }
 
-function GoogleSignUp() {
+function GoogleSignUp(signUp) {
     let provider = new firebase.auth.GoogleAuthProvider();
 
     firebase.auth()
@@ -316,7 +317,8 @@ function GoogleSignUp() {
             // let token = credential.accessToken
             // let user = result.user
 
-            StoreNotif('Your account was created', 'success')
+            if (signUp)
+                StoreNotif('Your account was created', 'success')
             OpenTxtLink("./")
         })
         .catch((error) => {
