@@ -37,4 +37,11 @@ for (let i = 1; i <= weekOn; i++) {
                 <a href="block1-challenge/"><img src="images/challenge.png">Block 1 Challenge</a>
             </section>`
     }
+    if (i === 11) {
+        weekList.innerHTML += `<hr>
+            <section class="weeks">
+                <h2 class="special">Final Project</h2>
+                <a href="block2-challenge/"><img src="images/challenge.png">Block 2 Challenge</a>
+            </section>`
+    }
 }

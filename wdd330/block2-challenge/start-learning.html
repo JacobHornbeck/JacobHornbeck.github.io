@@ -21,6 +21,36 @@
                 <div class="blue"></div>
             </div>
         </div>
+        <nav class="mobile-nav">
+            <ul>
+                <li>
+                    <a onclick="OpenLink(this)" href="./">Home</a>
+                    <img class="back-slide" src="images/yellow-bubble.png" alt="yellow bubble">
+                </li>
+                <li>
+                    <a class="at" onclick="OpenLink(this)" href="start-learning.html">Start Learning</a>
+                    <img class="back-slide" src="images/yellow-bubble.png" alt="yellow bubble">
+                </li>
+                <li>
+                    <a class="navLoginButton" onclick="OpenLink(this)" href="signup.html">Sign Up</a>
+                    <img class="back-slide" src="images/yellow-bubble.png" alt="yellow bubble">
+                </li>
+                <li>
+                    <a class="navLoginButton" onclick="OpenLink(this)" href="login.html">Login</a>
+                    <img class="back-slide" src="images/yellow-bubble.png" alt="yellow bubble">
+                </li>
+                <li>
+                    <a href="my-account.html">My Account</a>
+                    <img class="back-slide" src="images/yellow-bubble.png" alt="yellow bubble">
+                </li>
+                <li>
+                    <a>Logout</a>
+                    <img class="back-slide" src="images/yellow-bubble.png" alt="yellow bubble">
+                </li>
+            </ul>
+        </nav>
+        <button class="mobile-toggler" onclick="ToggleMenu()">Menu</button>
+        <div class="backdrop" onclick="ToggleMenu()"></div>
         <header>
             <div class="logo-name">
                 <div class="logo">
@@ -31,7 +61,7 @@
                 </div>
                 <a href="./" onclick="OpenLink(this)"><h1>Genius Coding</h1></a>
             </div>
-            <nav>
+            <nav class="desktop-nav">
                 <ul>
                     <li>
                         <a onclick="OpenLink(this)" href="./">Home</a>
@@ -42,7 +72,26 @@
                         <img class="back-slide" src="images/yellow-bubble.png" alt="yellow bubble">
                     </li>
                     <li>
-                        <a onclick="OpenLink(this)" href="login.html?showPage=login">Login</a>
+                        <a class="navLoginButton" onclick="OpenLink(this)" href="signup.html">Sign Up</a>
+                        <img class="back-slide" src="images/yellow-bubble.png" alt="yellow bubble">
+                    </li>
+                    <li>
+                        <a class="navLoginButton" onclick="OpenLink(this)" href="login.html">Login</a>
+                        <img class="back-slide" src="images/yellow-bubble.png" alt="yellow bubble">
+                    </li>
+                    <li>
+                        <a class="navAccountDropdown" onclick="ToggleAccountOptions(this)"><img src="images/profile-placeholder-small.png" alt="profile placeholder"></a>
+                    </li>
+                </ul>
+            </nav>
+            <nav class="desktopAccountOptions">
+                <ul>
+                    <li>
+                        <a href="my-account.html">My Account</a>
+                        <img class="back-slide" src="images/yellow-bubble.png" alt="yellow bubble">
+                    </li>
+                    <li>
+                        <a class="logoutButton">Logout</a>
                         <img class="back-slide" src="images/yellow-bubble.png" alt="yellow bubble">
                     </li>
                 </ul>
@@ -56,20 +105,10 @@
                 </div>
             </div>
             <section class="courses-offered">
-                <h2 class="down">Courses offered by Genius Coding</h2>
+                <h2>Courses offered by Genius Coding</h2>
                 <div class="overflow-handler">
                     <div class="course-grid">
                         <p>Something didn't load correctly...</p>
-                    </div>
-                </div>
-                <div class="outer-container">
-                    <div id="course-loader" class="open">
-                        <div class="courses-loading">
-                            <div class="green"></div>
-                            <div class="yellow"></div>
-                            <div class="gray"></div>
-                            <div class="blue"></div>
-                        </div>
                     </div>
                 </div>
             </section>
@@ -83,8 +122,6 @@
                 <div class="left">
                     <div>&copy;2020 Genius Coding</div>
                     <a href="terms-of-use.html" onclick="OpenLink(this)">Terms of Use</a>
-                    <a href="privacy-policy.html" onclick="OpenLink(this)">Privacy Policy</a>
-                    <a href="../final-site-plan.html" title="I forgot to put this in here...">Final Site-plan</a>
                 </div>
                 <div class="right">
                     <a title="Follow us on GitHub" href="https://github.com"><img src="images/github.png" alt="github logo"></a>
@@ -93,5 +130,10 @@
                 </div>
             </div>
         </footer>
+
+        <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-auth.js"></script>
+        <script src="scripts/firebase-initialize.js"></script>
+        <script src="scripts/authentication.js"></script>
     </body>
 </html>

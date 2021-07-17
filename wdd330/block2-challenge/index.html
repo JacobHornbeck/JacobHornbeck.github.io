@@ -20,6 +20,36 @@
                 <div class="blue"></div>
             </div>
         </div>
+        <nav class="mobile-nav">
+            <ul>
+                <li>
+                    <a class="at" onclick="OpenLink(this)" href="./">Home</a>
+                    <img class="back-slide" src="images/yellow-bubble.png" alt="yellow bubble">
+                </li>
+                <li>
+                    <a onclick="OpenLink(this)" href="start-learning.html">Start Learning</a>
+                    <img class="back-slide" src="images/yellow-bubble.png" alt="yellow bubble">
+                </li>
+                <li>
+                    <a class="navLoginButton" onclick="OpenLink(this)" href="signup.html">Sign Up</a>
+                    <img class="back-slide" src="images/yellow-bubble.png" alt="yellow bubble">
+                </li>
+                <li>
+                    <a class="navLoginButton" onclick="OpenLink(this)" href="login.html">Login</a>
+                    <img class="back-slide" src="images/yellow-bubble.png" alt="yellow bubble">
+                </li>
+                <li>
+                    <a href="my-account.html">My Account</a>
+                    <img class="back-slide" src="images/yellow-bubble.png" alt="yellow bubble">
+                </li>
+                <li>
+                    <a>Logout</a>
+                    <img class="back-slide" src="images/yellow-bubble.png" alt="yellow bubble">
+                </li>
+            </ul>
+        </nav>
+        <button class="mobile-toggler" onclick="ToggleMenu()">Menu</button>
+        <div class="backdrop" onclick="ToggleMenu()"></div>
         <header>
             <div class="logo-name">
                 <div class="logo">
@@ -30,7 +60,7 @@
                 </div>
                 <a href="./" onclick="OpenLink(this)"><h1>Genius Coding</h1></a>
             </div>
-            <nav>
+            <nav class="desktop-nav">
                 <ul>
                     <li>
                         <a class="at" onclick="OpenLink(this)" href="./">Home</a>
@@ -41,7 +71,26 @@
                         <img class="back-slide" src="images/yellow-bubble.png" alt="yellow bubble">
                     </li>
                     <li>
-                        <a onclick="OpenLink(this)" href="login.html?showPage=login">Login</a>
+                        <a class="navLoginButton" onclick="OpenLink(this)" href="signup.html">Sign Up</a>
+                        <img class="back-slide" src="images/yellow-bubble.png" alt="yellow bubble">
+                    </li>
+                    <li>
+                        <a class="navLoginButton" onclick="OpenLink(this)" href="login.html">Login</a>
+                        <img class="back-slide" src="images/yellow-bubble.png" alt="yellow bubble">
+                    </li>
+                    <li>
+                        <a class="navAccountDropdown" onclick="ToggleAccountOptions(this)"><img src="images/profile-placeholder-small.png" alt="profile placeholder"></a>
+                    </li>
+                </ul>
+            </nav>
+            <nav class="desktopAccountOptions">
+                <ul>
+                    <li>
+                        <a href="my-account.html">My Account</a>
+                        <img class="back-slide" src="images/yellow-bubble.png" alt="yellow bubble">
+                    </li>
+                    <li>
+                        <a class="logoutButton">Logout</a>
                         <img class="back-slide" src="images/yellow-bubble.png" alt="yellow bubble">
                     </li>
                 </ul>
@@ -52,7 +101,7 @@
                 <div id="action">
                     <h3>Looking to learn coding?</h3>
                     <small>Start Here, Start Now</small>
-                    <p><a href="login.html?showPage=create-account" onclick="OpenLink(this)">Create an account</a></p>
+                    <p><a href="signup.html" onclick="OpenLink(this)">Create an account</a></p>
                 </div>
             </div>
             <section>
@@ -61,7 +110,7 @@
                 <p>
                     Genius Coding is a group of people who create fun and/or
                     helpful tutorials and coding courses in a variety of
-                    coding languages. We also develope software that is useful,
+                    coding languages. We also develope software that is
                     helpful, efficient, clean, and user-friendly.
                 </p>
             </section>
@@ -165,7 +214,7 @@
                 <div>
                     <h2>Not sure where to start?</h2>
                     <p>
-                        Take this quiz to help you choose the<br />
+                        Take this quiz to help you choose the
                         right course for you!
                     </p>
                     <button>Take Quiz</button>
@@ -176,9 +225,7 @@
             <div class="border-top">
                 <div class="left">
                     <div>&copy;2020 Genius Coding</div>
-                    <a href="terms-of-use.html" onclick="OpenLink(this)">Terms of Use</a>
                     <a href="privacy-policy.html" onclick="OpenLink(this)">Privacy Policy</a>
-                    <a href="../final-site-plan.html" title="I forgot to put this in here...">Final Site-plan</a>
                 </div>
                 <div class="right">
                     <a title="Follow us on GitHub" href="https://github.com"><img src="images/github.png" alt="github logo"></a>
@@ -187,5 +234,10 @@
                 </div>
             </div>
         </footer>
+
+        <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-auth.js"></script>
+        <script src="scripts/firebase-initialize.js"></script>
+        <script src="scripts/authentication.js"></script>
     </body>
 </html>

@@ -3,9 +3,8 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="Login to you Genius Coding account,
-            if you don't have one, make one! It's free and easy and gives you
-            access to all of the courses that we offer!">
+        <meta name="description" content="Sign up for your free Genius Coding
+            account, and get access to all of the courses that we offer!">
         <title id="page-title">Genius Coding</title>
         <link rel="icon" href="images/favicon.ico">
         <link rel="stylesheet" href="styles/main-style.css">
@@ -32,15 +31,15 @@
                     <img class="back-slide" src="images/yellow-bubble.png" alt="yellow bubble">
                 </li>
                 <li>
-                    <a class="navLoginButton" onclick="OpenLink(this)" href="signup.html">Sign Up</a>
+                    <a class="navLoginButton at" onclick="OpenLink(this)" href="signup.html">Sign Up</a>
                     <img class="back-slide" src="images/yellow-bubble.png" alt="yellow bubble">
                 </li>
                 <li>
-                    <a class="navLoginButton at" onclick="OpenLink(this)" href="login.html">Login</a>
+                    <a class="navLoginButton" onclick="OpenLink(this)" href="login.html">Login</a>
                     <img class="back-slide" src="images/yellow-bubble.png" alt="yellow bubble">
                 </li>
                 <li>
-                    <a href="my-account.html">My Account</a>
+                    <a href="my-account.html" class="at">My Account</a>
                     <img class="back-slide" src="images/yellow-bubble.png" alt="yellow bubble">
                 </li>
                 <li>
@@ -72,11 +71,11 @@
                         <img class="back-slide" src="images/yellow-bubble.png" alt="yellow bubble">
                     </li>
                     <li>
-                        <a class="navLoginButton" onclick="OpenLink(this)" href="signup.html">Sign Up</a>
+                        <a class="navLoginButton at" onclick="OpenLink(this)" href="signup.html">Sign Up</a>
                         <img class="back-slide" src="images/yellow-bubble.png" alt="yellow bubble">
                     </li>
                     <li>
-                        <a class="navLoginButton at" onclick="OpenLink(this)" href="login.html">Login</a>
+                        <a class="navLoginButton" onclick="OpenLink(this)" href="login.html">Login</a>
                         <img class="back-slide" src="images/yellow-bubble.png" alt="yellow bubble">
                     </li>
                     <li>
@@ -87,7 +86,7 @@
             <nav class="desktopAccountOptions">
                 <ul>
                     <li>
-                        <a href="my-account.html">My Account</a>
+                        <a href="my-account.html" class="at">My Account</a>
                         <img class="back-slide" src="images/yellow-bubble.png" alt="yellow bubble">
                     </li>
                     <li>
@@ -98,43 +97,27 @@
             </nav>
         </header>
         <main class="bottom-padding non-transparent-background">
-            <div class="header-image"></div>
-            <div class="form-container" id="login">
-                <section class="fitter">
-                    <p>New to Genius Coding? <a onclick="OpenLink(this)" href="signup.html">Create an account.</a></p>
-                    <h2>Sign In</h2>
-                    <form action="javascript: EmailSignIn()">
-                        <div class="input-container">
-                            <input type="text" name="email" id="email-login" required>
-                            <label for="email-login" class="form-label">Email</label>
-                        </div>
-                        <div class="input-container">
-                            <input type="password" name="password" id="password" required>
-                            <label for="password" class="form-label">Password</label>
-                        </div>
-                        <a onclick="OpenLink(this)" href="forgot-password.html" id="forgot">Forgot password?</a>
-                        <input type="submit" value="Sign In">
-                    </form>
-                    <div class="or">
-                        <div></div>
-                        <p>or sign in with</p>
-                    </div>
-                    <div class="external-logins">
-                        <button class="login-with">
-                            <img src="images/github.png" alt="GitHub">
-                            <span>GitHub</span>
-                        </button>
-                        <button class="login-with">
-                            <img src="images/google.png" alt="Google">
-                            <span>Google</span>
-                        </button>
-                        <button class="login-with">
-                            <img src="images/microsoft.png" alt="Microsoft">
-                            <span>Microsoft</span>
-                        </button>
-                    </div>
-                </section>
-            </div>
+            <div class="other-header-image"></div>
+            <h2 class="big-title">My Account</h2>
+            <section class="account-container">
+                <h2><span id="greeting">[greeting]</span> <span id="accountDisplayName">[your name]</span></h2>
+                <hr>
+                <form>
+                    <label for="userName">Display name:</label>
+                    <input type="text" id="userName">
+                    <button class="btn" type="button">Update</button>
+
+                    <label for="userEmail">Email:</label>
+                    <input type="email" id="userEmail">
+                    <button class="btn" type="button">Verify</button>
+                    <button class="btn" type="button">Update</button>
+
+                    <label>Profile Photo:</label>
+                    <input type="file" id="userImage" accept=".jpg, .jpeg, .png, .gif">
+                    <button class="btn" type="button">Save</button>
+                    <img src="images/profile-placeholder-medium.png" alt="profile placeholder" id="imagePreview">
+                </form>
+            </section>
         </main>
         <footer>
             <div class="border-top">
@@ -151,6 +134,7 @@
         </footer>
 
         <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-storage.js"></script>
         <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-auth.js"></script>
         <script src="scripts/firebase-initialize.js"></script>
         <script src="scripts/authentication.js"></script>

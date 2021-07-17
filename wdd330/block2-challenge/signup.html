@@ -3,9 +3,8 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="Login to you Genius Coding account,
-            if you don't have one, make one! It's free and easy and gives you
-            access to all of the courses that we offer!">
+        <meta name="description" content="Sign up for your free Genius Coding
+            account, and get access to all of the courses that we offer!">
         <title id="page-title">Genius Coding</title>
         <link rel="icon" href="images/favicon.ico">
         <link rel="stylesheet" href="styles/main-style.css">
@@ -32,11 +31,11 @@
                     <img class="back-slide" src="images/yellow-bubble.png" alt="yellow bubble">
                 </li>
                 <li>
-                    <a class="navLoginButton" onclick="OpenLink(this)" href="signup.html">Sign Up</a>
+                    <a class="navLoginButton at" onclick="OpenLink(this)" href="signup.html">Sign Up</a>
                     <img class="back-slide" src="images/yellow-bubble.png" alt="yellow bubble">
                 </li>
                 <li>
-                    <a class="navLoginButton at" onclick="OpenLink(this)" href="login.html">Login</a>
+                    <a class="navLoginButton" onclick="OpenLink(this)" href="login.html">Login</a>
                     <img class="back-slide" src="images/yellow-bubble.png" alt="yellow bubble">
                 </li>
                 <li>
@@ -72,11 +71,11 @@
                         <img class="back-slide" src="images/yellow-bubble.png" alt="yellow bubble">
                     </li>
                     <li>
-                        <a class="navLoginButton" onclick="OpenLink(this)" href="signup.html">Sign Up</a>
+                        <a class="navLoginButton at" onclick="OpenLink(this)" href="signup.html">Sign Up</a>
                         <img class="back-slide" src="images/yellow-bubble.png" alt="yellow bubble">
                     </li>
                     <li>
-                        <a class="navLoginButton at" onclick="OpenLink(this)" href="login.html">Login</a>
+                        <a class="navLoginButton" onclick="OpenLink(this)" href="login.html">Login</a>
                         <img class="back-slide" src="images/yellow-bubble.png" alt="yellow bubble">
                     </li>
                     <li>
@@ -99,36 +98,55 @@
         </header>
         <main class="bottom-padding non-transparent-background">
             <div class="header-image"></div>
-            <div class="form-container" id="login">
+            <div class="form-container" id="create-account">
                 <section class="fitter">
-                    <p>New to Genius Coding? <a onclick="OpenLink(this)" href="signup.html">Create an account.</a></p>
-                    <h2>Sign In</h2>
-                    <form action="javascript: EmailSignIn()">
+                    <p>Already have an account? <a onclick="OpenLink(this)" href="login.html?showPage=login">Login now.</a></p>
+                    <h2>Create Account</h2>
+                    <form action="javascript: EmailSignUp()">
                         <div class="input-container">
-                            <input type="text" name="email" id="email-login" required>
-                            <label for="email-login" class="form-label">Email</label>
+                            <input type="text" name="email" id="email-create" required>
+                            <label for="email-create" class="form-label">Email</label>
                         </div>
                         <div class="input-container">
-                            <input type="password" name="password" id="password" required>
-                            <label for="password" class="form-label">Password</label>
+                            <input type="text" name="name" id="name-create" required onkeypress="LoadPerCharacter(true,this)" onkeyup="CheckValue(this)">
+                            <label for="name-create" class="form-label">Name</label>
+                            <div class="valid">
+                                <div class="green"></div>
+                                <div class="yellow"></div>
+                                <div class="gray"></div>
+                                <div class="blue"></div>
+                            </div>
                         </div>
-                        <a onclick="OpenLink(this)" href="forgot-password.html" id="forgot">Forgot password?</a>
-                        <input type="submit" value="Sign In">
+                        <div class="input-container">
+                            <input type="password" name="password" id="password-create" required onkeypress="LoadPerCharacter(true,document.getElementById('password-confirm'))" onkeyup="CheckValue(document.getElementById('password-confirm'))">
+                            <label for="password-create" class="form-label">Password</label>
+                        </div>
+                        <div class="input-container">
+                            <input type="password" name="confirm_password" id="password-confirm" required onkeypress="LoadPerCharacter(true,this)" onkeyup="CheckValue(this)">
+                            <label for="password-confirm" class="form-label">Confirm Password</label>
+                            <div class="valid">
+                                <div class="green"></div>
+                                <div class="yellow"></div>
+                                <div class="gray"></div>
+                                <div class="blue"></div>
+                            </div>
+                        </div>
+                        <input type="submit" value="Create Account">
                     </form>
                     <div class="or">
                         <div></div>
-                        <p>or sign in with</p>
+                        <p>or sign up with</p>
                     </div>
                     <div class="external-logins">
-                        <button class="login-with">
+                        <button class="login-with" onclick="GitHubSignUp()">
                             <img src="images/github.png" alt="GitHub">
                             <span>GitHub</span>
                         </button>
-                        <button class="login-with">
+                        <button class="login-with" onclick="GoogleSignUp()">
                             <img src="images/google.png" alt="Google">
                             <span>Google</span>
                         </button>
-                        <button class="login-with">
+                        <button class="login-with" onclick="MicrosoftSignUp()">
                             <img src="images/microsoft.png" alt="Microsoft">
                             <span>Microsoft</span>
                         </button>

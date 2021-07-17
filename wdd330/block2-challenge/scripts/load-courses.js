@@ -76,62 +76,19 @@ var courses = [
     },
 ]
 
-function LoadCourses(arg) {
-    var courseLoader = document.getElementById('course-loader')
-    var container = document.getElementsByClassName('outer-container')[0]
+function LoadCourses() {
     var courseGrid = document.getElementsByClassName('course-grid')[0]
-    var titleCourse = document.querySelector('.courses-offered > h2')
-    switch (arg) {
-        case 'close':
-            courseGrid.innerHTML = ""
-            setTimeout(() => {
-                for (let i = 0; i < courses.length; i++) {
-                    if (courses[i].img.length>1) {
-                        courseGrid.innerHTML += "<div onclick=\"OpenCourse(this)\"><div class=\"img-holder two\"><div class=\""+(courses[i].tags[0].toLowerCase())+"\" style=\"background-image: url("+courses[i].img[0]+");\"></div><div class=\""+(courses[i].tags[1].toLowerCase())+"\" style=\"background-image: url("+courses[i].img[1]+")\"></div></div>"+courses[i].name+"<div class=\"tags\" id=\"tags"+i+"\"></div></div>"
-                    }
-                    else {
-                        courseGrid.innerHTML += "<div onclick=\"OpenCourse(this)\"><div class=\"img-holder "+(courses[i]["sort-name"].toLowerCase())+"\"><div style=\""+((courses[i].tags[0]==='C++')?"background-color: #00A0FD; ":"")+"background-image: url("+courses[i].img[0]+")\"></div></div>"+courses[i].name+"<div class=\"tags\" id=\"tags"+i+"\"></div></div>"
-                    }
-                    for (let j = 0; j < courses[i].tags.length; j++) {
-                        let ct = courses[i].tags[j]
-                        document.getElementById("tags"+i).innerHTML += "<div class=\"tag "+((i<1)?(courses[i].tags[j].toLowerCase()):(courses[i]["sort-name"].toLowerCase()))+"\">"+courses[i].tags[j]+"</div>"
-                    }
-                }
-                titleCourse.className = 'up'
-                changeCSSStyle(
-                    ".overflow-handler",
-                    "height",
-                    "calc((100px * "+(Math.floor(courses.length/3))+") +"+
-                    " (20px * "+(Math.floor(courses.length/3)-1)+"))"
-                )
-                changeCSSStyle(
-                    ".course-grid",
-                    "grid-template-rows",
-                    "repeat("+(Math.floor(courses.length/3)+1)+",100px)"
-                )
-            }, 1500);
-            setTimeout(() => {
-                courseLoader.className = "closed"
-                setTimeout(() => {
-                    container.style.top = "-999px"
-                    container.style.left = "-999px"
-                    courseLoader.style.top = "-999px"
-                    courseLoader.style.left = "-999px"
-                }, 503)
-            }, 1700+Math.random()*400)
-        break;
-        case 'load':
-            container.style.top = "0"
-            container.style.left = "0"
-            courseLoader.style.top = "0"
-            courseLoader.style.left = "0"
-            courseLoader.className = "open"
-            titleCourse.className = 'down'
-            changeCSSStyle(
-                ".overflow-handler",
-                "height",
-                "calc((100px + 20px) * 2)"
-            )
-        break;
+    courseGrid.innerHTML = ""
+    for (let i = 0; i < courses.length; i++) {
+        if (courses[i].img.length>1) {
+            courseGrid.innerHTML += "<div onclick=\"OpenCourse(this)\"><div class=\"img-holder two\"><div class=\""+(courses[i].tags[0].toLowerCase())+"\" style=\"background-image: url("+courses[i].img[0]+");\"></div><div class=\""+(courses[i].tags[1].toLowerCase())+"\" style=\"background-image: url("+courses[i].img[1]+")\"></div></div>"+courses[i].name+"<div class=\"tags\" id=\"tags"+i+"\"></div></div>"
+        }
+        else {
+            courseGrid.innerHTML += "<div onclick=\"OpenCourse(this)\"><div class=\"img-holder "+(courses[i]["sort-name"].toLowerCase())+"\"><div style=\""+((courses[i].tags[0]==='C++')?"background-color: #00A0FD; ":"")+"background-image: url("+courses[i].img[0]+")\"></div></div>"+courses[i].name+"<div class=\"tags\" id=\"tags"+i+"\"></div></div>"
+        }
+        for (let j = 0; j < courses[i].tags.length; j++) {
+            let ct = courses[i].tags[j]
+            document.getElementById("tags"+i).innerHTML += "<div class=\"tag "+((i<1)?(courses[i].tags[j].toLowerCase()):(courses[i]["sort-name"].toLowerCase()))+"\">"+courses[i].tags[j]+"</div>"
+        }
     }
 }
