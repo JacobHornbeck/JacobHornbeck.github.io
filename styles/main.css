@@ -69,3 +69,13 @@ nav a:hover {
     background: var(--secondary-color);
     box-shadow: 0 0 10px var(--secondary-color);
 }
+main.bio {
+    margin: 0 20px 20px;
+}
+main.bio h2 {
+    margin: 10px 0 5px 0;
+}
+main.bio p {
+    margin: 10px 0 0 0;
+    padding: 0 0 0 10px;
+}
