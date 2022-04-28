@@ -89,11 +89,9 @@
             }
 
             if (getUrlVars()['source']!=undefined) {
-                document.querySelector('#web-reference').value = getUrlVars()['source'].toLowerCase()
+                document.querySelector('#web-reference').value = getUrlVars()['source'] ? getUrlVars()['source'].toLowerCase() : 'w3schools'
                 adjustLogo()
-                if (getUrlVars()['engine']) {
-                    document.querySelector('#engine').value = getUrlVars()['engine'].toLowerCase()
-                }
+                document.querySelector('#engine').value = getUrlVars()['engine'] ? getUrlVars()['engine'].toLowerCase() : 'bing'
             }
 
             function formatSearchText(txt) {
