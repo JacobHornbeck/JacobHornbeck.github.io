@@ -92,7 +92,10 @@ import Task from './Task.js'
             setTimeout(() => {
                 const task2complete = document.querySelector(`#${taskId}`)
                 
-                task2complete.style.animation = "completeTask 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55)"
+                if (filter === "done")
+                    task2complete.style.animation = "unCompleteTask 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55)"
+                if (filter === "todo")
+                    task2complete.style.animation = "completeTask 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55)"
                 setTimeout(() => {
                     task2complete.remove()
     

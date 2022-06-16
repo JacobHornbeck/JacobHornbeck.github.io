@@ -205,6 +205,14 @@ h1 {
         transform: translate(0px, 0px) scale(1);
     }
     to {
-        transform: translate(200%, 0px) scale(0);
+        transform: translate(200vw, 0px) scale(0);
+    }
+}
+@keyframes unCompleteTask {
+    from {
+        transform: translate(0px, 0px) scale(1);
+    }
+    to {
+        transform: translate(-200vw, 0px) scale(0);
     }
 }
