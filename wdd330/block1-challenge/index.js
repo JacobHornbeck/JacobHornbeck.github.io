@@ -166,7 +166,7 @@ import Task from './Task.js'
         document.querySelector('#filterAll').classList.remove('active')
         document.querySelector('#filterTodo').classList.add('active')
         document.querySelector('#filterDone').classList.remove('active')
-        document.querySelector('#pageTitle').textContent = "Tasks Todo"
+        document.querySelector('#pageTitle').textContent = "Tasks To-Do"
         loadTasks("todo")
     }
     function TasksDone() {
