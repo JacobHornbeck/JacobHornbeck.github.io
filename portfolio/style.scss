@@ -1,0 +1,203 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Rajdhani&display=swap');
+
+.material-symbols-outlined {
+    font-variation-settings:
+        'FILL' 1,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 48
+}
+
+* {
+    font-family: 'Rajdhani', sans-serif;
+    box-sizing: border-box;
+    --main-color: tomato;
+}
+
+h1, h2, h3, h4, nav ul a span {
+    font-family: 'Lobster';
+    font-weight: normal;
+}
+
+p, li {
+    font-size: 1.15rem;
+}
+
+a {
+    color: var(--main-color);
+    text-decoration: none;
+    font-weight: bold;
+
+    &:hover {
+        text-decoration: underline black;
+    }
+}
+
+body {
+    padding: 4rem 0 0 5rem;
+    margin: 0;
+}
+
+header {
+    position: fixed;
+    background-color: var(--main-color);
+    box-shadow: 2px 2px 4px gray;
+    top: 0; left: 0;
+    height: 100vh;
+    width: 5rem;
+    z-index: 9;
+
+    &::before {
+        content: '';
+        top: 0; left: 5rem;
+        position: absolute;
+        box-shadow: 2px 2px 4px gray;
+        background-color: var(--main-color);
+        width: calc(100vw - 5rem);
+        height: 4.5rem;
+        z-index: 8;
+    }
+    h1 {
+        position: relative;
+        width: max-content;
+        color: white;
+        padding: 1rem;
+        width: 100vw;
+        z-index: 9;
+        margin: 0;
+    }
+
+    nav ul {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        list-style: none;
+        flex-direction: column;
+        overflow: auto;
+
+        a {
+            display: flex;
+            text-decoration: none;
+            padding: 0.75rem 0 0.75rem 0;
+            background-color: var(--main-color);
+            flex-direction: column;
+            justify-items: center;
+            align-items: center;
+            font-size: 1.2rem;
+            row-gap: 0.25rem;
+            color: white;
+
+            span.material-symbols-outlined {
+                font-size: 2rem;
+            }
+            &:hover {
+                background-color: rgba(255, 255, 255, 0.3);
+                text-decoration: none;
+            }
+            &.at {
+                background-color: white;
+                color: var(--main-color);
+            }
+        }
+    }
+}
+
+main {
+    min-height: calc(100vh - 4rem - 3rem);
+    padding: 1.5rem;
+
+    h2, p {
+        margin: 0;
+    }
+
+    h2 {
+        top: 4.5rem;
+        padding: 0.5rem 1rem 1rem 0;
+        background-color: rgba(255, 255, 255, 0.7);
+        position: sticky;
+        z-index: 7;
+    }
+    p {
+        max-width: 1000px;
+        &:not(:first-of-type) {
+            padding-top: 1rem;
+        }
+        ul + & {
+            padding: 0 !important;
+        }
+    }
+    ul {
+        margin-top: 0.25rem;
+    }
+    .project-flex-grid {
+        justify-content: space-between;
+        flex-wrap: wrap;
+        display: flex;
+        padding: 1rem;
+        gap: 2rem 1rem;
+        
+        .project {
+            display: grid;
+            padding: 1rem;
+            max-width: 300px;
+            height: max-content;
+            grid-template-rows: 2.5rem 150px;
+            box-shadow: 2px 2px 8px gray;
+            grid-auto-rows: max-content;
+            box-sizing: content-box;
+            justify-items: center;
+            border-radius: 10px;
+            align-items: center;
+            overflow: hidden;
+            row-gap: 0.25rem;
+            padding-top: 0;
+            width: 100%;
+
+            h3 {
+                letter-spacing: 1.5px;
+                padding-bottom: 0.25rem;
+                align-self: end;
+                margin: 0;
+            }
+            span {
+                padding: 0.25rem;
+                text-align: justify;
+            }
+            img {
+                width: 100%;
+                object-fit: cover;
+                object-position: center;
+                grid-column: 1;
+                height: 100%;
+                &[src="loading.gif"] {
+                    object-fit: contain;
+                    background-color: white;
+                }
+            }
+        }
+    }
+    .contact-table {
+        display: grid;
+        column-gap: 0.75rem;
+        grid-template-columns: 70px max-content;
+        box-shadow: 2px 2px 8px gray;
+        border-radius: 10px;
+        width: max-content;
+        padding: 1rem;
+    }
+}
+
+footer {
+    background: none;
+    font-weight: bold;
+    position: relative;
+    background-color: var(--main-color);
+    box-shadow: 2px -2px 4px gray;
+    align-items: center;
+    font-size: 1.2rem;
+    color: white;
+    display: flex;
+    padding: 1rem;
+    height: 3rem;
+    z-index: 10;
+}
