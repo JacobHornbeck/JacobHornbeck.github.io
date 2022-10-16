@@ -109,7 +109,7 @@ main h2 {
   z-index: 7;
 }
 main p {
-  max-width: 1000px;
+  max-width: 930px;
 }
 main p:not(:first-of-type) {
   padding-top: 1rem;
@@ -126,6 +126,11 @@ main .project-flex-grid {
   display: flex;
   padding: 1rem;
   gap: 2rem 1rem;
+}
+@media screen and (max-width: 840px) {
+  main .project-flex-grid {
+    justify-content: space-around;
+  }
 }
 main .project-flex-grid .project {
   display: grid;
@@ -149,6 +154,22 @@ main .project-flex-grid .project h3 {
   padding-bottom: 0.25rem;
   align-self: end;
   margin: 0;
+}
+main .project-flex-grid .project a {
+  align-self: end;
+  display: flex;
+}
+main .project-flex-grid .project a h3 {
+  color: white;
+}
+main .project-flex-grid .project a span.material-symbols-outlined {
+  font-size: 1.2rem;
+}
+main .project-flex-grid .project a:hover {
+  text-decoration: none;
+}
+main .project-flex-grid .project a:hover h3 {
+  text-decoration: underline;
 }
 main .project-flex-grid .project span {
   padding: 0.25rem;

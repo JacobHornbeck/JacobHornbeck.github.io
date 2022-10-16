@@ -118,7 +118,7 @@ main {
         z-index: 7;
     }
     p {
-        max-width: 1000px;
+        max-width: 930px;
         &:not(:first-of-type) {
             padding-top: 1rem;
         }
@@ -135,6 +135,10 @@ main {
         display: flex;
         padding: 1rem;
         gap: 2rem 1rem;
+
+        @media screen and (max-width: 840px) {
+            justify-content: space-around;
+        }
         
         .project {
             display: grid;
@@ -158,6 +162,22 @@ main {
                 padding-bottom: 0.25rem;
                 align-self: end;
                 margin: 0;
+            }
+            a {
+                align-self: end;
+                display: flex;
+                h3 {
+                    color: white;
+                }
+                span.material-symbols-outlined {
+                    font-size: 1.2rem;
+                }
+                &:hover {
+                    text-decoration: none;
+                    h3 {
+                        text-decoration: underline;
+                    }
+                }
             }
             span {
                 padding: 0.25rem;

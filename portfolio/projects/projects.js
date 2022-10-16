@@ -11,32 +11,46 @@ function Build(type) {
  * Randomly adjust timeout to load
  * @param {function} cb Callback function
  * @param {number} bwt Base Wait Time
+ * @param {number} art Additional Random Time
  */
-function StaggerLoad(cb, bwt) {
-    setTimeout(cb, 1000+Math.random()*500);
+function StaggerLoad(cb, bwt = 1000, art = 500) {
+    setTimeout(cb, bwt+Math.random()*500);
 }
 
 const NO_IMAGE = 'https://dummyimage.com/500x281?text=%20%20%20No%20Image%20%20%20'
 const NOT_FOUND = 'https://dummyimage.com/500x281?text=Image%20Not%20Found'
 
 class Project {
-    constructor(title = 'Project Title', description = 'Project Description', technologies = [], languages = [], imageUrl = '') {
+    constructor(title = 'Project Title',
+                description = 'Project Description',
+                technologies = [],
+                languages = [],
+                imageUrl = '',
+                hostedLink) {
         this.title = title
         this.desc = description
         this.tech = technologies
         this.lang = languages
         this.img = imageUrl
+        this.link = hostedLink
     }
 
     get projectElement() {
         let image = Build('img').attr('data-src', this.img)
                                 .attr('src', 'loading.gif')
                                 .attr('alt', this.title)
-        let title = Build('h3')
-            title.html(this.title)
+        let title = Build('h3').html(this.title)
+        if (this.link) {
+            var icon = Build('span').addClass('material-symbols-outlined')
+                                    .text('open_in_new')
+            var link = Build('a').attr('href', this.link)
+                                 .attr('target', '_blank')
+                                 .append(title)
+                                 .append(icon)
+        }
         let description = Build('span').html(`<b>Description:</b> ${this.desc}`)
         let project = Build('div').addClass('project')
-                                  .append(title)
+                                  .append(this.link ? link : title)
                                   .append(image)
                                   .append(description)
 
@@ -84,7 +98,8 @@ const projects = [
             'ejs',
             'mongodb',
         ],
-        'genius-coding.jpg'
+        'genius-coding.jpg',
+        'https://genius-coding.herokuapp.com/'
     ),
     new Project(
         'CMS App',
@@ -122,7 +137,21 @@ const projects = [
         ],
         'rubiks-timer-app.jpg'
     ),
-    
+    new Project(
+        'GitHub Pages',
+        'Many projects that I made, either for a class or for a side-project',
+        [
+            'frontend',
+            'web-development',
+        ],
+        [
+            'html',
+            'javascript',
+            'css',
+        ],
+        '',
+        'https://jacobhornbeck.github.io/'
+    )
 ]
 
 if (projects.length > 0)
