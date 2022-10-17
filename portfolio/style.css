@@ -160,7 +160,7 @@ main .project-flex-grid .project a {
   display: flex;
 }
 main .project-flex-grid .project a h3 {
-  color: white;
+  color: black;
 }
 main .project-flex-grid .project a span.material-symbols-outlined {
   font-size: 1.2rem;
