@@ -184,7 +184,7 @@ main .project-flex-grid .project img {
 }
 main .project-flex-grid .project img[src="loading.gif"] {
   object-fit: contain;
-  background-color: white;
+  background-color: white !important;
 }
 main .contact-table {
   display: grid;
