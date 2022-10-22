@@ -130,7 +130,7 @@ main {
         margin-top: 0.25rem;
     }
     .project-flex-grid {
-        justify-content: space-between;
+        justify-content: space-around;
         flex-wrap: wrap;
         display: flex;
         padding: 1rem;
@@ -143,7 +143,6 @@ main {
         .project {
             display: grid;
             padding: 1rem;
-            max-width: 300px;
             height: max-content;
             grid-template-rows: 2.5rem 150px;
             box-shadow: 2px 2px 8px gray;
@@ -155,17 +154,23 @@ main {
             overflow: hidden;
             row-gap: 0.25rem;
             padding-top: 0;
-            width: 100%;
+            width: 300px;
 
             h3 {
                 letter-spacing: 1.5px;
                 padding-bottom: 0.25rem;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                overflow: hidden;
                 align-self: end;
                 margin: 0;
             }
             a {
+                display: grid;
                 align-self: end;
-                display: flex;
+                grid-template-columns: auto 30px;
+                box-sizing: content-box;
+                max-width: 100%;
                 h3 {
                     color: black;
                 }
@@ -186,12 +191,12 @@ main {
             img {
                 width: 100%;
                 object-fit: cover;
+                background-color: white !important;
                 object-position: center;
                 grid-column: 1;
                 height: 100%;
                 &[src="loading.gif"] {
                     object-fit: contain;
-                    background-color: white !important;
                 }
             }
         }

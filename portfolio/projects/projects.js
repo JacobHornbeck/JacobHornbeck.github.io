@@ -151,7 +151,39 @@ const projects = [
         ],
         '',
         'https://jacobhornbeck.github.io/'
-    )
+    ),
+    new Project(
+        'Pages and Buttons Tutorial',
+        'A Khan Academy project that teaches how to make a single page website in Khan Academy',
+        [
+            'frontend',
+            'web-development'
+        ],
+        [
+            'html',
+            'javascript',
+            'jquery',
+            'css',
+        ],
+        '',
+        'https://www.khanacademy.org/computer-programming/-/5971546630832128'
+    ),
+    new Project(
+        'Mathematics Year Challenge: 2022',
+        'A Khan Academy project that shares the Mathematics Year Challenge and shows other peoples solutions',
+        [
+            'frontend',
+            'web-development'
+        ],
+        [
+            'html',
+            'javascript',
+            'jquery',
+            'css',
+        ],
+        '',
+        'https://www.khanacademy.org/computer-programming/-/4850835973521408'
+    ),
 ]
 
 if (projects.length > 0)
